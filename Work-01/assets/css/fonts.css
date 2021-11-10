@@ -1,0 +1,63 @@
+@font-face {
+    font-family: "Aleo";
+    src: url(../fonts/aleo-bold-webfont.woff2);
+    font-style: normal; 
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Aleo";
+    src: url(../fonts/aleo-regular-webfont.woff2);
+    font-style: normal; 
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Aleo";
+    src: url(../fonts/aleo-light-webfont.woff2);
+    font-style: normal; 
+    font-weight: 200;
+}
+
+
+@font-face {
+    font-family: "JosefinSans-latin";
+    src: url(../fonts/josefin-sans-v20-latin-ext_latin-700.woff2);
+    font-style: normal; 
+    font-weight: 700;
+}
+@font-face {
+    font-family: "JosefinSans-latin";
+    src: url(../fonts/josefin-sans-v20-latin-ext_latin-600.woff2);
+    font-style: normal; 
+    font-weight: 600;
+}
+@font-face {
+    font-family: "JosefinSans-latin";
+    src: url(../fonts/josefin-sans-v20-latin-ext_latin-500.woff2);
+    font-style: normal; 
+    font-weight: 500;
+}
+@font-face {
+    font-family: "JosefinSans-latin";
+    src: url(../fonts/josefin-sans-v20-latin-ext_latin-regular.woff2);
+    font-style: normal; 
+    font-weight: 400;
+}
+@font-face {
+    font-family: "JosefinSans-latin";
+    src: url(../fonts/josefin-sans-v20-latin-ext_latin-300.woff2);
+    font-style: normal; 
+    font-weight: 300;
+}
+@font-face {
+    font-family: "JosefinSans-latin";
+    src: url(../fonts/josefin-sans-v20-latin-ext_latin-200.woff2);
+    font-style: normal; 
+    font-weight: 200;
+}
+
+@font-face {
+    font-family: 'fontello';
+    src: url('../fi/font/fontello.woff2');
+    font-weight: normal;
+    font-style: normal;
+  }
