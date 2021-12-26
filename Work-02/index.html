@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Monticello - International Group</title>
+    <meta name="description" content="We make the world beautiful everyday">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+    <!-- Favicon -->
+    <!-- <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+
+    <meta name="robots" content="all">
+    <meta name="revisit-after" content="1 days">
+
+    <meta property="og:locale" content="en">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="BHROMAON - Travel Anywhere">
+    <meta property="og:description" content="Your Best Travel Company">
+    <meta property="og:url" content="https://dmytrokabluchii.github.io/Exam1/Work-01/index.html">
+    <meta property="og:site_name" content="BHROMAON">
+    <meta property="og:image" content="https://dmytrokabluchii.github.io/Exam1/Work-01/assets/images/title-bg.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630"> -->
+
+    <link rel="stylesheet" href="assets/plugins/slick/slick.css">
+    <link rel="stylesheet" href="assets/plugins/slick/slick-theme.css">
+
+    <link rel="stylesheet" href="assets/plugins/leflet/leaflet.css">
+    <link rel="stylesheet" href="assets/plugins/slider/slider.min.css">
+    <link rel="stylesheet" href="assets/plugins/lightGallery/lightgallery-bundle.min.css">
+    <link rel="stylesheet" href="assets/css/fonts.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/responsive.min.css">
+</head>
+
+<body class="body">
+
+    <!--     <div class="mobile_menu_wrap">
+        <div class="sidemenu_top">
+            <div class="mobile_logo" itemscope itemtype="https://schema.org/Organization">
+                <a href="#">
+                    <img class="lazy"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                        data-src="assets/images/logo.png" alt="logo">
+                </a>
+            </div>
+            <button class="hamburger hamburger--slider" type="button">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
+        </div>
+        <nav class="sidemenu">
+            <ul>
+                <li><a href="#">who we are</a></li>
+                <li><a href="#">what we do</a></li>
+                <li><a href="#">travel with us</a></li>
+                <li><a href="#">contact us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="page_overlay"></div> -->
+
+    <header class="header">
+        <div class="header__content" id="header-content">
+            <div class="header__layer">
+                <div class="header__block container">
+                    <div class="header__main">
+                        <div class="header__logo">
+                            <a href="#"><img src="assets/images/svg/logo.svg" alt="logo"></a>
+                        </div>
+                        <div class="header__main-menu">
+
+                            <nav class="header__menu" id="main_menu">
+                                <ul class="header__menu-list">
+                                    <li class="header__menu-box">
+                                        <a class="nav-box__link" href="#about_monticello">
+                                            <div class="nav-box__circle"></div>
+                                            <span class="nav-box__name">ABOUT US</span>
+                                        </a>
+                                    </li>
+                                    <li class="header__menu-box">
+                                        <a class="nav-box__link" href="#projects_monticello">
+                                            <div class="nav-box__circle"></div>
+                                            <span class="nav-box__name">PROJECTS</span>
+                                        </a>
+                                    </li>
+                                    <li class="header__menu-box">
+                                        <a class="nav-box__link" href="#news_monticello">
+                                            <div class="nav-box__circle"></div>
+                                            <span class="nav-box__name">NEWS</span>
+                                        </a>
+                                    </li>
+                                    <li class="header__menu-box">
+                                        <a class="nav-box__link" href="#contact_monticello">
+                                            <div class="nav-box__circle"></div>
+                                            <span class="nav-box__name">CONTACT</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+
+                            <!-- <div class="hamburger_menu">
+                            <button class="hamburger hamburger--slider" type="button">
+                                <span class="hamburger-box">
+                                    <span class="hamburger-inner"></span>
+                                </span>
+                            </button>
+                        </div> -->
+                        </div>
+                        <nav class="header__media">
+                            <ul>
+                                <li class="media__links">
+                                    <a class="socil__media facebook-link" rel="nofollow" target="_blank"
+                                        href="https://www.facebook.com/">
+                                        <svg width="40" height="40" viewbox="0 0 40 40" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M23.7188 21L24.1562 18.125H21.375V16.25C21.375 15.4375 21.75 14.6875 23 14.6875H24.2812V12.2188C24.2812 12.2188 23.125 12 22.0312 12C19.75 12 18.25 13.4062 18.25 15.9062V18.125H15.6875V21H18.25V28H21.375V21H23.7188Z"
+                                                fill="white" />
+                                            <circle opacity="0.4" cx="20" cy="20" r="19.5" stroke="white" />
+                                        </svg>
+                                    </a>
+                                </li>
+
+                                <li class="media__links">
+                                    <a class="socil__media tvitter-link" rel="nofollow" target="_blank"
+                                        href="https://twitter.com/">
+                                        <svg width="40" height="40" viewbox="0 0 40 40" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M26.3438 16.75C26.9688 16.2812 27.5312 15.7188 27.9688 15.0625C27.4062 15.3125 26.75 15.5 26.0938 15.5625C26.7812 15.1562 27.2812 14.5312 27.5312 13.75C26.9062 14.125 26.1875 14.4062 25.4688 14.5625C24.8438 13.9062 24 13.5312 23.0625 13.5312C21.25 13.5312 19.7812 15 19.7812 16.8125C19.7812 17.0625 19.8125 17.3125 19.875 17.5625C17.1562 17.4062 14.7188 16.0938 13.0938 14.125C12.8125 14.5938 12.6562 15.1562 12.6562 15.7812C12.6562 16.9062 13.2188 17.9062 14.125 18.5C13.5938 18.4688 13.0625 18.3438 12.625 18.0938V18.125C12.625 19.7188 13.75 21.0312 15.25 21.3438C15 21.4062 14.6875 21.4688 14.4062 21.4688C14.1875 21.4688 14 21.4375 13.7812 21.4062C14.1875 22.7188 15.4062 23.6562 16.8438 23.6875C15.7188 24.5625 14.3125 25.0938 12.7812 25.0938C12.5 25.0938 12.25 25.0625 12 25.0312C13.4375 25.9688 15.1562 26.5 17.0312 26.5C23.0625 26.5 26.3438 21.5312 26.3438 17.1875C26.3438 17.0312 26.3438 16.9062 26.3438 16.75Z"
+                                                fill="white" />
+                                            <circle opacity="0.4" cx="20" cy="20" r="19.5" stroke="white" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="media__links">
+                                    <a class="socil__media insta-link" rel="nofollow" target="_blank"
+                                        href="https://www.instagram.com/beetrootacademy/">
+                                        <svg width="40" height="40" viewbox="0 0 40 40" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M20 16.4062C18 16.4062 16.4062 18.0312 16.4062 20C16.4062 22 18 23.5938 20 23.5938C21.9688 23.5938 23.5938 22 23.5938 20C23.5938 18.0312 21.9688 16.4062 20 16.4062ZM20 22.3438C18.7188 22.3438 17.6562 21.3125 17.6562 20C17.6562 18.7188 18.6875 17.6875 20 17.6875C21.2812 17.6875 22.3125 18.7188 22.3125 20C22.3125 21.3125 21.2812 22.3438 20 22.3438ZM24.5625 16.2812C24.5625 15.8125 24.1875 15.4375 23.7188 15.4375C23.25 15.4375 22.875 15.8125 22.875 16.2812C22.875 16.75 23.25 17.125 23.7188 17.125C24.1875 17.125 24.5625 16.75 24.5625 16.2812ZM26.9375 17.125C26.875 16 26.625 15 25.8125 14.1875C25 13.375 24 13.125 22.875 13.0625C21.7188 13 18.25 13 17.0938 13.0625C15.9688 13.125 15 13.375 14.1562 14.1875C13.3438 15 13.0938 16 13.0312 17.125C12.9688 18.2812 12.9688 21.75 13.0312 22.9062C13.0938 24.0312 13.3438 25 14.1562 25.8438C15 26.6562 15.9688 26.9062 17.0938 26.9688C18.25 27.0312 21.7188 27.0312 22.875 26.9688C24 26.9062 25 26.6562 25.8125 25.8438C26.625 25 26.875 24.0312 26.9375 22.9062C27 21.75 27 18.2812 26.9375 17.125ZM25.4375 24.125C25.2188 24.75 24.7188 25.2188 24.125 25.4688C23.1875 25.8438 21 25.75 20 25.75C18.9688 25.75 16.7812 25.8438 15.875 25.4688C15.25 25.2188 14.7812 24.75 14.5312 24.125C14.1562 23.2188 14.25 21.0312 14.25 20C14.25 19 14.1562 16.8125 14.5312 15.875C14.7812 15.2812 15.25 14.8125 15.875 14.5625C16.7812 14.1875 18.9688 14.2812 20 14.2812C21 14.2812 23.1875 14.1875 24.125 14.5625C24.7188 14.7812 25.1875 15.2812 25.4375 15.875C25.8125 16.8125 25.7188 19 25.7188 20C25.7188 21.0312 25.8125 23.2188 25.4375 24.125Z"
+                                                fill="white" />
+                                            <circle opacity="0.4" cx="20" cy="20" r="19.5" stroke="white" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="about" id="about_monticello">
+            <div class="about__wrapper slick__wrapper_vertical">
+
+                <div class="about__vertical_layer">
+                    <div class="about-bg lazy-bg" data-src="assets/images/header-bg-min.png">
+                        <div class="about__text container">
+                            <div class="about__title">
+                                <h2>SIMPLE & MODERN</h2>
+                            </div>
+                            <div class="about__subtitle subtitle">
+                                <p>WE MAKE THE WORLD BEAUTIFUL EVERYDAY</p>
+                            </div>
+                        </div>
+                        <div class="about__scroll container">
+                            <div class="about__scroll_element">
+                                <a href="#projects_monticello"><img src="assets/images/svg/header-arrow.svg"
+                                        alt="arrow"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about__vertical_layer">
+                    <div class="about-bg lazy-bg" data-src="assets/images/news-bg-min.png">
+                        <div class="about__text container">
+                            <div class="about__title">
+                                <h2>Just & do it</h2>
+                            </div>
+                            <div class="about__subtitle subtitle">
+                                <p>We Power Transactions That Drive Commerce</p>
+                            </div>
+                        </div>
+                        <div class="about__scroll container">
+                            <div class="about__scroll_element">
+                                <a href="#projects_monticello"><img src="assets/images/svg/header-arrow.svg"
+                                        alt="arrow"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about__vertical_layer">
+                    <div class="about-bg lazy-bg" data-src="assets/images/header-bg-min.png">
+                        <div class="about__text container">
+                            <div class="about__title">
+                                <h2>Diamond & forever</h2>
+                            </div>
+                            <div class="about__subtitle subtitle">
+                                <p>"Think Different!"</p>
+                            </div>
+                        </div>
+                        <div class="about__scroll container">
+                            <div class="about__scroll_element">
+                                <a href="#projects_monticello"><img src="assets/images/svg/header-arrow.svg"
+                                        alt="arrow"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about__vertical_layer">
+                    <div class="about-bg lazy-bg" data-src="assets/images/news-bg-min.png">
+                        <div class="about__text container">
+                            <div class="about__title">
+                                <h2>Do what & you can’t</h2>
+                            </div>
+                            <div class="about__subtitle subtitle">
+                                <p>You’re in good hands</p>
+                            </div>
+                        </div>
+                        <div class="about__scroll container">
+                            <div class="about__scroll_element">
+                                <a href="#projects_monticello"><img src="assets/images/svg/header-arrow.svg"
+                                        alt="arrow"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="about__vertical_layer">
+                    <div class="about-bg lazy-bg" data-src="assets/images/header-bg-min.png">
+                        <div class="about__text container">
+                            <div class="about__title">
+                                <h2>Because & You're</h2>
+                            </div>
+                            <div class="about__subtitle subtitle">
+                                <p>Move the way you want</p>
+                            </div>
+                        </div>
+                        <div class="about__scroll container">
+                            <div class="about__scroll_element">
+                                <a href="#projects_monticello"><img src="assets/images/svg/header-arrow.svg"
+                                        alt="arrow"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- <div class="about__scroll">
+                <div class="about__scroll_element">
+                    <a href="#projects_monticello"><img src="assets/images/svg/header-arrow.svg" alt="arrow"></a>
+                </div>
+            </div> -->
+
+        </section>
+
+
+
+        <section class="project" id="projects_monticello">
+            <div class="project__content container">
+                <div class="project__layer layer">
+                    <div class="project__title title blue-text">
+                        <h4>What we do</h4>
+                    </div>
+                    <div class="project__block-first">
+                        <div class="project__image_first">
+                            <img class="lazy"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                                data-src="assets/images/project-pic_1-min.jpg" alt="project-pic_one">
+                        </div>
+                        <div class="project__card">
+                            <div class="project__card_name blue-text">one world</div>
+                            <div class="project__card_title title blue-text">
+                                <h4>trade center</h4>
+                            </div>
+                            <div class="project__card_text blue-text">
+                                <p>Increasing prosperity in our lives can be accomplished by having the
+                                    right
+                                    frame of mind. The truth is, our thoughts are very powerful.
+                                </p>
+                            </div>
+                            <div class="project__button btn">
+                                <button type="button" class="btn-white">MORE DETAILS</button>
+                            </div>
+                            <div class="project__location">
+                                <img src="assets/images/svg/point-maps.svg" alt="point-maps">
+                                <p>New York City, United States - 1776 feet</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project__block-second">
+                        <div class="project__image_second">
+                            <img class="lazy"
+                                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                                data-src="assets/images/project-pic_2-min.jpg" alt="project-pic_second">
+                        </div>
+                        <div class="project__card_second">
+                            <div class="project__card_name blue-text">INTERNATIONAL</div>
+                            <div class="project__card_title title blue-text">
+                                <h4>COMMERCE CENTRE</h4>
+                            </div>
+                            <div class="project__card_text blue-text">
+                                <p>Successful businesses have many things in common, today we'll look at the
+                                    big
+                                    'R'
+                                    of recognition and how a digital advertising network may help.</p>
+                            </div>
+                            <div class="project__button btn">
+                                <button type="button" class="btn-white">MORE DETAILS</button>
+                            </div>
+                            <div class="project__location">
+                                <img src="assets/images/svg/point-maps.svg" alt="point-maps">
+                                <p>Hong Kong - 1588 feet</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="news" id="news_monticello">
+            <div class="news-bg lazy-bg" data-src="assets/images/news-bg-min.png">
+                <div class="news__layer">
+                    <div class="news__title title container">
+                        <h4>LATEST NEWS</h4>
+                    </div>
+                    <div class="slider container">
+                        <div class="slider__container">
+                            <div class="slider__wrapper">
+                                <div class="slider__items">
+                                    <div class="slider__item">
+                                        <!-- Начало контента 1 слайда -->
+                                        <div class="slider__item-container">
+                                            <div class="slider__item-content">
+                                                <div class="slider__content_header">
+                                                    <img class="slider__content_img lazy"
+                                                        src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                                                        data-src="assets/images/news-pic_1-min.jpg" alt="news-pic"
+                                                        loading="lazy">
+                                                </div>
+                                                <h4 class="slider__content_title blue-text">SEE THE
+                                                    UNMATCHED
+                                                    BEAUTY OF
+                                                    THE GREAT.
+                                                </h4>
+                                                <div class="slider__content_subtitle">
+                                                    <p>Free directories: directories are perfect for
+                                                        customers
+                                                        that are
+                                                        searching for...
+                                                    </p>
+                                                </div>
+                                                <div class="slider__content_footer">
+                                                    <div class="slider__content_avatar">
+                                                        <img class="slider__content_photo lazy"
+                                                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                                                            data-src="assets/images/news-pic_1_author-min.png"
+                                                            alt="author-pic" loading="lazy">
+                                                    </div>
+                                                    <div class="slider__footer_text">
+                                                        <div class="slider__content_author">ALJA BRUN</div>
+                                                        <div class="slider__content_date">20 Jan 2020</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Конец контента 1 слайда -->
+                                    </div>
+                                    <div class="slider__item">
+                                        <!-- Начало контента 2 слайда -->
+                                        <div class="slider__item-container">
+                                            <div class="slider__item-content">
+                                                <div class="slider__content_header">
+                                                    <img class="slider__content_img lazy"
+                                                        src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                                                        data-src="assets/images/news-pic_2-min.jpg" alt="news-pic"
+                                                        loading="lazy">
+                                                </div>
+                                                <h4 class="slider__content_title blue-text">EFFECTIVE
+                                                    ADVERTISING
+                                                    POINTERS.
+                                                </h4>
+                                                <div class="slider__content_subtitle">
+                                                    <p>Having a home based business is a wonderful asset to
+                                                        your
+                                                        life...
+                                                    </p>
+                                                </div>
+                                                <div class="slider__content_footer">
+                                                    <div class="slider__content_avatar">
+                                                        <img class="slider__content_photo lazy"
+                                                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                                                            data-src="assets/images/news-pic_2_author-min.png"
+                                                            alt="author-pic" loading="lazy">
+                                                    </div>
+                                                    <div class="slider__footer_text">
+                                                        <div class="slider__content_author">DOMINIC FREEMAN
+                                                        </div>
+                                                        <div class="slider__content_date">13 Dec 2019</div>
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Конец контента 2 слайда -->
+                                    </div>
+                                    <div class="slider__item">
+                                        <!-- Начало контента 3 слайда -->
+                                        <div class="slider__item-container">
+                                            <div class="slider__item-content">
+                                                <div class="slider__content_header">
+                                                    <img class="slider__content_img lazy"
+                                                        src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                                                        data-src="assets/images/news-pic_3-min.jpg" alt="news-pic"
+                                                        loading="lazy">
+                                                </div>
+                                                <h4 class="slider__content_title blue-text">HYPNOTIZE
+                                                    YOURSELF
+                                                    INTO THE
+                                                    GHOST.
+                                                </h4>
+                                                <div class="slider__content_subtitle">
+                                                    <p>There are many things that are important to catalog
+                                                        design...
+                                                    </p>
+                                                </div>
+                                                <div class="slider__content_footer">
+                                                    <div class="slider__content_avatar">
+                                                        <img class="slider__content_photo lazy"
+                                                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                                                            data-src="assets/images/news-pic_3_author-min.png"
+                                                            alt="author-pic" loading="lazy">
+                                                    </div>
+                                                    <div class="slider__footer_text">
+                                                        <div class="slider__content_author">ALICE WARD</div>
+                                                        <div class="slider__content_date">30 Nov 2019</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- Конец контента 3 слайда -->
+                                    </div>
+                                    <div class="slider__item">
+                                        <!-- Начало контента 4 слайда -->
+                                        <div class="slider__item-container">
+                                            <div class="slider__item-content">
+                                                <div class="slider__content_header">
+                                                    <img class="slider__content_img lazy"
+                                                        src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                                                        data-src="assets/images/news-pic_2-min.jpg" alt="news-pic"
+                                                        loading="lazy">
+                                                </div>
+                                                <h4 class="slider__content_title blue-text">SEE THE
+                                                    UNMATCHED
+                                                    BEAUTY OF
+                                                    THE GREAT.
+                                                </h4>
+                                                <div class="slider__content_subtitle">
+                                                    <p>Free directories: directories are perfect for
+                                                        customers
+                                                        that are
+                                                        searching for...
+                                                    </p>
+                                                </div>
+                                                <div class="slider__content_footer">
+                                                    <div class="slider__content_avatar">
+                                                        <img class="slider__content_photo lazy"
+                                                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                                                            data-src="assets/images/news-pic_1_author-min.png"
+                                                            alt="author-pic" loading="lazy">
+                                                    </div>
+                                                    <div class="slider__footer_text">
+                                                        <div class="slider__content_author">ALJA BRUN</div>
+                                                        <div class="slider__content_date">20 Jan 2021</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="slider__item">
+                                        <!-- Начало контента 5 слайда -->
+                                        <div class="slider__item-container">
+                                            <div class="slider__item-content">
+                                                <div class="slider__content_header">
+                                                    <img class="slider__content_img lazy"
+                                                        src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
+                                                        data-src="assets/images/news-pic_3-min.jpg" alt="news-pic"
+                                                        loading="lazy">
+                                                </div>
+                                                <h4 class="slider__content_title blue-text">SEE THE
+                                                    UNMATCHED
+                                                    BEAUTY OF
+                                                    THE GREAT.
+                                                </h4>
+                                                <div class="slider__content_subtitle">
+                                                    <p>Free directories: directories are perfect for
+                                                        customers
+                                                        that are
+                                                        searching for...
+                                                    </p>
+                                                </div>
+                                                <div class="slider__content_footer">
+                                                    <div class="slider__content_avatar">
+                                                        <img class="slider__content_photo lazy"
+                                                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                                                            data-src="assets/images/news-pic_1_author-min.png"
+                                                            alt="author-pic" loading="lazy">
+                                                    </div>
+                                                    <div class="slider__footer_text">
+                                                        <div class="slider__content_author">Mija Teri</div>
+                                                        <div class="slider__content_date">29 Jan 2020</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <a href="#" class="slider__control" data-slide="prev"></a>
+                            <a href="#" class="slider__control" data-slide="next"></a>
+                            <ol class="slider__indicators">
+                                <li data-slide-to="0"></li>
+                                <li data-slide-to="1"></li>
+                                <li data-slide-to="2"></li>
+                                <li data-slide-to="3"></li>
+                                <li data-slide-to="4"></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="gallery">
+            <div class="gallery__container container">
+                <div class="gallery__title title">
+                    <h4 class="blue-text">Gallery</h4>
+                </div>
+                <!-- Работающая галерея lightgallery! -->
+                <div class="gallery__image my-gallery" id="animated-thumbnails-gallery">
+                    <a href="assets/images/gallery_pic-1-min.jpg"
+                        class="gallery__block-first gallery__block gallery__image_first image-first">
+                        <img src="assets/images/gallery_pic-1-min.jpg" alt="pic">
+                    </a>
+                    <a href="assets/images/gallery_pic-2-min.jpg"
+                        class="gallery__block-second gallery__block gallery__image_second image-second">
+                        <img src="assets/images/gallery_pic-2-min.jpg" alt="pic">
+                    </a>
+                    <a href="assets/images/gallery_pic-3-min.jpg" class="gallery__image_third image-third">
+                        <img src="assets/images/gallery_pic-3-min.jpg" alt="pic">
+                    </a>
+                    <a href="assets/images/gallery_pic-4-min.jpg" class="gallery__image_fourth image-fourth">
+                        <img src="assets/images/gallery_pic-4-min.jpg" alt="pic">
+                    </a>
+                    <a href="assets/images/gallery_pic-5-min.jpg" class="gallery__image_fifth image-fifth">
+                        <img src="assets/images/gallery_pic-5-min.jpg" alt="pic">
+                    </a>
+                </div>
+
+                <!-- галерея lightgallery с моими фото и LazyLoad(не работают картинки внизу в lightgallery) -->
+                <!--  <div class="gallery__image my-gallery" id="animated-thumbnails-gallery">
+            <a href="assets/images/galery_alternative/maxime-vandenberge-min.jpg"
+                class="gallery__block-first gallery__block gallery__image_first image-first">
+                <img class="lazy"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                    data-src="assets/images/galery_alternative/maxime-vandenberge-min.jpg"
+                    alt="pic-vandenberge">
+            </a>
+            <a href="assets/images/galery_alternative/bernardo-lorena-min.jpg"
+                class="gallery__block-second gallery__block gallery__image_second image-second">
+                <img class="lazy"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                    data-src="assets/images/galery_alternative/bernardo-lorena-min.jpg" alt="pic-lorena">
+            </a>
+            <a href="assets/images/galery_alternative/jf-martin-min.jpg"
+                class="gallery__image_third image-third">
+                <img class="lazy"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                    data-src="assets/images/galery_alternative/jf-martin-min.jpg" alt="pic-martin">
+            </a>
+            <a href="assets/images/galery_alternative/mathias-p-r-min.jpg"
+                class="gallery__image_fourth image-fourth">
+                <img class="lazy"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                    data-src="assets/images/galery_alternative/mathias-p-r-min.jpg" alt="pic-mathias">
+            </a>
+            <a href="assets/images/galery_alternative/nimsibeth-min.jpg"
+                class="gallery__image_fifth image-fifth">
+                <img class="lazy"
+                    src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                    data-src="assets/images/galeryalternative/nimsibeth-min.jpg" alt="pic-nimsibeth">
+            </a>
+        </div> -->
+
+                <div class="gallery__button btn">
+                    <button type="button" class="btn-white">See more</button>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="contact" id="contact_monticello">
+            <div class="contact__map" id="my__map"></div>
+
+            <div class="contact__field contact__container">
+                <div class="contact__form-bg lazy-bg" data-src="assets/images/form_pic1-min.png">
+                    <div class="contact__content">
+                        <div class="contact__title title">
+                            <h4>GET IN TOUCH</h4>
+                        </div>
+                        <div class="contact__column">
+                            <ul class="contact__column_left">
+                                <li class="contact__date form-address" itemprop="address" itemscope
+                                    itemtype="https://schema.org/PostalAddress">
+                                    <a href="https://www.google.com/maps/@50.4439122,30.5162644,18z?hl=ru-RU"
+                                        class="contact-link" target="_blank"> <img
+                                            src="assets/images/svg/point-maps.svg" alt="pic-address">
+                                        <span itemprop="streetAddress">91 Nolan Extensions Suite 670</span>
+                                    </a>
+                                </li>
+                                <li class="contact__date form-phone" itemprop="phone">
+                                    <a href="tel:+380679166325" class="contact-link">
+                                        <img src="assets/images/svg/form_telephone.svg" alt="pic-phone">
+                                        <span itemprop="telephone">+380679166325</span>
+                                    </a>
+                                </li>
+
+                                <li class="contact__date form-mail">
+                                    <a href="mailto:montichello@service.com" class="contact-link">
+                                        <img src="assets/images/svg/form_email.svg" alt="pic-mail">
+                                        <span itemprop="email">montichello@service.com</span>
+                                    </a>
+                                </li>
+                                <li class="contact__date form-time">
+                                    <img src="assets/images/svg/form_clock-time.svg" alt="pic-time">
+                                    <span>From 07:05AM to 19:30PM</span>
+                                </li>
+                            </ul>
+                            <div class="contact__column_right">
+                                <form class="contact__form" id="my_form" method="get">
+                                    <div class="contact__login">
+                                        <input class="contact__name contact__form_field" type="text"
+                                            name="registration_name" id="name" placeholder="Your Name">
+                                    </div>
+                                    <div class="contact__email">
+                                        <input class="contact__mail contact__form_field" type="email"
+                                            name="registration" id="email_contact" placeholder="Email">
+                                    </div>
+                                    <div class="contact__btn">
+                                        <button class="contact__button btn-white" type="submit">SUBMIT</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bg lazy-bg" data-src="assets/images/footer_pic1-min.png">
+            <div class="footer__content container">
+                <div class="footer__container">
+                    <div class="footer__main">
+                        <div class="footer__logo">
+                            <a href="#">
+                                <img src="assets/images/svg/logo.svg" alt="logo">
+                            </a>
+                        </div>
+                        <nav class="footer__media">
+                            <ul>
+                                <li class="media__links">
+                                    <a class="socil__media facebook-link" rel="nofollow" target="_blank"
+                                        href="https://www.facebook.com/">
+                                        <svg width="40" height="40" viewbox="0 0 40 40" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M23.7188 21L24.1562 18.125H21.375V16.25C21.375 15.4375 21.75 14.6875 23 14.6875H24.2812V12.2188C24.2812 12.2188 23.125 12 22.0312 12C19.75 12 18.25 13.4062 18.25 15.9062V18.125H15.6875V21H18.25V28H21.375V21H23.7188Z"
+                                                fill="white" />
+                                            <circle opacity="0.4" cx="20" cy="20" r="19.5" stroke="white" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="media__links">
+                                    <a class="socil__media tvitter-link" rel="nofollow" target="_blank"
+                                        href="https://twitter.com/">
+                                        <svg width="40" height="40" viewbox="0 0 40 40" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M26.3438 16.75C26.9688 16.2812 27.5312 15.7188 27.9688 15.0625C27.4062 15.3125 26.75 15.5 26.0938 15.5625C26.7812 15.1562 27.2812 14.5312 27.5312 13.75C26.9062 14.125 26.1875 14.4062 25.4688 14.5625C24.8438 13.9062 24 13.5312 23.0625 13.5312C21.25 13.5312 19.7812 15 19.7812 16.8125C19.7812 17.0625 19.8125 17.3125 19.875 17.5625C17.1562 17.4062 14.7188 16.0938 13.0938 14.125C12.8125 14.5938 12.6562 15.1562 12.6562 15.7812C12.6562 16.9062 13.2188 17.9062 14.125 18.5C13.5938 18.4688 13.0625 18.3438 12.625 18.0938V18.125C12.625 19.7188 13.75 21.0312 15.25 21.3438C15 21.4062 14.6875 21.4688 14.4062 21.4688C14.1875 21.4688 14 21.4375 13.7812 21.4062C14.1875 22.7188 15.4062 23.6562 16.8438 23.6875C15.7188 24.5625 14.3125 25.0938 12.7812 25.0938C12.5 25.0938 12.25 25.0625 12 25.0312C13.4375 25.9688 15.1562 26.5 17.0312 26.5C23.0625 26.5 26.3438 21.5312 26.3438 17.1875C26.3438 17.0312 26.3438 16.9062 26.3438 16.75Z"
+                                                fill="white" />
+                                            <circle opacity="0.4" cx="20" cy="20" r="19.5" stroke="white" />
+                                        </svg>
+                                    </a>
+                                </li>
+                                <li class="media__links">
+                                    <a class="socil__media insta-link" rel="nofollow" target="_blank"
+                                        href="https://www.instagram.com/beetrootacademy/">
+                                        <svg width="40" height="40" viewbox="0 0 40 40" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M20 16.4062C18 16.4062 16.4062 18.0312 16.4062 20C16.4062 22 18 23.5938 20 23.5938C21.9688 23.5938 23.5938 22 23.5938 20C23.5938 18.0312 21.9688 16.4062 20 16.4062ZM20 22.3438C18.7188 22.3438 17.6562 21.3125 17.6562 20C17.6562 18.7188 18.6875 17.6875 20 17.6875C21.2812 17.6875 22.3125 18.7188 22.3125 20C22.3125 21.3125 21.2812 22.3438 20 22.3438ZM24.5625 16.2812C24.5625 15.8125 24.1875 15.4375 23.7188 15.4375C23.25 15.4375 22.875 15.8125 22.875 16.2812C22.875 16.75 23.25 17.125 23.7188 17.125C24.1875 17.125 24.5625 16.75 24.5625 16.2812ZM26.9375 17.125C26.875 16 26.625 15 25.8125 14.1875C25 13.375 24 13.125 22.875 13.0625C21.7188 13 18.25 13 17.0938 13.0625C15.9688 13.125 15 13.375 14.1562 14.1875C13.3438 15 13.0938 16 13.0312 17.125C12.9688 18.2812 12.9688 21.75 13.0312 22.9062C13.0938 24.0312 13.3438 25 14.1562 25.8438C15 26.6562 15.9688 26.9062 17.0938 26.9688C18.25 27.0312 21.7188 27.0312 22.875 26.9688C24 26.9062 25 26.6562 25.8125 25.8438C26.625 25 26.875 24.0312 26.9375 22.9062C27 21.75 27 18.2812 26.9375 17.125ZM25.4375 24.125C25.2188 24.75 24.7188 25.2188 24.125 25.4688C23.1875 25.8438 21 25.75 20 25.75C18.9688 25.75 16.7812 25.8438 15.875 25.4688C15.25 25.2188 14.7812 24.75 14.5312 24.125C14.1562 23.2188 14.25 21.0312 14.25 20C14.25 19 14.1562 16.8125 14.5312 15.875C14.7812 15.2812 15.25 14.8125 15.875 14.5625C16.7812 14.1875 18.9688 14.2812 20 14.2812C21 14.2812 23.1875 14.1875 24.125 14.5625C24.7188 14.7812 25.1875 15.2812 25.4375 15.875C25.8125 16.8125 25.7188 19 25.7188 20C25.7188 21.0312 25.8125 23.2188 25.4375 24.125Z"
+                                                fill="white" />
+                                            <circle opacity="0.4" cx="20" cy="20" r="19.5" stroke="white" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    <div class="footer__text">Copyrights © 2020 Montichello</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!--  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous">
+        </script> -->
+
+    <!--  <script>
+        $(function () {
+            $(".hamburger, .page_overlay").on('click', function () {
+                $(".hamburger").toggleClass("is-active");
+                $("body").toggleClass("open");
+            });
+        });
+    </script> -->
+
+
+    <script src="assets/js/lazyload.js"></script>
+    <!-- <script src="assets/plugins/slider/chief-slider.min.js"></script> -->
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <!-- <script src="assets/plugins/swiper/swiper-bundle.min.js"></script> -->
+    <script src="assets/plugins/slick/slick.min.js"></script>
+    <script src="assets/plugins/lightGallery/lightgallery.min.js"></script>
+    <script src="assets/plugins/lightGallery/lg-thumbnail.min.js"></script>
+    <script src="assets/plugins/lightGallery/lg-zoom.min.js"></script>
+    <script src="assets/plugins/lightGallery/lg-fullscreen.min.js"></script>
+    <script src="assets/plugins/leflet/leaflet.js"></script>
+    <script src="assets/js/axios.min.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

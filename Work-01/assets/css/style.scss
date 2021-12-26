@@ -230,6 +230,7 @@ body {
     &__menu {   
         ul {
             list-style: none;
+            
         }
         li {
             @include fz(14.5);
@@ -238,6 +239,11 @@ body {
             word-spacing: -2px;
             font-weight: 400;
             cursor: pointer;
+            a {
+                text-decoration: none;
+                color: #fff;
+            }
+
             +li {
                 padding-left: 30px;
             }

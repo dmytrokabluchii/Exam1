@@ -93,10 +93,10 @@
                     <div class="header__main-menu">
                         <nav class="header__menu">
                             <ul>
-                                <li><a href="#" target="blank"></a>who we are</li>
-                                <li><a href="#" target="blank"></a>what we do</li>
-                                <li><a href="#" target="blank"></a>travel with us</li>
-                                <li><a href="#" target="blank"></a>contact us</li>
+                                <li><a href="#" target="blank">who we are</a></li>
+                                <li><a href="#" target="blank">what we do</a></li>
+                                <li><a href="#" target="blank">travel with us</a></li>
+                                <li><a href="#" target="blank">contact us</a></li>
                             </ul>
                         </nav>
                         <div class="hamburger_menu">
@@ -145,7 +145,6 @@
                                     <img class="pic-about_first lazy"
                                         src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
                                         data-src="assets/images/block_2_pic1.jpg" alt="image-about_house">
-
                                 </div>
                                 <div class="about__pic-second">
                                     <img class="pic-about_second lazy"
@@ -276,15 +275,20 @@
 
             <div class="footer__icons">
                 <ul>
-                    <li><a href="#" target="blank"><object data="assets/images/svg/facebook.svg" type="image/svg+xml"></object> </a>
+                    <li><a href="#" target="blank"><object data="assets/images/svg/facebook.svg"
+                                type="image/svg+xml"></object> </a>
                     </li>
-                    <li><a href="#" target="blank"><object data="assets/images/svg/twitter.svg" type="image/svg+xml"></object> </a>
+                    <li><a href="#" target="blank"><object data="assets/images/svg/twitter.svg"
+                                type="image/svg+xml"></object> </a>
                     </li>
-                    <li><a href="#" target="blank"><object data="assets/images/svg/linkedin.svg" type="image/svg+xml"></object> </a>
+                    <li><a href="#" target="blank"><object data="assets/images/svg/linkedin.svg"
+                                type="image/svg+xml"></object> </a>
                     </li>
-                    <li><a href="#" target="blank"><object data="assets/images/svg/youtube.svg" type="image/svg+xml"></object> </a>
+                    <li><a href="#" target="blank"><object data="assets/images/svg/youtube.svg"
+                                type="image/svg+xml"></object> </a>
                     </li>
-                    <li><a href="#" target="blank"><object data="assets/images/svg/pinterest.svg" type="image/svg+xml"></object> </a>
+                    <li><a href="#" target="blank"><object data="assets/images/svg/pinterest.svg"
+                                type="image/svg+xml"></object> </a>
                     </li>
                 </ul>
             </div>
@@ -293,33 +297,33 @@
 
 
     <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-    integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous">
-    </script> 
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous">
+        </script>
     <script>
-        $(function(){
-            menu_top = $('.header__main').offset().top; 
-            $(window).on('scroll', function(){
-                if($(window).scrollTop()>menu_top){
-                    if ($('.header__main').css('position') != 'fixed'){
-                        $('.header__main').css('position','fixed');
-                        $('.header__main').css('top','0');
-                        $('.header__main').css('left','0');
-                        $('.header__main').css('width','100%');
-                        $('.header__main').css('height','80px');
-                        $('.header__main').css('z-index','99');
-                        $('.header__main').css('background-color','rgba(77, 158, 250, 0.5)');
-                        $('.header__main').css('backdrop-filter','blur(2px)');   
-                        $('.about').css('margin-top','80px');
+        $(function () {
+            menu_top = $('.header__main').offset().top;
+            $(window).on('scroll', function () {
+                if ($(window).scrollTop() > menu_top) {
+                    if ($('.header__main').css('position') != 'fixed') {
+                        $('.header__main').css('position', 'fixed');
+                        $('.header__main').css('top', '0');
+                        $('.header__main').css('left', '0');
+                        $('.header__main').css('width', '100%');
+                        $('.header__main').css('height', '80px');
+                        $('.header__main').css('z-index', '99');
+                        $('.header__main').css('background-color', 'rgba(77, 158, 250, 0.5)');
+                        $('.header__main').css('backdrop-filter', 'blur(2px)');
+                        $('.about').css('margin-top', '80px');
                     }
-                }else{
-                    if($('.header__main').css('position') == 'fixed'){
-                        $('.header__main').css('position','');
-                        $('.header__main').css('top','');
-                        $('.header__main').css('left','');
-                        $('.header__main').css('z-index','');
-                        $('.header__main').css('background-color','');
-                        $('.header__main').css('backdrop-filter','');   
-                        $('.about').css('margin-top','');
+                } else {
+                    if ($('.header__main').css('position') == 'fixed') {
+                        $('.header__main').css('position', '');
+                        $('.header__main').css('top', '');
+                        $('.header__main').css('left', '');
+                        $('.header__main').css('z-index', '');
+                        $('.header__main').css('background-color', '');
+                        $('.header__main').css('backdrop-filter', '');
+                        $('.about').css('margin-top', '');
                     }
                 }
             });
@@ -336,7 +340,7 @@
     </script>
 
 
-<script src="assets/js/lazyload.js"></script>
+    <script src="assets/js/lazyload.js"></script>
 
 </body>
 

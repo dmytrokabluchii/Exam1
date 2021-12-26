@@ -1,0 +1,36 @@
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/Montserrat-Regular.woff2);
+    font-style: normal; 
+    font-weight: normal;
+}
+@font-face {
+    font-family: "Montserrat";
+    src: url(../fonts/Montserrat-Bold.woff2);
+    font-style: normal; 
+    font-weight: bold;
+}
+@font-face {
+    font-family: "OpenSans";
+    src: url(../fonts/OpenSans-Regular.woff2);
+    font-style: normal; 
+    font-weight: normal;
+}
+@font-face {
+    font-family: "OpenSans";
+    src: url(../fonts/OpenSans-Italic.woff2);
+    font-style: italic; 
+    font-weight: normal;
+}
+@font-face {
+    font-family: "OpenSans";
+    src: url(../fonts/OpenSans-Bold.woff2);
+    font-style: normal; 
+    font-weight: bold;
+}
+@font-face {
+    font-family: "SourceSansPro";
+    src: url(../fonts/SourceSansPro-Regular.woff2);
+    font-style: normal; 
+    font-weight: normal;
+}
