@@ -62,9 +62,9 @@ var map = L.map('my_map').setView([41.653955,-74.7021683], 8);
     </div>
     `);
     // Переход по клику на маркер!
-    // marker.on('click', function(){
-    //     document.getElementById('to_google').click();
-    // })
+    marker.on('click', function(){
+        document.getElementById('to_google').click();
+    })
 });
 
 
@@ -117,7 +117,7 @@ function getNews(){
                         <div class="slider__item-content" id="news-card_first">
                             <div class="slider__content_header">
                                 <img class="slider__content_img"
-                                src=assets/images/${card.pic} 
+                                src="assets/images/${card.pic}" 
                                 alt="news-pic"">
                             </div>
                             <h4 class="slider__content_title blue-text">${card.title}</h4>
@@ -127,7 +127,7 @@ function getNews(){
                             <div class="slider__content_footer author">
                                 <div class="slider__content_avatar">
                                     <img class="slider__content_photo"
-                                    src=assets/images/${card.author.avatar} 
+                                    src="assets/images/${card.author.avatar}"
                                     alt="author-pic">
                                 </div>
                                 <div class="slider__footer_text">

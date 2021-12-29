@@ -52,9 +52,10 @@ $("#init_map").on('click', function () {
   var marker = L.marker([41.653955, -74.7021683], {
     icon: myIcon
   }).addTo(map).bindPopup("\n    <div class=\"map_popup\">\n    <img src=\"assets/plugins/leflet/images/map.svg\" alt=\"map-pic\">\n    <div class=\"map_info\">\n        <b>Hello! <br>\n        My friend!</b>\n        <div>You're in 91 Nolan Extension Suite 670!</div>\n        </div>\n    </div>\n    "); // Переход по клику на маркер!
-  // marker.on('click', function(){
-  //     document.getElementById('to_google').click();
-  // })
+
+  marker.on('click', function () {
+    document.getElementById('to_google').click();
+  });
 }); // Telegram BOT
 
 $("#my_form").on('submit', function (e) {
@@ -96,7 +97,7 @@ function getNews() {
     success: function success(json) {
       var html = '';
       json.forEach(function (card) {
-        html += "\n                <li class=\"slider__item\">\n                    <div class=\"slider__item-container\">\n                        <div class=\"slider__item-content\" id=\"news-card_first\">\n                            <div class=\"slider__content_header\">\n                                <img class=\"slider__content_img\"\n                                src=assets/images/".concat(card.pic, " \n                                alt=\"news-pic\"\">\n                            </div>\n                            <h4 class=\"slider__content_title blue-text\">").concat(card.title, "</h4>\n                            <div class=\"slider__content_subtitle\">\n                                <p>").concat(card.description, "</p>\n                            </div>\n                            <div class=\"slider__content_footer author\">\n                                <div class=\"slider__content_avatar\">\n                                    <img class=\"slider__content_photo\"\n                                    src=assets/images/").concat(card.author.avatar, " \n                                    alt=\"author-pic\">\n                                </div>\n                                <div class=\"slider__footer_text\">\n                                    <div class=\"slider__content_author\">").concat(card.author.name, " </div>\n                                    <div class=\"slider__content_date\">").concat(card.author.date, " </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <a class=\"slider__item-link\" href=\"javascript:void(0);\"></a>\n                </li>\n            ");
+        html += "\n                <li class=\"slider__item\">\n                    <div class=\"slider__item-container\">\n                        <div class=\"slider__item-content\" id=\"news-card_first\">\n                            <div class=\"slider__content_header\">\n                                <img class=\"slider__content_img\"\n                                src=\"assets/images/".concat(card.pic, "\" \n                                alt=\"news-pic\"\">\n                            </div>\n                            <h4 class=\"slider__content_title blue-text\">").concat(card.title, "</h4>\n                            <div class=\"slider__content_subtitle\">\n                                <p>").concat(card.description, "</p>\n                            </div>\n                            <div class=\"slider__content_footer author\">\n                                <div class=\"slider__content_avatar\">\n                                    <img class=\"slider__content_photo\"\n                                    src=\"assets/images/").concat(card.author.avatar, "\"\n                                    alt=\"author-pic\">\n                                </div>\n                                <div class=\"slider__footer_text\">\n                                    <div class=\"slider__content_author\">").concat(card.author.name, " </div>\n                                    <div class=\"slider__content_date\">").concat(card.author.date, " </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <a class=\"slider__item-link\" href=\"javascript:void(0);\"></a>\n                </li>\n            ");
       });
       $("#slider-horizontal").slick('slickAdd', html);
     },
