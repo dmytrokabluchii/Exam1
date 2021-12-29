@@ -627,10 +627,12 @@ body {
 }
 
 .slick-dots {
+    width: 0%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    // justify-content: center;
+    // align-items: center;
     bottom: -105px;
+    left: 42%;
 
     li {
         margin-right: 10px;

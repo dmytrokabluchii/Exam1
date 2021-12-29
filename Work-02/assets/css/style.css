@@ -476,10 +476,10 @@ body {
 }
 
 .slick-dots {
+  width: 0%;
   display: flex;
-  justify-content: center;
-  align-items: center;
   bottom: -105px;
+  left: 42%;
 }
 .slick-dots li {
   margin-right: 10px;

@@ -127,7 +127,7 @@ function getNews(){
                             <div class="slider__content_footer author">
                                 <div class="slider__content_avatar">
                                     <img class="slider__content_photo"
-                                    src="assets/images/${card.author.avatar} 
+                                    src=assets/images/${card.author.avatar} 
                                     alt="author-pic">
                                 </div>
                                 <div class="slider__footer_text">
