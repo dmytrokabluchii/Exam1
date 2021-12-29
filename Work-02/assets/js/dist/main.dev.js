@@ -1,37 +1,6 @@
 "use strict";
 
 // Fix Header Scroll
-
-/* $(function () {
-    menu_top = $('.header__content').offset().top;
-    $(window).on('scroll', function () {
-        if ($(window).scrollTop() > menu_top) {
-            if ($('.header__content').css('position') != 'fixed') {
-                $('.header__content').css('position', 'fixed');
-                $('.header__content').css('top', '0');
-                $('.header__content').css('left', '0');
-                $('.header__content').css('padding-top', '5px');
-                $('.header__content').css('width', '100%');
-                $('.header__content').css('height', '60px');
-                $('.header__content').css('z-index', '9999');
-                $('.header__content').css('opacity', '.9');
-                $('.header__content').css('background', 'linear-gradient(243.43deg, #7E5AFF 16.9%, #55B7FF 83.27%)');
-                $('.header__content').css('backdrop-filter', 'blur(2px)');
-                $('.main').css('margin-top', '60px');
-            }
-        } else {
-            if ($('.header__content').css('position') == 'fixed') {
-                $('.header__content').css('position', '');
-                $('.header__content').css('top', '');
-                $('.header__content').css('left', '');
-                $('.header__content').css('z-index', '');
-                $('.header__content').css('background-color', '');
-                $('.header__content').css('backdrop-filter', '');
-                $('.main').css('margin-top', '');
-            }
-        }
-    });
-});  */
 $(function () {
   $(window).on('scroll', function () {
     // if($(window).scrollTop()>$(".main").height()){
@@ -45,35 +14,48 @@ $(function () {
         $("header").removeClass("fixed_header");
       }
     }
-  }); // Решение по плавному скролу по меню!
+  }); // Плавный скролл по меню!
 
   $("#main_menu a").on('click', function (e) {
-    e.preventDefault(); // top-60 это в px отступ вниз
-
-    var top = $($(this).attr("href")).offset().top - 60; // 500 это в мс время анимации при прокрутке, scrollTop:top+'px' анимация scrollTop к указанной позиции
-
+    e.preventDefault();
+    var top = $($(this).attr("href")).offset().top - 60;
     $("html, body").animate({
       scrollTop: top + 'px'
-    }, 800);
+    }, 900);
+  }); // Скролл по arrow!
+
+  $("#arrow a").on("click", function (e) {
+    e.preventDefault();
+    var id = $(this).attr('href'),
+        top = $(id).offset().top;
+    $('body,html').animate({
+      scrollTop: top
+    }, 1500);
   });
 }); // Map Leaflet
+// инициализируем карту по клику
 
-var map = L.map('my__map').setView([49.074670019181646, 33.4165501110005], 9);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-var myIcon = L.icon({
-  iconUrl: 'assets/images/svg/map-pin.svg',
-  iconSize: [106, 106],
-  iconAnchor: [12, 41],
-  popupAnchor: [-3, -76] // shadowUrl: 'assets/plugins/leflet/images/marker-shadow.png',
-  // shadowSize: [41, 41],
-  // shadowAnchor: [22, 41]
+$("#init_map").on('click', function () {
+  // удаляем tag <a> init_map
+  $(this).remove(); // Инициализация карты
 
-});
-L.marker([49.074670019181646, 33.4165501110005], {
-  icon: myIcon
-}).addTo(map).bindPopup("\n<div class=\"map_popup\">\n  <img src=\"assets/plugins/leflet/images/map.svg\" alt=\"map-pic\">\n  <div class=\"map_info\">\n    <b>Hello!</b>\n    </div>\n</div>\n"); // Telegram BOT
+  var map = L.map('my_map').setView([41.653955, -74.7021683], 8);
+  L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+  var myIcon = L.icon({
+    iconUrl: 'assets/images/svg/map-pin.svg',
+    iconSize: [96, 96],
+    iconAnchor: [12, 41],
+    popupAnchor: [36, -25]
+  });
+  var marker = L.marker([41.653955, -74.7021683], {
+    icon: myIcon
+  }).addTo(map).bindPopup("\n    <div class=\"map_popup\">\n    <img src=\"assets/plugins/leflet/images/map.svg\" alt=\"map-pic\">\n    <div class=\"map_info\">\n        <b>Hello! <br>\n        My friend!</b>\n        <div>You're in 91 Nolan Extension Suite 670!</div>\n        </div>\n    </div>\n    "); // Переход по клику на маркер!
+  // marker.on('click', function(){
+  //     document.getElementById('to_google').click();
+  // })
+}); // Telegram BOT
 
 $("#my_form").on('submit', function (e) {
   e.preventDefault();
@@ -89,7 +71,7 @@ $("#my_form").on('submit', function (e) {
     $.get("https://api.telegram.org/bot".concat(BOT_TOKEN, "/sendMessage?chat_id=").concat(CHAT_ID, "&text=") + text + '&parse_mode=html', function (json) {
       if (json.ok) {
         $("#my_form").trigger('reset');
-        alert("Message successfully send");
+        panel.success("Message successfully send", true);
       }
     });
   }
@@ -104,9 +86,29 @@ lightGallery(document.querySelector('.my-gallery'), {
   zoomFromOfigin: true,
   speed: 500,
   licenseKey: 'your_license_key'
-}); // Slick-slider
+}); // Ajax Динамические пост новостей
+
+function getNews() {
+  $.ajax({
+    url: 'common/news.json',
+    type: 'get',
+    dataType: 'json',
+    success: function success(json) {
+      var html = '';
+      json.forEach(function (card) {
+        html += "\n                <li class=\"slider__item\">\n                    <div class=\"slider__item-container\">\n                        <div class=\"slider__item-content\" id=\"news-card_first\">\n                            <div class=\"slider__content_header\">\n                                <img class=\"slider__content_img\"\n                                src=assets/images/".concat(card.pic, " \n                                alt=\"news-pic\"\">\n                            </div>\n                            <h4 class=\"slider__content_title blue-text\">").concat(card.title, "</h4>\n                            <div class=\"slider__content_subtitle\">\n                                <p>").concat(card.description, "</p>\n                            </div>\n                            <div class=\"slider__content_footer author\">\n                                <div class=\"slider__content_avatar\">\n                                    <img class=\"slider__content_photo\"\n                                    src=\"assets/images/").concat(card.author.avatar, " \n                                    alt=\"author-pic\">\n                                </div>\n                                <div class=\"slider__footer_text\">\n                                    <div class=\"slider__content_author\">").concat(card.author.name, " </div>\n                                    <div class=\"slider__content_date\">").concat(card.author.date, " </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <a class=\"slider__item-link\" href=\"javascript:void(0);\"></a>\n                </li>\n            ");
+      });
+      $("#slider-horizontal").slick('slickAdd', html);
+    },
+    error: function error() {
+      panel.warning("The news don't load!", true);
+    }
+  });
+} // Slick-slider
+
 
 $(function () {
+  getNews();
   $('.slick__wrapper_vertical').slick({
     infinite: true,
     slidesToShow: 1,
@@ -116,85 +118,21 @@ $(function () {
     verticalSwiping: true,
     dots: true,
     arrows: false
-  }); //   $('.slick__wrapper_menu').slick({
-  //     infinite: true,
-  //     speed: 1100,
-  //     dots: true,
-  //     arrows: false,
-  //   });
-
-  $('.slider__items').slick({
+  });
+  $('#slider-horizontal').slick({
     infinite: true,
+    speed: 500,
     dots: true,
     slidesToShow: 3,
-    slidesToScroll: 1
+    slidesToScroll: 1,
+    responsive: [{
+      breakpoint: 1170,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        infinite: true,
+        dots: true
+      }
+    }]
   });
 });
-/* lightGallery(document.getElementById('gallery-container'), {
-    speed: 500,
-    mode: 'fade',
-    
-});
- */
-// Swiper Slider
-
-/* let swiper = new Swiper('.swiper', {
-    direction: "vertical",
-    speed: 400,
-    pagination: {
-      el: ".swiper-pagination",
-      type: 'bullets',
-      clickable: true,
-      dynamicBullets: true,
-    },
-  }); */
-
-/*  let pageSlider = new Swiper('.page', {
-   wrapperClass: "page__wrapper",
-   slideClass: "page__screen",
-   direction: "vertical",
-   slidePerView: 'auto',
-   speed: 400,
-   pagination: {
-       el: ".page__pagination",
-       type: 'bullets',
-       clickable: true,
-       bulletClass: "page__bullet",
-       bulletActiveClass: "page__bullet_active",
-     },
- }); */
-// ChiefSlider
-
-/* document.addEventListener('DOMContentLoaded', function () {
-    const slider = new ChiefSlider('.slider', {
-        loop: true,
-        autoplay: true,
-        interval: 5000,
-        refresh: true,
-    });
-}); */
-// Ajax
-
-/* $(function(){
-loadPage('pages/main.html');
-    $.ajax({
-        url:'common/menu.json',
-        type:'get',
-        dataType:'json',
-        success:function(json){
-            let html = '';
-            for(let i=0;i<json.length;i++){
-                html += `<a class="me-3 py-2 text-dark text-decoration-none" href="pages/${json[i].file}.html">${json[i].name}</a>`;
-            }
-            $('#main_menu').html(html);         
-        },
-        error:function(){           
-            alert("Menu JSON not found");
-        }
-    });
-
-    $(document).on('click', '#main_menu a', function(e){
-        e.preventDefault();
-        loadPage($(this).attr("href"));
-    });
-}); */

@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
     <!-- Favicon -->
-    <!-- <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
     <link rel="manifest" href="assets/favicon/site.webmanifest">
@@ -29,21 +29,19 @@
     <meta property="og:site_name" content="BHROMAON">
     <meta property="og:image" content="https://dmytrokabluchii.github.io/Exam1/Work-01/assets/images/title-bg.jpg">
     <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630"> -->
+    <meta property="og:image:height" content="630">
 
     <link rel="stylesheet" href="assets/plugins/slick/slick.css">
     <link rel="stylesheet" href="assets/plugins/slick/slick-theme.css">
-
     <link rel="stylesheet" href="assets/plugins/leflet/leaflet.css">
-    <link rel="stylesheet" href="assets/plugins/slider/slider.min.css">
     <link rel="stylesheet" href="assets/plugins/lightGallery/lightgallery-bundle.min.css">
+    <link rel="stylesheet" href="assets/plugins/panel/panel.min.css">
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="stylesheet" href="assets/css/responsive.min.css">
 </head>
 
 <body class="body">
-
     <!--     <div class="mobile_menu_wrap">
         <div class="sidemenu_top">
             <div class="mobile_logo" itemscope itemtype="https://schema.org/Organization">
@@ -76,10 +74,10 @@
                 <div class="header__block container">
                     <div class="header__main">
                         <div class="header__logo">
-                            <a href="#"><img src="assets/images/svg/logo.svg" alt="logo"></a>
+                            <a href="#" rel="nofollow" target="_blank"><img src="assets/images/svg/logo.svg"
+                                    alt="logo"></a>
                         </div>
                         <div class="header__main-menu">
-
                             <nav class="header__menu" id="main_menu">
                                 <ul class="header__menu-list">
                                     <li class="header__menu-box">
@@ -179,7 +177,7 @@
                             </div>
                         </div>
                         <div class="about__scroll container">
-                            <div class="about__scroll_element">
+                            <div class="about__scroll_element" id="arrow">
                                 <a href="#projects_monticello"><img src="assets/images/svg/header-arrow.svg"
                                         alt="arrow"></a>
                             </div>
@@ -198,7 +196,7 @@
                             </div>
                         </div>
                         <div class="about__scroll container">
-                            <div class="about__scroll_element">
+                            <div class="about__scroll_element" id="arrow">
                                 <a href="#projects_monticello"><img src="assets/images/svg/header-arrow.svg"
                                         alt="arrow"></a>
                             </div>
@@ -217,7 +215,7 @@
                             </div>
                         </div>
                         <div class="about__scroll container">
-                            <div class="about__scroll_element">
+                            <div class="about__scroll_element" id="arrow">
                                 <a href="#projects_monticello"><img src="assets/images/svg/header-arrow.svg"
                                         alt="arrow"></a>
                             </div>
@@ -236,7 +234,7 @@
                             </div>
                         </div>
                         <div class="about__scroll container">
-                            <div class="about__scroll_element">
+                            <div class="about__scroll_element" id="arrow">
                                 <a href="#projects_monticello"><img src="assets/images/svg/header-arrow.svg"
                                         alt="arrow"></a>
                             </div>
@@ -255,7 +253,7 @@
                             </div>
                         </div>
                         <div class="about__scroll container">
-                            <div class="about__scroll_element">
+                            <div class="about__scroll_element" id="arrow">
                                 <a href="#projects_monticello"><img src="assets/images/svg/header-arrow.svg"
                                         alt="arrow"></a>
                             </div>
@@ -264,16 +262,7 @@
                 </div>
 
             </div>
-
-            <!-- <div class="about__scroll">
-                <div class="about__scroll_element">
-                    <a href="#projects_monticello"><img src="assets/images/svg/header-arrow.svg" alt="arrow"></a>
-                </div>
-            </div> -->
-
         </section>
-
-
 
         <section class="project" id="projects_monticello">
             <div class="project__content container">
@@ -287,7 +276,7 @@
                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
                                 data-src="assets/images/project-pic_1-min.jpg" alt="project-pic_one">
                         </div>
-                        <div class="project__card">
+                        <div class="project__card-first">
                             <div class="project__card_name blue-text">one world</div>
                             <div class="project__card_title title blue-text">
                                 <h4>trade center</h4>
@@ -314,7 +303,7 @@
                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
                                 data-src="assets/images/project-pic_2-min.jpg" alt="project-pic_second">
                         </div>
-                        <div class="project__card_second">
+                        <div class="project__card-second">
                             <div class="project__card_name blue-text">INTERNATIONAL</div>
                             <div class="project__card_title title blue-text">
                                 <h4>COMMERCE CENTRE</h4>
@@ -341,213 +330,14 @@
         <section class="news" id="news_monticello">
             <div class="news-bg lazy-bg" data-src="assets/images/news-bg-min.png">
                 <div class="news__layer">
+                    <div class="arrow__news_container"></div>
                     <div class="news__title title container">
                         <h4>LATEST NEWS</h4>
                     </div>
                     <div class="slider container">
                         <div class="slider__container">
-                            <div class="slider__wrapper">
-                                <div class="slider__items">
-                                    <div class="slider__item">
-                                        <!-- Начало контента 1 слайда -->
-                                        <div class="slider__item-container">
-                                            <div class="slider__item-content">
-                                                <div class="slider__content_header">
-                                                    <img class="slider__content_img lazy"
-                                                        src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
-                                                        data-src="assets/images/news-pic_1-min.jpg" alt="news-pic"
-                                                        loading="lazy">
-                                                </div>
-                                                <h4 class="slider__content_title blue-text">SEE THE
-                                                    UNMATCHED
-                                                    BEAUTY OF
-                                                    THE GREAT.
-                                                </h4>
-                                                <div class="slider__content_subtitle">
-                                                    <p>Free directories: directories are perfect for
-                                                        customers
-                                                        that are
-                                                        searching for...
-                                                    </p>
-                                                </div>
-                                                <div class="slider__content_footer">
-                                                    <div class="slider__content_avatar">
-                                                        <img class="slider__content_photo lazy"
-                                                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                            data-src="assets/images/news-pic_1_author-min.png"
-                                                            alt="author-pic" loading="lazy">
-                                                    </div>
-                                                    <div class="slider__footer_text">
-                                                        <div class="slider__content_author">ALJA BRUN</div>
-                                                        <div class="slider__content_date">20 Jan 2020</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Конец контента 1 слайда -->
-                                    </div>
-                                    <div class="slider__item">
-                                        <!-- Начало контента 2 слайда -->
-                                        <div class="slider__item-container">
-                                            <div class="slider__item-content">
-                                                <div class="slider__content_header">
-                                                    <img class="slider__content_img lazy"
-                                                        src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
-                                                        data-src="assets/images/news-pic_2-min.jpg" alt="news-pic"
-                                                        loading="lazy">
-                                                </div>
-                                                <h4 class="slider__content_title blue-text">EFFECTIVE
-                                                    ADVERTISING
-                                                    POINTERS.
-                                                </h4>
-                                                <div class="slider__content_subtitle">
-                                                    <p>Having a home based business is a wonderful asset to
-                                                        your
-                                                        life...
-                                                    </p>
-                                                </div>
-                                                <div class="slider__content_footer">
-                                                    <div class="slider__content_avatar">
-                                                        <img class="slider__content_photo lazy"
-                                                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                            data-src="assets/images/news-pic_2_author-min.png"
-                                                            alt="author-pic" loading="lazy">
-                                                    </div>
-                                                    <div class="slider__footer_text">
-                                                        <div class="slider__content_author">DOMINIC FREEMAN
-                                                        </div>
-                                                        <div class="slider__content_date">13 Dec 2019</div>
-                                                    </div>
-
-
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Конец контента 2 слайда -->
-                                    </div>
-                                    <div class="slider__item">
-                                        <!-- Начало контента 3 слайда -->
-                                        <div class="slider__item-container">
-                                            <div class="slider__item-content">
-                                                <div class="slider__content_header">
-                                                    <img class="slider__content_img lazy"
-                                                        src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
-                                                        data-src="assets/images/news-pic_3-min.jpg" alt="news-pic"
-                                                        loading="lazy">
-                                                </div>
-                                                <h4 class="slider__content_title blue-text">HYPNOTIZE
-                                                    YOURSELF
-                                                    INTO THE
-                                                    GHOST.
-                                                </h4>
-                                                <div class="slider__content_subtitle">
-                                                    <p>There are many things that are important to catalog
-                                                        design...
-                                                    </p>
-                                                </div>
-                                                <div class="slider__content_footer">
-                                                    <div class="slider__content_avatar">
-                                                        <img class="slider__content_photo lazy"
-                                                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                            data-src="assets/images/news-pic_3_author-min.png"
-                                                            alt="author-pic" loading="lazy">
-                                                    </div>
-                                                    <div class="slider__footer_text">
-                                                        <div class="slider__content_author">ALICE WARD</div>
-                                                        <div class="slider__content_date">30 Nov 2019</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- Конец контента 3 слайда -->
-                                    </div>
-                                    <div class="slider__item">
-                                        <!-- Начало контента 4 слайда -->
-                                        <div class="slider__item-container">
-                                            <div class="slider__item-content">
-                                                <div class="slider__content_header">
-                                                    <img class="slider__content_img lazy"
-                                                        src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
-                                                        data-src="assets/images/news-pic_2-min.jpg" alt="news-pic"
-                                                        loading="lazy">
-                                                </div>
-                                                <h4 class="slider__content_title blue-text">SEE THE
-                                                    UNMATCHED
-                                                    BEAUTY OF
-                                                    THE GREAT.
-                                                </h4>
-                                                <div class="slider__content_subtitle">
-                                                    <p>Free directories: directories are perfect for
-                                                        customers
-                                                        that are
-                                                        searching for...
-                                                    </p>
-                                                </div>
-                                                <div class="slider__content_footer">
-                                                    <div class="slider__content_avatar">
-                                                        <img class="slider__content_photo lazy"
-                                                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                            data-src="assets/images/news-pic_1_author-min.png"
-                                                            alt="author-pic" loading="lazy">
-                                                    </div>
-                                                    <div class="slider__footer_text">
-                                                        <div class="slider__content_author">ALJA BRUN</div>
-                                                        <div class="slider__content_date">20 Jan 2021</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="slider__item">
-                                        <!-- Начало контента 5 слайда -->
-                                        <div class="slider__item-container">
-                                            <div class="slider__item-content">
-                                                <div class="slider__content_header">
-                                                    <img class="slider__content_img lazy"
-                                                        src="data:image/gif;base64,R0lGODlhAwACAIAAAP///wAAACH5BAEAAAEALAAAAAADAAIAAAICjF8AOw=="
-                                                        data-src="assets/images/news-pic_3-min.jpg" alt="news-pic"
-                                                        loading="lazy">
-                                                </div>
-                                                <h4 class="slider__content_title blue-text">SEE THE
-                                                    UNMATCHED
-                                                    BEAUTY OF
-                                                    THE GREAT.
-                                                </h4>
-                                                <div class="slider__content_subtitle">
-                                                    <p>Free directories: directories are perfect for
-                                                        customers
-                                                        that are
-                                                        searching for...
-                                                    </p>
-                                                </div>
-                                                <div class="slider__content_footer">
-                                                    <div class="slider__content_avatar">
-                                                        <img class="slider__content_photo lazy"
-                                                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                                            data-src="assets/images/news-pic_1_author-min.png"
-                                                            alt="author-pic" loading="lazy">
-                                                    </div>
-                                                    <div class="slider__footer_text">
-                                                        <div class="slider__content_author">Mija Teri</div>
-                                                        <div class="slider__content_date">29 Jan 2020</div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                </div>
-                            </div>
-
-                            <a href="#" class="slider__control" data-slide="prev"></a>
-                            <a href="#" class="slider__control" data-slide="next"></a>
-                            <ol class="slider__indicators">
-                                <li data-slide-to="0"></li>
-                                <li data-slide-to="1"></li>
-                                <li data-slide-to="2"></li>
-                                <li data-slide-to="3"></li>
-                                <li data-slide-to="4"></li>
-                            </ol>
+                            <ul class="slider__wrapper_horizontal" id="slider-horizontal">
+                            </ul>
                         </div>
                     </div>
                 </div>
@@ -570,18 +360,21 @@
                         class="gallery__block-second gallery__block gallery__image_second image-second">
                         <img src="assets/images/gallery_pic-2-min.jpg" alt="pic">
                     </a>
-                    <a href="assets/images/gallery_pic-3-min.jpg" class="gallery__image_third image-third">
+                    <a href="assets/images/gallery_pic-3-min.jpg"
+                        class="gallery__block gallery__image_third image-third">
                         <img src="assets/images/gallery_pic-3-min.jpg" alt="pic">
                     </a>
-                    <a href="assets/images/gallery_pic-4-min.jpg" class="gallery__image_fourth image-fourth">
+                    <a href="assets/images/gallery_pic-4-min.jpg"
+                        class="gallery__block gallery__image_fourth image-fourth">
                         <img src="assets/images/gallery_pic-4-min.jpg" alt="pic">
                     </a>
-                    <a href="assets/images/gallery_pic-5-min.jpg" class="gallery__image_fifth image-fifth">
+                    <a href="assets/images/gallery_pic-5-min.jpg"
+                        class="gallery__block gallery__image_fifth image-fifth">
                         <img src="assets/images/gallery_pic-5-min.jpg" alt="pic">
                     </a>
                 </div>
 
-                <!-- галерея lightgallery с моими фото и LazyLoad(не работают картинки внизу в lightgallery) -->
+                <!-- галерея lightgallery с моими фото и LazyLoad(не работают картинки внизу(уменьшить нужно) в lightgallery) -->
                 <!--  <div class="gallery__image my-gallery" id="animated-thumbnails-gallery">
             <a href="assets/images/galery_alternative/maxime-vandenberge-min.jpg"
                 class="gallery__block-first gallery__block gallery__image_first image-first">
@@ -624,7 +417,12 @@
 
 
         <section class="contact" id="contact_monticello">
-            <div class="contact__map" id="my__map"></div>
+            <div class="contact__map" id="my_map">
+                <a href="javascript:void(0)" id="init_map">
+                    <img src="../Work-02/assets/images/screen-map.jpg" alt="#">
+                    <p>Click to interactive</p>
+                </a>
+            </div>
 
             <div class="contact__field contact__container">
                 <div class="contact__form-bg lazy-bg" data-src="assets/images/form_pic1-min.png">
@@ -636,16 +434,16 @@
                             <ul class="contact__column_left">
                                 <li class="contact__date form-address" itemprop="address" itemscope
                                     itemtype="https://schema.org/PostalAddress">
-                                    <a href="https://www.google.com/maps/@50.4439122,30.5162644,18z?hl=ru-RU"
-                                        class="contact-link" target="_blank"> <img
+                                    <a href="https://www.google.com/maps/place/@41.653955,-74.7021683,14z"
+                                        class="contact-link" target="_blank" id="to_google"><img
                                             src="assets/images/svg/point-maps.svg" alt="pic-address">
-                                        <span itemprop="streetAddress">91 Nolan Extensions Suite 670</span>
+                                        <span itemprop="streetAddress">91 Nolan Extension Suite 670</span>
                                     </a>
                                 </li>
                                 <li class="contact__date form-phone" itemprop="phone">
                                     <a href="tel:+380679166325" class="contact-link">
                                         <img src="assets/images/svg/form_telephone.svg" alt="pic-phone">
-                                        <span itemprop="telephone">+380679166325</span>
+                                        <span itemprop="telephone">+001356-868-2454</span>
                                     </a>
                                 </li>
 
@@ -662,13 +460,15 @@
                             </ul>
                             <div class="contact__column_right">
                                 <form class="contact__form" id="my_form" method="get">
-                                    <div class="contact__login">
+                                    <div class="contact__login form-row">
                                         <input class="contact__name contact__form_field" type="text"
-                                            name="registration_name" id="name" placeholder="Your Name">
+                                            name="registration_name" label for="login" id="name" required
+                                            placeholder="Your Name">
                                     </div>
-                                    <div class="contact__email">
+                                    <div class="contact__email form-row">
                                         <input class="contact__mail contact__form_field" type="email"
-                                            name="registration" id="email_contact" placeholder="Email">
+                                            name="registration" label for="email" id="email_contact" required
+                                            placeholder="Email">
                                     </div>
                                     <div class="contact__btn">
                                         <button class="contact__button btn-white" type="submit">SUBMIT</button>
@@ -692,7 +492,7 @@
                 <div class="footer__container">
                     <div class="footer__main">
                         <div class="footer__logo">
-                            <a href="#">
+                            <a href="#" rel="nofollow" target="_blank">
                                 <img src="assets/images/svg/logo.svg" alt="logo">
                             </a>
                         </div>
@@ -743,12 +543,6 @@
         </div>
     </footer>
 
-
-
-    <!--  <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous">
-        </script> -->
-
     <!--  <script>
         $(function () {
             $(".hamburger, .page_overlay").on('click', function () {
@@ -760,9 +554,8 @@
 
 
     <script src="assets/js/lazyload.js"></script>
-    <!-- <script src="assets/plugins/slider/chief-slider.min.js"></script> -->
+    <script src="assets/plugins/panel/panel.js"></script>
     <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <!-- <script src="assets/plugins/swiper/swiper-bundle.min.js"></script> -->
     <script src="assets/plugins/slick/slick.min.js"></script>
     <script src="assets/plugins/lightGallery/lightgallery.min.js"></script>
     <script src="assets/plugins/lightGallery/lg-thumbnail.min.js"></script>
