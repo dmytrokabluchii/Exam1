@@ -106,7 +106,7 @@ $base_size:16;
 @media screen and (max-width:1170px) {
     .about {
         &__title h2 {
-            // формулы адаптивного шрифта до 44px плавного умен-я имеем на разр-и в 320px
+            /* формулы адаптивного шрифта до 44px плавного умен-я имеем на разр-и в 320px */
             font-size: calc(30px + 50 * ((100vw / 1170)));
         }
 
@@ -136,7 +136,6 @@ $base_size:16;
             }
         }
     }
-
 }
 
 
@@ -551,10 +550,19 @@ $base_size:16;
     .news {
         .container {
             width: 90%;
+            overflow: hidden;
 
             .slider__wrapper_horizontal {
                 .slick-dots {
                     left: 25%;
+                }
+
+                .slick-prev:before {
+                    display: none;
+                }
+
+                .slick-next:before {
+                    display: none;
                 }
 
                 .slick-prev {
@@ -593,6 +601,8 @@ $base_size:16;
 
 @media screen and (max-width: 450px) {
     .about {
+        overflow: hidden;
+
         .slick-dots {
             right: 10px;
         }
@@ -602,11 +612,11 @@ $base_size:16;
         }
 
         &__title {
-            padding: 115px 0 15px;
+            padding: 115px 10px 15px 0;
         }
 
         &__subtitle {
-            padding-bottom: 150px;
+            padding-bottom: 140px;
 
             P {
                 @include fz(16);
@@ -614,7 +624,6 @@ $base_size:16;
             }
         }
     }
-
 
     .project {
         padding: 30px 0 30px;
@@ -654,6 +663,12 @@ $base_size:16;
 
 
 @media screen and (max-width: 380px) {
+    .hamburger_menu {
+        button {
+            right: 10px
+        }
+    }
+
     .header {
         &__logo a svg {
             width: 75%;
@@ -690,6 +705,22 @@ $base_size:16;
 
                     h4 {
                         @include fz(21);
+                        overflow: hidden;
+                        position: relative;
+
+                        &:after {
+                            content: "";
+                            text-align: right;
+                            position: absolute;
+                            bottom: 0;
+                            right: 0;
+                            left: 0;
+                            height: 1.2em;
+                            background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(white));
+                            background: -o-linear-gradient(top, rgba(255, 255, 255, 0), white 100%);
+                            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white 100%);
+                            pointer-events: none;
+                        }
                     }
                 }
 

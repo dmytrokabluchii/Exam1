@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @media screen and (max-width: 1550px) {
   .project__image_first img {
     box-shadow: -190px -60px 0px 0px #55B7FF;
@@ -66,6 +67,7 @@
 }
 @media screen and (max-width: 1170px) {
   .about__title h2 {
+    /* формулы адаптивного шрифта до 44px плавного умен-я имеем на разр-и в 320px */
     font-size: calc(30px + 50 * ((100vw / 1170)));
   }
   .about__subtitle {
@@ -350,9 +352,16 @@
 @media screen and (max-width: 480px) {
   .news .container {
     width: 90%;
+    overflow: hidden;
   }
   .news .container .slider__wrapper_horizontal .slick-dots {
     left: 25%;
+  }
+  .news .container .slider__wrapper_horizontal .slick-prev:before {
+    display: none;
+  }
+  .news .container .slider__wrapper_horizontal .slick-next:before {
+    display: none;
   }
   .news .container .slider__wrapper_horizontal .slick-prev {
     display: none;
@@ -379,6 +388,9 @@
   }
 }
 @media screen and (max-width: 450px) {
+  .about {
+    overflow: hidden;
+  }
   .about .slick-dots {
     right: 10px;
   }
@@ -386,10 +398,10 @@
     height: 650px;
   }
   .about__title {
-    padding: 115px 0 15px;
+    padding: 115px 10px 15px 0;
   }
   .about__subtitle {
-    padding-bottom: 150px;
+    padding-bottom: 140px;
   }
   .about__subtitle P {
     font-size: 1rem;
@@ -425,6 +437,10 @@
   }
 }
 @media screen and (max-width: 380px) {
+  .hamburger_menu button {
+    right: 10px;
+  }
+
   .header__logo a svg {
     width: 75%;
   }
@@ -450,6 +466,21 @@
   }
   .news .container .slider__wrapper_horizontal .slider__content_title h4 {
     font-size: 1.3125rem;
+    overflow: hidden;
+    position: relative;
+  }
+  .news .container .slider__wrapper_horizontal .slider__content_title h4:after {
+    content: "";
+    text-align: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 1.2em;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(white));
+    background: -o-linear-gradient(top, rgba(255, 255, 255, 0), white 100%);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white 100%);
+    pointer-events: none;
   }
   .news .container .slider__wrapper_horizontal .slick-dots {
     left: 20%;

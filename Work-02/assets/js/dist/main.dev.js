@@ -42,7 +42,14 @@ $(function () {
     vertical: true,
     verticalSwiping: true,
     dots: true,
-    arrows: false
+    arrows: false,
+    // swipe: false,
+    responsive: [{
+      breakpoint: 1024,
+      settings: {
+        verticalSwiping: false
+      }
+    }]
   });
   $('#slider-horizontal').slick({
     infinite: true,
