@@ -1,9 +1,8 @@
-// Fix Header Scroll
 $(function(){
+    // Fix Header Scroll
     $(window).on('scroll', function(){
         // if($(window).scrollTop()>$(".main").height()){
             // вариант ниже с высотой а выше с классом
-            
             if($(window).scrollTop()>0){
                 if(!$("header").hasClass("fixed_header")) {
                     $("header").addClass("fixed_header");
@@ -15,41 +14,83 @@ $(function(){
             }
     });
 
-// Плавный скролл по меню!
+    // Плавный скролл по меню!
     $("#main_menu a").on('click', function(e){
         e.preventDefault();
         const top = $($(this).attr("href")).offset().top-60;
         $("html, body").animate({scrollTop:top+'px'}, 900);
     });
-// Скролл по arrow!
-    $("#arrow a").on("click", function (e) {
+    // Скролл по arrow!
+    $(".about-arrow a").on("click", function (e) {
         e.preventDefault();
         let id  = $(this).attr('href'),
             top = $(id).offset().top;
-        $('body,html').animate({scrollTop: top}, 1500);
+        $('body,html').animate({scrollTop: top}, 1400);
     });
-});
 
 
-// Map Leaflet
-// инициализируем карту по клику
-$("#init_map").on('click', function(){
+    // Slick-slider News
+    getNews();
+    $('.slick__wrapper_vertical').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        speed: 1100,
+        vertical: true,
+        verticalSwiping: true,
+        dots: true,
+        arrows: false,
+    });
+    $('#slider-horizontal').slick({
+        infinite: true,
+        speed: 900,
+        dots: true,
+        slidesToShow: 3, 
+        slidesToScroll: 1,
+        // slidesPerRow: 3,
+        responsive: [
+            {
+            breakpoint: 1024,
+            settings: {
+            slidesToShow: 2,
+            slidesToScroll: 1,
+            }
+            },
+            {
+                breakpoint: 760,
+                settings: {
+                  slidesToShow: 1,
+                  slidesToScroll: 1
+                }
+              }
+        ]   
+    });
+
+
+    // Hamburger-menu
+    $(".hamburger, .page_overlay").on('click', function () {
+        // $(".hamburger").toggleClass("is-active");
+        $(".mobile_menu_wrap .hamburger").toggleClass("is-active");
+        $("body").toggleClass("open");
+    });
+
+
+    // Map Leaflet
+    // инициализируем карту по клику
+    $("#init_map").on('click', function(){
     // удаляем tag <a> init_map
     $(this).remove();
     // Инициализация карты
-var map = L.map('my_map').setView([41.653955,-74.7021683], 8);
-
+    var map = L.map('my_map').setView([41.653955,-74.7021683], 8);
     L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-
     var myIcon = L.icon({
         iconUrl: 'assets/images/svg/map-pin.svg',
         iconSize: [96, 96],
         iconAnchor: [12, 41],
         popupAnchor: [36, -25],
     });
-
     const marker = L.marker([41.653955,-74.7021683], {icon:myIcon}).addTo(map)
     .bindPopup(`
     <div class="map_popup">
@@ -62,30 +103,32 @@ var map = L.map('my_map').setView([41.653955,-74.7021683], 8);
     </div>
     `);
     // Переход по клику на маркер!
-    marker.on('click', function(){
-        document.getElementById('to_google').click();
-    })
-});
+        marker.on('click', function(){
+            document.getElementById('to_google').click();
+        })
+    });
 
 
-// Telegram BOT
-$("#my_form").on('submit', function(e){
-    e.preventDefault();
-    const nameInput = document.getElementById('name');
-    const emailInput = document.getElementById('email_contact');            
-  const BOT_TOKEN = '5019836353:AAEY0Hztn5q-UaklaKWXMoDqbUyn0MhEzhc';
-  // @get_id_bot and /get_id
-  const CHAT_ID = '704440668';
-//   let text = encodeURI("<b>Email:</b> "+$("#exampleInputEmail1").val()+"\n<b>Subject:</b> "+$("#exampleInputPassword1").val()+"\n<b>Message:</b> "+$("#massage").val());
-let text = encodeURI(`Name: ${nameInput.value}, Email: ${emailInput.value}`);
- if(nameInput.value !== '' && emailInput.value !== ''){
-    $.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=`+text+'&parse_mode=html', (json)=>{
-        if(json.ok){
-            $("#my_form").trigger('reset');
-            panel.success("Message successfully send", true);
+    // Telegram BOT
+    $("#my_form").on('submit', function(e){
+        e.preventDefault();
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email_contact');            
+        const BOT_TOKEN = '5019836353:AAEY0Hztn5q-UaklaKWXMoDqbUyn0MhEzhc';
+    // @get_id_bot and /get_id
+        const CHAT_ID = '704440668';
+    //   let text = encodeURI("<b>Email:</b> "+$("#exampleInputEmail1").val()+"\n<b>Subject:</b> "+$("#exampleInputPassword1").val()+"\n<b>Message:</b> "+$("#massage").val());
+        let text = encodeURI(`Name: ${nameInput.value}, Email: ${emailInput.value}`);
+        if(nameInput.value !== '' && emailInput.value !== ''){
+            $.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=`+text+'&parse_mode=html', (json)=>{
+                if(json.ok){
+                    $("#my_form").trigger('reset');
+                    panel.success("Message successfully send", true);
+                }
+            });
         }
     });
- }
+
 });
 
 
@@ -120,7 +163,9 @@ function getNews(){
                                 src="assets/images/${card.pic}" 
                                 alt="news-pic"">
                             </div>
-                            <h4 class="slider__content_title blue-text">${card.title}</h4>
+                            <div class="slider__content_title">
+                                <h4 class="blue-text">${card.title}</h4>
+                                </div>
                             <div class="slider__content_subtitle">
                                 <p>${card.description}</p>
                             </div>
@@ -140,50 +185,12 @@ function getNews(){
                     <a class="slider__item-link" href="javascript:void(0);"></a>
                 </li>
             `;
-                });
-                $("#slider-horizontal").slick('slickAdd', html);
-            },
-            error:function(){
-                panel.warning("The news don't load!", true);
-            }
-        });    
+            });
+
+            $("#slider-horizontal").slick('slickAdd', html);
+        },
+        error:function(){
+            panel.warning("The news don't load!", true);
+        }
+    });  
 }
-
-
-// Slick-slider
-$(function(){
-    getNews();
-
-    $('.slick__wrapper_vertical').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        speed: 1100,
-        vertical: true,
-        verticalSwiping: true,
-        dots: true,
-        arrows: false,
-      });
-
-    $('#slider-horizontal').slick({
-        infinite: true,
-        speed: 500,
-        dots: true,
-        slidesToShow: 3, 
-        slidesToScroll: 1,
-        responsive: [
-            {
-              breakpoint: 1170,
-              settings: {
-                slidesToShow: 2,
-                slidesToScroll: 1,
-                infinite: true,
-                dots: true
-              }
-            },
-        ]   
-      });
-    
-      
-});
-
