@@ -352,7 +352,6 @@
 @media screen and (max-width: 480px) {
   .news .container {
     width: 90%;
-    overflow: hidden;
   }
   .news .container .slider__wrapper_horizontal .slick-dots {
     left: 25%;
