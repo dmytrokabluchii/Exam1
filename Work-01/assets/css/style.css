@@ -254,20 +254,15 @@ body {
   color: #999999;
 }
 .header__search_button {
-  display: inline-block;
-  background-color: #5474fd;
   height: 60px;
   width: 146px;
-  font-family: "Aleo";
-  font-weight: 400;
-  color: #fff;
   font-size: 0.875rem;
-  letter-spacing: 0.1em;
   border: 2px solid #fff;
-  cursor: pointer;
-  text-transform: uppercase;
   position: relative;
   padding: 0 30px;
+}
+.header__search_button:hover {
+  transform: none;
 }
 .header__search_button:after {
   content: "";
