@@ -1,0 +1,31 @@
+$base_size:16;
+
+@mixin fz($px_size) {
+    font-size: ($px_size/$base_size)+rem;
+}
+
+@media screen and (max-width:1180px) {
+    .home {
+        &__bg {
+            background-position: 50% right;
+            // background-size: cover;
+            height: 100vh;
+        }
+
+        &__wrapper {
+            max-width: 45%;
+        }
+
+        &__title h2 {
+            @include fz(55);
+        }
+    }
+}
+
+
+
+
+
+
+
+@media screen and (max-height:800px) {}

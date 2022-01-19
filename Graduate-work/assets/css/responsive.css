@@ -1,0 +1,12 @@
+@media screen and (max-width: 1180px) {
+  .home__bg {
+    background-position: 50% right;
+    height: 100vh;
+  }
+  .home__wrapper {
+    max-width: 45%;
+  }
+  .home__title h2 {
+    font-size: 3.4375rem;
+  }
+}
