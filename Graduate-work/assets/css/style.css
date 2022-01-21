@@ -101,24 +101,6 @@ body {
 .media__links a svg:hover {
   transform: scale(1.2);
   transition: all 0.3s ease-in-out;
-  border: 0px solid #1d3977;
-  border-radius: 50%;
-  background-color: #fff;
-}
-
-.facebook-link svg:hover path {
-  fill: #3b5998;
-  transition: all 0.3s ease-in-out;
-}
-
-.tvitter-link svg:hover path {
-  fill: #1ca2f3;
-  transition: all 0.3s ease-in-out;
-}
-
-.insta-link svg:hover path {
-  fill: #b33492;
-  transition: all 0.3s ease-in-out;
 }
 
 .header {
@@ -718,7 +700,8 @@ body {
   padding-left: 15px;
 }
 .footer .media__items li a svg {
-  width: 40px;
+  width: 50px;
+  height: 50px;
 }
 
 /* .hamburger_menu {
