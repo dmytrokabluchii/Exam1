@@ -1057,7 +1057,7 @@ body {
 .footer__media li + li {
   padding-left: 15px;
 }
-.footer__media li a img {
+.footer__media li a svg {
   width: 40px;
 }
 .footer__text {
