@@ -20,7 +20,164 @@ $base_size:16;
             @include fz(55);
         }
     }
+
+    .about {
+        &__column {
+            gap: 60px;
+        }
+    }
+
+    .support {
+        .row__first {
+            gap: 50px;
+            padding-bottom: 50px;
+        }
+
+        .row__second {
+            gap: 50px;
+        }
+
+        &__list {
+            gap: 50px;
+            padding-bottom: 80px;
+        }
+    }
+
+    .footer {
+        &__column {
+            gap: 60px;
+        }
+    }
 }
+
+
+@media screen and (max-width:999px) {
+    .header {
+
+        &__menu,
+        &__button {
+            display: none;
+        }
+
+        .hamburger_menu {
+            display: block;
+        }
+    }
+
+    .about {
+        padding-bottom: 5px;
+
+        &__column {
+            flex-direction: column;
+        }
+
+        &__left {
+            flex: 0 1 auto;
+        }
+
+        &__title {
+            max-width: 100%;
+            text-align: center;
+        }
+
+        &__right {
+            flex: 0 1 auto;
+        }
+
+    }
+
+    .place {
+        padding: 80px 0 70px;
+
+        &__card {
+            padding-bottom: 80px;
+
+            .card__item {
+                // натянуть слайдер!
+                // flex: 1 1 50%;
+            }
+        }
+
+        &__count {
+            gap: 90px;
+        }
+    }
+
+    .support {
+        padding: 70px 0 0;
+
+        &__wrapper {
+            &::after {
+                display: none;
+            }
+        }
+
+        .row__first {
+            flex-direction: column;
+            gap: 30px;
+            padding-bottom: 60px;
+        }
+
+        &__title {
+            flex: 0 1 auto;
+            text-align: center;
+        }
+
+        &__subtitle {
+            flex: 0 1 auto;
+        }
+
+        .row__second {
+            flex-direction: column;
+        }
+
+        &__image {
+            flex: 0 1 auto;
+        }
+    }
+
+    .footer {
+        &__column {
+            flex-direction: column;
+            gap: 30px;
+            border-bottom: 1px solid #4A4949;
+        }
+
+        &__main {
+            flex: 0 1 auto;
+        }
+
+        &__service {
+            flex: 0 1 auto;
+        }
+
+        &__contacts {
+            flex: 0 1 auto
+        }
+
+        &__contacts-data:last-child {
+            padding-bottom: 15px;
+        }
+
+        &__service_title,
+        &__contacts_title {
+            padding-bottom: 25px;
+        }
+
+        &__text {
+            padding-bottom: 25px;
+        }
+
+        .media__items {
+            padding-bottom: 5px;
+        }
+    }
+
+}
+
+
+
+
 
 
 
