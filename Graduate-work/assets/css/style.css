@@ -228,16 +228,23 @@ body {
 }
 
 .header {
-  margin-top: 33px;
-  padding-bottom: 30px;
   position: fixed;
   left: 0;
   top: 0;
   width: 100%;
-  height: 100px;
   background-color: rgba(255, 255, 255, 0);
-  z-index: 10;
+  z-index: 200;
   transition: all 0.2s ease;
+}
+.header__main {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+}
+.header__logo {
+  height: 100%;
+  padding-top: 8px;
 }
 .header__logo a {
   display: flex;
@@ -247,9 +254,12 @@ body {
   display: block;
   padding-top: 10px;
 }
-.header__main {
-  display: flex;
-  justify-content: space-between;
+.header__menu {
+  height: 100%;
+}
+.header__button {
+  padding-top: 8px;
+  height: 100%;
 }
 .header .nav__menu ul {
   padding-top: 10px;
@@ -287,13 +297,10 @@ body {
 }
 
 .fixed_header #header-content {
-  margin-top: -33px;
   width: 100%;
   height: 60px;
-  padding-top: 10px;
   background: linear-gradient(243.43deg, rgba(255, 73, 47, 0.7) 16%, rgba(68, 65, 65, 0.7) 90%);
   backdrop-filter: blur(2px);
-  z-index: 199;
 }
 .fixed_header #header-content .nav__menu ul {
   display: flex;
@@ -308,9 +315,6 @@ body {
 }
 .fixed_header #header-content .nav__menu ul li a:active {
   color: #752775;
-}
-.fixed_header #header-content .header__button {
-  display: none;
 }
 
 .home__bg {
@@ -963,15 +967,13 @@ body {
   display: flex;
   justify-content: flex-end;
 }
-.footer__arrow .arrow__content {
+.footer__arrow .arrow__content_icon {
   padding: 70px 80px;
   background-color: #FF492F;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-.footer__arrow .arrow__content_icon {
   text-decoration: none;
   color: #fff;
   cursor: pointer;

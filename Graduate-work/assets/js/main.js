@@ -19,7 +19,7 @@ $(function(){
     });
 
     // Скролл по arrow!
-    $(".arrow__content a").on("click", function (e) {
+    $(".footer__arrow a").on("click", function (e) {
         e.preventDefault();
         let id  = $(this).attr('href'),
             top = $(id).offset().top;

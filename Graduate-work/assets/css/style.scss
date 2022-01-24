@@ -122,20 +122,27 @@ body {
 
 
 .header {
-    // padding-top: 33px;
-    // height: 100px;
-    margin-top: 33px;
-    padding-bottom: 30px;
     position: fixed;
     left: 0;
     top: 0;
     width: 100%;
-    height: 100px;
+    // height: 100px;
     background-color: rgba(255, 255, 255, .0);
-    z-index: 10;
+    z-index: 200;
     transition: all .2s ease;
 
+    &__main {
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        align-items: center;
+        // padding-top: 33px;
+    }
+
     &__logo {
+        height: 100%;
+        padding-top: 8px;
+
         a {
             display: flex;
             gap: 15px;
@@ -147,9 +154,13 @@ body {
         }
     }
 
-    &__main {
-        display: flex;
-        justify-content: space-between;
+    &__menu {
+        height: 100%;
+    }
+
+    &__button {
+        padding-top: 8px;
+        height: 100%;
     }
 
     .nav__menu ul {
@@ -206,13 +217,11 @@ body {
 
 .fixed_header {
     #header-content {
-        margin-top: -33px;
         width: 100%;
         height: 60px;
-        padding-top: 10px;
         background: linear-gradient(243.43deg, rgb(255, 73, 47, .7) 16%, rgba(68, 65, 65, 0.7) 90%);
         backdrop-filter: blur(2px);
-        z-index: 199;
+        // z-index: 199;
 
         .nav__menu ul {
             display: flex;
@@ -230,10 +239,6 @@ body {
                     color: rgb(117, 39, 117);
                 }
             }
-        }
-
-        .header__button {
-            display: none;
         }
     }
 }
@@ -1067,7 +1072,7 @@ body {
         display: flex;
         justify-content: flex-end;
 
-        .arrow__content {
+        .arrow__content_icon {
             padding: 70px 80px;
             // width: 170px;
             // height: 170px;
@@ -1077,13 +1082,10 @@ body {
             align-items: center;
             text-align: center;
 
-            &_icon {
-                // padding: 70px;
-                text-decoration: none;
-                color: #fff;
-                cursor: pointer;
-                @include fz(40);
-            }
+            text-decoration: none;
+            color: #fff;
+            cursor: pointer;
+            @include fz(40);
         }
     }
 

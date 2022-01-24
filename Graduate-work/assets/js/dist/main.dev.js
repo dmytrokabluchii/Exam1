@@ -22,7 +22,7 @@ $(function () {
     }, 1400);
   }); // Скролл по arrow!
 
-  $(".arrow__content a").on("click", function (e) {
+  $(".footer__arrow a").on("click", function (e) {
     e.preventDefault();
     var id = $(this).attr('href'),
         top = $(id).offset().top;
