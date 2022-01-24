@@ -1,13 +1,16 @@
 @media screen and (max-width: 1180px) {
   .home__bg {
     background-position: 50% right;
-    height: 100vh;
   }
   .home__wrapper {
     max-width: 45%;
   }
   .home__title h2 {
     font-size: 3.4375rem;
+  }
+
+  .place .slick-dots {
+    left: 41%;
   }
 
   .about__column {
@@ -29,6 +32,9 @@
   .footer__column {
     gap: 60px;
   }
+  .footer__row {
+    gap: 60px;
+  }
 }
 @media screen and (max-width: 999px) {
   .header__menu, .header__button {
@@ -39,14 +45,18 @@
   }
 
   .home__bg {
+    padding: 110px 0 70px;
     background-position: 70% top;
     background-color: rgba(0, 0, 0, 0.4);
     background-blend-mode: multiply;
   }
   .home__wrapper {
     color: #fff;
-    max-width: 60%;
+    max-width: 90%;
     overflow: hidden;
+  }
+  .home__title h2 {
+    font-size: 3.125rem;
   }
   .home__button_video {
     color: #fff;
@@ -72,8 +82,16 @@
   .place {
     padding: 80px 0 70px;
   }
+  .place .card__container {
+    width: 85%;
+  }
   .place__card {
     padding-bottom: 80px;
+  }
+  .place .card__price {
+    bottom: 30px;
+    right: 20px;
+    padding: 16px 5px;
   }
   .place__count {
     gap: 90px;
@@ -104,19 +122,53 @@
     flex: 0 1 auto;
   }
 
+  .clients__layer {
+    height: 260px;
+    background-color: #F4F4F4;
+    position: relative;
+    z-index: 2;
+  }
+  .clients__text {
+    padding-top: 70px;
+  }
+  .clients__column {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    padding-bottom: 70px;
+    list-style: none;
+  }
+  .clients__cards {
+    margin-top: 0;
+    flex: 0 1 100%;
+  }
+  .clients__content {
+    padding: 75px 25px 110px;
+  }
+
+  .booking__layer {
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: multiply;
+  }
+  .booking__title {
+    width: 100%;
+  }
+  .booking__subtitle {
+    width: 100%;
+    padding-bottom: 40px;
+  }
+
   .footer__column {
     flex-direction: column;
     gap: 30px;
-    border-bottom: 1px solid #4A4949;
   }
   .footer__main {
-    flex: 0 1 auto;
+    flex: 0 1 100%;
   }
-  .footer__service {
-    flex: 0 1 auto;
-  }
-  .footer__contacts {
-    flex: 0 1 auto;
+  .footer__row {
+    flex: 0 1 100%;
+    gap: 30px;
+    padding-bottom: 30px;
   }
   .footer__contacts-data:last-child {
     padding-bottom: 15px;
@@ -129,6 +181,36 @@
   }
   .footer .media__items {
     padding-bottom: 5px;
+  }
+  .footer__arrow {
+    margin-top: -85px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .footer__arrow .arrow__content_icon {
+    padding: 55px 60px;
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .place__title h4 {
+    font-size: 1.75rem;
+    padding-bottom: 15px;
+  }
+  .place__count {
+    gap: 50px;
+  }
+  .place__count .count__column {
+    flex: 0 1 33.333%;
+    text-align: center;
+  }
+  .place__count .count__column_calculation {
+    font-size: 2.875rem;
+    line-height: 146%;
+    padding-bottom: 20px;
+  }
+  .place__count .count__column_text {
+    font-size: 1.5625rem;
   }
 }
 @media screen and (max-width: 750px) {

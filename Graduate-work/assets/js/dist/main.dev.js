@@ -12,8 +12,7 @@ $(function () {
         $("header").removeClass("fixed_header");
       }
     }
-  }); // Плавный скролл по меню!
-
+  });
   $("#header__menu_links a").on('click', function (e) {
     e.preventDefault();
     var top = $($(this).attr("href")).offset().top - 60;
@@ -48,13 +47,33 @@ $(function () {
     slidesToShow: 3,
     slidesToScroll: 1,
     responsive: [{
-      breakpoint: 1024,
+      breakpoint: 840,
       settings: {
         slidesToShow: 2,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+        arrows: false
       }
     }]
-  });
+  }); // Slick-slider review
+
+  /* getReview();
+  $('#review_clients').slick({
+      infinite: true,
+      speed: 900,
+      dots: true,
+      slidesToShow: 3, 
+      slidesToScroll: 1,
+      responsive: [
+          {
+              breakpoint: 767,
+              settings: {
+                  slidesToShow: 2,
+                  slidesToScroll: 1,
+                  arrows: false,
+              }
+          }
+      ]
+  }); */
 }); // Подключение lightGallery
 
 lightGallery(document.querySelector('.gallery__album', '.album__page'), {
@@ -106,3 +125,45 @@ function getCount() {
 }
 
 getCount();
+
+function toggleForm() {
+  document.body.classList.toggle('activeForm');
+} // Динамические карты блока place
+// function getReview(){
+//     $.ajax({
+//         url:'common/review.json',
+//         type:'get',
+//         dataType:'json',
+//         success:function(json){
+//             let html = '';
+//             json.forEach((item)=>{
+//                 html += `
+//                 <div class="clients__cards">
+//                     <div class="clients__content">
+//                         <div class="clients__review subtitle">
+//                             <p>${item.review}
+//                             </p>
+//                         </div>
+//                         <div class="clients__item">
+//                             <div class="clients__footer">
+//                                 <div class="clients__avatar">
+//                                     <img class="clients__avatar_photo lazy"
+//                                         src="assets/images//${item.author.avatar}" alt="author-pic">
+//                                 </div>
+//                                 <div class="clients__info">
+//                                     <div class="clients__info_author">${item.author.name}</div>
+//                                     <div class="clients__info_occupation">${item.author.occupation}</div>
+//                                 </div>
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+//                 `;
+//             });
+//             $("#review_clients").slick('slickAdd', html);
+//         },
+//         error:function(){
+//             panel.warning("The review don't load!", true);
+//         }
+//     });  
+// }

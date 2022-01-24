@@ -189,9 +189,10 @@
                             </ul>
                         </nav>
                     </div>
-                    <div class="header__button">
+                    <!-- <div class="header__button">
                         <button type="button" class="btn btn-style header__button_orange">Call Back</button>
-                    </div>
+                    </div> -->
+
                     <div class="hamburger_menu">
                         <button class="hamburger hamburger-btn_outer hamburger--spring" type="button">
                             <span class="hamburger-box">
@@ -219,7 +220,6 @@
                             </div>
                         </div>
                         <div class="home__button">
-                            <!-- <button class="home__button_video" type="button">Watch Video</button> -->
                             <a class="home__button_video tube" target="_blank" href="https://youtu.be/GTRQsa3jpXU">Watch
                                 Video</a>
                         </div>
@@ -229,9 +229,9 @@
         </section>
 
         <section class="place" id="place_tourplus">
-            <div class="place__content container">
+            <div class="place__content">
                 <div class="place__wrapper">
-                    <div class="place__header">
+                    <div class="place__header container">
                         <div class="place__text">
                             <div class="place__title title-section">
                                 <h4>POPULAR TOUR PLACE</h4>
@@ -245,38 +245,40 @@
                                 </p>
                             </div>
                         </div>
-                        <div class="place__button">
+                        <!-- <div class="place__button">
                             <button type="button" class="btn btn-style place__btn_orange">View All</button>
-                        </div>
+                        </div> -->
                     </div>
-
-                    <ul class="place__card" id="card_tour">
-                        <!-- <li class="card__item card-first">
-                            <div class="card__image">
-                                <a class="card__image_link" href="#!">
-                                    <img class="card__pic lazy"
-                                        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                        data-src="assets/images/place_one-min.jpg" alt="place_image">
-                                    <div class="card__price">$1299</div>
-                                </a>
-                            </div>
-                            <div class="card__content">
-                                <div class="card__title">
-                                    <h6>NORWAY ROAD TRIP</h6>
-                                </div>
-                                <div class="card__subtitle subtitle">
-                                    <p>Put yourself in the driving seat and see Norway’s stunning scenery
-                                        at your own pace.</p>
-                                </div>
-                                <div class="card__link">
-                                    <a class="card__link_text text_orange" href="#!">START JOURNEY &rarr;
+                    <div class="card__container container">
+                        <ul class="place__card" id="card_tour">
+                            <!-- <li class="card__item card-first">
+                                <div class="card__image">
+                                    <a class="card__image_link" href="#!">
+                                        <img class="card__pic lazy"
+                                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                                            data-src="assets/images/place_one-min.jpg" alt="place_image">
+                                        <div class="card__price">$1299</div>
                                     </a>
                                 </div>
-                            </div>
-                        </li> -->
-                    </ul>
+                                <div class="card__content">
+                                    <div class="card__title">
+                                        <h6>NORWAY ROAD TRIP</h6>
+                                    </div>
+                                    <div class="card__subtitle subtitle">
+                                        <p>Put yourself in the driving seat and see Norway’s stunning scenery
+                                            at your own pace.</p>
+                                    </div>
+                                    <div class="card__link">
+                                        <a class="card__link_text text_orange" href="#!">START JOURNEY &rarr;
+                                        </a>
+                                    </div>
+                                </div>
+                            </li> -->
+                        </ul>
+                    </div>
 
-                    <div class="place__count" id="place_count">
+
+                    <div class="place__count container" id="place_count">
                     </div>
                 </div>
             </div>
@@ -575,8 +577,8 @@
                 </div>
             </div>
             <div class="clients__container container">
-                <div class="clients__column" id="review_clients">
-                    <div class="clients__cards">
+                <ul class="clients__column" id="review_clients">
+                    <li class="clients__cards">
                         <div class="clients__content">
                             <div class="clients__review subtitle">
                                 <p>An excellent tour. Excellent locations, nice quality. Self guided, directions were
@@ -598,9 +600,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </li>
 
-                    <div class="clients__cards">
+                    <li class="clients__cards">
                         <div class="clients__content">
                             <div class="clients__review subtitle">
                                 <p>Our experience with Tour Plus was exceptional. All of our accommodations were
@@ -623,9 +625,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </li>
 
-                    <div class="clients__cards">
+                    <li class="clients__cards">
                         <div class="clients__content">
                             <div class="clients__review subtitle">
                                 <p>The trip was fantastically thought out and felt very personalised to us. We even had
@@ -650,8 +652,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </li>
+                </ul>
             </div>
         </section>
 
@@ -821,9 +823,9 @@
                                 is set up to be memorable. Booking the tour right now!
                             </p>
                         </div>
-                        <div class="booking__button">
+                        <!-- <div class="booking__button">
                             <button type="button" class="booking__btn btn btn-style">Book Now</button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -854,92 +856,95 @@
                             If you have any questions about our packages or services, or want to customise a tour,
                             please do not hesitate to contact us.
                         </div>
-                        <nav class="footer__media">
-                            <ul class="media__items">
-                                <li class="media__links">
-                                    <a class="socil__media facebook-link" rel="nofollow noreferrer" target="_blank"
-                                        href="https://www.facebook.com/">
-                                        <svg class="media__icon">
-                                            <use xlink:href="assets/images/svg/sprite-media_links.svg#icon_facebook">
-                                            </use>
-                                        </svg>
+                    </div>
+
+                    <div class="footer__row">
+                        <div class="footer__service column-second">
+                            <div class="footer__service_title">Service</div>
+                            <ul class="list__service">
+                                <li class="item__service">
+                                    <a href="#about_tourplus" class="item__service_link">About</a>
+                                </li>
+                                <li class="item__service">
+                                    <a href="#support_tourplus" class="item__service_link">Our Service</a>
+                                </li>
+                                <li class="item__service">
+                                    <a href="#!" class="item__service_link">Contact Us</a>
+                                </li>
+                                <li class="item__service">
+                                    <a href="#!" class="item__service_link">Our Blog</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="footer__contacts column-third">
+                            <div class="footer__contacts_title">Contact</div>
+                            <ul class="footer__contacts-column">
+                                <li class="footer__contacts-data">
+                                    <a href="https://www.google.com/maps/place/@24.9092452,91.8641862,17z"
+                                        target="_blank" class="footer__contacts_link"><img
+                                            src="assets/images/svg/contacts-address.svg" alt="pic-address">
+                                        <span>Flat 20, Housing state, Sylhet</span>
                                     </a>
                                 </li>
-                                <li class="media__links">
-                                    <a class="socil__media tvitter-link" rel="nofollow noreferrer" target="_blank"
-                                        href="https://twitter.com/">
-                                        <svg class="media__icon">
-                                            <use xlink:href="assets/images/svg/sprite-media_links.svg#icon_tvitter">
-                                            </use>
-                                        </svg>
+                                <li class="footer__contacts-data">
+                                    <a href="tel:+88017193850" class="footer__contacts_link">
+                                        <img src="assets/images/svg/contacts-phone.svg" alt="pic-phone">
+                                        <span>+880 17193850</span>
                                     </a>
                                 </li>
-                                <li class="media__links">
-                                    <a class="socil__media insta-link" rel="nofollow noreferrer" target="_blank"
-                                        href="https://www.instagram.com/">
-                                        <svg class="media__icon">
-                                            <use xlink:href="assets/images/svg/sprite-media_links.svg#icon_instagram">
-                                            </use>
-                                        </svg>
-                                    </a>
-                                </li>
-                                <li class="media__links">
-                                    <a class="socil__media linkedin-link" rel="nofollow noreferrer" target="_blank"
-                                        href="https://www.youtube.com/">
-                                        <svg class="media__icon">
-                                            <use xlink:href="assets/images/svg/sprite-media_links.svg#icon_youtube">
-                                            </use>
-                                        </svg>
+
+                                <li class="footer__contacts-data">
+                                    <a href="mailto:abmtajulislam97@gmail.com" class="footer__contacts_link">
+                                        <img src="assets/images/svg/contacts-email.svg" alt="pic-mail">
+                                        <span>abmtajulislam97@gmail.com</span>
                                     </a>
                                 </li>
                             </ul>
-                        </nav>
-                    </div>
-
-                    <div class="footer__service column-second">
-                        <div class="footer__service_title">Service</div>
-                        <ul class="list__service">
-                            <li class="item__service">
-                                <a href="#about_tourplus" class="item__service_link">About</a>
-                            </li>
-                            <li class="item__service">
-                                <a href="#support_tourplus" class="item__service_link">Our Service</a>
-                            </li>
-                            <li class="item__service">
-                                <a href="#!" class="item__service_link">Contact Us</a>
-                            </li>
-                            <li class="item__service">
-                                <a href="#!" class="item__service_link">Our Blog</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="footer__contacts column-third">
-                        <div class="footer__contacts_title">Contact</div>
-                        <ul class="footer__contacts-column">
-                            <li class="footer__contacts-data">
-                                <a href="https://www.google.com/maps/place/@24.9092452,91.8641862,17z" target="_blank"
-                                    class="footer__contacts_link"><img src="assets/images/svg/contacts-address.svg"
-                                        alt="pic-address">
-                                    <span>Flat 20, Housing state, Sylhet</span>
-                                </a>
-                            </li>
-                            <li class="footer__contacts-data">
-                                <a href="tel:+88017193850" class="footer__contacts_link">
-                                    <img src="assets/images/svg/contacts-phone.svg" alt="pic-phone">
-                                    <span>+880 17193850</span>
-                                </a>
-                            </li>
-
-                            <li class="footer__contacts-data">
-                                <a href="mailto:abmtajulislam97@gmail.com" class="footer__contacts_link">
-                                    <img src="assets/images/svg/contacts-email.svg" alt="pic-mail">
-                                    <span>abmtajulislam97@gmail.com</span>
-                                </a>
-                            </li>
-                        </ul>
+                        </div>
                     </div>
                 </div>
+
+                <nav class="footer__media">
+                    <ul class="media__items">
+                        <li class="media__links">
+                            <a class="socil__media facebook-link" rel="nofollow noreferrer" target="_blank"
+                                href="https://www.facebook.com/">
+                                <svg class="media__icon">
+                                    <use xlink:href="assets/images/svg/sprite-media_links.svg#icon_facebook">
+                                    </use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="media__links">
+                            <a class="socil__media tvitter-link" rel="nofollow noreferrer" target="_blank"
+                                href="https://twitter.com/">
+                                <svg class="media__icon">
+                                    <use xlink:href="assets/images/svg/sprite-media_links.svg#icon_tvitter">
+                                    </use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="media__links">
+                            <a class="socil__media insta-link" rel="nofollow noreferrer" target="_blank"
+                                href="https://www.instagram.com/">
+                                <svg class="media__icon">
+                                    <use xlink:href="assets/images/svg/sprite-media_links.svg#icon_instagram">
+                                    </use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="media__links">
+                            <a class="socil__media linkedin-link" rel="nofollow noreferrer" target="_blank"
+                                href="https://www.youtube.com/">
+                                <svg class="media__icon">
+                                    <use xlink:href="assets/images/svg/sprite-media_links.svg#icon_youtube">
+                                    </use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
 
             </div>
             <div class="footer__arrow">

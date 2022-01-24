@@ -126,10 +126,14 @@ body {
     left: 0;
     top: 0;
     width: 100%;
-    // height: 100px;
+    height: 100px;
     background-color: rgba(255, 255, 255, .0);
     z-index: 200;
     transition: all .2s ease;
+
+    &__block {
+        height: 100%;
+    }
 
     &__main {
         display: flex;
@@ -140,8 +144,6 @@ body {
     }
 
     &__logo {
-        height: 100%;
-        padding-top: 8px;
 
         a {
             display: flex;
@@ -154,17 +156,12 @@ body {
         }
     }
 
-    &__menu {
-        height: 100%;
-    }
-
-    &__button {
-        padding-top: 8px;
+    &__content {
         height: 100%;
     }
 
     .nav__menu ul {
-        padding-top: 10px;
+        // padding-top: 10px;
         list-style: none;
         display: flex;
 
@@ -191,66 +188,54 @@ body {
             }
 
             &:hover {
-
-                // color: violet;
                 &::after {
                     width: 100%;
                 }
             }
-
-            &:active {
-                color: violet;
-            }
         }
-
-        // .nav__menu_link:active {
-        //     color: violet;
-        // }
     }
 
     &__button_orange {
         width: 110px;
         min-height: 40px;
-        // padding: 5px 15px;
     }
 }
 
-.fixed_header {
-    #header-content {
-        width: 100%;
-        height: 60px;
-        background: linear-gradient(243.43deg, rgb(255, 73, 47, .7) 16%, rgba(68, 65, 65, 0.7) 90%);
-        backdrop-filter: blur(2px);
-        // z-index: 199;
+.header.fixed_header {
+    height: 60px;
+    background: linear-gradient(243.43deg, rgb(255, 73, 47, .7) 16%, rgba(68, 65, 65, 0.7) 90%);
+    backdrop-filter: blur(2px);
+    // z-index: 199;
 
-        .nav__menu ul {
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    .nav__menu ul {
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-            li a {
-                color: #fff;
+        li a {
+            color: #fff;
 
-                &:after {
-                    background-color: #8d2110;
-                }
+            &:after {
+                background-color: #8d2110;
+            }
 
-                &:active {
-                    color: rgb(117, 39, 117);
-                }
+            &:active {
+                color: rgb(117, 39, 117);
             }
         }
     }
 }
 
 .home {
+    .footer__contact {
+        display: none;
+    }
+
     &__bg {
         padding: 250px 0 125px;
         background-position: 50% top;
         background-size: cover;
         background-repeat: no-repeat;
-        // background-color: red;
-        // background-blend-mode: multiply;
         height: 100vh;
         // height: 720px;
     }
@@ -280,9 +265,6 @@ body {
             display: flex;
             justify-content: center;
             align-items: center;
-            // outline: none;
-            // border: none;
-            // background-color: transparent;
             text-decoration: none;
             cursor: pointer;
             font-family: 'Lato';
@@ -290,8 +272,6 @@ body {
             line-height: calc(20/16 * 100%);
             @include fz(16);
             color: #1D1B1B;
-            // width: 150px;
-            // height: 50px;
 
             &::before {
                 content: '';
@@ -331,15 +311,11 @@ body {
     }
 
     &__card {
-        // display: flex;
-        // gap: 30px;
-        // justify-content: space-between;
         padding-bottom: 50px;
         list-style: none;
         margin: 0 -15px;
 
         .card__item {
-            // flex: 0 1 33.333%;
             height: 100%;
             width: 100%;
             list-style: none;
@@ -353,7 +329,6 @@ body {
         }
 
         .card__pic {
-            // border-radius: 20px;
 
             &:hover {
                 transform: scale(1.01);
@@ -372,7 +347,6 @@ body {
             color: #FF492F;
             font-weight: 700;
             line-height: calc(24/16 * 100%);
-            // border-radius: 15px;
         }
 
         .card__title h6 {
@@ -442,15 +416,6 @@ body {
         height: 40px;
         width: 40px;
         transform: rotate(-90deg);
-        // font-size: 28px;
-        // line-height: 28px;
-        // width: 40px;
-        // height: 40px;
-        // content: '‹';
-        // color: #fff;
-        // opacity: 1;
-        // background-color: #FF492F;
-        // border-radius: 50%;
     }
 
     .slick-next:before {
@@ -465,11 +430,11 @@ body {
 
     .slick-prev {
         right: 0px;
-        left: -60px;
+        left: -35px;
     }
 
     .slick-next {
-        right: -40px;
+        right: -15px;
     }
 
     &__count {
@@ -546,10 +511,6 @@ body {
                 &:hover:before {
                     opacity: 1;
                 }
-
-                // &:hover:before {
-                //     opacity: 0.8;
-                // }
             }
         }
 
@@ -747,9 +708,6 @@ body {
     }
 }
 
-// .gallery__page {
-//     padding: 50px 30px;
-// }
 
 .support {
     padding: 128px 0 0;
@@ -856,7 +814,6 @@ body {
     &__text {
         padding-top: 120px;
         padding-bottom: 20px;
-        // text-align: center;
     }
 
     &__title {
@@ -870,6 +827,7 @@ body {
         display: flex;
         gap: 30px;
         padding-bottom: 130px;
+        list-style: none;
     }
 
     &__cards {
@@ -889,7 +847,6 @@ body {
         position: relative;
         height: auto;
 
-        // margin-bottom: 20px;
         p {
             // height: 222px;
             color: #4A4949;
@@ -1011,7 +968,6 @@ body {
 
 .booking {
     &__layer {
-        // height: 435px;
         padding: 80px 0 120px;
         background-position: 50% 20%;
         background-size: cover;
@@ -1074,8 +1030,6 @@ body {
 
         .arrow__content_icon {
             padding: 70px 80px;
-            // width: 170px;
-            // height: 170px;
             background-color: #FF492F;
             display: flex;
             justify-content: center;
@@ -1094,19 +1048,18 @@ body {
         display: flex;
         justify-content: space-between;
         gap: 135px;
-        border-bottom: 1px solid #4A4949;
+        // border-bottom: 1px solid #4A4949;
     }
 
     &__main {
         flex: 0 1 50%;
     }
 
-    &__service {
-        flex: 0 1 18%;
-    }
-
-    &__contacts {
-        flex: 0 1 32%;
+    &__row {
+        flex: 0 1 50%;
+        display: flex;
+        justify-content: space-between;
+        gap: 135px;
     }
 
     &__contacts_link img {
@@ -1160,11 +1113,10 @@ body {
         }
     }
 
-    // eslint-disable-next-line
-
     .media__items {
         list-style: none;
         padding-bottom: 55px;
+        border-bottom: 1px solid #4A4949;
 
         li {
             cursor: pointer;
@@ -1190,9 +1142,9 @@ body {
     position: relative;
 
     button {
-        padding: 15px;
+        padding: 5px;
         position: absolute;
-        top: 0;
+        top: -15px;
         right: 15px
     }
 

@@ -232,19 +232,19 @@ body {
   left: 0;
   top: 0;
   width: 100%;
+  height: 100px;
   background-color: rgba(255, 255, 255, 0);
   z-index: 200;
   transition: all 0.2s ease;
+}
+.header__block {
+  height: 100%;
 }
 .header__main {
   display: flex;
   justify-content: space-between;
   height: 100%;
   align-items: center;
-}
-.header__logo {
-  height: 100%;
-  padding-top: 8px;
 }
 .header__logo a {
   display: flex;
@@ -254,15 +254,10 @@ body {
   display: block;
   padding-top: 10px;
 }
-.header__menu {
-  height: 100%;
-}
-.header__button {
-  padding-top: 8px;
+.header__content {
   height: 100%;
 }
 .header .nav__menu ul {
-  padding-top: 10px;
   list-style: none;
   display: flex;
 }
@@ -288,35 +283,34 @@ body {
 .header .nav__menu ul li a:hover::after {
   width: 100%;
 }
-.header .nav__menu ul li a:active {
-  color: violet;
-}
 .header__button_orange {
   width: 110px;
   min-height: 40px;
 }
 
-.fixed_header #header-content {
-  width: 100%;
+.header.fixed_header {
   height: 60px;
   background: linear-gradient(243.43deg, rgba(255, 73, 47, 0.7) 16%, rgba(68, 65, 65, 0.7) 90%);
   backdrop-filter: blur(2px);
 }
-.fixed_header #header-content .nav__menu ul {
+.header.fixed_header .nav__menu ul {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.fixed_header #header-content .nav__menu ul li a {
+.header.fixed_header .nav__menu ul li a {
   color: #fff;
 }
-.fixed_header #header-content .nav__menu ul li a:after {
+.header.fixed_header .nav__menu ul li a:after {
   background-color: #8d2110;
 }
-.fixed_header #header-content .nav__menu ul li a:active {
+.header.fixed_header .nav__menu ul li a:active {
   color: #752775;
 }
 
+.home .footer__contact {
+  display: none;
+}
 .home__bg {
   padding: 250px 0 125px;
   background-position: 50% top;
@@ -483,10 +477,10 @@ body {
 }
 .place .slick-prev {
   right: 0px;
-  left: -60px;
+  left: -35px;
 }
 .place .slick-next {
-  right: -40px;
+  right: -15px;
 }
 .place__count {
   padding: 43px 0;
@@ -804,6 +798,7 @@ body {
   display: flex;
   gap: 30px;
   padding-bottom: 130px;
+  list-style: none;
 }
 .clients__cards {
   position: relative;
@@ -984,16 +979,15 @@ body {
   display: flex;
   justify-content: space-between;
   gap: 135px;
-  border-bottom: 1px solid #4A4949;
 }
 .footer__main {
   flex: 0 1 50%;
 }
-.footer__service {
-  flex: 0 1 18%;
-}
-.footer__contacts {
-  flex: 0 1 32%;
+.footer__row {
+  flex: 0 1 50%;
+  display: flex;
+  justify-content: space-between;
+  gap: 135px;
 }
 .footer__contacts_link img {
   width: 24px;
@@ -1035,6 +1029,7 @@ body {
 .footer .media__items {
   list-style: none;
   padding-bottom: 55px;
+  border-bottom: 1px solid #4A4949;
 }
 .footer .media__items li {
   cursor: pointer;
@@ -1053,9 +1048,9 @@ body {
   position: relative;
 }
 .hamburger_menu button {
-  padding: 15px;
+  padding: 5px;
   position: absolute;
-  top: 0;
+  top: -15px;
   right: 15px;
 }
 .hamburger_menu a {
