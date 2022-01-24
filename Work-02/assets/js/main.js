@@ -152,7 +152,7 @@ lightGallery(document.querySelector('.my-gallery'), {
     zoom: true,
     actualSize: true,
     animateThumb: true,
-    zoomFromOfigin: true,
+    zoomFromOrigin: true,
     speed: 500,
     licenseKey: 'your_license_key',
 });

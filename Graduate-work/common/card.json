@@ -1,0 +1,56 @@
+[
+    {
+        "pic": {
+            "image":"place_one-min.jpg",
+            "price": "$1299"
+        },
+        "title":"NORWAY ROAD TRIP",
+        "description":"Put yourself in the driving seat and see Norway’s stunning scenery at your own pace.",
+        "link":"START JOURNEY &rarr;"
+    },
+    {
+        "pic": {
+            "image":"place_two-min.jpg",
+            "price": "$1499"
+        },
+        "title":"SUMMER TOURS",
+        "description":"Come explore the incredible natural wonders of Iceland with up to 15% discounts on selected tours.",
+        "link":"START JOURNEY &rarr;"
+    },
+    {
+        "pic": {
+            "image":"place_three-min.jpg",
+            "price": "$1199"
+        },
+        "title":"SWEDEN Mountain TRIP",
+        "description":"Enjoy the freedom to explore Sweden at a pace that suits you.",
+        "link":"START JOURNEY &rarr;"
+    },
+    {
+        "pic": {
+            "image":"place_four-min.jpg",
+            "price": "$1099"
+        },
+        "title":"Sardinia & Corsica",
+        "description":"Feel the charm of those diversified islands surrounded by the Mediterranean sea!",
+        "link":"START JOURNEY &rarr;"
+    },
+    {
+        "pic": {
+            "image":"place_five-min.jpg",
+            "price": "$1899"
+        },
+        "title":"Christmas in Tyrol",
+        "description":"Feel the magic of the Tyrolean Christmas Markets in an Austrian winterwonderland!",
+        "link":"START JOURNEY &rarr;"
+    },
+    {
+        "pic": {
+            "image":"place_six-min.jpg",
+            "price": "$2999"
+        },
+        "title":"Swiss Gourmet Tour",
+        "description":"Switzerland has a lot more to offer than cheese, chocolate and wine! Let us show you!",
+        "link":"START JOURNEY &rarr;"
+    }
+]

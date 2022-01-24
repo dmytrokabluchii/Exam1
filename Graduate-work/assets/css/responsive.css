@@ -38,6 +38,20 @@
     display: block;
   }
 
+  .home__bg {
+    background-position: 70% top;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: multiply;
+  }
+  .home__wrapper {
+    color: #fff;
+    max-width: 60%;
+    overflow: hidden;
+  }
+  .home__button_video {
+    color: #fff;
+  }
+
   .about {
     padding-bottom: 5px;
   }
@@ -115,5 +129,10 @@
   }
   .footer .media__items {
     padding-bottom: 5px;
+  }
+}
+@media screen and (max-width: 750px) {
+  .home__bg {
+    padding: 190px 0 70px;
   }
 }

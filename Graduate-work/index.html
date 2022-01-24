@@ -44,14 +44,17 @@
     <meta property="og:title" content="Tourplus - International Travel Agency">
     <meta property="og:description" content="Your Best Travel Agency">
     <meta property="og:url" content="https://dmytrokabluchii.github.io/Exam1/Graduate-work/index.html">
-    <meta property="og:site_name" content="Monticello">
+    <meta property="og:site_name" content="Tourplus">
     <meta property="og:image"
         content="https://dmytrokabluchii.github.io/Exam1/Graduate-work/assets/images/tour_plus_bg_min.jpg">
     <meta property="og:image:width" content="1260">
     <meta property="og:image:height" content="630">
 
+    <link rel="stylesheet" href="assets/plugins/slick/slick.css">
+    <link rel="stylesheet" href="assets/plugins/slick/slick-theme.css">
     <link rel="stylesheet" href="assets/plugins/lightGallery/lightgallery-bundle.min.css">
     <link rel="stylesheet" href="assets/plugins/panel/panel.min.css">
+    <link rel="stylesheet" href="assets/plugins/videotube/videotube.min.css">
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="stylesheet" href="assets/css/responsive.min.css">
@@ -81,8 +84,9 @@
         <nav class="sidemenu">
             <ul class="sidemenu__list">
                 <li><a href="#place_tourplus">Find a Trip</a></li>
+                <li><a href="#video_tourplus">Video tour</a></li>
                 <li><a href="#about_tourplus">About Us</a></li>
-                <li><a href="#gallery_tourplus">Gallery tour</a></li>
+                <li><a href="#gallery_tourplus">Travel album</a></li>
                 <li><a href="#support_tourplus">Our support</a></li>
                 <li><a href="#team_tourplus">Our team</a></li>
                 <li><a href="#footer_tourplus">Contact Us</a></li>
@@ -157,29 +161,29 @@
                     </div>
                     <div class="header__menu">
                         <nav class="nav__menu" id="main_menu">
-                            <ul class="nav__menu-list">
+                            <ul class="nav__menu-list" id="header__menu_links">
                                 <li class="nav__menu-item">
                                     <a class="nav__menu_link" href="#place_tourplus">Find a Trip
                                     </a>
                                 </li>
                                 <li class="header__menu-item">
-                                    <a class="nav-box__link" href="#about_tourplus">About Us
+                                    <a class="nav__menu_link" href="#video_tourplus">Video tour
                                     </a>
                                 </li>
                                 <li class="header__menu-item">
-                                    <a class="nav-box__link" href="#gallery_tourplus">Gallery tour
+                                    <a class="nav__menu_link" href="#about_tourplus">About Us
                                     </a>
                                 </li>
                                 <li class="header__menu-item">
-                                    <a class="nav-box__link" href="#support_tourplus">Our support
+                                    <a class="nav__menu_link" href="#gallery_tourplus">Travel album
                                     </a>
                                 </li>
                                 <li class="header__menu-item">
-                                    <a class="nav-box__link" href="#team_tourplus">Our team
+                                    <a class="nav__menu_link" href="#support_tourplus">Our support
                                     </a>
                                 </li>
                                 <li class="header__menu-item">
-                                    <a class="nav-box__link" href="#footer_tourplus">Contact Us
+                                    <a class="nav__menu_link" href="#footer_tourplus">Contact Us
                                     </a>
                                 </li>
                             </ul>
@@ -215,18 +219,9 @@
                             </div>
                         </div>
                         <div class="home__button">
-                            <button class="home__button_video" type="button">
-                                <!-- <span> <svg viewbox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <circle cx="20.126" cy="20.6284" r="20" fill="#078E14" />
-                                        <path
-                                            d="M24.3589 19.7904C24.0773 19.18 23.2178 18.7216 21.4989 17.8048C19.9467 16.977 19.1706 16.5631 18.5371 16.6448C17.9843 16.7161 17.4862 17.0149 17.1632 17.4692C16.793 17.9897 16.793 18.8692 16.793 20.6284C16.793 22.3875 16.793 23.2671 17.1632 23.7875C17.4862 24.2418 17.9843 24.5406 18.5371 24.6119C19.1706 24.6936 19.9467 24.2797 21.4989 23.4519C23.2178 22.5351 24.0773 22.0767 24.3589 21.4663C24.6043 20.9346 24.6043 20.3221 24.3589 19.7904Z"
-                                            fill="white" />
-                                    </svg></span>  -->
-                                Watch Video
-                            </button>
-
-                            <!-- <iframe width="560" height="315" src="https://youtu.be/C5q0ULg0nmY?autoplay=1">
-                            </iframe> -->
+                            <!-- <button class="home__button_video" type="button">Watch Video</button> -->
+                            <a class="home__button_video tube" target="_blank" href="https://youtu.be/GTRQsa3jpXU">Watch
+                                Video</a>
                         </div>
                     </div>
                 </div>
@@ -255,14 +250,14 @@
                         </div>
                     </div>
 
-                    <div class="place__card">
-                        <div class="card__item card-first">
+                    <ul class="place__card" id="card_tour">
+                        <!-- <li class="card__item card-first">
                             <div class="card__image">
                                 <a class="card__image_link" href="#!">
                                     <img class="card__pic lazy"
                                         src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
                                         data-src="assets/images/place_one-min.jpg" alt="place_image">
-                                    <div class="card__price">$1599</div>
+                                    <div class="card__price">$1299</div>
                                 </a>
                             </div>
                             <div class="card__content">
@@ -278,71 +273,68 @@
                                     </a>
                                 </div>
                             </div>
-                        </div>
+                        </li> -->
+                    </ul>
 
-                        <div class="card__item card-second">
-                            <div class="card__image">
-                                <a class="card__image_link" href="#!">
-                                    <img class="card__pic lazy"
-                                        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                        data-src="assets/images/place_two-min.jpg" alt="place_image">
-                                    <div class="card__price">$1599</div>
-                                </a>
-                            </div>
-                            <div class="card__content">
-                                <div class="card__title">
-                                    <h6>SUMMER TOURS</h6>
-                                </div>
-                                <div class="card__subtitle subtitle">
-                                    <p>Come explore the incredible natural wonders of Iceland with up to 15% discounts
-                                        on selected tours.</p>
-                                </div>
-                                <div class="card__link">
-                                    <a class="card__link_text text_orange" href="#!">START JOURNEY &rarr;
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="card__item card-third">
-                            <div class="card__image">
-                                <a class="card__image_link" href="#!">
-                                    <img class="card__pic lazy"
-                                        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                        data-src="assets/images/place_three-min.jpg" alt="#!">
-                                    <div class="card__price">$1599</div>
-                                </a>
-                            </div>
-                            <div class="card__content">
-                                <div class="card__title">
-                                    <h6>SWEDEN ROAD TRIP</h6>
-                                </div>
-                                <div class="card__subtitle subtitle">
-                                    <p>Enjoy the freedom to explore Sweden at a pace that suits you.</p>
-                                </div>
-                                <div class="card__link">
-                                    <a class="card__link_text text_orange" href="#!">START JOURNEY &rarr;
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="place__count" id="place_count">
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="place__count">
-                        <div class="count__column">
-                            <div class="count__column_calculation"><span class="count__column_green">3,789</span>+</div>
-                            <div class="count__column_text">HAPPY CUSTOMERS</div>
-                        </div>
-                        <div class="count__column">
-                            <div class="count__column_calculation"><span class="count__column_green">759</span>+</div>
-                            <div class="count__column_text">AMAZING TOURS</div>
-                        </div>
-                        <div class="count__column">
-                            <div class="count__column_calculation"><span class="count__column_green">119</span>+</div>
-                            <div class="count__column_text">TOURS PACKAGE</div>
-                        </div>
+        <section class="video" id="video_tourplus">
+            <div class="video__wrapper container">
+                <div class="video__text">
+                    <div class="video__title title-section">
+                        <h4>Our Travel Video Album</h4>
                     </div>
+                    <div class="video__subtitle subtitle">
+                        <p>Memory in your Gallery</p>
+                    </div>
+                </div>
 
+                <div class="video__gallery" id="video_gallery">
+                    <ul class="video__content">
+                        <li>
+                            <a href="https://youtu.be/eR5PzPNtjoc" class="card__link tube">
+                                <img src="assets/images/video_image/norway-min.jpg" alt="norway">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://youtu.be/lepdqiCF-W8" class="card__link tube">
+                                <img src="assets/images/video_image/greece-min.jpg" alt="greece">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://youtu.be/7Xvqdny-fSI" class="card__link tube">
+                                <img src="assets/images/video_image/island-min.jpg" alt="island">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://youtu.be/ShnKXkgQY2c" class="card__link tube">
+                                <img src="assets/images/video_image/europa-min.jpg" alt="europe">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://youtu.be/R-MvwRoC1qo" class="card__link tube">
+                                <img src="assets/images/video_image/canada-min.jpg" alt="canada">
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://youtu.be/FSjgWT9o0XI" class="card__link tube">
+                                <img src="assets/images/video_image/thailand-min.jpg" alt="thailand">
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="video__button">
+                    <a class="btn btn-style place__btn_orange" target="_blank" href="video.html">View All</a>
                 </div>
             </div>
         </section>
@@ -366,9 +358,6 @@
                                 innovating on new ways to Make Travel Personal, we exist to create life-changing moments
                                 for every guest who travels with any of our 40 award-winning brands.
                             </p>
-                        </div>
-                        <div class="place__button">
-                            <button type="button" class="btn btn-style place__btn_orange">View All</button>
                         </div>
                     </div>
 
@@ -402,48 +391,40 @@
                         <p>Store in your Gallery</p>
                     </div>
                 </div>
-                <div class="gallery__album">
-                    <a class="gallery__link image-first" href="#!">
-                        <img class="gallery__pic lazy"
-                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-src="assets/images/album_one-min.jpg" alt="gallery_image_first">
+                <div class="gallery__album" id="animated-thumbnails-gallery">
+                    <a class="gallery__link image-first" href="assets/images/gallery_image/album_1(b)-min.jpg">
+                        <img class="gallery__pic" src="assets/images/gallery_image/album_1(s)-min.jpg"
+                            alt="gallery_image_first">
                     </a>
-                    <a class="gallery__link image-second" href="#!">
-                        <img class="gallery__pic lazy"
-                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-src="assets/images/album_two-min.jpg" alt="gallery_image_second">
+                    <a class="gallery__link image-second" href="assets/images/gallery_image/album_2(b)-min.jpg">
+                        <img class="gallery__pic" src="assets/images/gallery_image/album_2(s)-min.jpg"
+                            alt="gallery_image_second">
                     </a>
-                    <a class="gallery__link image-third" href="#!">
-                        <img class="gallery__pic lazy"
-                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-src="assets/images/album_three-min.jpg" alt="gallery_image_third">
+                    <a class="gallery__link image-third" href="assets/images/gallery_image/album_3(b)-min.jpg">
+                        <img class="gallery__pic" src="assets/images/gallery_image/album_3(s)-min.jpg"
+                            alt="gallery_image_third">
                     </a>
-                    <a class="gallery__link image-fourth" href="#!">
-                        <img class="gallery__pic lazy"
-                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-src="assets/images/album_four-min.jpg" alt="gallery_image_fourth">
+                    <a class="gallery__link image-fourth" href="assets/images/gallery_image/album_4(b)-min.jpg">
+                        <img class="gallery__pic" src="assets/images/gallery_image/album_4(s)-min.jpg"
+                            alt="gallery_image_fourth">
                     </a>
-                    <a class="gallery__link image-fifth" href="#!">
-                        <img class="gallery__pic lazy"
-                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-src="assets/images/album_five-min.jpg" alt="gallery_image_fifth">
+                    <a class="gallery__link image-fifth" href="assets/images/gallery_image/album_5(b)-min.jpg">
+                        <img class="gallery__pic" src="assets/images/gallery_image/album_5(s)-min.jpg"
+                            alt="gallery_image_fifth">
                     </a>
-                    <a class="gallery__link image-sixth" href="#!">
-                        <img class="gallery__pic lazy"
-                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                            data-src="assets/images/album_six-min.jpg" alt="gallery_image_sixth">
+                    <a class="gallery__link image-sixth" href="assets/images/gallery_image/album_6(b)-min.jpg">
+                        <img class="gallery__pic" src="assets/images/gallery_image/album_6(s)-min.jpg"
+                            alt="gallery_image_sixth">
                     </a>
+                </div>
+                <div class="gallery__button">
+                    <a class="btn btn-style place__btn_orange" target="_blank" href="gallery.html">View All</a>
                 </div>
             </div>
         </section>
 
         <section class="support" id="support_tourplus">
             <div class="support__wrapper">
-                <!-- <div class="support__image">
-                    <img class="support__image_main lazy"
-                        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                        data-src="assets/images/support_pic-min(2).jpg" alt="support_image">
-                </div> -->
                 <div class="support__column container">
                     <div class="support__row row__first">
                         <div class="support__title">
@@ -456,11 +437,6 @@
                                 any incident arises during your tour.
                             </p>
                         </div>
-                        <!-- <div class="support__image">
-                            <img class="support__image_main lazy"
-                                src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                data-src="assets/images/support_pic-min.jpg" alt="support_image">
-                        </div> -->
                     </div>
                     <div class="support__content row__second">
                         <div class="support__image">
@@ -468,13 +444,6 @@
                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
                                 data-src="assets/images/support_pic-min(1).jpg" alt="support_image">
                         </div>
-                        <!-- <div class="support__subtitle subtitle">
-                            <p>Our goal is to provide excellent customer service. To do so, we maintain strict quality
-                                monitoring. If, for any reason, you are unhappy with your tour package, we want to hear
-                                about it right away. We recommend calling our office or emergency helpline as soon as
-                                any incident arises during your tour.
-                            </p>
-                        </div> -->
                         <div class="support__list">
                             <div class="support__item support-personalized">
                                 <div class="support__icon">
@@ -594,7 +563,7 @@
                 </div>
             </div>
             <div class="clients__container container">
-                <div class="clients__column">
+                <div class="clients__column" id="review_clients">
                     <div class="clients__cards">
                         <div class="clients__content">
                             <div class="clients__review subtitle">
@@ -964,7 +933,6 @@
             <div class="footer__arrow">
                 <div class="arrow__content">
                     <a href="#home_tourplus" class="arrow__content_icon">&uarr;</a>
-                    <!-- <div class="arrow__content_icon">&uarr;</div> -->
                 </div>
             </div>
 
@@ -975,11 +943,13 @@
     <script src="assets/js/lazyload.js"></script>
     <script src="assets/plugins/panel/panel.js"></script>
     <script src="assets/js/jquery-3.6.0.min.js"></script>
-    <!-- <script src="assets/plugins/lightGallery/lightgallery.min.js"></script>
+    <script src="assets/plugins/videotube/videotube.min.js"></script>
+    <script src="assets/plugins/slick/slick.min.js"></script>
+    <script src="assets/plugins/lightGallery/lightgallery.min.js"></script>
     <script src="assets/plugins/lightGallery/lg-thumbnail.min.js"></script>
     <script src="assets/plugins/lightGallery/lg-zoom.min.js"></script>
-    <script src="assets/plugins/lightGallery/lg-fullscreen.min.js"></script> -->
-    <!-- <script src="assets/js/axios.min.js"></script> -->
+    <script src="assets/plugins/lightGallery/lg-fullscreen.min.js"></script>
+    <script src="assets/js/axios.min.js"></script>
     <script src="assets/js/main.js"></script>
 
 </body>
