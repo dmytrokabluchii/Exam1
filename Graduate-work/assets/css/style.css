@@ -177,7 +177,7 @@ body {
 .btn-style:hover {
   background-position: 20% 0;
   background-size: 550% 100%;
-  background: linear-gradient(45deg, #55B7FF 16.9%, #7E5AFF 83.27%);
+  background: linear-gradient(45deg, #4fe4e4, #f13c20);
   font-family: "Lato";
   letter-spacing: 0.03em;
   font-weight: 500;
@@ -1103,6 +1103,7 @@ body {
   text-transform: uppercase;
   width: 100%;
   color: #fff;
+  letter-spacing: 0.1em;
 }
 .mobile_menu_wrap .mobile__logo {
   padding: 20px 10px 20px;

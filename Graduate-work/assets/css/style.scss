@@ -68,7 +68,7 @@ body {
     &:hover {
         background-position: 20% 0;
         background-size: 550% 100%;
-        background: linear-gradient(45deg, #55B7FF 16.9%, #7E5AFF 83.27%);
+        background: linear-gradient(45deg, rgb(79, 228, 228), rgb(241, 60, 32));
         font-family: 'Lato';
         letter-spacing: 0.03em;
         font-weight: 500;
@@ -1244,6 +1244,7 @@ body {
                 text-transform: uppercase;
                 width: 100%;
                 color: #fff;
+                letter-spacing: 0.1em;
             }
         }
     }
