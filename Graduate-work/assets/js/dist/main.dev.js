@@ -1,6 +1,10 @@
 "use strict";
 
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
 $(function () {
+  var _$$slick;
+
   // Fix Header Scroll
   $(window).on('scroll', function () {
     if ($(window).scrollTop() > 0) {
@@ -40,21 +44,27 @@ $(function () {
   }); // Slick-slider Place
 
   getCard();
-  $('#card_tour').slick({
+  $('#card_tour').slick((_$$slick = {
     infinite: true,
     speed: 900,
     dots: true,
     slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [{
-      breakpoint: 840,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 1,
-        arrows: false
-      }
-    }]
-  }); // Slick-slider review
+    slidesToScroll: 3
+  }, _defineProperty(_$$slick, "infinite", true), _defineProperty(_$$slick, "responsive", [{
+    breakpoint: 999,
+    settings: {
+      slidesToShow: 2,
+      slidesToScroll: 2,
+      arrows: false
+    }
+  }, {
+    breakpoint: 540,
+    settings: {
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false
+    }
+  }]), _$$slick)); // Slick-slider review
 
   /* getReview();
   $('#review_clients').slick({
@@ -124,11 +134,11 @@ function getCount() {
   });
 }
 
-getCount();
-
-function toggleForm() {
-  document.body.classList.toggle('activeForm');
-} // Динамические карты блока place
+getCount(); // Модальное окно
+// function toggleForm() {
+//     document.body.classList.toggle('activeForm');
+// }
+// Динамические карты блока clients
 // function getReview(){
 //     $.ajax({
 //         url:'common/review.json',

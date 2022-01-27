@@ -43,12 +43,21 @@ $(function(){
         speed: 900,
         dots: true,
         slidesToShow: 3, 
-        slidesToScroll: 1,
+        slidesToScroll: 3,
+        infinite: true,
         responsive: [
             {
-                breakpoint: 840,
+                breakpoint: 999,
                 settings: {
                     slidesToShow: 2,
+                    slidesToScroll: 2,
+                    arrows: false,
+                }
+            },
+            {
+                breakpoint: 540,
+                settings: {
+                    slidesToShow: 1,
                     slidesToScroll: 1,
                     arrows: false,
                 }
@@ -157,13 +166,13 @@ function getCount(){
 }
 getCount();
 
+// Модальное окно
+// function toggleForm() {
+//     document.body.classList.toggle('activeForm');
+// }
 
-function toggleForm() {
-    document.body.classList.toggle('activeForm');
-}
 
-
-// Динамические карты блока place
+// Динамические карты блока clients
 // function getReview(){
 //     $.ajax({
 //         url:'common/review.json',

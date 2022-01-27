@@ -132,6 +132,9 @@
                 </li>
             </ul>
         </nav>
+        <div class="mobile__button">
+            <button type="button" class="mobile__btn btn btn-style">Call Back</button>
+        </div>
     </div>
     <div class="page_overlay"></div>
 
@@ -189,9 +192,9 @@
                             </ul>
                         </nav>
                     </div>
-                    <!-- <div class="header__button">
+                    <div class="header__button">
                         <button type="button" class="btn btn-style header__button_orange">Call Back</button>
-                    </div> -->
+                    </div>
 
                     <div class="hamburger_menu">
                         <button class="hamburger hamburger-btn_outer hamburger--spring" type="button">
@@ -231,53 +234,28 @@
         <section class="place" id="place_tourplus">
             <div class="place__content">
                 <div class="place__wrapper">
-                    <div class="place__header container">
-                        <div class="place__text">
+                    <div class="place__row container">
+                        <div class="place__header">
                             <div class="place__title title-section">
                                 <h4>POPULAR TOUR PLACE</h4>
                             </div>
-                            <div class="place__subtitle subtitle">
-                                <p>Tourplus offers many itineraries throughout different countries on six different
-                                    continents. Their eclectic, handcrafted trips are extremely popular across
-                                    the travel market. Tourplus caters not only to high-end clients who desire
-                                    tailor-made, luxurious trips but also to young adults and single travelers
-                                    who want to travel to remote areas.
-                                </p>
+                            <div class="place__button">
+                                <button type="button" class="btn btn-style place__btn_orange">View All</button>
                             </div>
                         </div>
-                        <!-- <div class="place__button">
-                            <button type="button" class="btn btn-style place__btn_orange">View All</button>
-                        </div> -->
+                        <div class="place__subtitle subtitle">
+                            <p>Tourplus offers many itineraries throughout different countries on six different
+                                continents. Their eclectic, handcrafted trips are extremely popular across
+                                the travel market. Tourplus caters not only to high-end clients who desire
+                                tailor-made, luxurious trips but also to young adults and single travelers
+                                who want to travel to remote areas.
+                            </p>
+                        </div>
                     </div>
                     <div class="card__container container">
                         <ul class="place__card" id="card_tour">
-                            <!-- <li class="card__item card-first">
-                                <div class="card__image">
-                                    <a class="card__image_link" href="#!">
-                                        <img class="card__pic lazy"
-                                            src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                            data-src="assets/images/place_one-min.jpg" alt="place_image">
-                                        <div class="card__price">$1299</div>
-                                    </a>
-                                </div>
-                                <div class="card__content">
-                                    <div class="card__title">
-                                        <h6>NORWAY ROAD TRIP</h6>
-                                    </div>
-                                    <div class="card__subtitle subtitle">
-                                        <p>Put yourself in the driving seat and see Norway’s stunning scenery
-                                            at your own pace.</p>
-                                    </div>
-                                    <div class="card__link">
-                                        <a class="card__link_text text_orange" href="#!">START JOURNEY &rarr;
-                                        </a>
-                                    </div>
-                                </div>
-                            </li> -->
                         </ul>
                     </div>
-
-
                     <div class="place__count container" id="place_count">
                     </div>
                 </div>
@@ -348,7 +326,7 @@
 
                 </div>
                 <div class="video__button">
-                    <a class="btn btn-style place__btn_orange" target="_blank" href="video.html">View All</a>
+                    <a class="btn btn-style place__btn_orange" href="video.html">View All</a>
                 </div>
             </div>
         </section>
@@ -432,7 +410,7 @@
                     </a>
                 </div>
                 <div class="gallery__button">
-                    <a class="btn btn-style place__btn_orange" target="_blank" href="gallery.html">View All</a>
+                    <a class="btn btn-style place__btn_orange" href="gallery.html">View All</a>
                 </div>
             </div>
         </section>
@@ -670,7 +648,7 @@
                                     src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
                                     data-src="assets/images/team-senior_editor-min.jpg" alt="senior_editor_image">
                                 <div class="team__text">
-                                    <div class="team__title title-section">
+                                    <div class="team__name">
                                         <h6>ASTRID TARAN</h6>
                                     </div>
                                     <div class="team__occupation subtitle">Senior Editor</div>
@@ -689,14 +667,15 @@
                                     data-src="assets/images/team-editorial_director-min.jpg"
                                     alt="editorial_director_image">
                                 <div class="team__text">
-                                    <div class="team__title title-section">
+                                    <div class="team__name">
                                         <h6>ALEX ZENG</h6>
                                     </div>
                                     <div class="team__occupation subtitle">Editorial Director</div>
                                     <div class="team__subtitle">
                                         <p>He joined the company in 2017 as an editor for Tourplus and has nearly a
                                             decade of experience writing and editing for
-                                            print and digital publications.</p>
+                                            print and digital publications.
+                                        </p>
                                     </div>
                                 </div>
                             </a>
@@ -708,14 +687,13 @@
                                     data-src="assets/images/team-senior_editorial_director-min.jpg"
                                     alt="editorial_director_image">
                                 <div class="team__text">
-                                    <div class="team__title title-section">
+                                    <div class="team__name">
                                         <h6>LAURA RATLIFF</h6>
                                     </div>
                                     <div class="team__occupation subtitle">Senior Editorial Director</div>
                                     <div class="team__subtitle">
                                         <p>She joined the Tourplus team in 2016 after spending two years as a freelance
-                                            travel
-                                            writer and editor.</p>
+                                            travel writer and editor.</p>
                                     </div>
                                 </div>
                             </a>
@@ -726,7 +704,7 @@
                                     src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
                                     data-src="assets/images/team-guide-min.jpg" alt="guide_image">
                                 <div class="team__text">
-                                    <div class="team__title title-section">
+                                    <div class="team__name">
                                         <h6>DON ROBINSON</h6>
                                     </div>
                                     <div class="team__occupation subtitle">Guide</div>
@@ -742,13 +720,14 @@
                                     src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
                                     data-src="assets/images/team-associate_editor-min.jpg" alt="associate_editor_image">
                                 <div class="team__text">
-                                    <div class="team__title title-section">
+                                    <div class="team__name">
                                         <h6>SHERRI GARDNER</h6>
                                     </div>
                                     <div class="team__occupation subtitle">Associate Editor</div>
                                     <div class="team__subtitle">
                                         <p>She joined the team in May 2018. She previously
-                                            worked at The Kitchn and has written for The Wall Street Journal.</p>
+                                            worked at The Kitchn and has written for The Wall Street Journal.
+                                        </p>
                                     </div>
                                 </div>
                             </a>
@@ -759,7 +738,7 @@
                                     src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
                                     data-src="assets/images/team-manager_first-min.jpg" alt="team-manager_image">
                                 <div class="team__text">
-                                    <div class="team__title title-section">
+                                    <div class="team__name">
                                         <h6>Artyr Berg</h6>
                                     </div>
                                     <div class="team__occupation subtitle">Travel Manager</div>
@@ -776,7 +755,7 @@
                                     src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
                                     data-src="assets/images/team-manager_second-min.jpg" alt="team-manager_image">
                                 <div class="team__text">
-                                    <div class="team__title title-section">
+                                    <div class="team__name">
                                         <h6>TIM CAGE</h6>
                                     </div>
                                     <div class="team__occupation subtitle">Travel Manager</div>
@@ -793,7 +772,7 @@
                                     src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
                                     data-src="assets/images/team-visual_editor-min.jpg" alt="visual_editor_image">
                                 <div class="team__text">
-                                    <div class="team__title title-section">
+                                    <div class="team__name">
                                         <h6>ALEXIA MILANO</h6>
                                     </div>
                                     <div class="team__occupation subtitle">Visual Editor</div>
@@ -823,9 +802,9 @@
                                 is set up to be memorable. Booking the tour right now!
                             </p>
                         </div>
-                        <!-- <div class="booking__button">
+                        <div class="booking__button">
                             <button type="button" class="booking__btn btn btn-style">Book Now</button>
-                        </div> -->
+                        </div>
                     </div>
                 </div>
             </div>
@@ -897,7 +876,7 @@
                                 <li class="footer__contacts-data">
                                     <a href="mailto:abmtajulislam97@gmail.com" class="footer__contacts_link">
                                         <img src="assets/images/svg/contacts-email.svg" alt="pic-mail">
-                                        <span>abmtajulislam97@gmail.com</span>
+                                        <span>dim84848484@gmail.com</span>
                                     </a>
                                 </li>
                             </ul>

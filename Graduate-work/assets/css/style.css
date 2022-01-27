@@ -222,7 +222,8 @@ body {
   font-size: 40px;
 }
 
-.media__links a svg:hover {
+.media__links a svg:hover,
+.mobile__media_links:hover {
   transform: scale(1.2);
   transition: all 0.3s ease-in-out;
 }
@@ -307,12 +308,21 @@ body {
 .header.fixed_header .nav__menu ul li a:active {
   color: #752775;
 }
-
-.home .footer__contact {
-  display: none;
+.header.fixed_header .header__button_orange {
+  background: linear-gradient(135deg, #4c4c4c, black);
+  background-color: transparent;
+  box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.23);
+  color: #fff;
+  opacity: 0.8;
 }
+.header.fixed_header .header__button_orange:hover {
+  background: #fff;
+  transform: translateY(0px);
+  color: #000;
+}
+
 .home__bg {
-  padding: 250px 0 125px;
+  padding: 250px 0 0;
   background-position: 50% top;
   background-size: cover;
   background-repeat: no-repeat;
@@ -362,18 +372,17 @@ body {
   font-family: "Lato";
 }
 .place__header {
-  padding-bottom: 40px;
+  padding-bottom: 20px;
   display: flex;
   justify-content: space-between;
-}
-.place__text {
-  width: 60%;
+  gap: 20px;
 }
 .place__title h4 {
   font-size: 2rem;
-  padding-bottom: 20px;
 }
-.place__subtitle p {
+.place__subtitle {
+  width: 60%;
+  padding-bottom: 40px;
   color: #4A4949;
 }
 .place__card {
@@ -414,8 +423,26 @@ body {
   padding-bottom: 20px;
   text-transform: uppercase;
 }
-.place__card .card__subtitle {
+.place__card .card__subtitle p {
   padding-bottom: 20px;
+  position: relative;
+  height: 110px;
+  overflow: hidden;
+}
+.place__card .card__subtitle p:after {
+  content: "";
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 1.2em;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), white 100%);
+  pointer-events: none;
+}
+.place__card .card__link {
+  position: absolute;
+  bottom: 0;
 }
 .place__card .card__link a {
   text-decoration: none;
@@ -424,7 +451,7 @@ body {
   width: 0%;
   display: flex;
   bottom: 0;
-  left: 44%;
+  left: 50%;
 }
 .place .slick-dots li {
   margin-right: 15px;
@@ -522,7 +549,6 @@ body {
   list-style: none;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
   gap: 30px;
   padding-bottom: 50px;
 }
@@ -885,7 +911,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background: transparent #000;
+  background: rgba(16, 100, 174, 0.9);
   opacity: 0.6;
   z-index: 10;
 }
@@ -901,7 +927,14 @@ body {
   top: 20%;
   transition: all 0.3s ease-out;
   z-index: 20;
-  padding: 10px 25px;
+  padding: 10px 20px;
+}
+.team__name {
+  font-family: "Lato";
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: calc(46/32 * 100%);
+  padding-bottom: 20px;
 }
 .team__occupation {
   padding-bottom: 20px;
@@ -1134,6 +1167,23 @@ body {
 .mobile_menu_wrap .mobile__media li a svg {
   width: 50px;
   height: 50px;
+}
+.mobile_menu_wrap .mobile__button {
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.mobile_menu_wrap .mobile__button button {
+  background: linear-gradient(135deg, #4c4c4c, black);
+  border: 2px solid #fff;
+  color: #fff;
+}
+.mobile_menu_wrap .mobile__button button:hover {
+  background: #fff;
+  border: 2px solid #FF492F;
+  transform: translateY(0px);
+  color: #000;
 }
 
 .open .page_overlay {

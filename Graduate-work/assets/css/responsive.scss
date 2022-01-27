@@ -4,24 +4,50 @@ $base_size:16;
     font-size: ($px_size/$base_size)+rem;
 }
 
+
+@media screen and (max-width:1240px) {
+    .home {
+        &__bg {
+            padding: 200px 0 0;
+        }
+
+        &__wrapper {
+            max-width: 46%;
+        }
+
+        &__title h2 {
+            @include fz(53);
+            // font-size: calc(40px + 22 * ((100vw - 320px) / (1240 - 320)));
+        }
+    }
+
+    .team {
+        &__text {
+            top: 5%;
+            padding: 10px 10px;
+        }
+
+        &__name {
+            @include fz(28);
+            line-height: calc(32/28 * 100%);
+        }
+
+        &__occupation {
+            padding-bottom: 10px;
+        }
+    }
+}
+
 @media screen and (max-width:1180px) {
     .home {
         &__bg {
             background-position: 50% right;
         }
-
-        &__wrapper {
-            max-width: 45%;
-        }
-
-        &__title h2 {
-            @include fz(55);
-        }
     }
 
     .place {
         .slick-dots {
-            left: 41%;
+            left: 48%;
         }
     }
 
@@ -43,7 +69,6 @@ $base_size:16;
 
         &__list {
             gap: 50px;
-            padding-bottom: 80px;
         }
     }
 
@@ -74,7 +99,7 @@ $base_size:16;
 
     .home {
         &__bg {
-            padding: 110px 0 70px;
+            padding: 190px 0 70px;
             background-position: 70% top;
             background-color: rgb(0, 0, 0, .4);
             background-blend-mode: multiply;
@@ -82,13 +107,8 @@ $base_size:16;
 
         &__wrapper {
             color: #fff;
-            max-width: 90%;
+            max-width: 100%;
             overflow: hidden;
-        }
-
-        &__title h2 {
-            @include fz(50);
-            // font-size: calc(44px + 24 * ((100vw - 320px) / (999 - 320)));
         }
 
         &__button_video {
@@ -121,12 +141,21 @@ $base_size:16;
     .place {
         padding: 80px 0 70px;
 
+        &__subtitle {
+            width: 100%;
+            padding-bottom: 30px;
+        }
+
         .card__container {
-            width: 85%;
+            width: 90%;
         }
 
         &__card {
             padding-bottom: 80px;
+        }
+
+        .slick-dots {
+            left: 46%;
         }
 
         .card__price {
@@ -153,7 +182,17 @@ $base_size:16;
         .row__first {
             flex-direction: column;
             gap: 30px;
-            padding-bottom: 60px;
+            padding-bottom: 40px;
+        }
+
+        .row__second {
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        &__list {
+            gap: 30px;
+            padding-bottom: 70px;
         }
 
         &__title {
@@ -163,10 +202,6 @@ $base_size:16;
 
         &__subtitle {
             flex: 0 1 auto;
-        }
-
-        .row__second {
-            flex-direction: column;
         }
 
         &__image {
@@ -201,6 +236,26 @@ $base_size:16;
 
         &__content {
             padding: 75px 25px 110px;
+        }
+    }
+
+    .team {
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__text {
+            top: 20%;
+            padding: 10px 15px;
+        }
+
+        &__name {
+            @include fz(34);
+            line-height: calc(40/34 * 100%);
+        }
+
+        &__occupation {
+            padding-bottom: 20px;
         }
     }
 
@@ -267,47 +322,34 @@ $base_size:16;
     }
 }
 
-@media screen and (max-width:840px) {
-    // .place {
-    //     padding: 70px 0 60px;
 
-    //     .card__container {
-    //         width: 90%;
-    //     }
+@media screen and (max-width:768px) {
+    .home {
+        &__bg {
+            padding: 140px 0 60px;
+        }
 
-    //     &__text {
-    //         width: 65%;
-    //     }
-
-    //     &__card {
-    //         padding-bottom: 60px;
-    //     }
-
-    //     &__title h4 {
-    //         @include fz(28);
-    //         padding-bottom: 15px;
-    //     }
-    // }
-}
-
-
-
-@media screen and (max-width:767px) {
+        &__title h2 {
+            @include fz(44);
+        }
+    }
 
     .place {
+        padding: 60px 0 30px;
 
         &__title h4 {
             @include fz(28);
             padding-bottom: 15px;
         }
 
+        .slick-dots {
+            left: 44%;
+        }
+
         &__count {
             gap: 50px;
 
             .count__column {
-                flex: 0 1 33.333%;
-                text-align: center;
-
                 &_calculation {
                     @include fz(46);
                     line-height: 146%;
@@ -319,18 +361,426 @@ $base_size:16;
                 }
             }
         }
+    }
 
+    .video {
+        padding: 10px 0 70px;
+
+        &__content {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            padding-bottom: 40px;
+        }
+    }
+
+    .about {
+        &__left_question {
+            padding: 0 0 20px 100px;
+        }
+
+        &__column {
+            gap: 30px;
+        }
+
+        &__subtitle {
+            color: #4A4949;
+            padding-bottom: 20px;
+        }
+
+        &__gallery {
+            gap: 20px;
+        }
+    }
+
+    .gallery {
+        padding: 60px 0 40px;
+
+        &__album {
+            padding-bottom: 40px;
+            gap: 20px;
+        }
+    }
+
+    .booking {
+        &__layer {
+            padding: 60px 0 50px;
+        }
+
+        &__title {
+            @include fz(34);
+            line-height: calc(40/34 * 100%);
+        }
+
+        &__subtitle {
+            padding-bottom: 30px;
+        }
+    }
+
+    .footer {
+        &__arrow {
+            margin-top: -65px;
+
+            .arrow__content_icon {
+                padding: 45px 50px;
+                @include fz(35);
+            }
+        }
+    }
+}
+
+@media screen and (max-width:650px) {
+
+    .place {
+        &__subtitle {
+            padding-bottom: 20px;
+        }
+
+        .slick-dots {
+            left: 42%;
+        }
+    }
+
+    .support {
+        padding: 50px 0 0;
+
+        .row__first {
+            gap: 20px;
+            padding-bottom: 20px;
+        }
+
+        &__title {
+
+            h4 {
+                @include fz(28);
+                line-height: calc(32/28 * 100%);
+            }
+        }
+
+        .row__second {
+            gap: 20px;
+        }
+
+        &__list {
+            gap: 25px;
+            padding-bottom: 50px;
+        }
+
+        &__icon {
+            svg {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+
+    .clients {
+        &__layer {
+            height: auto;
+        }
+
+        &__text {
+            padding-top: 50px;
+            padding-bottom: 10px;
+        }
+
+        &__title {
+            @include fz(38);
+            line-height: calc(46/38 * 100%);
+            padding-bottom: 20px;
+        }
+    }
+
+    .team {
+        padding-bottom: 70px;
+
+        .container {
+            width: 100%;
+        }
+
+        &__text {
+            top: 5%;
+            padding: 10px 10px;
+        }
+
+        &__name {
+            @include fz(32);
+            line-height: calc(36/32 * 100%);
+        }
+
+        &__occupation {
+            padding-bottom: 15px;
+        }
     }
 }
 
 
-@media screen and (max-width:750px) {
-    .home {
-        &__bg {
-            padding: 190px 0 70px;
-            // background-position: 70% top;
+@media screen and (max-width:580px) {
+    .place {
+        padding: 50px 0 40px;
+
+        &__header {
+            padding-bottom: 5px;
         }
 
+        &__subtitle {
+            padding-bottom: 15px;
+        }
+
+        &__count {
+            gap: 30px;
+        }
+
+        .count__column {
+
+            &_calculation {
+                @include fz(38);
+                line-height: 138%;
+            }
+
+            &_text {
+                @include fz(23);
+            }
+        }
+    }
+
+    .gallery {
+        padding: 50px 0 40px;
+
+        &__album {
+            grid-template-areas:
+                "image-first image-second"
+                "image-first image-third"
+                "image-fourth image-third"
+                "image-fifth image-sixth"
+                "image-fifth image-sixth";
+        }
+    }
+}
+
+@media screen and (max-width:540px) {
+    .place {
+        .slick-dots {
+            left: 35%;
+        }
+
+        .card__price {
+            bottom: 40px;
+            right: 20px;
+            padding: 24px 11px;
+        }
+
+        &__count {
+            gap: 15px;
+        }
+
+        .count__column {
+            &_calculation {
+                @include fz(36);
+                line-height: 136%;
+            }
+
+            &_text {
+                @include fz(20);
+            }
+        }
+    }
+
+    .support {
+        &__list {
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+
+    .booking {
+        &__layer {
+            padding: 30px 0 40px;
+            background-position: 30% 20%;
+        }
+
+        &__title {
+            text-align: center;
+            @include fz(32);
+            line-height: calc(38/32 * 100%);
+        }
+    }
+}
+
+
+@media screen and (max-width:460px) {
+    .video {
+        padding: 0px 0 60px;
+
+        &__content {
+            grid-template-columns: repeat(1, 1fr);
+            gap: 20px;
+        }
+    }
+
+    .footer {
+        &__arrow {
+            margin-top: -45px;
+
+            .arrow__content_icon {
+                padding: 25px 30px;
+                @include fz(30);
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:420px) {
+    .place {
+        padding: 50px 0 20px;
+
+        .slick-dots {
+            left: 30%;
+        }
+
+        &__count {
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .count__column {
+            &_calculation {
+                @include fz(44);
+                line-height: 144%;
+            }
+
+            &_text {
+                @include fz(24);
+            }
+        }
+    }
+
+    .about {
+        &__gallery {
+            gap: 15px;
+        }
+    }
+
+    .gallery {
+        &__album {
+            gap: 15px;
+        }
+    }
+
+    .team {
+        padding-bottom: 50px;
+
+        &__text {
+            top: 0%;
+            padding: 5px 5px;
+        }
+
+        &__name {
+            @include fz(24);
+            line-height: calc(26/24 * 100%);
+            padding-bottom: 0px;
+        }
+
+        &__occupation {
+            padding-bottom: 5px;
+        }
+
+        &__subtitle p {
+            @include fz(12);
+            line-height: calc(16/12 * 100%);
+        }
+    }
+
+    .footer {
+        &__logo {
+            a {
+                padding-bottom: 20px;
+            }
+        }
+
+        &__text {
+            padding-bottom: 0px;
+        }
+
+        &__row {
+            flex-direction: column;
+        }
+
+        &__service_title,
+        &__contacts_title {
+            @include fz(28);
+            line-height: calc(32/28 * 100%);
+        }
+    }
+}
+
+
+@media screen and (max-width:380px) {
+    .home {
+        &__bg {
+            padding: 120px 0 50px;
+        }
+
+        &__title h2 {
+            @include fz(40);
+        }
+    }
+
+    .about {
+        &__title {
+            h3 {
+                @include fz(40);
+            }
+        }
+    }
+
+    .clients {
+        &__title {
+            @include fz(30);
+            line-height: calc(36/30 * 100%);
+        }
+    }
+
+    .support {
+        &__title {
+            h4 {
+                @include fz(28);
+                line-height: calc(32/28 * 100%);
+            }
+        }
+    }
+
+    .footer {
+        &__row {
+            padding-bottom: 20px;
+        }
+
+        .media__items {
+            padding-bottom: 50px;
+
+            li {
+                +li {
+                    padding-left: 10px;
+                }
+            }
+        }
+
+        &__arrow {
+            margin-top: -40px;
+
+            .arrow__content_icon {
+                padding: 20px 25px;
+                @include fz(30);
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:340px) {
+    .place {
+        .slick-dots {
+            left: 25%;
+        }
     }
 }
 
