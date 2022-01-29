@@ -54,15 +54,15 @@ $(function () {
     breakpoint: 999,
     settings: {
       slidesToShow: 2,
-      slidesToScroll: 2,
-      arrows: false
+      slidesToScroll: 2 // arrows: false,
+
     }
   }, {
-    breakpoint: 540,
+    breakpoint: 600,
     settings: {
       slidesToShow: 1,
-      slidesToScroll: 1,
-      arrows: false
+      slidesToScroll: 1 // arrows: false,
+
     }
   }]), _$$slick)); // Slick-slider review
 
