@@ -303,6 +303,18 @@
   .booking__subtitle {
     padding-bottom: 30px;
   }
+  .booking__modal .modal__content {
+    max-width: 400px;
+    padding: 20px;
+  }
+  .booking__modal .modal__title h5 {
+    font-size: 2.375rem;
+    line-height: calc(46/38 * 100%);
+    letter-spacing: 0.03em;
+  }
+  .booking__modal .modal__form .form-row {
+    padding-bottom: 15px;
+  }
 
   .footer__arrow {
     margin-top: -65px;
@@ -461,12 +473,48 @@
   }
 }
 @media screen and (max-width: 460px) {
+  .modal__callback .callback__content {
+    max-width: 280px;
+    padding: 20px;
+  }
+
   .video {
     padding: 0px 0 60px;
   }
   .video__content {
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
+  }
+
+  .booking__modal .modal__content {
+    max-width: 290px;
+    padding: 15px;
+  }
+  .booking__modal .modal__close_btn {
+    top: 2px;
+    right: 7px;
+    width: 15px;
+    height: 15px;
+  }
+  .booking__modal .modal__close_btn:before {
+    width: 22px;
+    top: 11px;
+    left: -4px;
+  }
+  .booking__modal .modal__close_btn:after {
+    content: "";
+    width: 22px;
+    top: 11px;
+    transform: rotate(45deg);
+    left: -4px;
+  }
+  .booking__modal .modal__title h5 {
+    font-size: 2rem;
+    line-height: calc(40/32 * 100%);
+    padding-bottom: 10px;
+  }
+  .booking__modal .modal__form .form-row {
+    padding-bottom: 10px;
   }
 
   .footer__arrow {
@@ -647,6 +695,43 @@
   }
   .home__subtitle p {
     padding-bottom: 40px;
+  }
+
+  .booking__modal .modal__content {
+    max-width: 330px;
+    padding: 10px 15px;
+  }
+  .booking__modal .modal__close_btn {
+    top: 2px;
+    right: 7px;
+    width: 15px;
+    height: 15px;
+  }
+  .booking__modal .modal__close_btn:before {
+    width: 22px;
+    top: 11px;
+    left: -4px;
+  }
+  .booking__modal .modal__close_btn:after {
+    content: "";
+    width: 22px;
+    top: 11px;
+    transform: rotate(45deg);
+    left: -4px;
+  }
+  .booking__modal .modal__title h5 {
+    font-size: 1.875rem;
+    line-height: calc(36/30 * 100%);
+    padding-bottom: 5px;
+  }
+  .booking__modal .modal__form .form-row {
+    padding-bottom: 7px;
+  }
+  .booking__modal .modal__form label, .booking__modal .modal__form input {
+    height: 1.5rem;
+  }
+  .booking__modal .modal__btn {
+    padding: 7px 12px;
   }
 }
 @media screen and (max-height: 450px) {

@@ -105,7 +105,7 @@ $(function () {
     marker.on('click', function () {
       document.getElementById('to_google').click();
     });
-  }); // Telegram BOT
+  }); // Отправка формы на Telegram BOT
 
   $("#my_form").on('submit', function (e) {
     e.preventDefault();

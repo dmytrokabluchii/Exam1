@@ -50,10 +50,11 @@
     <meta property="og:image:width" content="1260">
     <meta property="og:image:height" content="630">
 
+
     <link rel="stylesheet" href="assets/plugins/slick/slick.css">
     <link rel="stylesheet" href="assets/plugins/slick/slick-theme.css">
     <link rel="stylesheet" href="assets/plugins/lightGallery/lightgallery-bundle.min.css">
-    <link rel="stylesheet" href="assets/plugins/panel/panel.min.css">
+    <link rel="stylesheet" href="assets/plugins/sweetalert2/sweetalert2.min.css">
     <link rel="stylesheet" href="assets/plugins/videotube/videotube.min.css">
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
@@ -134,7 +135,8 @@
                 </ul>
             </nav>
             <div class="mobile__button">
-                <button type="button" class="mobile__btn btn btn-style">Call Back</button>
+                <button type="button" class="mobile__btn callback__btn btn btn-style">
+                    Call Back</button>
             </div>
         </div>
 
@@ -196,7 +198,8 @@
                         </nav>
                     </div>
                     <div class="header__button">
-                        <button type="button" class="btn btn-style header__button_orange">Call Back</button>
+                        <button type="button" class="callback__btn btn btn-style header__button_orange" id="header_callback-btn">
+                        Call Back</button>
                     </div>
 
                     <div class="hamburger_menu">
@@ -212,6 +215,29 @@
     </header>
 
     <main class="main">
+        <div class="modal__callback">
+            <div class="callback__field">
+                <div class="callback__content">
+                    <div class="callback__close_btn"></div>
+                    <div class="callback__title">
+                        Enter your name and telephone number and our operator contact with you!
+                    </div>
+                    <form class="callback__form" id="my_callback-form" method="get">    
+                        <div class="callback__name">
+                            <input class="callback__names" type="text" name="callback_name"
+                                id="callback_name" placeholder="Name" required>
+                        </div>                 
+                        <div class="callback__phone">
+                            <input class="callback__telephone" type="tel" name="callback_phone" 
+                            id="callback_phone" placeholder="Phone" required>
+                        </div>
+                        <div class="callback__button">
+                            <button class="callback__btn btn" type="submit">SUBMIT</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
         <section class="home" id="home_tourplus">
             <div class="home__bg lazy-bg" data-src="assets/images/landing_page-min.jpg">
                 <div class="home__container container">
@@ -259,8 +285,36 @@
                         <ul class="place__card" id="card_tour">
                         </ul>
                     </div>
-                    <div class="place__count container" id="place_count">
-                    </div>
+                    <ul class="place__count container" id="place_count">
+                        <li class="count__column">
+
+                            <a class="count__column_text" href="#clients_tourplus">
+                                <div class="count__column_calculation" id="counters_1">
+                                    <span class="count__column_green counter" data-TargetNum="3789" data-Speed="4000">
+                                        0</span>+
+                                </div>
+                                HAPPY CUSTOMERS
+                            </a>
+                        </li>
+                        <li class="count__column">
+                            <a class="count__column_text" href="#place_tourplus">
+                                <div class="count__column_calculation" id="counters_2">
+                                    <span class="count__column_green counter" data-TargetNum="6" data-Speed="4000">
+                                        0</span>+
+                                </div>
+                                AMAZING TOURS
+                            </a>
+                        </li>
+                        <li class="count__column">
+                            <a class="count__column_text" href="gallery.html">
+                                <div class="count__column_calculation" id="counters_3">
+                                    <span class="count__column_green counter" data-TargetNum="119">
+                                        0</span>+
+                                </div>
+                                TOURS PACKAGE
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -329,7 +383,7 @@
 
                 </div>
                 <div class="video__button">
-                    <a class="btn btn-style place__btn_orange" href="video.html">View All</a>
+                    <a class="btn btn-style place__btn_orange" href="page/video.html">View All</a>
                 </div>
             </div>
         </section>
@@ -413,7 +467,7 @@
                     </a>
                 </div>
                 <div class="gallery__button">
-                    <a class="btn btn-style place__btn_orange" href="gallery.html">View All</a>
+                    <a class="btn btn-style place__btn_orange" href="page/gallery.html">View All</a>
                 </div>
             </div>
         </section>
@@ -806,9 +860,62 @@
                             </p>
                         </div>
                         <div class="booking__button">
-                            <button type="button" class="booking__btn btn btn-style">Book Now</button>
+                            <button type="button" class="booking__btn btn btn-style" id="booking_btn">
+                                Book Now</button>
                         </div>
                     </div>
+
+                    <div class="booking__modal" id="booking-modal">
+                        <div class="modal__field">
+                            <div class="modal__content">
+                                <div class="modal__close_btn"></div>
+                                <div class="modal__title">
+                                    <h5>Order Tour</h5>
+                                </div>
+                                <div class="modal__column">
+                                    <form class="modal__form" id="my_booking-form" method="get">
+                                        <div class="modal__name form-row">
+                                            <label class="modal__label" for="booking_name">Enter your name!</label>
+                                            <input class="modal__names form-field" type="text" name="name"
+                                                id="booking_name" placeholder="Name" required>
+                                        </div>
+                                        <div class="modal__surname form-row">
+                                            <label class="modal__label" for="booking_surname">Enter your surname!</label>
+                                            <input class="modal__surnames form-field" type="text" name="surname"
+                                                id="booking_surname" placeholder="Surname">
+                                        </div>
+                                        <div class="modal__email form-row">
+                                            <label class="modal__label" for="booking_email">Enter your email-address!</label>
+                                            <input class="modal__mail form-field" type="email" name="email"
+                                                id="booking_email" placeholder="Email" required>
+                                        </div>
+                                        <div class="modal__phone form-row">
+                                            <label class="modal__label" for="booking_phone">Enter your phone-number!</label>
+                                            <input class="modal__telephone form-field " type="tel" name="phone"
+                                                id="booking_phone" 
+                                                placeholder="Phone" required>
+                                        </div>
+                                        <div class="modal__choice form-row">
+                                            <label class="modal__label" for="choice_tour">Choose your travel tour!</label>
+                                            <select class="form-field" id="choice_tour" type="radio" name="travel_tour" required>
+                                                <option value="norway">Norway road trip</option>
+                                                <option value="iceland">Summer tours in Iceland</option>
+                                                <option value="sweden">Sweden mountain trip</option>
+                                                <option value="sardinia_corsica">Sardinia & Corsica</option>
+                                                <option value="austrian">Christmas in Tyrol</option>
+                                                <option value="swiss">Swiss Gourmet Tour</option>
+                                                <option hidden disabled selected>Choose tour</option>
+                                            </select>
+                                        </div>
+                                        <div class="modal__button">
+                                            <button class="modal__btn btn" type="submit">SUBMIT</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -872,7 +979,7 @@
                                 <li class="footer__contacts-data">
                                     <a href="tel:+88017193850" class="footer__contacts_link">
                                         <img src="assets/images/svg/contacts-phone.svg" alt="pic-phone">
-                                        <span>+880 17193850</span>
+                                        <span>+380 679166323</span>
                                     </a>
                                 </li>
 
@@ -937,8 +1044,10 @@
 
 
     <script src="assets/js/lazyload.js"></script>
-    <script src="assets/plugins/panel/panel.js"></script>
     <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/plugins/phonemask/maskedinput.min.js"></script>
+    <script src="assets/plugins/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="assets/plugins/counter/multi-animated-counter.js"></script>
     <script src="assets/plugins/videotube/videotube.min.js"></script>
     <script src="assets/plugins/slick/slick.min.js"></script>
     <script src="assets/plugins/lightGallery/lightgallery.min.js"></script>

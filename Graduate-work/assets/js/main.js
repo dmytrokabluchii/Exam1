@@ -30,11 +30,10 @@ $(function(){
         $(".mobile_menu_wrap .hamburger").toggleClass("is-active");
         $("body").toggleClass("open");
     });
-    // Закрытие меню бургер при нажатии на пунты меню
-    $(".sidemenu ul li a").on('click', function () {
+    // Закрытие меню бургер при нажатии на пунты меню и кнопку callback
+    $(".sidemenu ul li a, .mobile__btn").on('click', function () {
         $("body").removeClass("open");
     });
-
 
     // Slick-slider Place
     getCard();
@@ -66,6 +65,7 @@ $(function(){
     });
     // Slick-slider review
     /* getReview();
+
     $('#review_clients').slick({
         infinite: true,
         speed: 900,
@@ -83,6 +83,139 @@ $(function(){
             }
         ]
     }); */
+
+    // Модальное окно
+    // открыть по кнопке
+    $('#booking_btn').click(function() { 
+        $('.booking__modal').fadeIn();
+        $('.booking__modal').addClass('disabled');
+    });
+    // закрыть на крестик
+    $('.modal__close_btn').click(function() { 
+        $('.booking__modal').fadeOut(600); // закрытие с плавной анимацией, где 600 это время в мс
+    });
+    // закрыть по клику вне окна
+    $(document).mouseup(function (e) { 
+        let popup = $('.modal__content');
+        if (e.target!=popup[0]&&popup.has(e.target).length === 0){
+            $('.booking__modal').fadeOut(600);
+        }
+    });
+    // закрыть по ESC
+    $(document).on('keydown',function(event) {
+        if (event.keyCode == 27) {
+            $('.booking__modal').fadeOut(600);
+         }
+     });
+
+     // Маска номера телефона
+     $(function () {
+        $('#booking_phone').mask('+38 (099) 999-99-9?9');
+    })
+
+    // Валидация + отправка формы на Telegram BOT
+    $("#my_booking-form").on('submit', function(e){
+        e.preventDefault();
+        let nameInput = document.getElementById('booking_name');
+        let surnameInput = document.getElementById('booking_surname');
+        let emailInput = document.getElementById('booking_email');
+        let phoneInput = document.getElementById('booking_phone'); 
+        let tourSelect = document.getElementById('choice_tour');              
+        const BOT_TOKEN = '5019836353:AAEY0Hztn5q-UaklaKWXMoDqbUyn0MhEzhc';
+    // @get_id_bot and /get_id
+        const CHAT_ID = '704440668';
+    //   let text = encodeURI("<b>Email:</b> "+$("#exampleInputEmail1").val()+"\n<b>Subject:</b> "+$("#exampleInputPassword1").val()+"\n<b>Message:</b> "+$("#massage").val());
+        let text = encodeURI(`Name: ${nameInput.value}, Surname:${surnameInput.value}, 
+        Email: ${emailInput.value}, Phone: ${phoneInput.value}, Tour: ${tourSelect.value}`);
+        if(nameInput.value !== '' && surnameInput.value !== '' && emailInput.value !== '' 
+        && phoneInput.value !== '' && tourSelect.value !== ''){
+            $.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=`+text+'&parse_mode=html', (json)=>{
+                if(json.ok){
+                    $("#my_booking-form").trigger('reset');
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your message send!',
+                        showConfirmButton: false,
+                        timer: 3000
+                    })
+                }
+            });
+        }else{
+            Swal.fire({
+                position: 'top-end',
+                icon: 'warning',
+                title: 'Fill all field!',
+                showConfirmButton: false,
+                timer: 3000
+            })
+        }
+    });
+
+
+    // Модальное окно callback
+    // открыть по кнопке
+    $('.callback__btn').click(function() { 
+        $('.modal__callback').fadeIn();
+        $('.modal__callback').addClass('disabled');
+    });
+    // закрыть на крестик
+    $('.callback__close_btn').click(function() { 
+        $('.modal__callback').fadeOut(600); // закрытие с плавной анимацией, где 600 это время в мс
+    });
+    // закрыть по клику вне окна
+    $(document).mouseup(function (e) { 
+        let popup = $('.callback__content');
+        if (e.target!=popup[0]&&popup.has(e.target).length === 0){
+            $('.modal__callback').fadeOut(600);
+        }
+    });
+    // закрыть по ESC
+    $(document).on('keydown',function(event) {
+        if (event.keyCode == 27) {
+            $('.modal__callback').fadeOut(600);
+         }
+     });
+
+     // Маска номера телефона
+     $(function () {
+        $('#callback_phone').mask('+38 (099) 999-99-9?9');
+    })
+
+    // Валидация + отправка формы на Telegram BOT
+    $("#my_callback-form").on('submit', function(e){
+        e.preventDefault();
+        let nameInput = document.getElementById('callback_name');
+        let phoneInput = document.getElementById('callback_phone');            
+        const BOT_TOKEN = '5019836353:AAEY0Hztn5q-UaklaKWXMoDqbUyn0MhEzhc';
+    // @get_id_bot and /get_id
+        const CHAT_ID = '704440668';
+    //   let text = encodeURI("<b>Email:</b> "+$("#exampleInputEmail1").val()+"\n<b>Subject:</b> "+$("#exampleInputPassword1").val()+"\n<b>Message:</b> "+$("#massage").val());
+        let text = encodeURI(`Name: ${nameInput.value}, Phone: ${phoneInput.value}`);
+        if(nameInput.value !== '' && phoneInput.value !== ''){
+            $.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=`+text+'&parse_mode=html', (json)=>{
+                if(json.ok){
+                    $("#my_callback-form").trigger('reset');
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your message send!',
+                        showConfirmButton: false,
+                        timer: 3000
+                    })
+                }
+            });
+        }else{
+            Swal.fire({
+                position: 'top-end',
+                icon: 'warning',
+                title: 'Fill all field!',
+                showConfirmButton: false,
+                timer: 3000
+            })
+        }
+    });
+
 });
 
 
@@ -136,35 +269,78 @@ function getCard(){
             $("#card_tour").slick('slickAdd', html);
         },
         error:function(){
-            panel.warning("The card don't load!", true);
+            // modal window sweet-aler2
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Oops...',
+                text: "The tour-cards don't load!",
+                showConfirmButton: false,
+                timer: 4000
+              })
         }
     });  
-}
+};
 
-// Динамический подсчет блока place
-function getCount(){
-    $.ajax({
-        url:'common/count.json',
-        type:'get',
-        dataType:'json',
-        success:function(json){
-            let html = '';
-            json.forEach((count)=>{
-                html += `
-                    <div class="count__column">
-                        <div class="count__column_calculation"><span class="count__column_green">${count.calc}</span>+</div>
-                        <div class="count__column_text">${count.title}</div>
-                    </div>
-                `;
-            });
-            $("#place_count").append(html);
-        },
-        error:function(){
-            panel.warning("The count of tours don't load!", true);
-        }
-    });  
-}
-getCount();
+
+// Модальное окно sweetAlert
+// function sweetAlertClickCallBack() {
+//     const { value: formValues } = Swal.fire({
+//         html: 
+//         '<form class="callback__form" id="my_booking-form" method="get">' +                       
+//             '<div class="callback__phone form-row">' +
+//             '<label class="callback__label" for="callback_phone">Enter your phone-number!</label>' +
+//             '<input class="callback__telephone" type="tel" name="callback_phone" id="callback_phone" placeholder="Phone" required>' +
+//             '</div>' +
+//             '<div class="callback__button">' +
+//             '<button class="callback__btn btn" type="submit">SUBMIT</button>' +
+//             '</div>' +
+//         '</form>',
+//             showCancelButton: false,
+//             showCloseButton: false,
+//             showConfirmButton: false,
+//             confirmButtonColor: '#FF492F',
+//         preConfirm: () => {
+//         return [
+//         document.getElementById('swal-input1').value
+//         ]}      
+//     })
+//         if (formValues) {
+//         Swal.fire(JSON.stringify(formValues))
+//         }
+// }
+
+// '<label class="callback__label" for="callback_phone">Enter your phone-number!</label>'
+//         +
+// '<input class="callback__telephone" type="tel" name="callback_phone" id="callback_phone" placeholder="Phone-number" required>',
+
+
+// Динамический подсчет блока place count
+// function getCount(){
+//     $.ajax({
+//         url:'common/count.json',
+//         type:'get',
+//         dataType:'json',
+//         success:function(json){
+//             let html = '';
+//             json.forEach((count)=>{
+//                 html += `
+//                     <div class="count__column">
+//                         <div class="count__column_calculation">
+//                         <span class="count__column_green counter">${count.calc}</span>+</div>
+//                         <div class="count__column_text">${count.title}</div>
+//                     </div>
+//                 `;
+//             });
+//             $("#place_count").append(html);
+//         },
+//         error:function(){
+//             panel.warning("The count of tours don't load!", true);
+//         }
+//     });  
+// }
+// getCount();
+
 
 // Модальное окно
 // function toggleForm() {

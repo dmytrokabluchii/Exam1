@@ -191,6 +191,23 @@ body {
   text-transform: uppercase;
 }
 
+.modal__button, .callback__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.modal__button button, .callback__button button {
+  background: linear-gradient(135deg, #4c4c4c, black);
+  border: 2px solid #fff;
+  color: #fff;
+}
+.modal__button button:hover, .callback__button button:hover {
+  background: #fff;
+  border: 2px solid #FF492F;
+  transform: translateY(0px);
+  color: #000;
+}
+
 .title {
   font-family: "Lato";
   font-weight: 700;
@@ -226,6 +243,94 @@ body {
 .mobile__media_links:hover {
   transform: scale(1.2);
   transition: all 0.3s ease-in-out;
+}
+
+.modal__callback {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(2px);
+  overflow: auto;
+}
+.modal__callback .callback__field {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal__callback .callback__content {
+  position: relative;
+  max-width: 400px;
+  padding: 30px;
+  background: linear-gradient(45deg, #f56049, #1d1b1b);
+  color: #fff;
+  font-family: "Lato";
+}
+.modal__callback .callback__close_btn {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #f56049, #1d1b1b);
+  cursor: pointer;
+}
+.modal__callback .callback__close_btn:hover {
+  transform: scale(1.05);
+}
+.modal__callback .callback__close_btn:before {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  height: 2px;
+  width: 18px;
+  top: 14px;
+  left: 6px;
+  transform: rotate(-45deg);
+}
+.modal__callback .callback__close_btn:after {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  height: 2px;
+  width: 18px;
+  top: 14px;
+  transform: rotate(45deg);
+  left: 6px;
+}
+.modal__callback .callback__title {
+  padding-bottom: 30px;
+  font-size: 1.1875rem;
+  text-align: center;
+}
+.modal__callback .callback__form label, .modal__callback .callback__form input {
+  width: 100%;
+  outline: none;
+  border: none;
+  height: 1.8rem;
+}
+.modal__callback .callback__form input {
+  border-left: 5px solid rgba(126, 128, 129, 0);
+  background-color: #fff;
+  width: 100%;
+}
+.modal__callback .callback__form ::placeholder {
+  color: #1D1B1B;
+  padding-left: 5px;
+}
+.modal__callback .callback__form input:focus {
+  background-color: #d4a19a;
+  opacity: 1;
+  border-left: 5px solid #360802;
+}
+.modal__callback .callback__form .callback__phone, .modal__callback .callback__form .callback__name {
+  padding-bottom: 20px;
 }
 
 .header {
@@ -515,6 +620,7 @@ body {
   justify-content: space-between;
   gap: 182px;
   background-color: #FBFBFB;
+  list-style: none;
 }
 .place__count .count__column {
   flex: 0 1 33.333%;
@@ -532,6 +638,11 @@ body {
 .place__count .count__column_text {
   font-weight: 400;
   font-size: 1.875rem;
+}
+.place__count .count__column a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #1D1B1B;
 }
 
 .video {
@@ -975,6 +1086,92 @@ body {
   background: #ff492f;
   color: #fff;
 }
+.booking__modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(2px);
+  overflow: auto;
+}
+.booking__modal .modal__field {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.booking__modal .modal__content {
+  position: relative;
+  max-width: 600px;
+  padding: 40px;
+  background-color: #FF492F;
+  color: #fff;
+  font-family: "Lato";
+}
+.booking__modal .modal__close_btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.booking__modal .modal__close_btn:before {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  height: 3px;
+  width: 27px;
+  top: 11px;
+  left: -4px;
+  transform: rotate(-45deg);
+}
+.booking__modal .modal__close_btn:after {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  height: 3px;
+  width: 27px;
+  top: 11px;
+  transform: rotate(45deg);
+  left: -4px;
+}
+.booking__modal .modal__title h5 {
+  text-transform: uppercase;
+  font-size: 2.625rem;
+  font-weight: 700;
+  line-height: calc(54/42 * 100%);
+  padding-bottom: 20px;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+.booking__modal .modal__form label, .booking__modal .modal__form input, .booking__modal .modal__form select {
+  width: 100%;
+  outline: none;
+  border: none;
+  height: 1.8rem;
+}
+.booking__modal .modal__form .form-row {
+  padding-bottom: 20px;
+}
+.booking__modal .modal__form ::placeholder {
+  color: #1D1B1B;
+  padding-left: 5px;
+}
+.booking__modal .modal__form .form-field {
+  border-left: 5px solid rgba(126, 128, 129, 0);
+  background-color: #fff;
+  width: 100%;
+}
+.booking__modal .modal__form .form-field:focus {
+  background-color: #f5bab1;
+  opacity: 1;
+  border-left: 5px solid #ac1a04;
+}
 
 .footer {
   background-color: #1D1B1B;
@@ -1098,7 +1295,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(34, 33, 33, 0.7);
-  z-index: 999;
+  z-index: 990;
   backdrop-filter: blur(2px);
 }
 

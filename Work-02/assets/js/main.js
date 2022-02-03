@@ -122,7 +122,7 @@ $(function(){
     });
 
 
-    // Telegram BOT
+    // Отправка формы на Telegram BOT
     $("#my_form").on('submit', function(e){
         e.preventDefault();
         const nameInput = document.getElementById('name');
