@@ -7,6 +7,15 @@
         padding-bottom: 50px;
         display: grid;
         gap: 30px;
+        @media screen and (max-width:768px) {
+            gap: 20px;
+        }
+        @media screen and (max-width:420px) {
+            gap: 15px;
+        }
+        @media screen and (max-width:380px) {
+            gap: 10px;
+        }
         grid-template-areas:
             "image-1 image-2 image-3"
             "image-1 image-5 image-3"
@@ -20,6 +29,7 @@
             "image-13 image-17 image-15"
             "image-16 image-17 image-18";
     }
+    
 
     .image-1 {
         grid-area: image-1;

@@ -243,24 +243,24 @@ function getCard(){
             json.forEach((card)=>{
                 html += `
                     <li class="card__item card-first">
-                        <div class="card__image">
-                            <a class="card__image_link" href="#!">
-                                <img class="card__pic lazy"
-                                    src="assets/images/${card.pic.image}" alt="place_image">
-                                <div class="card__price">${card.pic.price}</div>
-                            </a>
-                        </div>
-                        <div class="card__content">
-                            <div class="card__title">
-                                <h6>${card.title}</h6>
+                            <div class="card__image">
+                                <div class="card__image_link" href="#!">
+                                    <img class="card__pic lazy"
+                                        src="assets/images/place_image/${card.pic.image}" alt="place_image">
+                                    <div class="card__price">${card.pic.price}</div>
+                                </div>
                             </div>
-                            <div class="card__subtitle subtitle">
-                                <p>${card.description}</p>
-                            </div>
-                            <div class="card__link">
-                                <a class="card__link_text text_orange" href="#!">${card.link}
-                                </a>
-                            </div>
+                            <div class="card__content">
+                                <div class="card__title">
+                                    <h6>${card.title}</h6>
+                                </div>
+                                <div class="card__subtitle subtitle">
+                                    <p>${card.description}</p>
+                                </div>
+                                <div class="card__link">
+                                    <a class="card__link_text text_orange" href="#!">${card.link}
+                                    </a>
+                                </div>
                         </div>
                     </li>
                 `;

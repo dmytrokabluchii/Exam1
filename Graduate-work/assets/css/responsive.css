@@ -262,15 +262,6 @@
     font-size: 1.5625rem;
   }
 
-  .video {
-    padding: 10px 0 70px;
-  }
-  .video__content {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    padding-bottom: 40px;
-  }
-
   .about__left_question {
     padding: 0 0 20px 100px;
   }
@@ -283,6 +274,15 @@
   }
   .about__gallery {
     gap: 20px;
+  }
+
+  .video {
+    padding: 10px 0 70px;
+  }
+  .video__content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    padding-bottom: 40px;
   }
 
   .gallery {
