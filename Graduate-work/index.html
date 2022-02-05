@@ -269,7 +269,7 @@
                                 <h4>POPULAR TOUR PLACE</h4>
                             </div>
                             <div class="place__button">
-                                <button type="button" class="btn btn-style place__btn_orange">View All</button>
+                                <a class="btn btn-style place__btn_orange" href="place.html">View All</a>
                             </div>
                         </div>
                         <div class="place__subtitle subtitle">
@@ -301,16 +301,16 @@
                             <li class="count__column">
                                 <a class="count__column_text" href="#place_tourplus">
                                     <div class="count__column_calculation" id="counters_2">
-                                        <span class="count__column_green counter" data-TargetNum="6" data-Speed="4000">
+                                        <span class="count__column_green counter" data-TargetNum="9" data-Speed="4000">
                                             0</span>+
                                     </div>
                                     AMAZING TOURS
                                 </a>
                             </li>
                             <li class="count__column">
-                                <a class="count__column_text" href="gallery.html">
+                                <a class="count__column_text" href="#place_tourplus">
                                     <div class="count__column_calculation" id="counters_3">
-                                        <span class="count__column_green counter" data-TargetNum="119">
+                                        <span class="count__column_green counter" data-TargetNum="116">
                                             0</span>+
                                     </div>
                                     TOURS PACKAGE
@@ -629,7 +629,7 @@
                                     <div class="clients__avatar">
                                         <img class="clients__avatar_photo lazy"
                                             src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                            data-src="assets/images/clients_one-min(1).jpg" alt="author-pic">
+                                            data-src="assets/images/clients/clients_1-min.jpg" alt="author-pic">
                                     </div>
                                     <div class="clients__info">
                                         <div class="clients__info_author">Tim Cook</div>
@@ -639,7 +639,6 @@
                             </div>
                         </div>
                     </li>
-
                     <li class="clients__cards">
                         <div class="clients__content">
                             <div class="clients__review subtitle">
@@ -654,7 +653,7 @@
                                     <div class="clients__avatar">
                                         <img class="clients__avatar_photo lazy"
                                             src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                            data-src="assets/images/clients_two-min(1).jpg" alt="author-pic">
+                                            data-src="assets/images/clients/clients_2-min.jpg" alt="author-pic">
                                     </div>
                                     <div class="clients__info">
                                         <div class="clients__info_author">Rihanna</div>
@@ -664,7 +663,6 @@
                             </div>
                         </div>
                     </li>
-
                     <li class="clients__cards">
                         <div class="clients__content">
                             <div class="clients__review subtitle">
@@ -681,7 +679,7 @@
                                     <div class="clients__avatar">
                                         <img class="clients__avatar_photo lazy"
                                             src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
-                                            data-src="assets/images/clients_three-min(1).jpg" alt="author-pic">
+                                            data-src="assets/images/clients/clients_3-min.jpg" alt="author-pic">
                                     </div>
                                     <div class="clients__info">
                                         <div class="clients__info_author">Mark Zuckerberg</div>
@@ -692,6 +690,9 @@
                         </div>
                     </li>
                 </ul>
+                <div class="clients__button">
+                    <a class="btn btn-style clients__button_link" href="page/clients.html">View all reviews</a>
+                </div>
             </div>
         </section>
 
@@ -868,60 +869,63 @@
                         </div>
                     </div>
 
-                    <div class="booking__modal" id="booking-modal">
-                        <div class="modal__field">
-                            <div class="modal__content">
-                                <div class="modal__close_btn"></div>
-                                <div class="modal__title">
-                                    <h5>Order Tour</h5>
-                                </div>
-                                <div class="modal__column">
-                                    <form class="modal__form" id="my_booking-form" method="get">
-                                        <div class="modal__name form-row">
-                                            <label class="modal__label" for="booking_name">Enter your name!</label>
-                                            <input class="modal__names form-field" type="text" name="name"
-                                                id="booking_name" placeholder="Name" required>
-                                        </div>
-                                        <div class="modal__surname form-row">
-                                            <label class="modal__label" for="booking_surname">Enter your surname!</label>
-                                            <input class="modal__surnames form-field" type="text" name="surname"
-                                                id="booking_surname" placeholder="Surname">
-                                        </div>
-                                        <div class="modal__email form-row">
-                                            <label class="modal__label" for="booking_email">Enter your email-address!</label>
-                                            <input class="modal__mail form-field" type="email" name="email"
-                                                id="booking_email" placeholder="Email">
-                                        </div>
-                                        <div class="modal__phone form-row">
-                                            <label class="modal__label" for="booking_phone">Enter your phone-number!</label>
-                                            <input class="modal__telephone form-field " type="tel" name="phone"
-                                                id="booking_phone" 
-                                                placeholder="Phone" required>
-                                        </div>
-                                        <div class="modal__choice form-row">
-                                            <label class="modal__label" for="choice_tour">Choose your travel tour!</label>
-                                            <select class="form-field" id="choice_tour" type="radio" name="travel_tour" required>
-                                                <option value="norway_road_trip">Norway road trip</option>
-                                                <option value="summer_tours_iceland">Summer tours in Iceland</option>
-                                                <option value="sweden_mountain_trip">Sweden mountain trip</option>
-                                                <option value="sardinia_corsica">Sardinia & Corsica</option>
-                                                <option value="christmas_tyrol">Christmas in Tyrol</option>
-                                                <option value="swiss_gourmet_tour">Swiss Gourmet Tour</option>
-                                                <option hidden disabled selected>Choose tour</option>
-                                            </select>
-                                        </div>
-                                        <div class="modal__button">
-                                            <button class="modal__btn btn" type="submit">SUBMIT</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
                 </div>
             </div>
         </section>
+
+        <div class="booking__modal" id="booking-modal">
+            <div class="modal__field container">
+                <div class="modal__content">
+                    <div class="modal__close_btn"></div>
+                    <div class="modal__title">
+                        <h5>Order Tour</h5>
+                    </div>
+                    <div class="modal__column">
+                        <form class="modal__form" id="my_booking-form" method="get">
+                            <div class="modal__name form-row">
+                                <label class="modal__label" for="booking_name">Enter your name!</label>
+                                <input class="modal__names form-field" type="text" name="name"
+                                    id="booking_name" placeholder="Name" required>
+                            </div>
+                            <div class="modal__surname form-row">
+                                <label class="modal__label" for="booking_surname">Enter your surname!</label>
+                                <input class="modal__surnames form-field" type="text" name="surname"
+                                    id="booking_surname" placeholder="Surname">
+                            </div>
+                            <div class="modal__email form-row">
+                                <label class="modal__label" for="booking_email">Enter your email-address!</label>
+                                <input class="modal__mail form-field" type="email" name="email"
+                                    id="booking_email" placeholder="Email">
+                            </div>
+                            <div class="modal__phone form-row">
+                                <label class="modal__label" for="booking_phone">Enter your phone-number!</label>
+                                <input class="modal__telephone form-field " type="tel" name="phone"
+                                    id="booking_phone" 
+                                    placeholder="Phone" required>
+                            </div>
+                            <div class="modal__choice form-row">
+                                <label class="modal__label" for="choice_tour">Choose your travel tour!</label>
+                                <select class="form-field" id="choice_tour" type="radio" name="travel_tour" required>
+                                    <option value="norway_road_trip">Norway road trip</option>
+                                    <option value="summer_tours_iceland">Summer tours in Iceland</option>
+                                    <option value="sweden_mountain_trip">Sweden mountain trip</option>
+                                    <option value="sardinia_corsica">Sardinia & Corsica</option>
+                                    <option value="christmas_tyrol">Christmas in Tyrol</option>
+                                    <option value="swiss_gourmet_tour">Swiss Gourmet Tour</option>
+                                    <option value="swedish_lapland">Swedish Lapland</option>
+                                    <option value="norwegian_fjords">Norwegian Fjords</option>
+                                    <option value="croatia_culture_cuisine">Croatia – Culture and Cuisine</option>
+                                    <option hidden disabled selected>Choose tour</option>
+                                </select>
+                            </div>
+                            <div class="modal__button">
+                                <button class="modal__btn btn" type="submit">SUBMIT</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer class="footer" id="footer_tourplus">

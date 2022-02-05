@@ -1,7 +1,7 @@
 [
     {
         "pic": {
-            "image":"place_one-min.jpg",
+            "image":"place_1-min.jpg",
             "price": "$1299"
         },
         "title":"NORWAY ROAD TRIP",
@@ -10,7 +10,7 @@
     },
     {
         "pic": {
-            "image":"place_two-min.jpg",
+            "image":"place_2-min.jpg",
             "price": "$1499"
         },
         "title":"SUMMER TOURS IN iceland",
@@ -19,7 +19,7 @@
     },
     {
         "pic": {
-            "image":"place_three-min.jpg",
+            "image":"place_3-min.jpg",
             "price": "$1199"
         },
         "title":"SWEDEN Mountain TRIP",
@@ -28,7 +28,7 @@
     },
     {
         "pic": {
-            "image":"place_four-min.jpg",
+            "image":"place_4-min.jpg",
             "price": "$1099"
         },
         "title":"Sardinia & Corsica",
@@ -37,7 +37,7 @@
     },
     {
         "pic": {
-            "image":"place_five-min.jpg",
+            "image":"place_5-min.jpg",
             "price": "$1899"
         },
         "title":"Christmas in Tyrol",
@@ -46,11 +46,41 @@
     },
     {
         "pic": {
-            "image":"place_six-min.jpg",
+            "image":"place_6-min.jpg",
             "price": "$2999"
         },
         "title":"Swiss Gourmet Tour",
         "description":"Switzerland has a lot more to offer than cheese, chocolate and wine! Let us show you!",
         "link":"START JOURNEY &rarr;"
+    },
+
+
+    {
+        "pic": {
+            "image":"place_7-min.jpg",
+            "price": "$1999"
+        },
+        "title":"Swedish Lapland",
+        "description":"This winter break in Swedish Lapland is the perfect blend of adventure and relaxation.",
+        "link":"START JOURNEY &rarr;"
+    },
+    {
+        "pic": {
+            "image":"place_8-min.jpg",
+            "price": "$2899"
+        },
+        "title":"NORWEGIAN FJORDS",
+        "description":"Experience the culture of Scandinavia in its beautiful capital cities, Copenhagen, Stockholm and Oslo and marvel at Norway’s breathtaking nature along the fjords. ",
+        "link":"START JOURNEY &rarr;"
+    },
+    {
+        "pic": {
+            "image":"place_9-min.jpg",
+            "price": "$1699"
+        },
+        "title":"Croatia – Culture and Cuisine",
+        "description":"You will see Plitvice National Park, St. Lawrence Cathedral Trogir and Benedictine monastery Hvar!",
+        "link":"START JOURNEY &rarr;"
     }
+
 ]

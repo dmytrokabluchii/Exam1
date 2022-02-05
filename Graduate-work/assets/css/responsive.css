@@ -26,10 +26,6 @@
     background-position: 50% right;
   }
 
-  .place__card .slick-dots {
-    left: 48%;
-  }
-
   .about__column {
     gap: 60px;
   }
@@ -89,7 +85,7 @@
     padding-bottom: 80px;
   }
   .place__card .slick-dots {
-    left: 46%;
+    left: 42%;
   }
   .place__card .card__price {
     bottom: 30px;
@@ -248,7 +244,7 @@
     padding-bottom: 15px;
   }
   .place__card .slick-dots {
-    left: 44%;
+    left: 40%;
   }
   .place__count {
     gap: 50px;
@@ -332,7 +328,7 @@
     width: 80%;
   }
   .place__card .slick-dots {
-    left: 42%;
+    left: 37%;
   }
 
   .support {
@@ -391,7 +387,7 @@
 }
 @media screen and (max-width: 600px) {
   .place__card .slick-dots {
-    left: 35%;
+    left: 25%;
   }
   .place__card .card__price {
     bottom: 40px;
@@ -428,6 +424,9 @@
   }
 }
 @media screen and (max-width: 540px) {
+  .place__card {
+    padding-bottom: 40px;
+  }
   .place__card .slick-prev:before {
     background-size: 35px 35px;
     height: 35px;
@@ -445,7 +444,7 @@
     right: -7px;
   }
   .place__card .slick-dots {
-    left: 30%;
+    left: 20%;
   }
   .place__count {
     gap: 15px;
@@ -476,6 +475,16 @@
   .modal__callback .callback__content {
     max-width: 280px;
     padding: 20px;
+  }
+
+  .place__card .card__content {
+    padding: 15px 10px 10px;
+  }
+  .place__card .card__title h6 {
+    padding-bottom: 10px;
+  }
+  .place__card .slick-dots {
+    left: 16%;
   }
 
   .video {
@@ -530,7 +539,7 @@
     padding: 50px 0 20px;
   }
   .place__card .slick-dots {
-    left: 30%;
+    left: 15%;
   }
   .place__card .slick-prev:before {
     background-size: 30px 30px;
@@ -611,7 +620,7 @@
     width: 75%;
   }
   .place .slick-dots {
-    left: 25%;
+    left: 7%;
   }
 
   .about__title h3 {
@@ -647,7 +656,10 @@
 }
 @media screen and (max-width: 340px) {
   .place__card .slick-dots {
-    left: 20%;
+    left: 10%;
+  }
+  .place__card .slick-dots li {
+    margin-right: 10px;
   }
 }
 @media screen and (max-height: 655px) {

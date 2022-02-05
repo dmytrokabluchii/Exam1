@@ -41,14 +41,6 @@ $base_size:16;
         }
     }
 
-    .place {
-        &__card {
-            .slick-dots {
-                left: 48%;
-            }
-        }
-    }
-
     .about {
         &__column {
             gap: 60px;
@@ -119,7 +111,7 @@ $base_size:16;
         &__card {
             padding-bottom: 80px;
             .slick-dots {
-                left: 46%;
+                left: 42%;
             }
             .card__price {
                 bottom: 30px;
@@ -295,7 +287,7 @@ $base_size:16;
         }
         &__card {
             .slick-dots {
-                left: 44%;
+                left: 40%;
             }
         }
         &__count {
@@ -397,7 +389,7 @@ $base_size:16;
         }
         &__card {
             .slick-dots {
-                left: 42%;
+                left: 37%;
             }
         }
     }
@@ -468,7 +460,7 @@ $base_size:16;
     .place {
         &__card {
             .slick-dots {
-                left: 35%;
+                left: 25%;
             }
             .card__price {
                 bottom: 40px;
@@ -520,6 +512,7 @@ $base_size:16;
 @media screen and (max-width:540px) {
     .place {
         &__card {
+            padding-bottom: 40px;
             .slick-prev:before {
                 background-size: 35px 35px;
                 height: 35px;
@@ -537,7 +530,7 @@ $base_size:16;
                 right: -7px;
             }
             .slick-dots {
-                left: 30%;
+                left: 20%;
             }
         }
         &__count {
@@ -579,6 +572,20 @@ $base_size:16;
         .callback__content {
             max-width: 280px;
             padding: 20px;
+        }
+    }
+
+    .place {
+        &__card {
+            .card__content {
+                padding: 15px 10px 10px;
+            }
+            .card__title h6 {
+                padding-bottom: 10px;
+            }
+            .slick-dots {
+                left: 16%;
+            }
         }
     }
 
@@ -644,7 +651,7 @@ $base_size:16;
         padding: 50px 0 20px;
         &__card {
             .slick-dots {
-                left: 30%;
+                left: 15%;
             }
             .slick-prev:before {
                 background-size: 30px 30px;
@@ -744,7 +751,7 @@ $base_size:16;
             width: 75%;
         }
         .slick-dots {
-            left: 25%;
+            left: 7%;
         }
     }
 
@@ -800,7 +807,10 @@ $base_size:16;
     .place {
         &__card {
             .slick-dots {
-                left: 20%;
+                left: 10%;
+                li {
+                    margin-right: 10px;
+                }
             }
         }
     }

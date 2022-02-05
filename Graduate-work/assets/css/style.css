@@ -234,11 +234,6 @@ body {
   color: #FF492F;
 }
 
-#panel {
-  color: #2C4058;
-  font-size: 40px;
-}
-
 .media__links a svg:hover,
 .mobile__media_links:hover {
   transform: scale(1.2);
@@ -281,28 +276,30 @@ body {
   background: linear-gradient(45deg, #f56049, #1d1b1b);
   cursor: pointer;
 }
-.modal__callback .callback__close_btn:hover {
-  transform: scale(1.05);
-}
 .modal__callback .callback__close_btn:before {
   content: "";
   background-color: #fff;
   position: absolute;
   height: 2px;
-  width: 18px;
-  top: 14px;
-  left: 6px;
+  width: 20px;
+  top: 15px;
+  left: 5px;
   transform: rotate(-45deg);
+  opacity: 0.75;
 }
 .modal__callback .callback__close_btn:after {
   content: "";
   background-color: #fff;
   position: absolute;
   height: 2px;
-  width: 18px;
-  top: 14px;
+  width: 20px;
+  top: 15px;
   transform: rotate(45deg);
-  left: 6px;
+  left: 5px;
+  opacity: 0.75;
+}
+.modal__callback .callback__close_btn:hover:before, .modal__callback .callback__close_btn:hover::after {
+  opacity: 1;
 }
 .modal__callback .callback__title {
   padding-bottom: 30px;
@@ -498,6 +495,9 @@ body {
   padding-bottom: 40px;
   color: #4A4949;
 }
+.place__button a {
+  text-decoration: none;
+}
 .place__card {
   padding-bottom: 50px;
   list-style: none;
@@ -533,13 +533,14 @@ body {
 .place__card .card__title h6 {
   font-weight: 600;
   font-size: 1.125rem;
+  height: 45px;
   padding-bottom: 20px;
   text-transform: uppercase;
 }
 .place__card .card__subtitle p {
   padding-bottom: 20px;
   position: relative;
-  height: 110px;
+  height: 130px;
   overflow: hidden;
 }
 .place__card .card__subtitle p:after {
@@ -557,14 +558,19 @@ body {
   position: relative;
   bottom: 0;
 }
-.place__card .card__link a {
+.place__card .card__link button {
+  font-size: 1rem;
+  font-weight: 500;
   text-decoration: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 .place__card .slick-dots {
   width: 0%;
   display: flex;
   bottom: 0;
-  left: 50%;
+  left: 47%;
 }
 .place__card .slick-dots li {
   margin-right: 15px;
@@ -924,10 +930,11 @@ body {
 
 .clients {
   font-family: "Lato";
+  padding-bottom: 95px;
 }
 .clients__layer {
   height: 560px;
-  background-color: #F4F4F4;
+  background-color: #e5e2e2;
   position: relative;
   z-index: 2;
 }
@@ -944,12 +951,12 @@ body {
 .clients__column {
   display: flex;
   gap: 30px;
-  padding-bottom: 130px;
+  padding-bottom: 50px;
   list-style: none;
 }
 .clients__cards {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   background-color: #fff;
   margin-top: -196px;
   flex: 0 1 33.333%;
@@ -993,6 +1000,15 @@ body {
   width: 51px;
   border-radius: 60px;
   border: 1px solid #007EFF;
+}
+.clients__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.clients__button_link {
+  text-decoration: none;
+  padding: 15px;
 }
 
 .team {
@@ -1096,7 +1112,8 @@ body {
   background: #ff492f;
   color: #fff;
 }
-.booking__modal {
+
+#booking-modal {
   display: none;
   position: fixed;
   top: 0;
@@ -1108,13 +1125,13 @@ body {
   backdrop-filter: blur(2px);
   overflow: auto;
 }
-.booking__modal .modal__field {
+#booking-modal .modal__field {
   min-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.booking__modal .modal__content {
+#booking-modal .modal__content {
   position: relative;
   max-width: 600px;
   padding: 40px;
@@ -1122,7 +1139,7 @@ body {
   color: #fff;
   font-family: "Lato";
 }
-.booking__modal .modal__close_btn {
+#booking-modal .modal__close_btn {
   position: absolute;
   top: 10px;
   right: 10px;
@@ -1130,7 +1147,7 @@ body {
   height: 20px;
   cursor: pointer;
 }
-.booking__modal .modal__close_btn:before {
+#booking-modal .modal__close_btn:before {
   content: "";
   background-color: #fff;
   position: absolute;
@@ -1140,7 +1157,7 @@ body {
   left: -4px;
   transform: rotate(-45deg);
 }
-.booking__modal .modal__close_btn:after {
+#booking-modal .modal__close_btn:after {
   content: "";
   background-color: #fff;
   position: absolute;
@@ -1150,7 +1167,7 @@ body {
   transform: rotate(45deg);
   left: -4px;
 }
-.booking__modal .modal__title h5 {
+#booking-modal .modal__title h5 {
   text-transform: uppercase;
   font-size: 2.625rem;
   font-weight: 700;
@@ -1159,25 +1176,25 @@ body {
   text-align: center;
   letter-spacing: 0.05em;
 }
-.booking__modal .modal__form label, .booking__modal .modal__form input, .booking__modal .modal__form select {
+#booking-modal .modal__form label, #booking-modal .modal__form input, #booking-modal .modal__form select {
   width: 100%;
   outline: none;
   border: none;
   height: 1.8rem;
 }
-.booking__modal .modal__form .form-row {
+#booking-modal .modal__form .form-row {
   padding-bottom: 20px;
 }
-.booking__modal .modal__form ::placeholder {
+#booking-modal .modal__form ::placeholder {
   color: #1D1B1B;
   padding-left: 5px;
 }
-.booking__modal .modal__form .form-field {
+#booking-modal .modal__form .form-field {
   border-left: 5px solid rgba(126, 128, 129, 0);
   background-color: #fff;
   width: 100%;
 }
-.booking__modal .modal__form .form-field:focus {
+#booking-modal .modal__form .form-field:focus {
   background-color: #f5bab1;
   opacity: 1;
   border-left: 5px solid #ac1a04;

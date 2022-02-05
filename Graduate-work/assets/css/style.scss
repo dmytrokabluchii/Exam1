@@ -128,11 +128,6 @@ body {
     color: #FF492F;
 }
 
-#panel {
-    color: #2C4058;
-    font-size: 40px;
-}
-
 .media__links a svg:hover,
 .mobile__media_links:hover {
     transform: scale(1.2);
@@ -173,28 +168,30 @@ body {
         border-radius: 50%;
         background: linear-gradient(45deg, rgb(245, 96, 73), rgb(29, 27, 27));
         cursor: pointer;
-        &:hover {
-            transform: scale(1.05);
-        }
         &:before {
             content: '';
             background-color: #fff;
             position: absolute;
             height: 2px;
-            width: 18px;
-            top: 14px;
-            left: 6px;
+            width: 20px;
+            top: 15px;
+            left: 5px;
             transform: rotate(-45deg);
+            opacity: 0.75;
         }
         &:after {
             content: '';
             background-color: #fff;
             position: absolute;
             height: 2px;
-            width: 18px;
-            top: 14px;
+            width: 20px;
+            top: 15px;
             transform: rotate(45deg);
-            left: 6px;
+            left: 5px;
+            opacity: 0.75;
+        }
+        &:hover:before, &:hover::after {
+            opacity: 1;
         }
     }
     .callback__title {
@@ -245,27 +242,22 @@ body {
     &__block {
         height: 100%;
     }
-
     &__main {
         display: flex;
         justify-content: space-between;
         height: 100%;
         align-items: center;
     }
-
     &__logo {
-
         a {
             display: flex;
             gap: 15px;
         }
-
         &_name {
             display: block;
             padding-top: 10px;
         }
     }
-
     &__content {
         height: 100%;
     }
@@ -273,18 +265,15 @@ body {
     .nav__menu ul {
         list-style: none;
         display: flex;
-
         // Конструкция отступов в меню(кроме последнего пункта)
         li:not(:last-child) {
             margin-right: 20px;
         }
-
         li a {
             text-decoration: none;
             color: #1D1B1B;
             font-weight: 600;
             position: relative;
-
             &:after {
                 content: '';
                 width: 0;
@@ -295,7 +284,6 @@ body {
                 left: 0;
                 transition: all .3s ease-in-out;
             }
-
             &:hover {
                 &::after {
                     width: 100%;
@@ -320,14 +308,11 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-
         li a {
             color: #fff;
-
             &:after {
                 background-color: #8d2110;
             }
-
             &:active {
                 color: rgb(117, 39, 117);
             }
@@ -340,7 +325,6 @@ body {
         box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.23);
         color: #fff;
         opacity: 0.8;
-
         &:hover {
             background: #fff;
             transform: translateY(0px);
@@ -350,7 +334,6 @@ body {
 }
 
 .home {
-
     &__bg {
         padding: 250px 0 0;
         background-position: 50% top;
@@ -359,28 +342,23 @@ body {
         height: 100vh;
         // height: 720px;
     }
-
     &__wrapper {
         // max-width: 520px;
         max-width: 44%;
     }
-
     &__title h2 {
         font-family: 'DMSerifDisplay';
         font-weight: 400;
         @include fz(64);
         padding-bottom: 17px;
     }
-
     &__subtitle p {
         padding-bottom: 60px;
     }
-
     &__button {
         padding-bottom: 130px;
         width: 150px;
         height: 50px;
-
         &_video {
             display: flex;
             justify-content: center;
@@ -418,6 +396,7 @@ body {
     padding: 70px 0 0px;
     font-family: 'Lato';
     background-color: #e5e2e2;
+    // background-color: #F4F4F4;
     &__header {
         padding-bottom: 20px;
         display: flex;
@@ -431,6 +410,9 @@ body {
         width: 60%;
         padding-bottom: 40px;
         color: #4A4949;
+    }
+    &__button a {
+        text-decoration: none;
     }
 
     &__card {
@@ -473,13 +455,14 @@ body {
         .card__title h6 {
             font-weight: 600;
             @include fz(18);
+            height: 45px;
             padding-bottom: 20px;
             text-transform: uppercase;
         }
         .card__subtitle p {
             padding-bottom: 20px;
             position: relative;
-            height: 110px;
+            height: 130px;
             overflow: hidden;
             &:after {
                 content: "";
@@ -496,9 +479,13 @@ body {
         .card__link {
             position: relative;
             bottom: 0;
-            // text-align: center;
-            a {
+            button {
+                @include fz(16);
+                font-weight: 500;
                 text-decoration: none;
+                border: none;
+                background-color: transparent;
+                cursor: pointer;
             }
         }
 
@@ -506,7 +493,7 @@ body {
             width: 0%;
             display: flex;
             bottom: 0;
-            left: 50%;
+            left: 47%;
             li {
                 margin-right: 15px;
                 width: 20px;
@@ -828,7 +815,6 @@ body {
 
     &__wrapper {
         position: relative;
-
         &::after {
             content: '';
             position: absolute;
@@ -841,18 +827,15 @@ body {
         }
     }
 
-
     .row__first {
         display: flex;
         justify-content: space-between;
         gap: 70px;
         padding-bottom: 95px;
     }
-
     &__title {
         padding: 0 25px 10px;
         flex: 0 1 50%;
-
         h4 {
             font-weight: 700;
             @include fz(32);
@@ -871,16 +854,13 @@ body {
         justify-content: space-between;
         gap: 70px;
     }
-
     &__image {
         flex: 0 1 50%;
         z-index: 9;
-
         img {
             height: 100%;
             width: 100%;
             object-fit: cover;
-            // border-radius: 20px;
         }
     }
 
@@ -894,7 +874,6 @@ body {
 
     &__icon {
         padding-bottom: 20px;
-
         svg {
             width: 49px;
             height: 49px;
@@ -903,7 +882,6 @@ body {
 
     .item__title {
         padding-bottom: 20px;
-
         h6 {
             font-weight: 800;
             @include fz(22);
@@ -915,9 +893,12 @@ body {
 
 .clients {
     font-family: 'Lato';
+    padding-bottom: 95px;
+
     &__layer {
         height: 560px;
-        background-color: #F4F4F4;
+        // background-color: #F4F4F4;
+        background-color: #e5e2e2;
         position: relative;
         z-index: 2;
     }
@@ -934,12 +915,12 @@ body {
     &__column {
         display: flex;
         gap: 30px;
-        padding-bottom: 130px;
+        padding-bottom: 50px;
         list-style: none;
     }
     &__cards {
         position: relative;
-        z-index: 2;
+        z-index: 3;
         background-color: #fff;
         margin-top: -196px;
         flex: 0 1 33.333%;
@@ -983,6 +964,16 @@ body {
         width: 51px;
         border-radius: 60px;
         border: 1px solid #007EFF;
+    }
+
+    &__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &_link {
+            text-decoration: none;
+            padding: 15px;
+        }
     }
 }
 
@@ -1099,99 +1090,101 @@ body {
         }
     }
 
-    &__modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        z-index: 999;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.8);
-        backdrop-filter: blur(2px);
-        overflow: auto;
-        .modal__field {
-            min-height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .modal__content {
-            position: relative;
-            max-width: 600px;
-            padding: 40px;
-            background-color: #FF492F;
-            color: #fff;
-            font-family: 'Lato';
-            // alternative variant
-            // position: absolute;
-            // left: 50%;
-            // top: 50%;
-            // transform: translate(-50%, -50%);
-            // box-sizing: border-box;
-        }
-        .modal__close_btn {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 20px;
-            height: 20px;
-            cursor: pointer;
-            &:before {
-                content: '';
-                background-color: #fff;
-                position: absolute;
-                height: 3px;
-                width: 27px;
-                top: 11px;
-                left: -4px;
-                transform: rotate(-45deg);
-            }
-            &:after {
-                content: '';
-                background-color: #fff;
-                position: absolute;
-                height: 3px;
-                width: 27px;
-                top: 11px;
-                transform: rotate(45deg);
-                left: -4px;
-            }
-        }
-        .modal__title h5 {
-            text-transform: uppercase;
-            @include fz(42);
-            font-weight: 700;
-            line-height: calc(54/42 * 100%);
-            padding-bottom: 20px;
-            text-align: center;
-            letter-spacing: 0.05em;
-        }
-        .modal__form {
-            label, input, select {
-                width: 100%;
-                outline: none;
-                border: none;
-                height: 1.8rem;
-            }
-            .form-row {
-                padding-bottom: 20px;
-            }
-            ::placeholder {
-                color: #1D1B1B;
-                padding-left: 5px;
-            }
+    
+}
 
-            .form-field {
-                border-left: 5px solid rgba(126, 128, 129, 0);
-                background-color: #fff;
-                width: 100%;
-            }
-            .form-field:focus {
-                background-color: #f5bab1;
-                opacity: 1;
-                border-left: 5px solid #ac1a04;
-            }
+#booking-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(2px);
+    overflow: auto;
+    .modal__field {
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .modal__content {
+        position: relative;
+        max-width: 600px;
+        padding: 40px;
+        background-color: #FF492F;
+        color: #fff;
+        font-family: 'Lato';
+        // alternative variant
+        // position: absolute;
+        // left: 50%;
+        // top: 50%;
+        // transform: translate(-50%, -50%);
+        // box-sizing: border-box;
+    }
+    .modal__close_btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        &:before {
+            content: '';
+            background-color: #fff;
+            position: absolute;
+            height: 3px;
+            width: 27px;
+            top: 11px;
+            left: -4px;
+            transform: rotate(-45deg);
+        }
+        &:after {
+            content: '';
+            background-color: #fff;
+            position: absolute;
+            height: 3px;
+            width: 27px;
+            top: 11px;
+            transform: rotate(45deg);
+            left: -4px;
+        }
+    }
+    .modal__title h5 {
+        text-transform: uppercase;
+        @include fz(42);
+        font-weight: 700;
+        line-height: calc(54/42 * 100%);
+        padding-bottom: 20px;
+        text-align: center;
+        letter-spacing: 0.05em;
+    }
+    .modal__form {
+        label, input, select {
+            width: 100%;
+            outline: none;
+            border: none;
+            height: 1.8rem;
+        }
+        .form-row {
+            padding-bottom: 20px;
+        }
+        ::placeholder {
+            color: #1D1B1B;
+            padding-left: 5px;
+        }
+
+        .form-field {
+            border-left: 5px solid rgba(126, 128, 129, 0);
+            background-color: #fff;
+            width: 100%;
+        }
+        .form-field:focus {
+            background-color: #f5bab1;
+            opacity: 1;
+            border-left: 5px solid #ac1a04;
         }
     }
 }
