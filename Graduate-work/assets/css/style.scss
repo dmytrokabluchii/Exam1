@@ -434,7 +434,9 @@ body {
         }
         .card__image {
             position: relative;
-            cursor: pointer;
+            &_link {
+                cursor: zoom-in;
+            }
         }
         .card__price {
             position: absolute;

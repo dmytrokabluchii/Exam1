@@ -83,7 +83,7 @@ $(function () {
 
       var CHAT_ID = '704440668'; //  let text = encodeURI("<b>Email:</b> "+$("#exampleInputEmail1").val()+"\n<b>Subject:</b> "+$("#exampleInputPassword1").val()+"\n<b>Message:</b> "+$("#massage").val());
 
-      var text = encodeURI("Name: ".concat(nameInput.value, ", Surname:").concat(surnameInput.value, ", \n            Email: ").concat(emailInput.value, ", Phone: ").concat(phoneInput.value, ", Tour: ").concat(tourSelect.value));
+      var text = encodeURI("Name: ".concat(nameInput.value, ", Surname:").concat(surnameInput.value, ", \n                Email: ").concat(emailInput.value, ", Phone: ").concat(phoneInput.value, ", Tour: ").concat(tourSelect.value));
 
       if (nameInput.value !== '' && surnameInput.value !== '' && emailInput.value !== '' && phoneInput.value !== '' && tourSelect.value !== '') {
         $.get("https://api.telegram.org/bot".concat(BOT_TOKEN, "/sendMessage?chat_id=").concat(CHAT_ID, "&text=") + text + '&parse_mode=html', function (json) {
@@ -204,7 +204,7 @@ function getCard() {
     success: function success(json) {
       var html = '';
       json.forEach(function (card) {
-        html += "\n                    <li class=\"card__item card-first\">\n                        <div class=\"card__image\">\n                            <div class=\"card__image_link\" href=\"#!\">\n                                <img class=\"card__pic lazy\"\n                                    src=\"assets/images/place_image/".concat(card.pic.image, "\" alt=\"place_image\">\n                                <div class=\"card__price\">").concat(card.pic.price, "</div>\n                            </div>\n                        </div>\n                        <div class=\"card__content\">\n                            <div class=\"card__title\">\n                                <h6>").concat(card.title, "</h6>\n                            </div>\n                            <div class=\"card__subtitle subtitle\">\n                                <p>").concat(card.description, "</p>\n                            </div>\n                            <div class=\"card__link\">\n                                <button type=\"button\" class=\"card__link_text text_orange\" id=\"card_btn\">\n                                ").concat(card.link, "</button>\n                            </div>\n                        </div>\n                    </li>\n                ");
+        html += "\n                    <li class=\"card__item card-first\">\n                        <div class=\"card__image\" id=\"card-img\">\n                            <a class=\"card__image_link colorbox\" data-fancybox=\"group-1\" href=\"assets/images/place_image/place_1-min(b).jpg\">\n                                <img class=\"card__pic\"\n                                    src=\"assets/images/place_image/".concat(card.pic.image, "\" alt=\"place_image\">\n                                <div class=\"card__price\">").concat(card.pic.price, "</div>\n                            </a>\n                        </div>\n                        <div class=\"card__content\">\n                            <div class=\"card__title\">\n                                <h6>").concat(card.title, "</h6>\n                            </div>\n                            <div class=\"card__subtitle subtitle\">\n                                <p>").concat(card.description, "</p>\n                            </div>\n                            <div class=\"card__link\">\n                                <button type=\"button\" class=\"card__link_text text_orange\" id=\"card_btn\">\n                                ").concat(card.link, "</button>\n                            </div>\n                        </div>\n                    </li>\n                ");
       });
       $("#page_card").append(html);
       $("#card_tour").slick('slickAdd', html);
@@ -221,6 +221,12 @@ function getCard() {
       });
     }
   });
+  $(function () {
+    $("a.colorbox").colorbox({
+      maxWidth: "90%",
+      maxHeight: "90%"
+    });
+  });
 }
 
 ; // Подключение lightGallery
@@ -234,29 +240,33 @@ lightGallery(document.querySelector('.gallery__album', '.album__page'), {
   zoomFromOrigin: true,
   speed: 500,
   licenseKey: 'your_license_key'
-}); // Динамический подсчет блока place count
-// function getCount(){
-//     $.ajax({
-//         url:'common/count.json',
-//         type:'get',
-//         dataType:'json',
-//         success:function(json){
-//             let html = '';
-//             json.forEach((count)=>{
-//                 html += `
-//                     <div class="count__column">
-//                         <div class="count__column_calculation">
-//                         <span class="count__column_green counter">${count.calc}</span>+</div>
-//                         <div class="count__column_text">${count.title}</div>
-//                     </div>
-//                 `;
-//             });
-//                 // Добавляем в наш html            
-//             $("#place_count").append(html);
-//         },
-//         error:function(){
-//             // modal window sweet-aler2 вставляем
-//         }
-//     });  
-// }
-// getCount();
+}); // Динамические карты блока clients
+
+function getReview() {
+  $.ajax({
+    url: 'common/review.json',
+    type: 'get',
+    dataType: 'json',
+    success: function success(json) {
+      var html = '';
+      json.forEach(function (item) {
+        html += "\n                <li class=\"clients__cards\">\n                    <div class=\"clients__content\">\n                        <div class=\"clients__review subtitle\">\n                            <p>".concat(item.review, "\n                            </p>\n                        </div>\n                        <div class=\"clients__item\">\n                            <div class=\"clients__footer\">\n                                <div class=\"clients__avatar\">\n                                    <img class=\"clients__avatar_photo lazy\"\n                                        src=\"assets/images/clients/").concat(item.author.avatar, "\" alt=\"author-pic\">\n                                </div>\n                                <div class=\"clients__info\">\n                                    <div class=\"clients__info_author\">").concat(item.author.name, "</div>\n                                    <div class=\"clients__info_occupation\">").concat(item.author.occupation, "</div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </li>\n                ");
+      });
+      $("#review_clients").append(html);
+    },
+    error: function error() {
+      // modal window sweet-aler2
+      Swal.fire({
+        position: 'top-end',
+        icon: 'error',
+        title: 'Oops...',
+        text: "The clients-cards don't load!",
+        showConfirmButton: false,
+        timer: 4000
+      });
+    }
+  });
+}
+
+;
+getReview();

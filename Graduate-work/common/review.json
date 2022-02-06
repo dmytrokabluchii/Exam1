@@ -11,8 +11,8 @@
         "review":"Our experience with Tour Plus was exceptional. All of our accommodations were clean and were so varied. They gave us a real sense of Icelandic living and allowed us to meet people from all over the world and share their amazing adventures in Iceland.",
         "author": {
             "avatar":"clients_2-min.jpg",
-            "name": "$Tim Cook",
-            "occupation": "CEO of Apple"
+            "name": "Rihanna",
+            "occupation": "Singer"
         }
     },
     {
@@ -34,9 +34,17 @@
     {
         "review":"The trip was perfect!",
         "author": {
-            "avatar":"clients_5-min.png",
+            "avatar":"clients_5-min.jpg",
             "name": "Gary Tor",
             "occupation": "Manager"
+        }
+    },
+    {
+        "review":"Our entire trip included two weeks in Norway and two weeks in Europe. During our travels we raved about TourPlus and how professional, organised and helpful you are. It was so well organised and every little detail was covered so we could relax and enjoy our holiday without any concerns. I am really really impressed and would recommend your company without hesitation!",
+        "author": {
+            "avatar":"clients_6-min.jpg",
+            "name": "Dmytro",
+            "occupation": "Frontend developer"
         }
     }
 ]

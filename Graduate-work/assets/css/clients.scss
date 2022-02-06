@@ -1,0 +1,30 @@
+@import "style";
+
+.reviews__page {
+    background-color: #e5e2e2;
+    padding: 30px 0 95px;
+    .reviews__title_clients {
+        letter-spacing: 0.10em;
+    }
+    .reviews__subtitle {
+        padding: 30px 0 20px;
+    }
+    .reviews__column {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        list-style: none;
+        padding-bottom: 50px;
+    }
+    .clients__cards {
+        margin-top: 0px;
+    }
+    .reviews__button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+            text-decoration: none;
+        }
+    }
+}

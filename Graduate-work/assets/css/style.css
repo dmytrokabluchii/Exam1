@@ -512,7 +512,9 @@ body {
 }
 .place__card .card__image {
   position: relative;
-  cursor: pointer;
+}
+.place__card .card__image_link {
+  cursor: zoom-in;
 }
 .place__card .card__price {
   position: absolute;

@@ -17,7 +17,6 @@ $(function(){
         $("html, body").animate({scrollTop:top+'px'}, 1400);
     });
 
-
     // Скролл по arrow!
     $(".footer__arrow a").on("click", function (e) {
         e.preventDefault();
@@ -25,7 +24,6 @@ $(function(){
             top = $(id).offset().top;
         $('body,html').animate({scrollTop: top}, 1400);
     });
-
 
     // Hamburger-menu
     $(".hamburger, .page_overlay").on('click', function () {
@@ -37,7 +35,6 @@ $(function(){
         $("body").removeClass("open");
     });
     
-
     // Модальное окно order tour
     $.when(getCard()).then(function() {
         // открыть по кнопке
@@ -79,7 +76,7 @@ $(function(){
             const CHAT_ID = '704440668';
         //  let text = encodeURI("<b>Email:</b> "+$("#exampleInputEmail1").val()+"\n<b>Subject:</b> "+$("#exampleInputPassword1").val()+"\n<b>Message:</b> "+$("#massage").val());
             let text = encodeURI(`Name: ${nameInput.value}, Surname:${surnameInput.value}, 
-            Email: ${emailInput.value}, Phone: ${phoneInput.value}, Tour: ${tourSelect.value}`);
+                Email: ${emailInput.value}, Phone: ${phoneInput.value}, Tour: ${tourSelect.value}`);
             if(nameInput.value !== '' && surnameInput.value !== '' && emailInput.value !== '' 
             && phoneInput.value !== '' && tourSelect.value !== ''){
                 $.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=`+text+'&parse_mode=html', (json)=>{
@@ -90,7 +87,7 @@ $(function(){
                             icon: 'success',
                             title: 'Your message send!',
                             showConfirmButton: false,
-                            timer: 3000
+                            timer: 3000,
                         })
                     }
                 });
@@ -202,7 +199,6 @@ $(function(){
 
 });
 
-
 // Динамические карты блока place
 function getCard(){
     $.ajax({
@@ -214,12 +210,12 @@ function getCard(){
             json.forEach((card)=>{
                 html += `
                     <li class="card__item card-first">
-                        <div class="card__image">
-                            <div class="card__image_link" href="#!">
-                                <img class="card__pic lazy"
+                        <div class="card__image" id="card-img">
+                            <a class="card__image_link colorbox" data-fancybox="group-1" href="assets/images/place_image/place_1-min(b).jpg">
+                                <img class="card__pic"
                                     src="assets/images/place_image/${card.pic.image}" alt="place_image">
                                 <div class="card__price">${card.pic.price}</div>
-                            </div>
+                            </a>
                         </div>
                         <div class="card__content">
                             <div class="card__title">
@@ -253,6 +249,13 @@ function getCard(){
             })
         }
     });  
+
+    $(function(){
+        $("a.colorbox").colorbox({
+            maxWidth:"90%",
+            maxHeight:"90%"
+        });
+    });
 };
 
 
@@ -270,29 +273,51 @@ lightGallery(document.querySelector('.gallery__album', '.album__page'), {
 
 
 
-// Динамический подсчет блока place count
-// function getCount(){
-//     $.ajax({
-//         url:'common/count.json',
-//         type:'get',
-//         dataType:'json',
-//         success:function(json){
-//             let html = '';
-//             json.forEach((count)=>{
-//                 html += `
-//                     <div class="count__column">
-//                         <div class="count__column_calculation">
-//                         <span class="count__column_green counter">${count.calc}</span>+</div>
-//                         <div class="count__column_text">${count.title}</div>
-//                     </div>
-//                 `;
-//             });
-//                 // Добавляем в наш html            
-//             $("#place_count").append(html);
-//         },
-//         error:function(){
-//             // modal window sweet-aler2 вставляем
-//         }
-//     });  
-// }
-// getCount();
+// Динамические карты блока clients
+function getReview(){
+    $.ajax({
+        url:'common/review.json',
+        type:'get',
+        dataType:'json',
+        success:function(json){
+            let html = '';
+            json.forEach((item)=>{
+                html += `
+                <li class="clients__cards">
+                    <div class="clients__content">
+                        <div class="clients__review subtitle">
+                            <p>${item.review}
+                            </p>
+                        </div>
+                        <div class="clients__item">
+                            <div class="clients__footer">
+                                <div class="clients__avatar">
+                                    <img class="clients__avatar_photo lazy"
+                                        src="assets/images/clients/${item.author.avatar}" alt="author-pic">
+                                </div>
+                                <div class="clients__info">
+                                    <div class="clients__info_author">${item.author.name}</div>
+                                    <div class="clients__info_occupation">${item.author.occupation}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                `;
+            });
+            $("#review_clients").append(html);
+        },
+        error:function(){
+            // modal window sweet-aler2
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Oops...',
+                text: "The clients-cards don't load!",
+                showConfirmButton: false,
+                timer: 4000
+            })
+        }
+    });  
+};
+getReview();
