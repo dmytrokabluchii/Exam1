@@ -851,6 +851,7 @@ body {
 .map__contact {
   height: 700px;
   z-index: 10;
+  position: relative;
 }
 .map__contact a img {
   max-width: 100%;
@@ -858,22 +859,10 @@ body {
   -o-object-fit: cover;
   object-fit: cover;
 }
-.map .map_popup {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-}
-.map .map_popup img {
-  width: 100px;
-  margin-right: 10px;
-}
-.map #my_map {
-  position: relative;
-}
-.map #my_map p {
+.map__contact p {
+  position: absolute;
+  left: 0;
+  top: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -886,9 +875,6 @@ body {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  position: absolute;
-  left: 0;
-  top: 0;
   color: #fff;
   text-decoration: none;
   font-size: 40px;
@@ -897,8 +883,20 @@ body {
   -o-transition: all 0.2s ease;
   transition: all 0.2s ease;
 }
-.map #my_map a:hover p {
+.map__contact a:hover p {
   opacity: 0.5;
+}
+.map .map_popup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.map .map_popup img {
+  width: 100px;
+  margin-right: 10px;
 }
 
 .footer {

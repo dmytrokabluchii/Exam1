@@ -56,6 +56,8 @@
     <link rel="stylesheet" href="assets/plugins/sweetalert2/sweetalert2.min.css">
     <link rel="stylesheet" href="assets/plugins/videotube/videotube.min.css">
     <link rel="stylesheet" href="assets/plugins/colorbox/colorbox.css">
+
+    <link rel="stylesheet" href="assets/plugins/leflet/leaflet.css">
     <link rel="stylesheet" href="assets/plugins/animatewow/animate.min.css">
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
@@ -208,7 +210,7 @@
                         </nav>
                     </div>
                     <div class="header__button">
-                        <button type="button" class="callback__btn btn btn-style header__button_orange wow animate__tada" data-wow-duration="1s" id="header_callback-btn">
+                        <button type="button" class="callback__btn btn btn-style header__button_orange" id="header_callback-btn">
                         Call Back</button>
                     </div>
 
@@ -225,7 +227,7 @@
     </header>
 
     <main class="main">
-        <div class="modal__callback">
+        <div class="modal__callback" id="modal__callback">
             <div class="callback__field">
                 <div class="callback__content">
                     <div class="callback__close_btn"></div>
@@ -279,7 +281,7 @@
                                 <h4 class="wow animate__slideInLeft" data-wow-duration="2s">POPULAR TOUR PLACE</h4>
                             </div>
                             <div class="place__button">
-                                <a class="btn btn-style place__btn_orange wow animate__shakeY" data-wow-duration="1s" href="place.html">View All</a>
+                                <a class="btn btn-style place__btn_orange" href="place.html">View All</a>
                             </div>
                         </div>
                         <div class="place__subtitle subtitle">
@@ -377,7 +379,7 @@
             <div class="video__wrapper container">
                 <div class="video__text">
                     <div class="video__title title-section">
-                        <h4 class="wow animate__flipInX" data-wow-duration="2s">Our Travel Video Album</h4>
+                        <h4 class="wow animate__zoomInRight" data-wow-duration="2s">Our Travel Video Album</h4>
                     </div>
                     <div class="video__subtitle subtitle">
                         <p>Memory in your Gallery</p>
@@ -437,7 +439,7 @@
 
                 </div>
                 <div class="video__button">
-                    <a class="btn btn-style place__btn_orange wow animate__shakeY" data-wow-duration="1s" href="page/video.html">View All</a>
+                    <a class="btn btn-style place__btn_orange" href="page/video.html">View All</a>
                 </div>
             </div>
         </section>
@@ -446,7 +448,7 @@
             <div class="gallery__wrapper container">
                 <div class="gallery__text">
                     <div class="gallery__title title-section">
-                        <h4 class="wow animate__flipInX" data-wow-duration="2s">Create Your Journey Album</h4>
+                        <h4 class="wow animate__zoomInRight" data-wow-duration="2s">Create Your Journey Album</h4>
                     </div>
                     <div class="gallery__subtitle subtitle">
                         <p>Store in your Gallery</p>
@@ -479,7 +481,7 @@
                     </a>
                 </div>
                 <div class="gallery__button">
-                    <a class="btn btn-style place__btn_orange wow animate__shakeY" data-wow-duration="1s" href="page/gallery.html">View All</a>
+                    <a class="btn btn-style place__btn_orange" href="page/gallery.html">View All</a>
                 </div>
             </div>
         </section>
@@ -700,7 +702,7 @@
                     </li>
                 </ul>
                 <div class="clients__button">
-                    <a class="btn btn-style clients__button_link wow animate__shakeY" data-wow-duration="1s" href="clients.html">View all reviews</a>
+                    <a class="btn btn-style clients__button_link" href="clients.html">View all reviews</a>
                 </div>
             </div>
         </section>
@@ -708,7 +710,7 @@
         <section class="team" id="team_tourplus">
             <div class="team__wrapper container">
                 <div class="team__title title-section ">
-                    <h3 class="wow animate__flipInX" data-wow-duration="2s">Professional Team</h3>
+                    <h3 class="wow animate__zoomInRight" data-wow-duration="2s">Professional Team</h3>
                 </div>
                 <div class="team__gallery">
                     <ul class="team__list">
@@ -873,7 +875,7 @@
                             </p>
                         </div>
                         <div class="booking__button">
-                            <button type="button" class="booking__btn btn btn-style wow animate__tada" data-wow-duration="1s" id="booking_btn">
+                            <button type="button" class="booking__btn btn btn-style" id="booking_btn">
                                 Book Now</button>
                         </div>
                     </div>
@@ -935,6 +937,17 @@
                 </div>
             </div>
         </div>
+
+        <div class="map" id="map">
+            <div class="map__wrapper" id="my_map">
+                <a href="javascript:void(0)" class="map__link" id="init_map">
+                    <img class="map__link_pic lazy"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
+                        data-src="assets/images/screen-map.jpg" alt="#">
+                    <p class="map__link_click">Click to interactive</p>
+                </a>
+            </div>
+        </div>
     </main>
 
     <footer class="footer" id="footer_tourplus">
@@ -973,7 +986,7 @@
                                 <li class="item__service">
                                     <a href="#support_tourplus" class="item__service_link">Our Service</a>
                                 </li>
-                                <li class="item__service">
+                                <li class="item__service item__service_contact">
                                     <a href="#!" class="item__service_link">Contact Us</a>
                                 </li>
                                 <li class="item__service">
@@ -986,10 +999,10 @@
                             <div class="footer__contacts_title">Contact</div>
                             <ul class="footer__contacts-column">
                                 <li class="footer__contacts-data">
-                                    <a href="https://www.google.com/maps/place/@24.9092452,91.8641862,17z"
-                                        target="_blank" class="footer__contacts_link"><img
+                                    <a href="https://www.google.com/maps/place/@24.90925,91.8619975,17z/"
+                                        target="_blank" class="footer__contacts_link to_google"><img
                                             src="assets/images/svg/contacts-address.svg" alt="pic-address">
-                                        <span>Flat 20, Housing state, Sylhet</span>
+                                        <span>Flat 20, Housing estate, Sylhet</span>
                                     </a>
                                 </li>
                                 <li class="footer__contacts-data">
@@ -999,7 +1012,7 @@
                                     </a>
                                 </li>
 
-                                <li class="footer__contacts-data">
+                                <li class="footer__contacts-data" id="mail__link">
                                     <a href="mailto:dim84848484@gmail.com" class="footer__contacts_link">
                                         <img src="assets/images/svg/contacts-email.svg" alt="pic-mail">
                                         <span>dim84848484@gmail.com</span>
@@ -1080,6 +1093,7 @@
     <script src="assets/plugins/lightGallery/lg-zoom.min.js"></script>
     <script src="assets/plugins/lightGallery/lg-fullscreen.min.js"></script>
     <script src="assets/plugins/colorbox/jquery.colorbox-min.js"></script>
+    <script src="assets/plugins/leflet/leaflet.js"></script>
     <script src="assets/plugins/animatewow/wow.min.js"></script>
     <script src="assets/js/axios.min.js"></script>
     <script src="assets/js/main.js"></script>

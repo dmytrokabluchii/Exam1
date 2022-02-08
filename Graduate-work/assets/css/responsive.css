@@ -655,6 +655,14 @@
     line-height: calc(32/28 * 100%);
   }
 
+  .map .map_popup img {
+    width: 80px;
+    margin-right: 5px;
+  }
+  .map .leaflet-popup-content-wrapper .leaflet-popup-content {
+    margin: 10px 8px;
+  }
+
   .footer__row {
     padding-bottom: 20px;
   }

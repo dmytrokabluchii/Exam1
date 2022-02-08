@@ -893,7 +893,7 @@ body {
     &__contact {
         height: 700px;
         z-index: 10;
-
+        position: relative;
         a {
             img {
                 max-width: 100%;
@@ -901,6 +901,33 @@ body {
                 -o-object-fit: cover;
                 object-fit: cover;
             }
+        }
+        p {
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            color: #fff;
+            text-decoration: none;
+            font-size: 40px;
+            opacity: 0;
+            -webkit-transition: all .2s ease;
+            -o-transition: all .2s ease;
+            transition: all .2s ease;
+        }
+        a:hover p {
+            opacity: .5;
         }
     }
 
@@ -912,43 +939,9 @@ body {
         -ms-flex-pack: justify;
         justify-content: space-between;
     }
-
     .map_popup img {
         width: 100px;
         margin-right: 10px;
-    }
-
-    #my_map {
-        position: relative;
-    }
-
-    #my_map p {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        width: 100%;
-        height: 100%;
-        background-color: #000;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        position: absolute;
-        left: 0;
-        top: 0;
-        color: #fff;
-        text-decoration: none;
-        font-size: 40px;
-        opacity: 0;
-        -webkit-transition: all .2s ease;
-        -o-transition: all .2s ease;
-        transition: all .2s ease;
-    }
-
-    #my_map a:hover p {
-        opacity: .5;
     }
 }
 

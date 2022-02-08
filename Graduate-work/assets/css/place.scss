@@ -15,6 +15,12 @@
         .card__subtitle p {
             height: 130px;
         }
+        @media screen and (max-width:999px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media screen and (max-width:600px) {
+            grid-template-columns: repeat(1, 1fr);
+        }
     }
     .place__page_button {
         display: flex;
@@ -22,22 +28,6 @@
         align-items: center;
         .place__page_btn {
             text-decoration: none;
-        }
-    }
-}
-
-@media screen and (max-width:999px) {
-    .place__page {
-        .column__card {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-}
-
-@media screen and (max-width:600px) {
-    .place__page {
-        .column__card {
-            grid-template-columns: repeat(1, 1fr);
         }
     }
 }

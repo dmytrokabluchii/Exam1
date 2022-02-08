@@ -18,7 +18,7 @@ $(function(){
     });
 
     // Скролл по arrow!
-    $(".footer__arrow a").on("click", function (e) {
+    $(".footer__arrow a, .item__service a").on("click", function (e) {
         e.preventDefault();
         let id  = $(this).attr('href'),
             top = $(id).offset().top;
@@ -259,6 +259,40 @@ async function getCard(){
             closeButton:"true"
         });
     });
+
+
+    // Map Leaflet
+    // инициализируем карту по клику
+    $("#init_map").on('click', function(){
+        // удаляем tag <a> init_map
+        $(this).remove();
+        // Инициализация карты
+        var map = L.map('my_map').setView([24.9092452, 91.8641862], 4);
+        L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+        var myIcon = L.icon({
+            iconUrl: 'assets/images/svg/map-pin.svg',
+            iconSize: [96, 96],
+            iconAnchor: [12, 41],
+            popupAnchor: [36, -25],
+        });
+        const marker = L.marker([24.9092452, 91.8641862], {icon:myIcon}).addTo(map)
+        .bindPopup(`
+        <div class="map_popup">
+        <img src="assets/plugins/leflet/images/map.svg" alt="map-pic">
+        <div class="map_info">
+            <b>Hello! <br>
+            My friend!</b>
+            <div class="map_info_text">You're in Flat 20, Housing state, Sylhet!</div>
+            </div>
+        </div>
+        `);
+        // Переход по клику на маркер!
+            marker.on('click', function(){
+                document.getElementById('to_google').click();
+            })
+        });
 };
 
 

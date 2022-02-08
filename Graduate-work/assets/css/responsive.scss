@@ -801,6 +801,18 @@ $base_size:16;
         }
     }
 
+    .map {
+        .map_popup img {
+            width: 80px;
+            margin-right: 5px;
+        }
+        .leaflet-popup-content-wrapper {
+            .leaflet-popup-content {
+                margin: 10px 8px;
+            }
+        }
+    }
+
     .footer {
         &__row {
             padding-bottom: 20px;
