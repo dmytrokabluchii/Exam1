@@ -50,13 +50,13 @@
     <meta property="og:image:width" content="1260">
     <meta property="og:image:height" content="630">
 
-
     <link rel="stylesheet" href="assets/plugins/slick/slick.css">
     <link rel="stylesheet" href="assets/plugins/slick/slick-theme.css">
     <link rel="stylesheet" href="assets/plugins/lightGallery/lightgallery-bundle.min.css">
     <link rel="stylesheet" href="assets/plugins/sweetalert2/sweetalert2.min.css">
     <link rel="stylesheet" href="assets/plugins/videotube/videotube.min.css">
     <link rel="stylesheet" href="assets/plugins/colorbox/colorbox.css">
+    <link rel="stylesheet" href="assets/plugins/animatewow/animate.min.css">
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="stylesheet" href="assets/css/responsive.min.css">
@@ -133,6 +133,15 @@
                             </svg>
                         </a>
                     </li>
+                    <li class="media__links">
+                        <a class="socil__media android-link" rel="nofollow noreferrer" target="_blank"
+                            href="https://play.google.com/store/apps/details?id=my.tourplus.cust">
+                            <svg class="media__icon">
+                                <use xlink:href="assets/images/svg/sprite-media_links.svg#icon_android">
+                                </use>
+                            </svg>
+                        </a>
+                    </li>
                 </ul>
             </nav>
             <div class="mobile__button">
@@ -199,7 +208,7 @@
                         </nav>
                     </div>
                     <div class="header__button">
-                        <button type="button" class="callback__btn btn btn-style header__button_orange" id="header_callback-btn">
+                        <button type="button" class="callback__btn btn btn-style header__button_orange wow animate__tada" data-wow-duration="1s" id="header_callback-btn">
                         Call Back</button>
                     </div>
 
@@ -245,10 +254,10 @@
                     <div class="home__wrapper">
                         <div class="home__text">
                             <div class="home__title">
-                                <h2>Exploring the <span class="text_orange">World</span> In Comfort</h2>
+                                <h2 class="home__title_text wow animate__slideInLeft" data-wow-duration="2s">Exploring the <span class="text_orange">World</span> In Comfort</h2>
                             </div>
                             <div class="home__subtitle subtitle">
-                                <p>For over 25 years Tourplus has been enriching lives through our all-inclusive
+                                <p class="home__subtitle_text">For over 25 years Tourplus has been enriching lives through our all-inclusive
                                     tour and custom itineraries. Our company make the world beautiful everyday!</p>
                             </div>
                         </div>
@@ -267,10 +276,10 @@
                     <div class="place__row container">
                         <div class="place__header">
                             <div class="place__title title-section">
-                                <h4>POPULAR TOUR PLACE</h4>
+                                <h4 class="wow animate__slideInLeft" data-wow-duration="2s">POPULAR TOUR PLACE</h4>
                             </div>
                             <div class="place__button">
-                                <a class="btn btn-style place__btn_orange" href="place.html">View All</a>
+                                <a class="btn btn-style place__btn_orange wow animate__shakeY" data-wow-duration="1s" href="place.html">View All</a>
                             </div>
                         </div>
                         <div class="place__subtitle subtitle">
@@ -295,7 +304,7 @@
                                         <span class="count__column_green counter" data-TargetNum="3789" data-Speed="4000">
                                             0</span>+
                                     </div>
-                                    HAPPY CUSTOMERS
+                                      <div class="count__column_title wow animate__zoomInUp" data-wow-duration="2s">HAPPY CUSTOMERS</div>
                                 </a>
                             </li>
                             <li class="count__column">
@@ -304,7 +313,7 @@
                                         <span class="count__column_green counter" data-TargetNum="9" data-Speed="4000">
                                             0</span>+
                                     </div>
-                                    AMAZING TOURS
+                                    <div class="count__column_title wow animate__zoomInUp" data-wow-duration="2s"> AMAZING TOURS</div>
                                 </a>
                             </li>
                             <li class="count__column">
@@ -313,7 +322,7 @@
                                         <span class="count__column_green counter" data-TargetNum="116">
                                             0</span>+
                                     </div>
-                                    TOURS PACKAGE
+                                    <div class="count__column_title wow animate__zoomInUp" data-wow-duration="2s">TOURS PACKAGE</div>
                                 </a>
                             </li>
                         </ul>
@@ -328,7 +337,7 @@
                     <div class="about__left">
                         <div class="about__left_question">WHO WE ARE?</div>
                         <div class="about__title">
-                            <h3>We are a travel experts</h3>
+                            <h3 class="wow animate__slideInLeft" data-wow-duration="2s">We are a travel experts</h3>
                         </div>
                         <div class="about__subtitle subtitle">
                             <p>
@@ -368,7 +377,7 @@
             <div class="video__wrapper container">
                 <div class="video__text">
                     <div class="video__title title-section">
-                        <h4>Our Travel Video Album</h4>
+                        <h4 class="wow animate__flipInX" data-wow-duration="2s">Our Travel Video Album</h4>
                     </div>
                     <div class="video__subtitle subtitle">
                         <p>Memory in your Gallery</p>
@@ -428,7 +437,7 @@
 
                 </div>
                 <div class="video__button">
-                    <a class="btn btn-style place__btn_orange" href="page/video.html">View All</a>
+                    <a class="btn btn-style place__btn_orange wow animate__shakeY" data-wow-duration="1s" href="page/video.html">View All</a>
                 </div>
             </div>
         </section>
@@ -437,7 +446,7 @@
             <div class="gallery__wrapper container">
                 <div class="gallery__text">
                     <div class="gallery__title title-section">
-                        <h4>Create Your Journey Album</h4>
+                        <h4 class="wow animate__flipInX" data-wow-duration="2s">Create Your Journey Album</h4>
                     </div>
                     <div class="gallery__subtitle subtitle">
                         <p>Store in your Gallery</p>
@@ -470,7 +479,7 @@
                     </a>
                 </div>
                 <div class="gallery__button">
-                    <a class="btn btn-style place__btn_orange" href="page/gallery.html">View All</a>
+                    <a class="btn btn-style place__btn_orange wow animate__shakeY" data-wow-duration="1s" href="page/gallery.html">View All</a>
                 </div>
             </div>
         </section>
@@ -480,7 +489,7 @@
                 <div class="support__column container">
                     <div class="support__row row__first">
                         <div class="support__title">
-                            <h4>WE PROVIDE THE BEST Quality Rest TO YOUR JOURNEY</h4>
+                            <h4 class="wow animate__slideInLeft" data-wow-duration="2s">WE PROVIDE THE BEST Quality Rest TO YOUR JOURNEY</h4>
                         </div>
                         <div class="support__subtitle subtitle">
                             <p>Our goal is to provide excellent customer service. To do so, we maintain strict quality
@@ -610,7 +619,7 @@
                 <div class="clients__wrapper container">
                     <div class="clients__text subtitle">What Say Clients</div>
                     <div class="clients__title">
-                        <h3>Our Clients are Important to Us!</h3>
+                        <h3 class="wow animate__zoomInDown" data-wow-duration="2s">Our Clients are Important to Us!</h3>
                     </div>
                 </div>
             </div>
@@ -691,7 +700,7 @@
                     </li>
                 </ul>
                 <div class="clients__button">
-                    <a class="btn btn-style clients__button_link" href="clients.html">View all reviews</a>
+                    <a class="btn btn-style clients__button_link wow animate__shakeY" data-wow-duration="1s" href="clients.html">View all reviews</a>
                 </div>
             </div>
         </section>
@@ -699,7 +708,7 @@
         <section class="team" id="team_tourplus">
             <div class="team__wrapper container">
                 <div class="team__title title-section ">
-                    <h3>Professional Team</h3>
+                    <h3 class="wow animate__flipInX" data-wow-duration="2s">Professional Team</h3>
                 </div>
                 <div class="team__gallery">
                     <ul class="team__list">
@@ -854,7 +863,7 @@
                 <div class="booking__wrapper container">
                     <div class="booking__content">
                         <div class="booking__title title">
-                            <h3>Are you still interested to our tour</h3>
+                            <h3 class="wow animate__slideInLeft" data-wow-duration="2s">Are you still interested to our tour</h3>
                         </div>
                         <div class="booking__subtitle subtitle">
                             <p>Your time is important. When you choose Nordic Visitor, we dedicate time to organising a
@@ -864,7 +873,7 @@
                             </p>
                         </div>
                         <div class="booking__button">
-                            <button type="button" class="booking__btn btn btn-style" id="booking_btn">
+                            <button type="button" class="booking__btn btn btn-style wow animate__tada" data-wow-duration="1s" id="booking_btn">
                                 Book Now</button>
                         </div>
                     </div>
@@ -1031,10 +1040,19 @@
                             </a>
                         </li>
                         <li class="media__links">
-                            <a class="socil__media linkedin-link" rel="nofollow noreferrer" target="_blank"
+                            <a class="socil__media youtube-link" rel="nofollow noreferrer" target="_blank"
                                 href="https://www.youtube.com/">
                                 <svg class="media__icon">
                                     <use xlink:href="assets/images/svg/sprite-media_links.svg#icon_youtube">
+                                    </use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="media__links">
+                            <a class="socil__media android-link" rel="nofollow noreferrer" target="_blank"
+                                href="https://play.google.com/store/apps/details?id=my.tourplus.cust">
+                                <svg class="media__icon">
+                                    <use xlink:href="assets/images/svg/sprite-media_links.svg#icon_android">
                                     </use>
                                 </svg>
                             </a>
@@ -1044,7 +1062,7 @@
 
             </div>
             <div class="footer__arrow">
-                <a href="#home_tourplus" class="arrow__content_icon">&uarr;</a>
+                <a href="#home_tourplus" class="arrow__content_icon"><span class="wow animate__zoomIn" data-wow-duration="2s">&uarr;</span></a>
             </div>
         </div>
     </footer>
@@ -1062,6 +1080,7 @@
     <script src="assets/plugins/lightGallery/lg-zoom.min.js"></script>
     <script src="assets/plugins/lightGallery/lg-fullscreen.min.js"></script>
     <script src="assets/plugins/colorbox/jquery.colorbox-min.js"></script>
+    <script src="assets/plugins/animatewow/wow.min.js"></script>
     <script src="assets/js/axios.min.js"></script>
     <script src="assets/js/main.js"></script>
 

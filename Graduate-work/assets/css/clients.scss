@@ -3,6 +3,10 @@
 .reviews__page {
     background-color: #e5e2e2;
     padding: 30px 0 95px;
+    font-family: 'Lato';
+    .reviews__text {
+        color: #1D1B1B;
+    }
     .reviews__title_clients {
         letter-spacing: 0.10em;
     }
@@ -16,6 +20,7 @@
         list-style: none;
         padding-bottom: 50px;
     }
+
     .clients__cards {
         margin-top: 0px;
     }

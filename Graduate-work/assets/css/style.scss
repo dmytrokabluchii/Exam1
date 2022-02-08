@@ -932,7 +932,7 @@ body {
         padding: 75px 25px 110px;
     }
     &__review {
-        position: relative;
+        // position: relative;
         height: auto;
         p {
             color: #4A4949;
@@ -1225,7 +1225,7 @@ body {
             text-decoration: none;
             color: #fff;
             cursor: pointer;
-            @include fz(40);
+            @include fz(60);
         }
     }
 

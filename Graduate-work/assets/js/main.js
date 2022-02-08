@@ -201,7 +201,7 @@ async function getCard(){
             let html = '';
             json.forEach((card)=>{
                 html += `
-                    <li class="card__item card-first">
+                    <li class="card__item card-first wow animate__zoomIn" data-wow-duration="4s">
                         <div class="card__image" id="card-img">
                             <a class="card__image_link colorbox" data-fancybox="group-1" href="assets/images/place_image/${card.pic.big_image}" title="${card.title}">
                                 <img class="card__pic"
@@ -273,7 +273,7 @@ function getReview(){
             json.forEach((item)=>{
                 html += `
                 <li class="clients__cards">
-                    <div class="clients__content">
+                    <article class="clients__content">
                         <div class="clients__review subtitle">
                             <p>${item.review}
                             </p>
@@ -290,7 +290,7 @@ function getReview(){
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </article>
                 </li>
                 `;
             });
@@ -323,3 +323,7 @@ lightGallery(document.querySelector('.gallery__album', '.album__page'), {
     speed: 500,
     licenseKey: 'your_license_key',
 });
+
+
+// Инициализация WOW.js for animate.css
+new WOW().init();

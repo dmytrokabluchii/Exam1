@@ -968,7 +968,6 @@ body {
   padding: 75px 25px 110px;
 }
 .clients__review {
-  position: relative;
   height: auto;
 }
 .clients__review p {
@@ -1443,6 +1442,10 @@ body {
 .reviews__page {
   background-color: #e5e2e2;
   padding: 30px 0 95px;
+  font-family: "Lato";
+}
+.reviews__page .reviews__text {
+  color: #1D1B1B;
 }
 .reviews__page .reviews__title_clients {
   letter-spacing: 0.1em;

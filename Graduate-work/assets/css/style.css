@@ -968,7 +968,6 @@ body {
   padding: 75px 25px 110px;
 }
 .clients__review {
-  position: relative;
   height: auto;
 }
 .clients__review p {
@@ -1231,7 +1230,7 @@ body {
   text-decoration: none;
   color: #fff;
   cursor: pointer;
-  font-size: 2.5rem;
+  font-size: 3.75rem;
 }
 .footer__column {
   width: 100%;
