@@ -280,10 +280,9 @@ function getCard() {
             var marker = L.marker([24.9092452, 91.8641862], {
               icon: myIcon
             }).addTo(map).bindPopup("\n        <div class=\"map_popup\">\n        <img src=\"assets/plugins/leflet/images/map.svg\" alt=\"map-pic\">\n        <div class=\"map_info\">\n            <b>Hello! <br>\n            My friend!</b>\n            <div class=\"map_info_text\">You're in Flat 20, Housing state, Sylhet!</div>\n            </div>\n        </div>\n        "); // Переход по клику на маркер!
-
-            marker.on('click', function () {
-              document.getElementById('to_google').click();
-            });
+            // marker.on('click', function(){
+            //     document.getElementById('to_google').click();
+            // })
           });
 
         case 6:

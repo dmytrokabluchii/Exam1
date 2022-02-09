@@ -218,11 +218,6 @@
   .footer .media__items {
     padding-bottom: 5px;
   }
-  .footer__arrow {
-    margin-top: -85px;
-    display: flex;
-    justify-content: flex-end;
-  }
   .footer__arrow .arrow__content_icon {
     padding: 55px 60px;
     font-size: 2.5rem;

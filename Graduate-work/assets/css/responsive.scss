@@ -257,9 +257,6 @@ $base_size:16;
             padding-bottom: 5px;
         }
         &__arrow {
-            margin-top: -85px;
-            display: flex;
-            justify-content: flex-end;
             .arrow__content_icon {
                 padding: 55px 60px;
                 @include fz(40);

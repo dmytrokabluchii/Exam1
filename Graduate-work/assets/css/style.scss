@@ -912,6 +912,7 @@ body {
     }
     &__column {
         display: flex;
+        justify-content: space-between;
         gap: 30px;
         padding-bottom: 50px;
         list-style: none; 
@@ -921,7 +922,7 @@ body {
         z-index: 3;
         background-color: #fff;
         margin-top: -196px;
-        flex: 0 0 33.333%;
+        flex: 0 1 33.333%;
         box-shadow: 0px 5px 10px 4px rgba(97, 94, 94, 0.2);
     }
     &__content {
@@ -1252,7 +1253,7 @@ body {
         justify-content: flex-end;
 
         .arrow__content_icon {
-            padding: 70px 80px;
+            padding: 60px 71px;
             background-color: #FF492F;
             display: flex;
             justify-content: center;
@@ -1262,7 +1263,7 @@ body {
             text-decoration: none;
             color: #fff;
             cursor: pointer;
-            @include fz(60);
+            @include fz(50);
         }
     }
 

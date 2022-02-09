@@ -317,10 +317,10 @@ async function getCard(){
         </div>
         `);
         // Переход по клику на маркер!
-            marker.on('click', function(){
-                document.getElementById('to_google').click();
-            })
-        });
+            // marker.on('click', function(){
+            //     document.getElementById('to_google').click();
+            // })
+    });
 };
 
 
