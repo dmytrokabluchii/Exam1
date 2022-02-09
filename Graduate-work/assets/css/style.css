@@ -187,7 +187,7 @@ body {
 
 .place__btn_orange {
   width: 133px;
-  padding: 15px 15px;
+  padding: 15px 25px;
   text-transform: uppercase;
 }
 
@@ -372,17 +372,17 @@ body {
   color: #1D1B1B;
   font-weight: 600;
   position: relative;
-  padding: 5px;
+  padding: 7px;
   border: 2px solid transparent;
   transition: all 0.4s ease-in-out;
 }
 .header .nav__menu ul li a:hover {
   border: 2px solid #FF492F;
-  border-radius: 20px;
+  border-radius: 25px;
 }
-.header .nav__menu ul li a:active {
-  border: 2px solid #12cf22;
-  border-radius: 20px;
+.header .nav__menu ul li a.active {
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  border-radius: 25px;
 }
 .header__button_orange {
   width: 110px;
@@ -391,7 +391,7 @@ body {
 
 .header.fixed_header {
   height: 60px;
-  background: linear-gradient(243.43deg, rgba(255, 73, 47, 0.7) 16%, rgba(68, 65, 65, 0.7) 90%);
+  background: linear-gradient(243.43deg, rgba(255, 73, 47, 0.8) 16%, rgba(68, 65, 65, 0.8) 90%);
   backdrop-filter: blur(2px);
 }
 .header.fixed_header .nav__menu ul {
@@ -404,9 +404,6 @@ body {
 }
 .header.fixed_header .nav__menu ul li a:after {
   background-color: #8d2110;
-}
-.header.fixed_header .nav__menu ul li a:active {
-  color: #752775;
 }
 .header.fixed_header .header__button_orange {
   background: linear-gradient(135deg, #4c4c4c, black);
@@ -1200,7 +1197,7 @@ body {
 }
 
 .map__wrapper {
-  height: 500px;
+  height: 465px;
   z-index: 10;
   position: relative;
 }

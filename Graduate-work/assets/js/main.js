@@ -11,10 +11,10 @@ $(function(){
                 }
             }
     });
-    $("#header__menu_links a").on('click', function(e){
+    $("#header__menu_links li a").on('click', function(e){
         e.preventDefault();
         const top = $($(this).attr("href")).offset().top-60;
-        $("html, body").animate({scrollTop:top+'px'}, 1400);
+        $("html, body").animate({scrollTop:top+'px'}, 900);
     });
 
     // Скролл по arrow!
@@ -125,10 +125,9 @@ $(function(){
     });
     
 
-
     // Модальное окно callback
     // открыть по кнопке
-    $('.callback__btn').click(function() { 
+    $('.callback__btn, .item__service_contact a').click(function() { 
         $('.modal__callback').fadeIn();
         $('.modal__callback').addClass('disabled');
     });
@@ -188,8 +187,37 @@ $(function(){
             })
         }
     });
-
 });
+
+
+// Active menu on scroll
+let sections = $('section')
+    , nav = $('.nav__menu')
+    , nav_height = nav.outerHeight();
+
+$(window).on('scroll', function () {
+    let cur_pos = $(this).scrollTop();
+    sections.each(function() {
+        let top = $(this).offset().top - nav_height,
+            bottom = top + $(this).outerHeight();
+        if (cur_pos >= top && cur_pos <= bottom) {
+        nav.find('a').removeClass('active');
+        sections.removeClass('active');
+        $(this).addClass('active');
+        nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+        }
+    });
+});
+
+nav.find('a').on('click', function () {
+    let $el = $(this)
+        , id = $el.attr('href');
+    $('html, body').animate({
+        scrollTop: $(id).offset().top - nav_height
+    }, 500);
+    return false;
+});
+
 
 // Динамические карты блока place
 async function getCard(){
@@ -224,7 +252,7 @@ async function getCard(){
                     </li>
                 `;
             });
-
+            
             $("#page_card").append(html);
             $("#card_tour").slick('slickAdd', html);
         },
