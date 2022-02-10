@@ -381,7 +381,7 @@ body {
   border-radius: 25px;
 }
 .header .nav__menu ul li a.active {
-  border: 2px solid rgba(0, 0, 0, 0.6);
+  border: 2px solid #1D1B1B;
   border-radius: 25px;
 }
 .header__button_orange {
@@ -392,7 +392,7 @@ body {
 .header.fixed_header {
   height: 60px;
   background: linear-gradient(243.43deg, rgba(255, 73, 47, 0.8) 16%, rgba(68, 65, 65, 0.8) 90%);
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(5px);
 }
 .header.fixed_header .nav__menu ul {
   display: flex;
