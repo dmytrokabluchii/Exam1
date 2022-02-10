@@ -14,7 +14,7 @@ $(function(){
     $("#header__menu_links li a").on('click', function(e){
         e.preventDefault();
         const top = $($(this).attr("href")).offset().top-60;
-        $("html, body").animate({scrollTop:top+'px'}, 900);
+        $('body,html').animate({scrollTop: top + 'px'}, 900);
     });
 
     // Скролл по arrow!
@@ -282,8 +282,8 @@ async function getCard(){
     // colorbox plugin
     $(function(){
         $("a.card__image_link").colorbox({
-            maxWidth:"90%",
-            maxHeight:"90%",
+            maxWidth:"98%",
+            maxHeight:"98%",
             closeButton:"true"
         });
     });

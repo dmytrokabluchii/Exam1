@@ -20,7 +20,7 @@ $(function () {
   $("#header__menu_links li a").on('click', function (e) {
     e.preventDefault();
     var top = $($(this).attr("href")).offset().top - 60;
-    $("html, body").animate({
+    $('body,html').animate({
       scrollTop: top + 'px'
     }, 900);
   }); // Скролл по arrow!
@@ -256,8 +256,8 @@ function getCard() {
 
           $(function () {
             $("a.card__image_link").colorbox({
-              maxWidth: "90%",
-              maxHeight: "90%",
+              maxWidth: "98%",
+              maxHeight: "98%",
               closeButton: "true"
             });
           }); // Map Leaflet

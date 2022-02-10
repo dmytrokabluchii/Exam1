@@ -208,6 +208,11 @@ body {
   color: #000;
 }
 
+input {
+  border-radius: 0;
+  -webkit-appearance: none;
+}
+
 .title {
   font-family: "Lato";
   font-weight: 700;
