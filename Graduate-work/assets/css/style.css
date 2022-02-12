@@ -335,6 +335,100 @@ input {
   padding-bottom: 20px;
 }
 
+#booking-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(2px);
+  overflow: auto;
+}
+#booking-modal .modal__field {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#booking-modal .modal__content {
+  position: relative;
+  max-width: 600px;
+  padding: 40px;
+  background-color: #FF492F;
+  color: #fff;
+  font-family: "Lato";
+}
+#booking-modal .modal__close_btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+#booking-modal .modal__close_btn:before {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  height: 3px;
+  width: 27px;
+  top: 11px;
+  left: -4px;
+  transform: rotate(-45deg);
+}
+#booking-modal .modal__close_btn:after {
+  content: "";
+  background-color: #fff;
+  position: absolute;
+  height: 3px;
+  width: 27px;
+  top: 11px;
+  transform: rotate(45deg);
+  left: -4px;
+}
+#booking-modal .modal__title h5 {
+  text-transform: uppercase;
+  font-size: 2.625rem;
+  font-weight: 700;
+  line-height: calc(54/42 * 100%);
+  padding-bottom: 20px;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+#booking-modal .modal__form label, #booking-modal .modal__form input, #booking-modal .modal__form select {
+  width: 100%;
+  outline: none;
+  border: none;
+  height: 1.8rem;
+  transition: all 0.2s ease;
+}
+#booking-modal .modal__form .form-row {
+  padding-bottom: 20px;
+}
+#booking-modal .modal__form ::placeholder {
+  color: #1D1B1B;
+  padding-left: 5px;
+}
+#booking-modal .modal__form .form-field {
+  border-left: 5px solid transparent;
+  background-color: #fff;
+  width: 100%;
+}
+#booking-modal .modal__form .form-field:invalid {
+  border-color: red;
+}
+#booking-modal .modal__form .form-field:focus {
+  background-color: #f5bab1;
+  opacity: 1;
+  border-left: 5px solid #0490bb;
+}
+#booking-modal .modal__form .form-field:focus:invalid {
+  border-color: red;
+}
+
 .header {
   position: fixed;
   left: 0;
@@ -471,6 +565,9 @@ input {
 }
 .home__button_video:hover:before {
   opacity: 1;
+}
+.home__button_video:hover {
+  transform: scale(1.01);
 }
 .home__button_video:hover {
   transform: scale(1.01);
@@ -1113,93 +1210,6 @@ input {
 .booking__btn:hover {
   background: #ff492f;
   color: #fff;
-}
-
-#booking-modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
-  backdrop-filter: blur(2px);
-  overflow: auto;
-}
-#booking-modal .modal__field {
-  min-height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#booking-modal .modal__content {
-  position: relative;
-  max-width: 600px;
-  padding: 40px;
-  background-color: #FF492F;
-  color: #fff;
-  font-family: "Lato";
-}
-#booking-modal .modal__close_btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
-#booking-modal .modal__close_btn:before {
-  content: "";
-  background-color: #fff;
-  position: absolute;
-  height: 3px;
-  width: 27px;
-  top: 11px;
-  left: -4px;
-  transform: rotate(-45deg);
-}
-#booking-modal .modal__close_btn:after {
-  content: "";
-  background-color: #fff;
-  position: absolute;
-  height: 3px;
-  width: 27px;
-  top: 11px;
-  transform: rotate(45deg);
-  left: -4px;
-}
-#booking-modal .modal__title h5 {
-  text-transform: uppercase;
-  font-size: 2.625rem;
-  font-weight: 700;
-  line-height: calc(54/42 * 100%);
-  padding-bottom: 20px;
-  text-align: center;
-  letter-spacing: 0.05em;
-}
-#booking-modal .modal__form label, #booking-modal .modal__form input, #booking-modal .modal__form select {
-  width: 100%;
-  outline: none;
-  border: none;
-  height: 1.8rem;
-}
-#booking-modal .modal__form .form-row {
-  padding-bottom: 20px;
-}
-#booking-modal .modal__form ::placeholder {
-  color: #1D1B1B;
-  padding-left: 5px;
-}
-#booking-modal .modal__form .form-field {
-  border-left: 5px solid rgba(126, 128, 129, 0);
-  background-color: #fff;
-  width: 100%;
-}
-#booking-modal .modal__form .form-field:focus {
-  background-color: #f5bab1;
-  opacity: 1;
-  border-left: 5px solid #ac1a04;
 }
 
 .map__wrapper {

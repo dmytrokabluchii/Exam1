@@ -11,12 +11,13 @@ $(function(){
                 }
             }
     });
+
+    // Плавный Scroll main menu 
     $("#header__menu_links li a").on('click', function(e){
         e.preventDefault();
         const top = $($(this).attr("href")).offset().top-60;
         $('body,html').animate({scrollTop: top + 'px'}, 900);
     });
-
     // Скролл по arrow!
     $(".footer__arrow a, .item__service a").on("click", function (e) {
         e.preventDefault();
@@ -24,6 +25,31 @@ $(function(){
             top = $(id).offset().top;
         $('body,html').animate({scrollTop: top}, 1400);
     });
+
+
+    // Active menu при scroll
+    let sections = $('section'), nav = $('.nav__menu'), nav_height = nav.outerHeight();
+    $(window).on('scroll', function () {
+        let cur_pos = $(this).scrollTop();
+        sections.each(function() {
+            let top = $(this).offset().top - nav_height,
+                bottom = top + $(this).outerHeight();
+            if (cur_pos >= top && cur_pos <= bottom) {
+            nav.find('a').removeClass('active');
+            sections.removeClass('active');
+            $(this).addClass('active');
+            nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+            }
+        });
+    });
+    nav.find('a').on('click', function () {
+    let $el = $(this), id = $el.attr('href');
+        $('html, body').animate({
+            scrollTop: $(id).offset().top - nav_height
+        }, 500);
+        return false;
+    });
+
 
     // Hamburger-menu
     $(".hamburger, .page_overlay").on('click', function () {
@@ -35,27 +61,88 @@ $(function(){
         $("body").removeClass("open");
     });
 
-    
-    // Модальное окно order tour
-    getCard();
-    // закрыть по клику вне окна
-    $(document).mouseup(function (e) { 
-        let popup = $('.modal__content');
-        if (e.target!=popup[0]&&popup.has(e.target).length === 0){
-            $('.booking__modal').fadeOut(600);
-        }
+
+    // Модальное окно 
+    // открыть по кнопке callback
+    $('.callback__btn, .item__service_contact a').click(function() { 
+        $('.modal__callback').fadeIn();
+        $('.modal__callback').addClass('disabled');
     });
+    // закрыть на крестик callback + order tour
+    $('.callback__close_btn, .modal__close_btn').click(function() { 
+        $('.modal__callback, .booking__modal').fadeOut(600); // закрытие с плавной анимацией, где 600 это время в мс
+    });
+    // закрыть по клику вне окна callback + order tour
+    $(document).mouseup(function (e) { 
+        let popup = $('.callback__content, .modal__content');
+        if (e.target!=popup[0]&&popup.has(e.target).length === 0){
+            $('.modal__callback, .booking__modal').fadeOut(600);
+        }
+    }); 
     // закрыть по ESC
     $(document).on('keydown',function(event) {
         if (event.keyCode == 27) {
-            $('.booking__modal').fadeOut(600);
+            $('.modal__callback, .booking__modal').fadeOut(600);
+         }
+    });
+
+    // Маска номера телефона для модалок
+    $(function () {
+        $('#callback_phone, #booking_phone').mask('+38 (099) 999-99-9?9');
+    })
+
+    // Маска e-mail address для модалки
+    $('#booking_email[type=email]').on('blur', function (e) {
+        e.preventDefault();
+        let email = $(this).val();
+        if (email.length > 0 && (email.match(/.+?\@.+/g) || []).length !== 1) {
+            Swal.fire({
+                position: 'top-end',
+                icon: 'warning',
+                title: 'Fill right email address!',
+                showConfirmButton: false,
+                timer: 3000
+            });
         }
     });
-    // Маска номера телефона
-    $(function () {
-        $('#booking_phone').mask('+38 (099) 999-99-9?9');
-    })
-    // Валидация + отправка формы на Telegram BOT
+
+    //  константы для Telegram BOT
+    const BOT_TOKEN = '5019836353:AAEY0Hztn5q-UaklaKWXMoDqbUyn0MhEzhc';
+    const CHAT_ID = '704440668';
+
+    // Отправка формы callback на Telegram BOT
+    $("#my_callback-form").on('submit', function(e){
+        e.preventDefault();
+        let nameInputCallback = document.getElementById('callback_name');
+        let phoneInputCallback = document.getElementById('callback_phone');            
+        let text = encodeURI(`Name: ${nameInputCallback.value}, Phone: ${phoneInputCallback.value}`);
+        if(nameInputCallback.value !== '' && phoneInputCallback.value !== ''){
+            $.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=`+text+'&parse_mode=html', (json)=>{
+                if(json.ok){
+                    $("#my_callback-form").trigger('reset');
+                    Swal.fire({
+                        position: 'top-end',
+                        icon: 'success',
+                        title: 'Your message send!',
+                        showConfirmButton: false,
+                        timer: 3000
+                    })
+                }
+            });
+        }else{
+            Swal.fire({
+                position: 'top-end',
+                icon: 'warning',
+                title: 'Fill all field!',
+                showConfirmButton: false,
+                timer: 3000
+            })
+        }
+    });
+    
+    // Модальное окно order tour
+    getCard();
+    // Отправка формы на Telegram BOT
     $("#my_booking-form").on('submit', function(e){
         e.preventDefault();
         let nameInput = document.getElementById('booking_name');
@@ -63,12 +150,9 @@ $(function(){
         let emailInput = document.getElementById('booking_email');
         let phoneInput = document.getElementById('booking_phone'); 
         let tourSelect = document.getElementById('choice_tour');              
-        const BOT_TOKEN = '5019836353:AAEY0Hztn5q-UaklaKWXMoDqbUyn0MhEzhc';
-    //  @get_id_bot and /get_id
-        const CHAT_ID = '704440668';
-    //  let text = encodeURI("<b>Email:</b> "+$("#exampleInputEmail1").val()+"\n<b>Subject:</b> "+$("#exampleInputPassword1").val()+"\n<b>Message:</b> "+$("#massage").val());
         let text = encodeURI(`Name: ${nameInput.value}, Surname:${surnameInput.value}, 
-            Email: ${emailInput.value}, Phone: ${phoneInput.value}, Tour: ${tourSelect.value}`);
+        Email: ${emailInput.value}, Phone: ${phoneInput.value}, Tour: ${tourSelect.value}`);
+
         if(nameInput.value !== '' && surnameInput.value !== '' && emailInput.value !== '' 
         && phoneInput.value !== '' && tourSelect.value !== ''){
             $.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=`+text+'&parse_mode=html', (json)=>{
@@ -104,6 +188,8 @@ $(function(){
         slidesToShow: 3, 
         slidesToScroll: 3,
         infinite: true,
+        autoplay: true,
+        autoplaySpeed: 6000,
         responsive: [
             {
                 breakpoint: 999,
@@ -123,99 +209,7 @@ $(function(){
             }
         ]
     });
-    
 
-    // Модальное окно callback
-    // открыть по кнопке
-    $('.callback__btn, .item__service_contact a').click(function() { 
-        $('.modal__callback').fadeIn();
-        $('.modal__callback').addClass('disabled');
-    });
-    // закрыть на крестик
-    $('.callback__close_btn').click(function() { 
-        $('.modal__callback').fadeOut(600); // закрытие с плавной анимацией, где 600 это время в мс
-    });
-    // закрыть по клику вне окна
-    $(document).mouseup(function (e) { 
-        let popup = $('.callback__content');
-        if (e.target!=popup[0]&&popup.has(e.target).length === 0){
-            $('.modal__callback').fadeOut(600);
-        }
-    });
-    // закрыть по ESC
-    $(document).on('keydown',function(event) {
-        if (event.keyCode == 27) {
-            $('.modal__callback').fadeOut(600);
-         }
-     });
-
-     // Маска номера телефона
-     $(function () {
-        $('#callback_phone').mask('+38 (099) 999-99-9?9');
-    })
-
-    // Валидация + отправка формы на Telegram BOT
-    $("#my_callback-form").on('submit', function(e){
-        e.preventDefault();
-        let nameInput = document.getElementById('callback_name');
-        let phoneInput = document.getElementById('callback_phone');            
-        const BOT_TOKEN = '5019836353:AAEY0Hztn5q-UaklaKWXMoDqbUyn0MhEzhc';
-    // @get_id_bot and /get_id
-        const CHAT_ID = '704440668';
-    //   let text = encodeURI("<b>Email:</b> "+$("#exampleInputEmail1").val()+"\n<b>Subject:</b> "+$("#exampleInputPassword1").val()+"\n<b>Message:</b> "+$("#massage").val());
-        let text = encodeURI(`Name: ${nameInput.value}, Phone: ${phoneInput.value}`);
-        if(nameInput.value !== '' && phoneInput.value !== ''){
-            $.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=`+text+'&parse_mode=html', (json)=>{
-                if(json.ok){
-                    $("#my_callback-form").trigger('reset');
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'Your message send!',
-                        showConfirmButton: false,
-                        timer: 3000
-                    })
-                }
-            });
-        }else{
-            Swal.fire({
-                position: 'top-end',
-                icon: 'warning',
-                title: 'Fill all field!',
-                showConfirmButton: false,
-                timer: 3000
-            })
-        }
-    });
-});
-
-
-// Active menu on scroll
-let sections = $('section')
-    , nav = $('.nav__menu')
-    , nav_height = nav.outerHeight();
-
-$(window).on('scroll', function () {
-    let cur_pos = $(this).scrollTop();
-    sections.each(function() {
-        let top = $(this).offset().top - nav_height,
-            bottom = top + $(this).outerHeight();
-        if (cur_pos >= top && cur_pos <= bottom) {
-        nav.find('a').removeClass('active');
-        sections.removeClass('active');
-        $(this).addClass('active');
-        nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
-        }
-    });
-});
-
-nav.find('a').on('click', function () {
-    let $el = $(this)
-        , id = $el.attr('href');
-    $('html, body').animate({
-        scrollTop: $(id).offset().top - nav_height
-    }, 500);
-    return false;
 });
 
 
@@ -229,7 +223,7 @@ async function getCard(){
             let html = '';
             json.forEach((card)=>{
                 html += `
-                    <li class="card__item card-first wow animate__zoomIn" data-wow-duration="4s">
+                    <li class="card__item card-first wow animate__zoomIn" data-wow-duration="2s">
                         <div class="card__image" id="card-img">
                             <a class="card__image_link colorbox" data-fancybox="group-1" href="assets/images/place_image/${card.pic.big_image}" title="${card.title}">
                                 <img class="card__pic"
@@ -273,10 +267,6 @@ async function getCard(){
         $('.booking__modal').fadeIn();
         $('.booking__modal').addClass('disabled');
     });
-    // закрыть на крестик
-    $('.modal__close_btn').click(function() { 
-        $('.booking__modal').fadeOut(600); // закрытие с плавной анимацией, где 600 это время в мс
-    });
 
 
     // colorbox plugin
@@ -295,11 +285,11 @@ async function getCard(){
         // удаляем tag <a> init_map
         $(this).remove();
         // Инициализация карты
-        var map = L.map('my_map').setView([24.9092452, 91.8641862], 4);
+        let map = L.map('my_map').setView([24.9092452, 91.8641862], 4);
         L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
             attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
-        var myIcon = L.icon({
+        let myIcon = L.icon({
             iconUrl: 'assets/images/svg/map-pin.svg',
             iconSize: [96, 96],
             iconAnchor: [12, 41],
@@ -316,10 +306,6 @@ async function getCard(){
             </div>
         </div>
         `);
-        // Переход по клику на маркер!
-            // marker.on('click', function(){
-            //     document.getElementById('to_google').click();
-            // })
     });
 };
 

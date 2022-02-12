@@ -16,7 +16,8 @@ $(function () {
         $("header").removeClass("fixed_header");
       }
     }
-  });
+  }); // Плавный Scroll main menu 
+
   $("#header__menu_links li a").on('click', function (e) {
     e.preventDefault();
     var top = $($(this).attr("href")).offset().top - 60;
@@ -32,6 +33,32 @@ $(function () {
     $('body,html').animate({
       scrollTop: top
     }, 1400);
+  }); // Active menu при scroll
+
+  var sections = $('section'),
+      nav = $('.nav__menu'),
+      nav_height = nav.outerHeight();
+  $(window).on('scroll', function () {
+    var cur_pos = $(this).scrollTop();
+    sections.each(function () {
+      var top = $(this).offset().top - nav_height,
+          bottom = top + $(this).outerHeight();
+
+      if (cur_pos >= top && cur_pos <= bottom) {
+        nav.find('a').removeClass('active');
+        sections.removeClass('active');
+        $(this).addClass('active');
+        nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('active');
+      }
+    });
+  });
+  nav.find('a').on('click', function () {
+    var $el = $(this),
+        id = $el.attr('href');
+    $('html, body').animate({
+      scrollTop: $(id).offset().top - nav_height
+    }, 500);
+    return false;
   }); // Hamburger-menu
 
   $(".hamburger, .page_overlay").on('click', function () {
@@ -41,27 +68,85 @@ $(function () {
 
   $(".sidemenu ul li a, .mobile__btn").on('click', function () {
     $("body").removeClass("open");
-  }); // Модальное окно order tour
+  }); // Модальное окно 
+  // открыть по кнопке callback
 
-  getCard(); // закрыть по клику вне окна
+  $('.callback__btn, .item__service_contact a').click(function () {
+    $('.modal__callback').fadeIn();
+    $('.modal__callback').addClass('disabled');
+  }); // закрыть на крестик callback + order tour
+
+  $('.callback__close_btn, .modal__close_btn').click(function () {
+    $('.modal__callback, .booking__modal').fadeOut(600); // закрытие с плавной анимацией, где 600 это время в мс
+  }); // закрыть по клику вне окна callback + order tour
 
   $(document).mouseup(function (e) {
-    var popup = $('.modal__content');
+    var popup = $('.callback__content, .modal__content');
 
     if (e.target != popup[0] && popup.has(e.target).length === 0) {
-      $('.booking__modal').fadeOut(600);
+      $('.modal__callback, .booking__modal').fadeOut(600);
     }
   }); // закрыть по ESC
 
   $(document).on('keydown', function (event) {
     if (event.keyCode == 27) {
-      $('.booking__modal').fadeOut(600);
+      $('.modal__callback, .booking__modal').fadeOut(600);
     }
-  }); // Маска номера телефона
+  }); // Маска номера телефона для модалок
 
   $(function () {
-    $('#booking_phone').mask('+38 (099) 999-99-9?9');
-  }); // Валидация + отправка формы на Telegram BOT
+    $('#callback_phone, #booking_phone').mask('+38 (099) 999-99-9?9');
+  }); // Маска e-mail address для модалки
+
+  $('#booking_email[type=email]').on('blur', function (e) {
+    e.preventDefault();
+    var email = $(this).val();
+
+    if (email.length > 0 && (email.match(/.+?\@.+/g) || []).length !== 1) {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'warning',
+        title: 'Fill right email address!',
+        showConfirmButton: false,
+        timer: 3000
+      });
+    }
+  }); //  константы для Telegram BOT
+
+  var BOT_TOKEN = '5019836353:AAEY0Hztn5q-UaklaKWXMoDqbUyn0MhEzhc';
+  var CHAT_ID = '704440668'; // Отправка формы callback на Telegram BOT
+
+  $("#my_callback-form").on('submit', function (e) {
+    e.preventDefault();
+    var nameInputCallback = document.getElementById('callback_name');
+    var phoneInputCallback = document.getElementById('callback_phone');
+    var text = encodeURI("Name: ".concat(nameInputCallback.value, ", Phone: ").concat(phoneInputCallback.value));
+
+    if (nameInputCallback.value !== '' && phoneInputCallback.value !== '') {
+      $.get("https://api.telegram.org/bot".concat(BOT_TOKEN, "/sendMessage?chat_id=").concat(CHAT_ID, "&text=") + text + '&parse_mode=html', function (json) {
+        if (json.ok) {
+          $("#my_callback-form").trigger('reset');
+          Swal.fire({
+            position: 'top-end',
+            icon: 'success',
+            title: 'Your message send!',
+            showConfirmButton: false,
+            timer: 3000
+          });
+        }
+      });
+    } else {
+      Swal.fire({
+        position: 'top-end',
+        icon: 'warning',
+        title: 'Fill all field!',
+        showConfirmButton: false,
+        timer: 3000
+      });
+    }
+  }); // Модальное окно order tour
+
+  getCard(); // Отправка формы на Telegram BOT
 
   $("#my_booking-form").on('submit', function (e) {
     e.preventDefault();
@@ -70,11 +155,7 @@ $(function () {
     var emailInput = document.getElementById('booking_email');
     var phoneInput = document.getElementById('booking_phone');
     var tourSelect = document.getElementById('choice_tour');
-    var BOT_TOKEN = '5019836353:AAEY0Hztn5q-UaklaKWXMoDqbUyn0MhEzhc'; //  @get_id_bot and /get_id
-
-    var CHAT_ID = '704440668'; //  let text = encodeURI("<b>Email:</b> "+$("#exampleInputEmail1").val()+"\n<b>Subject:</b> "+$("#exampleInputPassword1").val()+"\n<b>Message:</b> "+$("#massage").val());
-
-    var text = encodeURI("Name: ".concat(nameInput.value, ", Surname:").concat(surnameInput.value, ", \n            Email: ").concat(emailInput.value, ", Phone: ").concat(phoneInput.value, ", Tour: ").concat(tourSelect.value));
+    var text = encodeURI("Name: ".concat(nameInput.value, ", Surname:").concat(surnameInput.value, ", \n        Email: ").concat(emailInput.value, ", Phone: ").concat(phoneInput.value, ", Tour: ").concat(tourSelect.value));
 
     if (nameInput.value !== '' && surnameInput.value !== '' && emailInput.value !== '' && phoneInput.value !== '' && tourSelect.value !== '') {
       $.get("https://api.telegram.org/bot".concat(BOT_TOKEN, "/sendMessage?chat_id=").concat(CHAT_ID, "&text=") + text + '&parse_mode=html', function (json) {
@@ -107,7 +188,7 @@ $(function () {
     dots: true,
     slidesToShow: 3,
     slidesToScroll: 3
-  }, _defineProperty(_$$slick, "infinite", true), _defineProperty(_$$slick, "responsive", [{
+  }, _defineProperty(_$$slick, "infinite", true), _defineProperty(_$$slick, "autoplay", true), _defineProperty(_$$slick, "autoplaySpeed", 6000), _defineProperty(_$$slick, "responsive", [{
     breakpoint: 999,
     settings: {
       slidesToShow: 2,
@@ -121,95 +202,7 @@ $(function () {
       slidesToScroll: 1 // arrows: false,
 
     }
-  }]), _$$slick)); // Модальное окно callback
-  // открыть по кнопке
-
-  $('.callback__btn, .item__service_contact a').click(function () {
-    $('.modal__callback').fadeIn();
-    $('.modal__callback').addClass('disabled');
-  }); // закрыть на крестик
-
-  $('.callback__close_btn').click(function () {
-    $('.modal__callback').fadeOut(600); // закрытие с плавной анимацией, где 600 это время в мс
-  }); // закрыть по клику вне окна
-
-  $(document).mouseup(function (e) {
-    var popup = $('.callback__content');
-
-    if (e.target != popup[0] && popup.has(e.target).length === 0) {
-      $('.modal__callback').fadeOut(600);
-    }
-  }); // закрыть по ESC
-
-  $(document).on('keydown', function (event) {
-    if (event.keyCode == 27) {
-      $('.modal__callback').fadeOut(600);
-    }
-  }); // Маска номера телефона
-
-  $(function () {
-    $('#callback_phone').mask('+38 (099) 999-99-9?9');
-  }); // Валидация + отправка формы на Telegram BOT
-
-  $("#my_callback-form").on('submit', function (e) {
-    e.preventDefault();
-    var nameInput = document.getElementById('callback_name');
-    var phoneInput = document.getElementById('callback_phone');
-    var BOT_TOKEN = '5019836353:AAEY0Hztn5q-UaklaKWXMoDqbUyn0MhEzhc'; // @get_id_bot and /get_id
-
-    var CHAT_ID = '704440668'; //   let text = encodeURI("<b>Email:</b> "+$("#exampleInputEmail1").val()+"\n<b>Subject:</b> "+$("#exampleInputPassword1").val()+"\n<b>Message:</b> "+$("#massage").val());
-
-    var text = encodeURI("Name: ".concat(nameInput.value, ", Phone: ").concat(phoneInput.value));
-
-    if (nameInput.value !== '' && phoneInput.value !== '') {
-      $.get("https://api.telegram.org/bot".concat(BOT_TOKEN, "/sendMessage?chat_id=").concat(CHAT_ID, "&text=") + text + '&parse_mode=html', function (json) {
-        if (json.ok) {
-          $("#my_callback-form").trigger('reset');
-          Swal.fire({
-            position: 'top-end',
-            icon: 'success',
-            title: 'Your message send!',
-            showConfirmButton: false,
-            timer: 3000
-          });
-        }
-      });
-    } else {
-      Swal.fire({
-        position: 'top-end',
-        icon: 'warning',
-        title: 'Fill all field!',
-        showConfirmButton: false,
-        timer: 3000
-      });
-    }
-  });
-}); // Active menu on scroll
-
-var sections = $('section'),
-    nav = $('.nav__menu'),
-    nav_height = nav.outerHeight();
-$(window).on('scroll', function () {
-  var cur_pos = $(this).scrollTop();
-  sections.each(function () {
-    var top = $(this).offset().top - nav_height,
-        bottom = top + $(this).outerHeight();
-
-    if (cur_pos >= top && cur_pos <= bottom) {
-      nav.find('a').removeClass('active');
-      sections.removeClass('active');
-      $(this).addClass('active');
-      nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('active');
-    }
-  });
-});
-nav.find('a').on('click', function () {
-  var $el = $(this),
-      id = $el.attr('href');
-  $('html, body').animate({
-    scrollTop: $(id).offset().top - nav_height
-  }, 500);
-  return false;
+  }]), _$$slick));
 }); // Динамические карты блока place
 
 function getCard() {
@@ -225,7 +218,7 @@ function getCard() {
             success: function success(json) {
               var html = '';
               json.forEach(function (card) {
-                html += "\n                    <li class=\"card__item card-first wow animate__zoomIn\" data-wow-duration=\"4s\">\n                        <div class=\"card__image\" id=\"card-img\">\n                            <a class=\"card__image_link colorbox\" data-fancybox=\"group-1\" href=\"assets/images/place_image/".concat(card.pic.big_image, "\" title=\"").concat(card.title, "\">\n                                <img class=\"card__pic\"\n                                    src=\"assets/images/place_image/").concat(card.pic.image, "\" alt=\"place_image\">\n                                <div class=\"card__price\">").concat(card.pic.price, "</div>\n                            </a>\n                        </div>\n                        <div class=\"card__content\">\n                            <div class=\"card__title\">\n                                <h6>").concat(card.title, "</h6>\n                            </div>\n                            <div class=\"card__subtitle subtitle\">\n                                <p>").concat(card.description, "</p>\n                            </div>\n                            <div class=\"card__link\">\n                                <button type=\"button\" class=\"card__link_text text_orange\" id=\"card_btn\">\n                                ").concat(card.link, "</button>\n                            </div>\n                        </div>\n                    </li>\n                ");
+                html += "\n                    <li class=\"card__item card-first wow animate__zoomIn\" data-wow-duration=\"2s\">\n                        <div class=\"card__image\" id=\"card-img\">\n                            <a class=\"card__image_link colorbox\" data-fancybox=\"group-1\" href=\"assets/images/place_image/".concat(card.pic.big_image, "\" title=\"").concat(card.title, "\">\n                                <img class=\"card__pic\"\n                                    src=\"assets/images/place_image/").concat(card.pic.image, "\" alt=\"place_image\">\n                                <div class=\"card__price\">").concat(card.pic.price, "</div>\n                            </a>\n                        </div>\n                        <div class=\"card__content\">\n                            <div class=\"card__title\">\n                                <h6>").concat(card.title, "</h6>\n                            </div>\n                            <div class=\"card__subtitle subtitle\">\n                                <p>").concat(card.description, "</p>\n                            </div>\n                            <div class=\"card__link\">\n                                <button type=\"button\" class=\"card__link_text text_orange\" id=\"card_btn\">\n                                ").concat(card.link, "</button>\n                            </div>\n                        </div>\n                    </li>\n                ");
               });
               $("#page_card").append(html);
               $("#card_tour").slick('slickAdd', html);
@@ -248,10 +241,6 @@ function getCard() {
           $('#booking_btn, #card_btn').click(function () {
             $('.booking__modal').fadeIn();
             $('.booking__modal').addClass('disabled');
-          }); // закрыть на крестик
-
-          $('.modal__close_btn').click(function () {
-            $('.booking__modal').fadeOut(600); // закрытие с плавной анимацией, где 600 это время в мс
           }); // colorbox plugin
 
           $(function () {
@@ -279,13 +268,10 @@ function getCard() {
             });
             var marker = L.marker([24.9092452, 91.8641862], {
               icon: myIcon
-            }).addTo(map).bindPopup("\n        <div class=\"map_popup\">\n        <img src=\"assets/plugins/leflet/images/map.svg\" alt=\"map-pic\">\n        <div class=\"map_info\">\n            <b>Hello! <br>\n            My friend!</b>\n            <div class=\"map_info_text\">You're in Flat 20, Housing state, Sylhet!</div>\n            </div>\n        </div>\n        "); // Переход по клику на маркер!
-            // marker.on('click', function(){
-            //     document.getElementById('to_google').click();
-            // })
+            }).addTo(map).bindPopup("\n        <div class=\"map_popup\">\n        <img src=\"assets/plugins/leflet/images/map.svg\" alt=\"map-pic\">\n        <div class=\"map_info\">\n            <b>Hello! <br>\n            My friend!</b>\n            <div class=\"map_info_text\">You're in Flat 20, Housing state, Sylhet!</div>\n            </div>\n        </div>\n        ");
           });
 
-        case 6:
+        case 5:
         case "end":
           return _context.stop();
       }
