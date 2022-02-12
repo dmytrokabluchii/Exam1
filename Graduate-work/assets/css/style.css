@@ -705,7 +705,7 @@ input {
 .place__card .slick-prev:before {
   display: block;
   content: "";
-  background-image: url("../images/svg/arrow-left.svg");
+  background-image: url("../images/svg/arrow.svg");
   background-size: 40px 40px;
   height: 40px;
   width: 40px;
@@ -714,7 +714,7 @@ input {
 .place__card .slick-next:before {
   display: block;
   content: " ";
-  background-image: url("../images/svg/arrow-right.svg");
+  background-image: url("../images/svg/arrow.svg");
   background-size: 40px 40px;
   height: 40px;
   width: 40px;

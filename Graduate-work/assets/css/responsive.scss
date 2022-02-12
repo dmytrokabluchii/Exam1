@@ -71,7 +71,7 @@ $base_size:16;
 }
 
 
-@media screen and (max-width:999px) {
+@media screen and (max-width:1080px) {
     .header {
         &__menu,
         &__button {
@@ -81,7 +81,11 @@ $base_size:16;
             display: block;
         }
     }
+}
 
+
+
+@media screen and (max-width:999px) {
     .home {
         &__bg {
             padding: 190px 0 70px;
@@ -267,6 +271,23 @@ $base_size:16;
 
 
 @media screen and (max-width:768px) {
+    #booking-modal {
+        .modal__content {
+            max-width: 400px;
+            padding: 20px;
+        }
+        .modal__title h5 {
+            @include fz(38);
+            line-height: calc(46/38 * 100%);
+            letter-spacing: 0.03em;
+        }
+        .modal__form {
+            .form-row {
+                padding-bottom: 15px;
+            }
+        }
+    }
+
     .home {
         &__bg {
             padding: 140px 0 60px;
@@ -345,22 +366,6 @@ $base_size:16;
         }
         &__subtitle {
             padding-bottom: 30px;
-        }
-        &__modal {
-            .modal__content {
-                max-width: 400px;
-                padding: 20px;
-            }
-            .modal__title h5 {
-                @include fz(38);
-                line-height: calc(46/38 * 100%);
-                letter-spacing: 0.03em;
-            }
-            .modal__form {
-                .form-row {
-                    padding-bottom: 15px;
-                }
-            }
         }
     }
 
@@ -583,6 +588,41 @@ $base_size:16;
         }
     }
 
+    #booking-modal {
+        .modal__content {
+            max-width: 290px;
+            padding: 15px;
+        }
+        .modal__close_btn {
+            top: 2px;
+            right: 7px;
+            width: 15px;
+            height: 15px;
+            &:before {
+                width: 22px;
+                top: 11px;
+                left: -4px;
+            }
+            &:after {
+                content: '';
+                width: 22px;
+                top: 11px;
+                transform: rotate(45deg);
+                left: -4px;
+            }
+        }
+        .modal__title h5 {
+            @include fz(32);
+            line-height: calc(40/32 * 100%);
+            padding-bottom: 10px;
+        }
+        .modal__form {
+            .form-row {
+                padding-bottom: 10px;
+            }
+        }
+    }
+
     .place {
         &__card {
             .card__content {
@@ -602,43 +642,6 @@ $base_size:16;
         &__content {
             grid-template-columns: repeat(1, 1fr);
             gap: 20px;
-        }
-    }
-
-    .booking {
-        &__modal {
-            .modal__content {
-                max-width: 290px;
-                padding: 15px;
-            }
-            .modal__close_btn {
-                top: 2px;
-                right: 7px;
-                width: 15px;
-                height: 15px;
-                &:before {
-                    width: 22px;
-                    top: 11px;
-                    left: -4px;
-                }
-                &:after {
-                    content: '';
-                    width: 22px;
-                    top: 11px;
-                    transform: rotate(45deg);
-                    left: -4px;
-                }
-            }
-            .modal__title h5 {
-                @include fz(32);
-                line-height: calc(40/32 * 100%);
-                padding-bottom: 10px;
-            }
-            .modal__form {
-                .form-row {
-                    padding-bottom: 10px;
-                }
-            }
         }
     }
 
@@ -895,6 +898,51 @@ $base_size:16;
     }
 }
 
+@media screen and (max-height:550px) {
+    #booking-modal {
+        .modal__content {
+            max-width: 330px;
+            padding: 10px 15px;
+        }
+        .modal__close_btn {
+            top: 2px;
+            right: 7px;
+            width: 15px;
+            height: 15px;
+            &:before {
+                width: 22px;
+                top: 11px;
+                left: -4px;
+            }
+            &:after {
+                content: '';
+                width: 22px;
+                top: 11px;
+                transform: rotate(45deg);
+                left: -4px;
+            }
+        }
+        .modal__title h5 {
+            @include fz(30);
+            line-height: calc(36/30 * 100%);
+            padding-bottom: 5px;
+        }
+        .modal__form {
+            .form-row {
+                padding-bottom: 7px;
+            }
+        }
+        .modal__form {
+            label, input{
+                height: 1.5rem;
+            }
+        }
+        .modal__btn {
+                padding: 7px 12px;
+        }
+    }
+}
+
 @media screen and (max-height:525px) {
     .mobile_menu_wrap {
         .mobile__logo {
@@ -941,51 +989,6 @@ $base_size:16;
         }
         &__subtitle p {
             padding-bottom: 40px;
-        }
-    }
-
-    .booking {
-        &__modal {
-            .modal__content {
-                max-width: 330px;
-                padding: 10px 15px;
-            }
-            .modal__close_btn {
-                top: 2px;
-                right: 7px;
-                width: 15px;
-                height: 15px;
-                &:before {
-                    width: 22px;
-                    top: 11px;
-                    left: -4px;
-                }
-                &:after {
-                    content: '';
-                    width: 22px;
-                    top: 11px;
-                    transform: rotate(45deg);
-                    left: -4px;
-                }
-            }
-            .modal__title h5 {
-                @include fz(30);
-                line-height: calc(36/30 * 100%);
-                padding-bottom: 5px;
-            }
-            .modal__form {
-                .form-row {
-                    padding-bottom: 7px;
-                }
-            }
-            .modal__form {
-                label, input{
-                    height: 1.5rem;
-                }
-            }
-            .modal__btn {
-                    padding: 7px 12px;
-            }
         }
     }
 }
