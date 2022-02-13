@@ -253,7 +253,36 @@ function getCard() {
   });
 }
 
-; // Подключение lightGallery
+; // Динамические карты блока clients
+
+function getReview() {
+  $.ajax({
+    url: 'common/review.json',
+    type: 'get',
+    dataType: 'json',
+    success: function success(json) {
+      var html = '';
+      json.forEach(function (item) {
+        html += "\n                <li class=\"clients__cards\">\n                    <article class=\"clients__content\">\n                        <div class=\"clients__review subtitle\">\n                            <p>".concat(item.review, "\n                            </p>\n                        </div>\n                        <div class=\"clients__item\">\n                            <div class=\"clients__footer\">\n                                <div class=\"clients__avatar\">\n                                    <img class=\"clients__avatar_photo\"\n                                        src=\"assets/images/clients/").concat(item.author.avatar, "\" alt=\"author-pic\">\n                                </div>\n                                <div class=\"clients__info\">\n                                    <div class=\"clients__info_author\">").concat(item.author.name, "</div>\n                                    <div class=\"clients__info_occupation\">").concat(item.author.occupation, "</div>\n                                </div>\n                            </div>\n                        </div>\n                    </article>\n                </li>\n                ");
+      });
+      $("#review_clients").append(html);
+    },
+    error: function error() {
+      // modal window sweet-aler2
+      Swal.fire({
+        position: 'top-end',
+        icon: 'error',
+        title: 'Oops...',
+        text: "The clients-cards don't load!",
+        showConfirmButton: false,
+        timer: 4000
+      });
+    }
+  });
+}
+
+;
+getReview(); // Подключение lightGallery
 
 lightGallery(document.querySelector('.gallery__album', '.album__page'), {
   plugins: [lgZoom, lgThumbnail],

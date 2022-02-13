@@ -274,6 +274,56 @@ async function getCard(){
 };
 
 
+// Динамические карты блока clients
+function getReview(){
+    $.ajax({
+        url:'common/review.json',
+        type:'get',
+        dataType:'json',
+        success:function(json){
+            let html = '';
+            json.forEach((item)=>{
+                html += `
+                <li class="clients__cards">
+                    <article class="clients__content">
+                        <div class="clients__review subtitle">
+                            <p>${item.review}
+                            </p>
+                        </div>
+                        <div class="clients__item">
+                            <div class="clients__footer">
+                                <div class="clients__avatar">
+                                    <img class="clients__avatar_photo"
+                                        src="assets/images/clients/${item.author.avatar}" alt="author-pic">
+                                </div>
+                                <div class="clients__info">
+                                    <div class="clients__info_author">${item.author.name}</div>
+                                    <div class="clients__info_occupation">${item.author.occupation}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </li>
+                `;
+            });
+            $("#review_clients").append(html);
+        },
+        error:function(){
+            // modal window sweet-aler2
+            Swal.fire({
+                position: 'top-end',
+                icon: 'error',
+                title: 'Oops...',
+                text: "The clients-cards don't load!",
+                showConfirmButton: false,
+                timer: 4000
+            })
+        }
+    });  
+};
+getReview();
+
+
 // Подключение lightGallery
 lightGallery(document.querySelector('.gallery__album', '.album__page'), {
     plugins:[lgZoom, lgThumbnail],
