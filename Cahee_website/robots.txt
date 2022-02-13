@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://dmytrokabluchii.github.io/hwokrs/Cahee_full_work/sitemap.xml
