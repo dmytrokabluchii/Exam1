@@ -205,15 +205,6 @@ $(function(){
         ]
     });
 
-    // colorbox plugin
-    $(function(){
-        $("a.card__image_link").colorbox({
-            maxWidth:"98%",
-            maxHeight:"98%",
-            closeButton:"true"
-        });
-    });
-
 });
 
 
@@ -270,6 +261,15 @@ async function getCard(){
     $('#booking_btn, #card_btn').click(function() { 
         $('.booking__modal').fadeIn();
         $('.booking__modal').addClass('disabled');
+    });
+
+    // colorbox plugin
+    $(function(){
+        $("a.card__image_link").colorbox({
+            maxWidth:"98%",
+            maxHeight:"98%",
+            closeButton:"true"
+        });
     });
 };
 

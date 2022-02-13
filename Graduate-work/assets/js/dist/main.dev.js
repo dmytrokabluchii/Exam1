@@ -196,15 +196,7 @@ $(function () {
       slidesToScroll: 1 // arrows: false,
 
     }
-  }]), _$$slick)); // colorbox plugin
-
-  $(function () {
-    $("a.card__image_link").colorbox({
-      maxWidth: "98%",
-      maxHeight: "98%",
-      closeButton: "true"
-    });
-  });
+  }]), _$$slick));
 }); // Динамические карты блока place
 
 function getCard() {
@@ -243,9 +235,17 @@ function getCard() {
           $('#booking_btn, #card_btn').click(function () {
             $('.booking__modal').fadeIn();
             $('.booking__modal').addClass('disabled');
+          }); // colorbox plugin
+
+          $(function () {
+            $("a.card__image_link").colorbox({
+              maxWidth: "98%",
+              maxHeight: "98%",
+              closeButton: "true"
+            });
           });
 
-        case 3:
+        case 4:
         case "end":
           return _context.stop();
       }
