@@ -16,23 +16,15 @@ $(function () {
         $("header").removeClass("fixed_header");
       }
     }
-  }); // Плавный Scroll main menu 
+  }); // Плавный Scroll main menu + Скролл по arrow!
 
-  $("#header__menu_links li a").on('click', function (e) {
+  $("#header__menu_links li a, .footer__arrow a, .item__service a").on('click', function (e) {
     e.preventDefault();
-    var top = $($(this).attr("href")).offset().top - 60;
+    var top = $($(this).attr("href")).offset().top - 60; // let id  = $(this).attr('href'), top = $(id).offset().top;
+
     $('body,html').animate({
       scrollTop: top + 'px'
-    }, 900);
-  }); // Скролл по arrow!
-
-  $(".footer__arrow a, .item__service a").on("click", function (e) {
-    e.preventDefault();
-    var id = $(this).attr('href'),
-        top = $(id).offset().top;
-    $('body,html').animate({
-      scrollTop: top
-    }, 1400);
+    }, 1100);
   }); // Active menu при scroll
 
   var sections = $('section'),
@@ -120,10 +112,10 @@ $(function () {
     e.preventDefault();
     var nameInputCallback = document.getElementById('callback_name');
     var phoneInputCallback = document.getElementById('callback_phone');
-    var text = encodeURI("Name: ".concat(nameInputCallback.value, ", Phone: ").concat(phoneInputCallback.value));
+    var textCallback = encodeURI("Name: ".concat(nameInputCallback.value, ", Phone: ").concat(phoneInputCallback.value));
 
     if (nameInputCallback.value !== '' && phoneInputCallback.value !== '') {
-      $.get("https://api.telegram.org/bot".concat(BOT_TOKEN, "/sendMessage?chat_id=").concat(CHAT_ID, "&text=") + text + '&parse_mode=html', function (json) {
+      $.get("https://api.telegram.org/bot".concat(BOT_TOKEN, "/sendMessage?chat_id=").concat(CHAT_ID, "&text=") + textCallback + '&parse_mode=html', function (json) {
         if (json.ok) {
           $("#my_callback-form").trigger('reset');
           Swal.fire({
@@ -132,7 +124,9 @@ $(function () {
             title: 'Your message send!',
             showConfirmButton: false,
             timer: 3000
-          });
+          }); // Закрытие формы callback после успешной отправки
+
+          $('.modal__callback').fadeOut(600);
         }
       });
     } else {
@@ -148,7 +142,7 @@ $(function () {
 
   getCard(); // Отправка формы на Telegram BOT
 
-  $("#my_booking-form").on('submit', function (e) {
+  $("#my_booking_form").on('submit', function (e) {
     e.preventDefault();
     var nameInput = document.getElementById('booking_name');
     var surnameInput = document.getElementById('booking_surname');
@@ -160,14 +154,16 @@ $(function () {
     if (nameInput.value !== '' && surnameInput.value !== '' && emailInput.value !== '' && phoneInput.value !== '' && tourSelect.value !== '') {
       $.get("https://api.telegram.org/bot".concat(BOT_TOKEN, "/sendMessage?chat_id=").concat(CHAT_ID, "&text=") + text + '&parse_mode=html', function (json) {
         if (json.ok) {
-          $("#my_booking-form").trigger('reset');
+          $("#my_booking_form").trigger('reset');
           Swal.fire({
             position: 'top-end',
             icon: 'success',
             title: 'Your message send!',
             showConfirmButton: false,
             timer: 3000
-          });
+          }); // Закрытие формы order tour после успешной отправки
+
+          $('.booking__modal').fadeOut(600);
         }
       });
     } else {
@@ -180,7 +176,6 @@ $(function () {
       });
     }
   }); // Slick-slider Place
-  // getCard();
 
   $('#card_tour').slick((_$$slick = {
     infinite: true,
@@ -192,8 +187,7 @@ $(function () {
     breakpoint: 999,
     settings: {
       slidesToShow: 2,
-      slidesToScroll: 2 // arrows: false,
-
+      slidesToScroll: 2
     }
   }, {
     breakpoint: 600,
@@ -202,7 +196,15 @@ $(function () {
       slidesToScroll: 1 // arrows: false,
 
     }
-  }]), _$$slick));
+  }]), _$$slick)); // colorbox plugin
+
+  $(function () {
+    $("a.card__image_link").colorbox({
+      maxWidth: "98%",
+      maxHeight: "98%",
+      closeButton: "true"
+    });
+  });
 }); // Динамические карты блока place
 
 function getCard() {
@@ -241,37 +243,9 @@ function getCard() {
           $('#booking_btn, #card_btn').click(function () {
             $('.booking__modal').fadeIn();
             $('.booking__modal').addClass('disabled');
-          }); // colorbox plugin
-
-          $(function () {
-            $("a.card__image_link").colorbox({
-              maxWidth: "98%",
-              maxHeight: "98%",
-              closeButton: "true"
-            });
-          }); // Map Leaflet
-          // инициализируем карту по клику
-
-          $("#init_map").on('click', function () {
-            // удаляем tag <a> init_map
-            $(this).remove(); // Инициализация карты
-
-            var map = L.map('my_map').setView([24.9092452, 91.8641862], 4);
-            L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
-              attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-            }).addTo(map);
-            var myIcon = L.icon({
-              iconUrl: 'assets/images/svg/map-pin.svg',
-              iconSize: [96, 96],
-              iconAnchor: [12, 41],
-              popupAnchor: [36, -25]
-            });
-            var marker = L.marker([24.9092452, 91.8641862], {
-              icon: myIcon
-            }).addTo(map).bindPopup("\n        <div class=\"map_popup\">\n        <img src=\"assets/plugins/leflet/images/map.svg\" alt=\"map-pic\">\n        <div class=\"map_info\">\n            <b>Hello! <br>\n            My friend!</b>\n            <div class=\"map_info_text\">You're in Flat 20, Housing state, Sylhet!</div>\n            </div>\n        </div>\n        ");
           });
 
-        case 5:
+        case 3:
         case "end":
           return _context.stop();
       }
@@ -279,36 +253,7 @@ function getCard() {
   });
 }
 
-; // Динамические карты блока clients
-
-function getReview() {
-  $.ajax({
-    url: 'common/review.json',
-    type: 'get',
-    dataType: 'json',
-    success: function success(json) {
-      var html = '';
-      json.forEach(function (item) {
-        html += "\n                <li class=\"clients__cards\">\n                    <article class=\"clients__content\">\n                        <div class=\"clients__review subtitle\">\n                            <p>".concat(item.review, "\n                            </p>\n                        </div>\n                        <div class=\"clients__item\">\n                            <div class=\"clients__footer\">\n                                <div class=\"clients__avatar\">\n                                    <img class=\"clients__avatar_photo\"\n                                        src=\"assets/images/clients/").concat(item.author.avatar, "\" alt=\"author-pic\">\n                                </div>\n                                <div class=\"clients__info\">\n                                    <div class=\"clients__info_author\">").concat(item.author.name, "</div>\n                                    <div class=\"clients__info_occupation\">").concat(item.author.occupation, "</div>\n                                </div>\n                            </div>\n                        </div>\n                    </article>\n                </li>\n                ");
-      });
-      $("#review_clients").append(html);
-    },
-    error: function error() {
-      // modal window sweet-aler2
-      Swal.fire({
-        position: 'top-end',
-        icon: 'error',
-        title: 'Oops...',
-        text: "The clients-cards don't load!",
-        showConfirmButton: false,
-        timer: 4000
-      });
-    }
-  });
-}
-
-;
-getReview(); // Подключение lightGallery
+; // Подключение lightGallery
 
 lightGallery(document.querySelector('.gallery__album', '.album__page'), {
   plugins: [lgZoom, lgThumbnail],
@@ -319,6 +264,26 @@ lightGallery(document.querySelector('.gallery__album', '.album__page'), {
   zoomFromOrigin: true,
   speed: 500,
   licenseKey: 'your_license_key'
+}); // Map Leaflet
+// инициализируем карту по клику
+
+$("#init_map").on('click', function () {
+  // удаляем tag <a> init_map
+  $(this).remove(); // Инициализация карты
+
+  var map = L.map('my_map').setView([24.9092452, 91.8641862], 4);
+  L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/light_all/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+  var myIcon = L.icon({
+    iconUrl: 'assets/images/svg/map-pin.svg',
+    iconSize: [96, 96],
+    iconAnchor: [12, 41],
+    popupAnchor: [36, -25]
+  });
+  var marker = L.marker([24.9092452, 91.8641862], {
+    icon: myIcon
+  }).addTo(map).bindPopup("\n    <div class=\"map_popup\">\n    <img src=\"assets/plugins/leflet/images/map.svg\" alt=\"map-pic\">\n    <div class=\"map_info\">\n        <b>Hello! <br>\n        My friend!</b>\n        <div class=\"map_info_text\">You're in Flat 20, Housing state, Sylhet!</div>\n        </div>\n    </div>\n    ");
 }); // Инициализация WOW.js for animate.css
 
 new WOW().init();

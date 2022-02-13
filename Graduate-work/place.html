@@ -74,7 +74,7 @@
                                 <h5>Order Tour</h5>
                             </div>
                             <div class="modal__column">
-                                <form class="modal__form" id="my_booking-form" method="get">
+                                <form class="modal__form" id="my_booking-form" method="post">
                                     <div class="modal__name form-row">
                                         <label class="modal__label" for="booking_name">Enter your name!</label>
                                         <input class="modal__names form-field" type="text" name="name" id="booking_name"
@@ -97,7 +97,8 @@
                                     </div>
                                     <div class="modal__choice form-row">
                                         <label class="modal__label" for="choice_tour">Choose your travel tour!</label>
-                                        <select class="form-field" id="choice_tour" type="radio" name="travel_tour" required>
+                                        <select class="form-field" id="choice_tour" name="travel_tour">
+                                            <option hidden disabled selected>Choose tour</option>
                                             <option value="norway_road_trip">Norway road trip</option>
                                             <option value="summer_tours_iceland">Summer tours in Iceland</option>
                                             <option value="sweden_mountain_trip">Sweden mountain trip</option>
@@ -107,7 +108,6 @@
                                             <option value="swedish_lapland">Swedish Lapland</option>
                                             <option value="norwegian_fjords">Norwegian Fjords</option>
                                             <option value="croatia_culture_cuisine">Croatia – Culture and Cuisine</option>
-                                            <option hidden disabled selected>Choose tour</option>
                                         </select>
                                     </div>
                                     <div class="modal__button">

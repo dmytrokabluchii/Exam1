@@ -439,7 +439,6 @@ input {
         height: 100vh;
     }
     &__wrapper {
-        // max-width: 520px;
         max-width: 44%;
     }
     &__title h2 {
@@ -494,7 +493,6 @@ input {
     padding: 70px 0 0px;
     font-family: 'Lato';
     background-color: #e5e2e2;
-    // background-color: #F4F4F4;
     &__header {
         padding-bottom: 20px;
         display: flex;
@@ -523,12 +521,6 @@ input {
             list-style: none;
             position: relative;
             padding: 15px;
-            // cursor: pointer;
-            // &:hover {
-            //     transform: scale(1.01);
-            //     transition: all .3s ease-in;
-            //     overflow: hidden;
-            // }
         }
         .card__image {
             position: relative;
@@ -661,7 +653,6 @@ input {
         display: flex;
         justify-content: space-between;
         gap: 182px;
-        // background-color: #FBFBFB;
         list-style: none;
 
         .count__column {
