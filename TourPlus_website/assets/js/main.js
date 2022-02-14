@@ -13,7 +13,7 @@ $(function(){
     });
 
     // Плавный Scroll main menu + Скролл по arrow!
-    $("#header__menu_links li a, .footer__arrow a, .item__service a").on('click', function(e){
+    $("#header__menu_links li a, .footer__arrow a, .item__service a, .home__arrow_down").on('click', function(e){
         e.preventDefault();
         const top = $($(this).attr("href")).offset().top-60;
         // let id  = $(this).attr('href'), top = $(id).offset().top;

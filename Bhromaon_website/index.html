@@ -55,10 +55,10 @@
         </div>
         <nav class="sidemenu">
             <ul>
-                <li><a href="#" target="blank">who we are</a></li>
-                <li><a href="#" target="blank">what we do</a></li>
-                <li><a href="#" target="blank">travel with us</a></li>
-                <li><a href="#" target="blank">contact us</a></li>
+                <li><a href="#about">who we are</a></li>
+                <li><a href="#spain">what we do</a></li>
+                <li><a href="#comment">travel with us</a></li>
+                <li><a href="#footer">contact us</a></li>
             </ul>
         </nav>
     </div>
@@ -80,23 +80,24 @@
                         <button class="header__search_button btn-blue" type="submit">search</button>
                     </form>
                     <div class="header__scroll">
-                        <div class="header__scroll-text">Scroll Down</div>
-                        <div class="header__scroll_element">›</div>
+                        <a href="#about">
+                            <div class="header__scroll-text">Scroll Down</div>
+                        </a>
                     </div>
                 </div>
             </div>
 
 
-            <div class="header__main">
+            <div class="header__main" id="header">
                 <div class="header__container container">
                     <div class="header__main-logo">BHROMAON</div>
                     <div class="header__main-menu">
                         <nav class="header__menu">
-                            <ul>
-                                <li><a href="#" target="blank">who we are</a></li>
-                                <li><a href="#" target="blank">what we do</a></li>
-                                <li><a href="#" target="blank">travel with us</a></li>
-                                <li><a href="#" target="blank">contact us</a></li>
+                            <ul class="header__item">
+                                <li><a href="#about">who we are</a></li>
+                                <li><a href="#spain">what we do</a></li>
+                                <li><a href="#comment">travel with us</a></li>
+                                <li><a href="#footer">contact us</a></li>
                             </ul>
                         </nav>
                         <div class="hamburger_menu">
@@ -114,8 +115,7 @@
     </header>
 
     <main class="main">
-
-        <section class="about">
+        <section class="about" id="about">
             <div class="about__content about-bg lazy-bg" data-src="assets/images/block_2_bg.jpg">
                 <div class="about__layer layer">
                     <div class="about__container container">
@@ -159,7 +159,7 @@
             </div>
         </section>
 
-        <div class="work">
+        <div class="work" id="work">
             <div class="work__container container">
                 <div class="work__column">
                     <div class="work__column-left">
@@ -184,7 +184,7 @@
             </div>
         </div>
 
-        <section class="spain">
+        <section class="spain" id="spain">
             <div class="spain__first spain-bg lazy-bg" data-src="assets/images/block_3_bg1.jpg">
                 <div class="spain__container container">
                     <div class="spain__column-left">
@@ -229,7 +229,7 @@
 
         </section>
 
-        <section class="comment">
+        <section class="comment" id="comment">
             <div class="comment__content comment-bg lazy-bg" data-src="assets/images/block_4_bg.jpg">
                 <div class="comment__layer layer">
                     <div class="comment__container container">
@@ -266,81 +266,63 @@
 
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="footer">
         <div class="footer__column container">
-            <div class="footer__title-logo title">bhromaon</div>
-            <div class="footer__subtitle subtitle">
-                <p>Safe Travel Anywhere</p>
-            </div>
+            <div class="footer__content">
+                <div class="footer__title-logo title">bhromaon</div>
+                <div class="footer__subtitle subtitle">
+                    <p>Safe Travel Anywhere</p>
+                </div>
 
-            <div class="footer__icons">
-                <ul>
-                    <li><a href="#" target="blank"><object data="assets/images/svg/facebook.svg"
-                                type="image/svg+xml"></object> </a>
-                    </li>
-                    <li><a href="#" target="blank"><object data="assets/images/svg/twitter.svg"
-                                type="image/svg+xml"></object> </a>
-                    </li>
-                    <li><a href="#" target="blank"><object data="assets/images/svg/linkedin.svg"
-                                type="image/svg+xml"></object> </a>
-                    </li>
-                    <li><a href="#" target="blank"><object data="assets/images/svg/youtube.svg"
-                                type="image/svg+xml"></object> </a>
-                    </li>
-                    <li><a href="#" target="blank"><object data="assets/images/svg/pinterest.svg"
-                                type="image/svg+xml"></object> </a>
-                    </li>
-                </ul>
+                <div class="footer__icons">
+                    <ul>
+                        <li>
+                            <a class="socil__media facebook-link" href="https://www.facebook.com/" rel="noopener noreferrer" target="_blank">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+                                    <path fill="#fff" d="M9.5 3h2.5v-3h-2.5c-1.93 0-3.5 1.57-3.5 3.5v1.5h-2v3h2v8h3v-8h2.5l0.5-3h-3v-1.5c0-0.271 0.229-0.5 0.5-0.5z"></path>
+                                </svg> 
+                            </a>
+                        </li>
+                        <li>
+                            <a class="socil__media twitter-link" href="https://www.twitter.com/" rel="noopener noreferrer" target="_blank">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+                                    <path fill="#fff" d="M16 3.538c-0.588 0.263-1.222 0.438-1.884 0.516 0.678-0.406 1.197-1.050 1.444-1.816-0.634 0.375-1.338 0.65-2.084 0.797-0.6-0.638-1.453-1.034-2.397-1.034-1.813 0-3.281 1.469-3.281 3.281 0 0.256 0.028 0.506 0.084 0.747-2.728-0.138-5.147-1.444-6.766-3.431-0.281 0.484-0.444 1.050-0.444 1.65 0 1.138 0.578 2.144 1.459 2.731-0.538-0.016-1.044-0.166-1.488-0.409 0 0.013 0 0.028 0 0.041 0 1.591 1.131 2.919 2.634 3.219-0.275 0.075-0.566 0.116-0.866 0.116-0.212 0-0.416-0.022-0.619-0.059 0.419 1.303 1.631 2.253 3.066 2.281-1.125 0.881-2.538 1.406-4.078 1.406-0.266 0-0.525-0.016-0.784-0.047 1.456 0.934 3.181 1.475 5.034 1.475 6.037 0 9.341-5.003 9.341-9.341 0-0.144-0.003-0.284-0.009-0.425 0.641-0.459 1.197-1.038 1.637-1.697z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="socil__media linkedin-link" href="https://www.linkedin.com/" rel="noopener noreferrer" target="_blank">
+                                <svg width="32px" height="32px" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill="#fff" d="M8.268 28h-5.805v-18.694h5.805zM5.362 6.756c-1.856 0-3.362-1.538-3.362-3.394s1.505-3.362 3.362-3.362 3.362 1.505 3.362 3.362c0 1.856-1.506 3.394-3.362 3.394zM29.994 28h-5.792v-9.1c0-2.169-0.044-4.95-3.018-4.95-3.018 0-3.481 2.356-3.481 4.794v9.256h-5.799v-18.694h5.567v2.55h0.081c0.775-1.469 2.668-3.019 5.492-3.019 5.875 0 6.955 3.869 6.955 8.894v10.269z"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="socil__media youtube-link" href="https://www.youtube.com/" rel="nnoopener noreferrer" target="_blank">
+                                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="16" height="16" viewBox="0 0 16 16">
+                                    <path fill="#fff" d="M15.841 4.8c0 0-0.156-1.103-0.637-1.587-0.609-0.637-1.291-0.641-1.603-0.678-2.237-0.163-5.597-0.163-5.597-0.163h-0.006c0 0-3.359 0-5.597 0.163-0.313 0.038-0.994 0.041-1.603 0.678-0.481 0.484-0.634 1.587-0.634 1.587s-0.159 1.294-0.159 2.591v1.213c0 1.294 0.159 2.591 0.159 2.591s0.156 1.103 0.634 1.588c0.609 0.637 1.409 0.616 1.766 0.684 1.281 0.122 5.441 0.159 5.441 0.159s3.363-0.006 5.6-0.166c0.313-0.037 0.994-0.041 1.603-0.678 0.481-0.484 0.637-1.588 0.637-1.588s0.159-1.294 0.159-2.591v-1.213c-0.003-1.294-0.162-2.591-0.162-2.591zM6.347 10.075v-4.497l4.322 2.256-4.322 2.241z"></path>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="socil__media pinterest-link" href="https://www.pinterest.ru/" rel="noopener noreferrer" target="_blank">
+                                <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                                    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill="#fff">
+                                            <path d="M11.9996934,2 C6.47687073,2 2,6.47687073 2,11.9996934 C2,16.2362282 4.63572545,19.854143 8.35541522,21.3114865 C8.26835474,20.5199718 8.18926458,19.3072561 8.39036204,18.4427823 C8.57184023,17.6629165 9.56261304,13.4723644 9.56261304,13.4723644 C9.56261304,13.4723644 9.26403237,12.8733638 9.26403237,11.9880445 C9.26403237,10.5969161 10.0696484,9.55954753 11.0732963,9.55954753 C11.9261212,9.55954753 12.3381257,10.199626 12.3381257,10.9678428 C12.3381257,11.8255725 11.792465,13.1081818 11.5104381,14.2975997 C11.2743938,15.2926642 12.0095031,16.1044113 12.9910794,16.1044113 C14.768462,16.1044113 16.1344533,14.2301585 16.1344533,11.5251525 C16.1344533,9.13098924 14.4140891,7.45660771 11.9573894,7.45660771 C9.11259618,7.45660771 7.44189326,9.59081573 7.44189326,11.7967567 C7.44189326,12.6557126 7.77296833,13.577818 8.18619907,14.0781092 C8.26835474,14.1774317 8.28000368,14.2644922 8.2560927,14.3650409 C8.18006805,14.6814016 8.01146501,15.3601055 7.9777444,15.4998927 C7.93421416,15.681984 7.83305233,15.7212225 7.64360381,15.6329358 C6.39471506,15.0517152 5.61362313,13.2258974 5.61362313,11.7587444 C5.61362313,8.60433463 7.90539836,5.70804083 12.2210233,5.70804083 C15.6899543,5.70804083 18.3857638,8.18006805 18.3857638,11.4834616 C18.3857638,14.9297079 16.2129303,17.7027682 13.1964685,17.7027682 C12.183624,17.7027682 11.2308636,17.1767266 10.9046933,16.5544281 C10.9046933,16.5544281 10.4031759,18.4642408 10.2817817,18.9320376 C10.0561601,19.8001901 9.44673676,20.8896723 9.03902394,21.5536618 C9.97461758,21.8430459 10.969069,21.9993869 11.9996934,21.9993869 C17.5225162,21.9993869 22,17.5219031 22,11.9996934 C22,6.47687073 17.5225162,2 11.9996934,2"></path>
+                                    </g></g>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>
 
 
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous">
-        </script>
-    <script>
-        $(function () {
-            menu_top = $('.header__main').offset().top;
-            $(window).on('scroll', function () {
-                if ($(window).scrollTop() > menu_top) {
-                    if ($('.header__main').css('position') != 'fixed') {
-                        $('.header__main').css('position', 'fixed');
-                        $('.header__main').css('top', '0');
-                        $('.header__main').css('left', '0');
-                        $('.header__main').css('width', '100%');
-                        $('.header__main').css('height', '80px');
-                        $('.header__main').css('z-index', '99');
-                        $('.header__main').css('background-color', 'rgba(77, 158, 250, 0.5)');
-                        $('.header__main').css('backdrop-filter', 'blur(2px)');
-                        $('.about').css('margin-top', '80px');
-                    }
-                } else {
-                    if ($('.header__main').css('position') == 'fixed') {
-                        $('.header__main').css('position', '');
-                        $('.header__main').css('top', '');
-                        $('.header__main').css('left', '');
-                        $('.header__main').css('z-index', '');
-                        $('.header__main').css('background-color', '');
-                        $('.header__main').css('backdrop-filter', '');
-                        $('.about').css('margin-top', '');
-                    }
-                }
-            });
-        });
-    </script>
-
-    <script>
-        $(function () {
-            $(".hamburger, .page_overlay").on('click', function () {
-                $(".hamburger").toggleClass("is-active");
-                $("body").toggleClass("open");
-            });
-        });
-    </script>
-
-
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/lazyload.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
 

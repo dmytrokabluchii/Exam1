@@ -97,7 +97,6 @@ body {
 }
 
 
-
 .header {
     &-bg {
         background-position: center center;
@@ -180,20 +179,31 @@ body {
 
     &__scroll {
         padding-bottom: 125px;
-
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+            cursor: pointer;
+            text-decoration: none;
+            color: #fff;
+        }
         &-text {
             font-family: "JosefinSans-latin";
             @include fz(14);
             font-weight: 300;
             letter-spacing: 0.17em;
-        }
-
-        &_element {
-            @include fz(30);
-            -webkit-transform: rotate(90deg);
-            -ms-transform: rotate(90deg);
-            transform: rotate(90deg);
-            font-weight: 300;
+            position: relative;
+            &::after {
+                position: absolute;
+                top: 20px;
+                left: 45%;
+                content: '';
+                border: solid #fff;
+                border-width: 0 2px 2px 0;
+                display: inline-block;
+                padding: 3px;
+                transform: rotate(45deg);
+            }
         }
     }
 
@@ -229,7 +239,6 @@ body {
     &__menu {
         ul {
             list-style: none;
-
         }
 
         li {
@@ -243,6 +252,10 @@ body {
             a {
                 text-decoration: none;
                 color: #fff;
+                transition: all .3s ease;
+                &:hover {
+                    color: rgb(255, 99, 99);
+                }
             }
 
             +li {
@@ -528,6 +541,7 @@ body {
         -webkit-box-direction: normal;
         -ms-flex-direction: column;
         flex-direction: column;
+        justify-content: center;
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
@@ -549,23 +563,68 @@ body {
     &__icons {
         ul {
             list-style: none;
+            li:not(:last-child) {
+                margin-right: 15px;
+            }
         }
-
         li {
             display: inline-block;
-            padding: 0 8px;
-
-            a object {
-                width: 17px;
-                -webkit-transition: all .5s ease-in-out;
-                -o-transition: all .5s ease-in-out;
-                transition: all .5s ease-in-out;
-
-                &:hover {
-                    -webkit-transform: scale(2.5);
-                    -ms-transform: scale(2.5);
-                    transform: scale(2.5);
+            a {
+                cursor: pointer;
+                svg {
+                    width: 17px;
+                    height: 17px;
+                    -webkit-transition: all .3s ease-in-out;
+                    -o-transition: all .3s ease-in-out;
+                    transition: all .3s ease-in-out;
+                    &:hover {
+                        -webkit-transform: scale(2);
+                        -ms-transform: scale(2);
+                        transform: scale(2);
+                    }
                 }
+            }
+        }
+        .facebook-link {
+            svg:hover path {
+                fill: #3b5998;
+                -webkit-transition: all .3s ease-in-out;
+                -o-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+            }
+        }
+        
+        .twitter-link {
+            svg:hover path {
+                fill: #1ca2f3;
+                -webkit-transition: all .3s ease-in-out;
+                -o-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+            }
+        }
+        
+        .linkedin-link {
+            svg:hover path {
+                fill: #5474fd;
+                -webkit-transition: all .3s ease-in-out;
+                -o-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+            }
+        }
+        .youtube-link {
+            svg:hover path {
+                fill: #f80808;
+                -webkit-transition: all .3s ease-in-out;
+                -o-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
+            }
+        }
+        .pinterest-link {
+            svg:hover path {
+                fill: #a70404;
+                -webkit-transition: all .3s ease-in-out;
+                -o-transition: all .3s ease-in-out;
+                transition: all .3s ease-in-out;
             }
         }
     }

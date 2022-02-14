@@ -278,19 +278,32 @@ body {
 }
 .header__scroll {
   padding-bottom: 125px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__scroll a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
 }
 .header__scroll-text {
   font-family: "JosefinSans-latin";
   font-size: 0.875rem;
   font-weight: 300;
   letter-spacing: 0.17em;
+  position: relative;
 }
-.header__scroll_element {
-  font-size: 1.875rem;
-  -webkit-transform: rotate(90deg);
-  -ms-transform: rotate(90deg);
-  transform: rotate(90deg);
-  font-weight: 300;
+.header__scroll-text::after {
+  position: absolute;
+  top: 20px;
+  left: 45%;
+  content: "";
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
 }
 .header__main {
   font-family: "JosefinSans-latin";
@@ -332,6 +345,10 @@ body {
 .header__menu li a {
   text-decoration: none;
   color: #fff;
+  transition: all 0.3s ease;
+}
+.header__menu li a:hover {
+  color: #ff6363;
 }
 .header__menu li + li {
   padding-left: 30px;
@@ -568,6 +585,7 @@ body {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
@@ -586,20 +604,56 @@ body {
 .footer__icons ul {
   list-style: none;
 }
+.footer__icons ul li:not(:last-child) {
+  margin-right: 15px;
+}
 .footer__icons li {
   display: inline-block;
-  padding: 0 8px;
 }
-.footer__icons li a object {
+.footer__icons li a {
+  cursor: pointer;
+}
+.footer__icons li a svg {
   width: 17px;
-  -webkit-transition: all 0.5s ease-in-out;
-  -o-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  height: 17px;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
-.footer__icons li a object:hover {
-  -webkit-transform: scale(2.5);
-  -ms-transform: scale(2.5);
-  transform: scale(2.5);
+.footer__icons li a svg:hover {
+  -webkit-transform: scale(2);
+  -ms-transform: scale(2);
+  transform: scale(2);
+}
+.footer__icons .facebook-link svg:hover path {
+  fill: #3b5998;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.footer__icons .twitter-link svg:hover path {
+  fill: #1ca2f3;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.footer__icons .linkedin-link svg:hover path {
+  fill: #5474fd;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.footer__icons .youtube-link svg:hover path {
+  fill: #f80808;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.footer__icons .pinterest-link svg:hover path {
+  fill: #a70404;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 
 .hamburger_menu {
