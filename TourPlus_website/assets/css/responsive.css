@@ -708,6 +708,17 @@
     gap: 15px;
   }
 }
+@media screen and (max-height: 600px) {
+  .home__bg {
+    padding: 130px 0 30px;
+  }
+  .home__title h2 {
+    font-size: 3rem;
+  }
+  .home__subtitle p {
+    padding-bottom: 30px;
+  }
+}
 @media screen and (max-height: 550px) {
   #booking-modal .modal__content {
     max-width: 330px;
@@ -769,17 +780,6 @@
     padding: 7px 12px;
   }
 }
-@media screen and (max-height: 500px) {
-  .home__bg {
-    padding: 105px 0 50px;
-  }
-  .home__title h2 {
-    font-size: 2.5rem;
-  }
-  .home__subtitle p {
-    padding-bottom: 40px;
-  }
-}
 @media screen and (max-height: 450px) {
   .mobile_menu_wrap .sidemenu li a {
     font-size: 1rem;
@@ -798,7 +798,7 @@
     height: 43px;
   }
 }
-@media screen and (max-height: 395px) {
+@media screen and (max-height: 425px) {
   .home__bg {
     padding: 90px 0 40px;
   }
