@@ -1,10 +1,6 @@
 "use strict";
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 $(function () {
-  var _$$slick;
-
   // Fix Header Scroll
   $(window).on('scroll', function () {
     if ($(window).scrollTop() > 0) {
@@ -29,14 +25,14 @@ $(function () {
 
   var sections = $('section'),
       nav = $('.nav__menu'),
-      nav_height = nav.outerHeight();
+      navHeight = nav.outerHeight();
   $(window).on('scroll', function () {
-    var cur_pos = $(this).scrollTop();
+    var curPos = $(this).scrollTop();
     sections.each(function () {
-      var top = $(this).offset().top - nav_height,
+      var top = $(this).offset().top - navHeight,
           bottom = top + $(this).outerHeight();
 
-      if (cur_pos >= top && cur_pos <= bottom) {
+      if (curPos >= top && curPos <= bottom) {
         nav.find('a').removeClass('active');
         sections.removeClass('active');
         $(this).addClass('active');
@@ -48,7 +44,7 @@ $(function () {
     var $el = $(this),
         id = $el.attr('href');
     $('html, body').animate({
-      scrollTop: $(id).offset().top - nav_height
+      scrollTop: $(id).offset().top - navHeight
     }, 500);
     return false;
   }); // Hamburger-menu
@@ -177,26 +173,29 @@ $(function () {
     }
   }); // Slick-slider Place
 
-  $('#card_tour').slick((_$$slick = {
+  $('#card_tour').slick({
     infinite: true,
     speed: 900,
     dots: true,
     slidesToShow: 3,
-    slidesToScroll: 3
-  }, _defineProperty(_$$slick, "infinite", true), _defineProperty(_$$slick, "autoplay", true), _defineProperty(_$$slick, "autoplaySpeed", 6000), _defineProperty(_$$slick, "responsive", [{
-    breakpoint: 999,
-    settings: {
-      slidesToShow: 2,
-      slidesToScroll: 2
-    }
-  }, {
-    breakpoint: 600,
-    settings: {
-      slidesToShow: 1,
-      slidesToScroll: 1 // arrows: false,
+    slidesToScroll: 3,
+    autoplay: true,
+    autoplaySpeed: 6000,
+    responsive: [{
+      breakpoint: 999,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    }, {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1 // arrows: false,
 
-    }
-  }]), _$$slick));
+      }
+    }]
+  });
 }); // Динамические карты блока place
 
 function getCard() {
@@ -212,7 +211,7 @@ function getCard() {
             success: function success(json) {
               var html = '';
               json.forEach(function (card) {
-                html += "\n                    <li class=\"card__item card-first wow animate__zoomIn\" data-wow-duration=\"2s\">\n                        <div class=\"card__image\" id=\"card-img\">\n                            <a class=\"card__image_link colorbox\" data-fancybox=\"group-1\" href=\"assets/images/place_image/".concat(card.pic.big_image, "\" title=\"").concat(card.title, "\">\n                                <img class=\"card__pic\"\n                                    src=\"assets/images/place_image/").concat(card.pic.image, "\" alt=\"place_image\">\n                                <div class=\"card__price\">").concat(card.pic.price, "</div>\n                            </a>\n                        </div>\n                        <div class=\"card__content\">\n                            <div class=\"card__title\">\n                                <h6>").concat(card.title, "</h6>\n                            </div>\n                            <div class=\"card__subtitle subtitle\">\n                                <p>").concat(card.description, "</p>\n                            </div>\n                            <div class=\"card__link\">\n                                <button type=\"button\" class=\"card__link_text text_orange\" id=\"card_btn\">\n                                ").concat(card.link, "</button>\n                            </div>\n                        </div>\n                    </li>\n                ");
+                html += "\n                    <li class=\"card__item card-first wow animate__zoomIn\" data-wow-duration=\"2s\">\n                        <div class=\"card__image\" id=\"card-img\">\n                            <a class=\"card__image_link colorbox\" data-fancybox=\"group-1\" \n                            href=\"assets/images/place_image/".concat(card.pic.bigImage, "\" title=\"").concat(card.title, "\">\n                                <img class=\"card__pic\"\n                                    src=\"assets/images/place_image/").concat(card.pic.image, "\" alt=\"place_image\">\n                                <div class=\"card__price\">").concat(card.pic.price, "</div>\n                            </a>\n                        </div>\n                        <div class=\"card__content\">\n                            <div class=\"card__title\">\n                                <h6>").concat(card.title, "</h6>\n                            </div>\n                            <div class=\"card__subtitle subtitle\">\n                                <p>").concat(card.description, "</p>\n                            </div>\n                            <div class=\"card__link\">\n                                <button type=\"button\" class=\"card__link_text text_orange\" id=\"card_btn\">\n                                ").concat(card.link, "</button>\n                            </div>\n                        </div>\n                    </li>\n                ");
               });
               $("#page_card").append(html);
               $("#card_tour").slick('slickAdd', html);
@@ -251,9 +250,8 @@ function getCard() {
       }
     }
   });
-}
+} // Динамические карты блока clients
 
-; // Динамические карты блока clients
 
 function getReview() {
   $.ajax({
@@ -281,7 +279,6 @@ function getReview() {
   });
 }
 
-;
 getReview(); // Подключение lightGallery
 
 lightGallery(document.querySelector('.gallery__album', '.album__page'), {
@@ -313,6 +310,6 @@ $("#init_map").on('click', function () {
   var marker = L.marker([24.9092452, 91.8641862], {
     icon: myIcon
   }).addTo(map).bindPopup("\n    <div class=\"map_popup\">\n    <img src=\"assets/plugins/leflet/images/map.svg\" alt=\"map-pic\">\n    <div class=\"map_info\">\n        <b>Hello! <br>\n        My friend!</b>\n        <div class=\"map_info_text\">You're in Flat 20, Housing state, Sylhet!</div>\n        </div>\n    </div>\n    ");
-}); // Инициализация WOW.js for animate.css
+}); // Инициализация WOW.js при скроле for animate.css
 
 new WOW().init();

@@ -1,44 +1,49 @@
-$(function(){
+$(function () {
     // Fix Header Scroll
-    $(window).on('scroll', function(){
-            if($(window).scrollTop()>0){
-                if(!$("header").hasClass("fixed_header")) {
-                    $("header").addClass("fixed_header");
-                }
-        }else{
-                if($("header").hasClass("fixed_header")){
-                    $("header").removeClass("fixed_header");
-                }
+    $(window).on('scroll', function () {
+        if ($(window).scrollTop() > 0) {
+            if (!$("header").hasClass("fixed_header")) {
+                $("header").addClass("fixed_header");
             }
+        } else {
+            if ($("header").hasClass("fixed_header")) {
+                $("header").removeClass("fixed_header");
+            }
+        }
     });
 
     // Плавный Scroll main menu + Скролл по arrow!
-    $("#header__menu_links li a, .footer__arrow a, .item__service a, .home__arrow_down").on('click', function(e){
+    $("#header__menu_links li a, .footer__arrow a, .item__service a, .home__arrow_down").on('click', function (e) {
         e.preventDefault();
-        const top = $($(this).attr("href")).offset().top-60;
+        const top = $($(this).attr("href")).offset().top - 60;
         // let id  = $(this).attr('href'), top = $(id).offset().top;
-        $('body,html').animate({scrollTop: top + 'px'}, 1100);
+        $('body,html').animate({
+            scrollTop: top + 'px'
+        }, 1100);
     });
 
     // Active menu при scroll
-    let sections = $('section'), nav = $('.nav__menu'), nav_height = nav.outerHeight();
+    let sections = $('section'),
+        nav = $('.nav__menu'),
+        navHeight = nav.outerHeight();
     $(window).on('scroll', function () {
-        let cur_pos = $(this).scrollTop();
-        sections.each(function() {
-            let top = $(this).offset().top - nav_height,
+        let curPos = $(this).scrollTop();
+        sections.each(function () {
+            let top = $(this).offset().top - navHeight,
                 bottom = top + $(this).outerHeight();
-            if (cur_pos >= top && cur_pos <= bottom) {
-            nav.find('a').removeClass('active');
-            sections.removeClass('active');
-            $(this).addClass('active');
-            nav.find('a[href="#'+$(this).attr('id')+'"]').addClass('active');
+            if (curPos >= top && curPos <= bottom) {
+                nav.find('a').removeClass('active');
+                sections.removeClass('active');
+                $(this).addClass('active');
+                nav.find('a[href="#' + $(this).attr('id') + '"]').addClass('active');
             }
         });
     });
     nav.find('a').on('click', function () {
-    let $el = $(this), id = $el.attr('href');
+        let $el = $(this),
+            id = $el.attr('href');
         $('html, body').animate({
-            scrollTop: $(id).offset().top - nav_height
+            scrollTop: $(id).offset().top - navHeight
         }, 500);
         return false;
     });
@@ -57,32 +62,32 @@ $(function(){
 
     // Модальное окно 
     // открыть по кнопке callback
-    $('.callback__btn, .item__service_contact a').click(function() { 
+    $('.callback__btn, .item__service_contact a').click(function () {
         $('.modal__callback').fadeIn();
         $('.modal__callback').addClass('disabled');
     });
     // закрыть на крестик callback + order tour
-    $('.callback__close_btn, .modal__close_btn').click(function() { 
+    $('.callback__close_btn, .modal__close_btn').click(function () {
         $('.modal__callback, .booking__modal').fadeOut(600); // закрытие с плавной анимацией, где 600 это время в мс
     });
     // закрыть по клику вне окна callback + order tour
-    $(document).mouseup(function (e) { 
+    $(document).mouseup(function (e) {
         let popup = $('.callback__content, .modal__content');
-        if (e.target!=popup[0]&&popup.has(e.target).length === 0){
+        if (e.target != popup[0] && popup.has(e.target).length === 0) {
             $('.modal__callback, .booking__modal').fadeOut(600);
         }
-    }); 
+    });
     // закрыть по ESC
-    $(document).on('keydown',function(event) {
+    $(document).on('keydown', function (event) {
         if (event.keyCode == 27) {
             $('.modal__callback, .booking__modal').fadeOut(600);
-         }
+        }
     });
 
     // Маска номера телефона для модалок
     $(function () {
         $('#callback_phone, #booking_phone').mask('+38 (099) 999-99-9?9');
-    })
+    });
 
     // Маска e-mail address для модалки
     $('#booking_email[type=email]').on('blur', function (e) {
@@ -95,7 +100,7 @@ $(function(){
                 title: 'Fill right email address!',
                 showConfirmButton: false,
                 timer: 3000
-            })
+            });
         }
     });
 
@@ -104,14 +109,15 @@ $(function(){
     const CHAT_ID = '704440668';
 
     // Отправка формы callback на Telegram BOT
-    $("#my_callback-form").on('submit', function(e){
+    $("#my_callback-form").on('submit', function (e) {
         e.preventDefault();
         let nameInputCallback = document.getElementById('callback_name');
-        let phoneInputCallback = document.getElementById('callback_phone');            
+        let phoneInputCallback = document.getElementById('callback_phone');
         let textCallback = encodeURI(`Name: ${nameInputCallback.value}, Phone: ${phoneInputCallback.value}`);
-        if(nameInputCallback.value !== '' && phoneInputCallback.value !== ''){
-            $.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=`+textCallback+'&parse_mode=html', (json)=>{
-                if(json.ok){
+        if (nameInputCallback.value !== '' && phoneInputCallback.value !== '') {
+            $.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=` + textCallback + 
+            '&parse_mode=html', (json) => {
+                if (json.ok) {
                     $("#my_callback-form").trigger('reset');
                     Swal.fire({
                         position: 'top-end',
@@ -119,39 +125,40 @@ $(function(){
                         title: 'Your message send!',
                         showConfirmButton: false,
                         timer: 3000
-                    })
+                    });
                     // Закрытие формы callback после успешной отправки
                     $('.modal__callback').fadeOut(600);
                 }
             });
-        }else{
+        } else {
             Swal.fire({
                 position: 'top-end',
                 icon: 'warning',
                 title: 'Fill all field!',
                 showConfirmButton: false,
                 timer: 3000
-            })
+            });
         }
     });
-    
+
     // Модальное окно order tour
     getCard();
     // Отправка формы на Telegram BOT
-    $("#my_booking_form").on('submit', function(e){
+    $("#my_booking_form").on('submit', function (e) {
         e.preventDefault();
         let nameInput = document.getElementById('booking_name');
         let surnameInput = document.getElementById('booking_surname');
         let emailInput = document.getElementById('booking_email');
-        let phoneInput = document.getElementById('booking_phone'); 
-        let tourSelect = document.getElementById('choice_tour');              
+        let phoneInput = document.getElementById('booking_phone');
+        let tourSelect = document.getElementById('choice_tour');
         let text = encodeURI(`Name: ${nameInput.value}, Surname:${surnameInput.value}, 
         Email: ${emailInput.value}, Phone: ${phoneInput.value}, Tour: ${tourSelect.value}`);
 
-        if(nameInput.value !== '' && surnameInput.value !== '' && emailInput.value !== '' 
-        && phoneInput.value !== '' && tourSelect.value !== ''){
-            $.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=`+text+'&parse_mode=html', (json)=>{
-                if(json.ok){
+        if (nameInput.value !== '' && surnameInput.value !== '' && emailInput.value !== '' &&
+            phoneInput.value !== '' && tourSelect.value !== '') {
+            $.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=` + text + 
+            '&parse_mode=html', (json) => {
+                if (json.ok) {
                     $("#my_booking_form").trigger('reset');
                     Swal.fire({
                         position: 'top-end',
@@ -159,19 +166,19 @@ $(function(){
                         title: 'Your message send!',
                         showConfirmButton: false,
                         timer: 3000,
-                    })
+                    });
                     // Закрытие формы order tour после успешной отправки
                     $('.booking__modal').fadeOut(600);
                 }
             });
-        }else{
+        } else {
             Swal.fire({
                 position: 'top-end',
                 icon: 'warning',
                 title: 'Fill all field!',
                 showConfirmButton: false,
                 timer: 3000
-            })
+            });
         }
     });
 
@@ -181,13 +188,11 @@ $(function(){
         infinite: true,
         speed: 900,
         dots: true,
-        slidesToShow: 3, 
+        slidesToShow: 3,
         slidesToScroll: 3,
-        infinite: true,
         autoplay: true,
         autoplaySpeed: 6000,
-        responsive: [
-            {
+        responsive: [{
                 breakpoint: 999,
                 settings: {
                     slidesToShow: 2,
@@ -209,18 +214,19 @@ $(function(){
 
 
 // Динамические карты блока place
-async function getCard(){
+async function getCard() {
     await $.ajax({
-        url:'common/card.json',
-        type:'get',
-        dataType:'json',
-        success:function(json){
+        url: 'common/card.json',
+        type: 'get',
+        dataType: 'json',
+        success: function (json) {
             let html = '';
-            json.forEach((card)=>{
+            json.forEach((card) => {
                 html += `
                     <li class="card__item card-first wow animate__zoomIn" data-wow-duration="2s">
                         <div class="card__image" id="card-img">
-                            <a class="card__image_link colorbox" data-fancybox="group-1" href="assets/images/place_image/${card.pic.big_image}" title="${card.title}">
+                            <a class="card__image_link colorbox" data-fancybox="group-1" 
+                            href="assets/images/place_image/${card.pic.bigImage}" title="${card.title}">
                                 <img class="card__pic"
                                     src="assets/images/place_image/${card.pic.image}" alt="place_image">
                                 <div class="card__price">${card.pic.price}</div>
@@ -241,11 +247,11 @@ async function getCard(){
                     </li>
                 `;
             });
-            
+
             $("#page_card").append(html);
             $("#card_tour").slick('slickAdd', html);
         },
-        error:function(){
+        error: function () {
             // modal window sweet-aler2
             Swal.fire({
                 position: 'top-end',
@@ -254,35 +260,35 @@ async function getCard(){
                 text: "The tour-cards don't load!",
                 showConfirmButton: false,
                 timer: 4000
-            })
+            });
         }
-    });  
+    });
     // открыть по кнопке
-    $('#booking_btn, #card_btn').click(function() { 
+    $('#booking_btn, #card_btn').click(function () {
         $('.booking__modal').fadeIn();
         $('.booking__modal').addClass('disabled');
     });
 
     // colorbox plugin
-    $(function(){
+    $(function () {
         $("a.card__image_link").colorbox({
-            maxWidth:"98%",
-            maxHeight:"98%",
-            closeButton:"true"
+            maxWidth: "98%",
+            maxHeight: "98%",
+            closeButton: "true"
         });
     });
-};
+}
 
 
 // Динамические карты блока clients
-function getReview(){
+function getReview() {
     $.ajax({
-        url:'common/review.json',
-        type:'get',
-        dataType:'json',
-        success:function(json){
+        url: 'common/review.json',
+        type: 'get',
+        dataType: 'json',
+        success: function (json) {
             let html = '';
-            json.forEach((item)=>{
+            json.forEach((item) => {
                 html += `
                 <li class="clients__cards">
                     <article class="clients__content">
@@ -308,7 +314,7 @@ function getReview(){
             });
             $("#review_clients").append(html);
         },
-        error:function(){
+        error: function () {
             // modal window sweet-aler2
             Swal.fire({
                 position: 'top-end',
@@ -317,16 +323,16 @@ function getReview(){
                 text: "The clients-cards don't load!",
                 showConfirmButton: false,
                 timer: 4000
-            })
+            });
         }
-    });  
-};
+    });
+}
 getReview();
 
 
 // Подключение lightGallery
 lightGallery(document.querySelector('.gallery__album', '.album__page'), {
-    plugins:[lgZoom, lgThumbnail],
+    plugins: [lgZoom, lgThumbnail],
     thumbnail: true,
     zoom: true,
     actualSize: true,
@@ -339,7 +345,7 @@ lightGallery(document.querySelector('.gallery__album', '.album__page'), {
 
 // Map Leaflet
 // инициализируем карту по клику
-$("#init_map").on('click', function(){
+$("#init_map").on('click', function () {
     // удаляем tag <a> init_map
     $(this).remove();
     // Инициализация карты
@@ -353,8 +359,10 @@ $("#init_map").on('click', function(){
         iconAnchor: [12, 41],
         popupAnchor: [36, -25],
     });
-    const marker = L.marker([24.9092452, 91.8641862], {icon:myIcon}).addTo(map)
-    .bindPopup(`
+    const marker = L.marker([24.9092452, 91.8641862], {
+            icon: myIcon
+        }).addTo(map)
+        .bindPopup(`
     <div class="map_popup">
     <img src="assets/plugins/leflet/images/map.svg" alt="map-pic">
     <div class="map_info">
@@ -367,5 +375,5 @@ $("#init_map").on('click', function(){
 });
 
 
-// Инициализация WOW.js for animate.css
+// Инициализация WOW.js при скроле for animate.css
 new WOW().init();

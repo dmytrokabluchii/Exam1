@@ -1,7 +1,7 @@
 [
     {
         "pic": {
-            "big_image":"place_1-min(b).jpg",
+            "bigImage":"place_1-min(b).jpg",
             "image":"place_1-min.jpg",
             "price": "$1299"
         },
@@ -11,7 +11,7 @@
     },
     {
         "pic": {
-            "big_image":"place_2-min(b).jpg",
+            "bigImage":"place_2-min(b).jpg",
             "image":"place_2-min.jpg",
             "price": "$1499"
         },
@@ -21,7 +21,7 @@
     },
     {
         "pic": {
-            "big_image":"place_3-min(b).jpg",
+            "bigImage":"place_3-min(b).jpg",
             "image":"place_3-min.jpg",
             "price": "$1199"
         },
@@ -31,7 +31,7 @@
     },
     {
         "pic": {
-            "big_image":"place_4-min(b).jpg",
+            "bigImage":"place_4-min(b).jpg",
             "image":"place_4-min.jpg",
             "price": "$1099"
         },
@@ -41,7 +41,7 @@
     },
     {
         "pic": {
-            "big_image":"place_5-min(b).jpg",
+            "bigImage":"place_5-min(b).jpg",
             "image":"place_5-min.jpg",
             "price": "$1899"
         },
@@ -51,7 +51,7 @@
     },
     {
         "pic": {
-            "big_image":"place_6-min(b).jpg",
+            "bigImage":"place_6-min(b).jpg",
             "image":"place_6-min.jpg",
             "price": "$2999"
         },
@@ -61,7 +61,7 @@
     },
     {
         "pic": {
-            "big_image":"place_7-min(b).jpg",
+            "bigImage":"place_7-min(b).jpg",
             "image":"place_7-min.jpg",
             "price": "$1999"
         },
@@ -71,7 +71,7 @@
     },
     {
         "pic": {
-            "big_image":"place_8-min(b).jpg",
+            "bigImage":"place_8-min(b).jpg",
             "image":"place_8-min.jpg",
             "price": "$2899"
         },
@@ -81,7 +81,7 @@
     },
     {
         "pic": {
-            "big_image":"place_9-min(b).jpg",
+            "bigImage":"place_9-min(b).jpg",
             "image":"place_9-min.jpg",
             "price": "$1699"
         },
