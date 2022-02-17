@@ -13,7 +13,7 @@ $(function () {
     });
 
     // Плавный Scroll main menu + Скролл по arrow!
-    $("#header__menu_links li a, .footer__arrow a, .item__service a, .home__arrow_down").on('click', function (e) {
+    $("#header__menu_links li a, .footer__arrow a, .item__service a, .home__arrow_down, .header__logo_symbol, .footer__logo_symbol").on('click', function (e) {
         e.preventDefault();
         const top = $($(this).attr("href")).offset().top - 60;
         // let id  = $(this).attr('href'), top = $(id).offset().top;
@@ -54,8 +54,8 @@ $(function () {
         $(".mobile_menu_wrap .hamburger").toggleClass("is-active");
         $("body").toggleClass("open");
     });
-    // Закрытие меню бургер при нажатии на пунты меню и кнопку callback
-    $(".sidemenu ul li a, .mobile__btn").on('click', function () {
+    // Закрытие меню бургер при нажатии на пунты меню, кнопку callback и на логотип
+    $(".sidemenu ul li a, .mobile__btn, .mobile__logo_symbol").on('click', function () {
         $("body").removeClass("open");
     });
 
