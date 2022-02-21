@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "..\\..\\..\\Beetroot Education\\Exam1"
+		},
+		{
+			"path": ".."
+		},
+		{
+			"path": "..\\..\\..\\Beetroot Education\\Practice"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Exam1",
+		"compile-hero.disable-compile-files-on-did-save-code": false
+	}
+}

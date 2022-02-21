@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/panel/panel.min.css">
+    <link rel="stylesheet" href="assets/css/style.min.css">
+    <link rel="stylesheet" href="assets/css/responsive.min.css">
+</head>
+
+<body>
+    <div id="app">
+        <div class="container-fluid pt-3">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <form @submit.prevent="searchMovies">
+                        <div class="section-search_up">
+                            <div class="col search-name">
+                                <input list="searchHistory" type="text" class="form-control"
+                                    placeholder="Enter name your movie!" v-model="search">
+                                <datalist id="searchHistory">
+                                    <option v-for="h in searchHistory" :value="h"></option>
+                                </datalist>
+                            </div>
+                            <div class="col search-type">
+                                <select class="form-control" v-model="type">
+                                    <option value="">All types</option>
+                                    <option value="movie">Movies</option>
+                                    <option value="series">Series</option>
+                                    <option value="episode">Episodes</option>
+                                </select>
+                            </div>
+                            <div class="col search-year">
+                                <input type="number" class="form-control" placeholder="Year" v-model.number="year"
+                                    min="1930" :max="currentYear">
+                            </div>
+                            <div class="col search-button">
+                                <div>
+                                    <button type="submit"
+                                        class="btn btn-primary btn-myStyle btn-myStyle_search">Search</button>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-secondary btn-myStyle btn-myStyle_clear"
+                                        @click="clearHistory">Clear</button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="album py-5 bg-light">
+            <div class="container-fluid">
+                <div class="row row-cols-1">
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <div class="card-header">Favorite movies</div>
+                            <div class="card-body film__detail">
+                                <ul class="d-flex d-sm-flex align-content-start flex-wrap bd-highlight favorite-card">
+                                    <li class="film__item" v-for="film in favList" :key="film.imdbID">
+                                        <movie-item :movie="film" :favids="favListIds"></movie-item>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="album py-5 bg-light">
+            <div class="container-fluid">
+                <div class="row row-cols-1">
+                    <div class="col">
+                        <div class="card shadow-sm">
+                            <div class="card-header">Found Movies</div>
+                            <div class="card-body film__detail">
+                                <ul class="d-flex d-sm-flex align-content-start flex-wrap bd-highlight">
+                                    <li class="film__item" v-for="film in movieList.Search" :key="film.imdbID">
+                                        <movie-item :movie="film" :favids="favListIds"></movie-item>
+                                    </li>
+                                </ul>
+                                <pagination :total="totalPages" :page="currentPage"></pagination>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div :class="showModal?'modal_overlay open':'modal_overlay'">
+            <div class="my_modal p-4">
+                <button class="btn btn-danger close_modal" @click="showModal=false">&times;</button>
+                <h3 class="text-wrap">{{ movieDetail.Title }}</h3>
+                <div class="row modal_movie-info">
+                    <div class="col-5 film-poster_link poster_pic-modal">
+                        <img class="film-poster_pic" :alt="movieDetail.Title" v-if="movieDetail.Poster!='N/A'"
+                            :src="movieDetail.Poster">
+                        <img src="https://via.placeholder.com/300x444" alt="`No image for ${movieDetail.Title}`" v-else>
+                    </div>
+                    <div class="col-7">
+                        <movie-rating :ratings="movieDetail.Ratings"></movie-rating>
+                        <dl>
+                            <dt>Date of released</dt>
+                            <dd>{{ movieDetail.Released }}</dd>
+                            <dt>Country</dt>
+                            <dd>{{ movieDetail.Country }}</dd>
+                            <dt>Actors</dt>
+                            <dd>{{ movieDetail.Actors }}</dd>
+                            <dt>Description</dt>
+                            <dd>{{ movieDetail.Plot }}</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <template id="movie_item">
+        <div class="p-2">
+            <div class="film-poster_link" href="#!" @click="getMovieDetail(movie.imdbID)">
+                <img class="film-poster_pic" :alt="movie.Title" v-if="movie.Poster!='N/A'" :src="movie.Poster">
+                <img class="film-poster_pic" src="https://via.placeholder.com/300x444"
+                    alt="`No image for ${movie.Title}`" v-else>
+                <div class="myStyle_detail" @click="getMovieDetail(movie.imdbID)">Push to Detail</div>
+                <button class="btn btn-warning btn-sm btn-favorite" @click="addToFavourite(movie.imdbID)">
+                    <span v-if="inFav(movie.imdbID)">&star;</span>
+                    <span v-else>&starf;</span>
+                </button>
+                <!-- <div class="rating-imdbid">
+                    <movie-rating :ratings="movieDetail.Ratings"></movie-rating>
+                    <dt>IMDbRating</dt>
+                    <dd>{{ movieDetail.imdbRating }}</dd>
+                </div> -->
+            </div>
+            <h5 class="card-title text-wrap">
+                {{ movie.Title }} - {{ movie.Year }}
+            </h5>
+        </div>
+    </template>
+
+    <template id="movie_rating">
+        <div>
+            <div class="scale_wrap mb-3" v-for="r in ratings_list" :key="r.Source">
+                <div class="scale_top mb-2 d-flex justify-content-between">
+                    <span> {{ r.Source }}</span>
+                    <span>{{ r.Value }}</span>
+                </div>
+                <div class="bar">
+                    <div class="scale" :style="`width:${r.Width}%`"></div>
+                </div>
+            </div>
+            <ul>
+                <li v-for="r in ratings_list" :key="r.Source">
+                    {{ r.Source }} : {{ r.Value }}
+                </li>
+            </ul>
+        </div>
+    </template>
+
+    <template id="pagination">
+        <nav aria-label="Page navigation example" class="d-flex justify-content-centre">
+            <ul class="pagination flex-wrap">
+                <li class="page-item" v-if="page!=1"><a class="page-link" href="#"
+                        @click.prevent=goToPage(page-1)>Previous</a></li>
+                <li :class="['page-item', (page==num)?'active':'']" v-for="num in total" :key="num">
+                    <a class="page-link" href="#" @click.prevent="goToPage(num)" v-if="num!=page">{{ num }}</a>
+                    <span class="page-link" v-else>{{ num }}</span>
+                </li>
+                <li class="page-item" v-if="page!=total"><a class="page-link" href="#!"
+                        @click.prevent=goToPage(page+1)>Next</a></li>
+            </ul>
+        </nav>
+    </template>
+
+
+
+
+    <script src="assets/js/vue.js"></script>
+    <script src="assets/js/axios.min.js"></script>
+    <script src="assets/panel/panel.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
