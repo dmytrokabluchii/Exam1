@@ -492,8 +492,15 @@ body {
             width: 9px;
         }
 
-        p {
+        a {
             padding-left: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            color: #000;
+            &:hover {
+                color: #765ad8;
+                transition: all .2s ease-in-out;
+            }
         }
     }
 
@@ -559,7 +566,6 @@ body {
         position: relative;
         padding-bottom: 75px;
         color: #fff;
-
         h4::before {
             @extend %line;
             background-color: #fff;

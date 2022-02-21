@@ -516,8 +516,15 @@ body {
 .project__location img {
   width: 9px;
 }
-.project__location p {
+.project__location a {
   padding-left: 15px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #000;
+}
+.project__location a:hover {
+  color: #765ad8;
+  transition: all 0.2s ease-in-out;
 }
 .project__button {
   padding-bottom: 60px;

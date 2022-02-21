@@ -168,7 +168,7 @@ function getNews(){
             let html = '';
             json.forEach((card)=>{
                 html += `
-                <li class="slider__item">
+                <li class="slider__item wow animate__zoomIn" data-wow-duration="2s">
                     <div class="slider__item-container">
                         <div class="slider__item-content" id="news-card_first">
                             <div class="slider__content_header">
@@ -207,3 +207,6 @@ function getNews(){
         }
     });  
 }
+
+// Инициализация WOW.js при скроле for animate.css
+new WOW().init();
