@@ -1,0 +1,89 @@
+@media screen and (max-width: 1210px) {
+  .film__item {
+    width: calc(25% - 16px);
+  }
+
+  .favorite-card li {
+    width: calc(20% - 16px);
+  }
+  .favorite-card li .film-poster_link .myStyle_detail {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-width: 999px) {
+  .film__item {
+    width: calc(33.333% - 16px);
+  }
+  .film__item .film-poster_link .myStyle_detail {
+    font-size: 1.625rem;
+  }
+
+  .favorite-card li {
+    width: calc(25% - 16px);
+  }
+  .favorite-card li .card-title {
+    font-size: 1rem;
+  }
+
+  .btn-myStyle_clear {
+    height: 40px;
+    width: 90px;
+    padding: 5px 10px;
+  }
+
+  .btn-myStyle_search {
+    height: 40px;
+    width: 90px;
+  }
+  .btn-myStyle_search:after {
+    display: none;
+  }
+}
+@media screen and (max-width: 666px) {
+  .film__item {
+    width: calc(50% - 15px);
+  }
+
+  .favorite-card li {
+    width: calc(33.333% - 12px);
+  }
+  .favorite-card li .film-poster_link .myStyle_detail {
+    font-size: 1.125rem;
+  }
+
+  .section-search_up {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 510px) {
+  .film__item {
+    width: calc(100%);
+  }
+  .film__item .film-poster_link .myStyle_detail {
+    font-size: 1.8125rem;
+  }
+
+  .favorite-card li {
+    width: calc(50% - 10px);
+  }
+}
+@media screen and (max-width: 366px) {
+  .favorite-card li {
+    width: calc(50%);
+  }
+  .favorite-card li .film-poster_link .myStyle_detail {
+    font-size: 1rem;
+  }
+  .favorite-card li .film-poster_link .btn-favorite {
+    position: absolute;
+    right: 5px;
+    bottom: 5px;
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+  }
+  .favorite-card li .film-poster_link .btn-favorite span {
+    font-size: 1.25rem;
+  }
+}
