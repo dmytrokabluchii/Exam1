@@ -52,6 +52,7 @@
     <link rel="stylesheet" href="assets/plugins/leflet/leaflet.css">
     <link rel="stylesheet" href="assets/plugins/lightGallery/lightgallery-bundle.min.css">
     <link rel="stylesheet" href="assets/plugins/panel/panel.min.css">
+    <link rel="stylesheet" href="assets/plugins/animatewow/animate.min.css">
     <link rel="stylesheet" href="assets/css/fonts.css">
     <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="stylesheet" href="assets/css/responsive.min.css">
@@ -134,7 +135,7 @@
                 <div class="header__block container">
                     <div class="header__main">
                         <div class="header__logo">
-                            <a href="#" rel="nofollow" target="_blank">
+                            <a href="#" rel="nofollow">
                                 <svg width="241" height="54" viewBox="0 0 241 54" fill="none"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <rect width="241" height="54" fill="url(#pattern0)" />
@@ -356,7 +357,7 @@
                     </div>
                     <div class="project__block-first">
                         <div class="project__image_first">
-                            <img class="lazy"
+                            <img class="lazy wow animate__slideInLeft" data-wow-duration="2s"
                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
                                 data-src="assets/images/project-pic_1-min.jpg" alt="project-pic_one">
                         </div>
@@ -376,14 +377,14 @@
                             </div>
                             <div class="project__location">
                                 <img src="assets/images/svg/point-maps.svg" alt="point-maps">
-                                <p>New York City, United States - 1776 feet</p>
+                                <a href="https://www.google.com/maps/place/@40.7129947,-74.0153496,17z/" target="_blank">New York City, United States - 1776 feet</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="project__block-second">
                         <div class="project__image_second">
-                            <img class="lazy"
+                            <img class="lazy wow animate__slideInRight" data-wow-duration="2s"
                                 src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
                                 data-src="assets/images/project-pic_2-min.jpg" alt="project-pic_second">
                         </div>
@@ -403,7 +404,7 @@
                             </div>
                             <div class="project__location">
                                 <img src="assets/images/svg/point-maps.svg" alt="point-maps">
-                                <p>Hong Kong - 1588 feet</p>
+                                <a href="https://www.google.com/maps/place/@22.3297034,114.1607433,17z/" target="_blank">Hong Kong - 158 street</a>
                             </div>
                         </div>
                     </div>
@@ -437,24 +438,24 @@
                 <div class="gallery__image my-gallery" id="animated-thumbnails-gallery">
                     <a href="assets/images/galery_alternative/maxime-vandenberge-min.jpg"
                         class="gallery__block-first gallery__block gallery__image_first image-first">
-                        <img src="assets/images/galery_alternative/maxime-vandenberge-small-min.jpg"
+                        <img class="wow animate__flipInX" data-wow-duration="2s" src="assets/images/galery_alternative/maxime-vandenberge-small-min.jpg"
                             alt="pic-vandenberge">
                     </a>
                     <a href="assets/images/galery_alternative/bernardo-lorena-min.jpg"
                         class="gallery__block-second gallery__block gallery__image_second image-second">
-                        <img src="assets/images/galery_alternative/bernardo-lorena-small-min.jpg" alt="pic-lorena">
+                        <img class="wow animate__bounceIn" data-wow-duration="2s" src="assets/images/galery_alternative/bernardo-lorena-small-min.jpg" alt="pic-lorena">
                     </a>
                     <a href="assets/images/galery_alternative/jf-martin-min.jpg"
                         class="gallery__block gallery__image_third image-third">
-                        <img src="assets/images/galery_alternative/jf-martin-small-min.jpg" alt="pic-martin">
+                        <img class="wow animate__bounceIn" data-wow-duration="2s" src="assets/images/galery_alternative/jf-martin-small-min.jpg" alt="pic-martin">
                     </a>
                     <a href="assets/images/galery_alternative/mathias-p-r-min.jpg"
                         class="gallery__block gallery__image_fourth image-fourth">
-                        <img src="assets/images/galery_alternative/mathias-p-r-small-min.jpg" alt="pic-mathias">
+                        <img class="wow animate__bounceIn" data-wow-duration="2s" src="assets/images/galery_alternative/mathias-p-r-small-min.jpg" alt="pic-mathias">
                     </a>
                     <a href="assets/images/galery_alternative/nimsibeth-min.jpg"
                         class="gallery__block gallery__image_fifth image-fifth">
-                        <img src="assets/images/galery_alternative/nimsibeth-small-min.jpg" alt="pic-nimsibeth">
+                        <img class="wow animate__bounceIn" data-wow-duration="2s" src="assets/images/galery_alternative/nimsibeth-small-min.jpg" alt="pic-nimsibeth">
                     </a>
                 </div>
                 <div class="gallery__button btn">
@@ -528,8 +529,9 @@
                                                         name="email" id="email_contact" placeholder="Email" required>
                                                 </div>
                                                 <div class="footer__contact-btn">
-                                                    <button class="footer__contact-button btn-white"
-                                                        type="submit">SUBMIT</button>
+                                                    <button class="footer__contact-button btn-white wow animate__heartBeat" 
+                                                    data-wow-duration="2s" data-wow-delay="4s" data-wow-iteration="2"
+                                                    type="submit">SUBMIT</button>
                                                 </div>
                                             </form>
                                         </div>
@@ -541,7 +543,7 @@
 
                     <div class="footer__main">
                         <div class="footer__logo">
-                            <a href="#" rel="nofollow" target="_blank">
+                            <a href="#" rel="nofollow">
                                 <svg width="241" height="54" viewBox="0 0 241 54" fill="none"
                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                     <rect width="241" height="54" fill="url(#pattern1)" />
@@ -608,6 +610,7 @@
     <script src="assets/plugins/panel/panel.js"></script>
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/plugins/slick/slick.min.js"></script>
+    <script src="assets/plugins/animatewow/wow.min.js"></script>
     <script src="assets/plugins/lightGallery/lightgallery.min.js"></script>
     <script src="assets/plugins/lightGallery/lg-thumbnail.min.js"></script>
     <script src="assets/plugins/lightGallery/lg-zoom.min.js"></script>

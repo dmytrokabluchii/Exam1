@@ -47,7 +47,7 @@ $(function () {
         }, 500);
         return false;
     });
-
+    
 
     // Hamburger-menu
     $(".hamburger, .page_overlay").on('click', function () {
