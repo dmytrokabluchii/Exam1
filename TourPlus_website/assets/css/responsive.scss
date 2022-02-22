@@ -340,7 +340,7 @@ $base_size:16;
     }
 
     .video {
-        padding: 10px 0 70px;
+        padding: 50px 0 5px;
         &__content {
             grid-template-columns: repeat(2, 1fr);
             gap: 30px;
@@ -349,11 +349,29 @@ $base_size:16;
     }
 
     .gallery {
-        padding: 60px 0 40px;
+        padding: 50px 0 50px;
         &__album {
             padding-bottom: 40px;
             gap: 20px;
         }
+    }
+
+    .support {
+        padding: 50px 0 0;
+    }
+
+    .clients {
+        padding-bottom: 50px;
+        &__column {
+            padding-bottom: 40px;
+        }
+        &__text {
+            padding-top: 50px;
+        }
+    }
+
+    .team {
+        padding-bottom: 50px;
     }
 
     .booking {
@@ -397,7 +415,6 @@ $base_size:16;
     }
 
     .support {
-        padding: 50px 0 0;
         .row__first {
             gap: 20px;
             padding-bottom: 20px;
@@ -498,7 +515,6 @@ $base_size:16;
     }
 
     .gallery {
-        padding: 50px 0 40px;
         &__album {
             grid-template-areas:
                 "image-first image-second"
@@ -638,7 +654,6 @@ $base_size:16;
     }
 
     .video {
-        padding: 0px 0 60px;
         &__content {
             grid-template-columns: repeat(1, 1fr);
             gap: 20px;
