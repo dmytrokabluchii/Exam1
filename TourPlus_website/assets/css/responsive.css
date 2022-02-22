@@ -282,7 +282,7 @@
   }
 
   .video {
-    padding: 10px 0 70px;
+    padding: 50px 0 5px;
   }
   .video__content {
     grid-template-columns: repeat(2, 1fr);
@@ -291,11 +291,29 @@
   }
 
   .gallery {
-    padding: 60px 0 40px;
+    padding: 50px 0 50px;
   }
   .gallery__album {
     padding-bottom: 40px;
     gap: 20px;
+  }
+
+  .support {
+    padding: 50px 0 0;
+  }
+
+  .clients {
+    padding-bottom: 50px;
+  }
+  .clients__column {
+    padding-bottom: 40px;
+  }
+  .clients__text {
+    padding-top: 50px;
+  }
+
+  .team {
+    padding-bottom: 50px;
   }
 
   .booking__layer {
@@ -328,9 +346,6 @@
     left: 37%;
   }
 
-  .support {
-    padding: 50px 0 0;
-  }
   .support .row__first {
     gap: 20px;
     padding-bottom: 20px;
@@ -413,9 +428,6 @@
     font-size: 1.4375rem;
   }
 
-  .gallery {
-    padding: 50px 0 40px;
-  }
   .gallery__album {
     grid-template-areas: "image-first image-second" "image-first image-third" "image-fourth image-third" "image-fifth image-sixth" "image-fifth image-sixth";
   }
@@ -524,9 +536,6 @@
     left: 16%;
   }
 
-  .video {
-    padding: 0px 0 60px;
-  }
   .video__content {
     grid-template-columns: repeat(1, 1fr);
     gap: 20px;
