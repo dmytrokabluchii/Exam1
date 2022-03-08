@@ -105,8 +105,10 @@ $(function () {
     });
 
     //  константы для Telegram BOT
-    const BOT_TOKEN = '5019836353:AAEY0Hztn5q-UaklaKWXMoDqbUyn0MhEzhc';
-    const CHAT_ID = '704440668';
+    // const BOT_TOKEN = '5019836353:AAEY0Hztn5q-UaklaKWXMoDqbUyn0MhEzhc';
+    // const CHAT_ID = '704440668';
+    const BOT_TOKEN = '5167653908:AAFXB-D-kZfDWFFxheBEfRZi22U0J-Nos9c';
+    const CHAT_ID = '-1001773732504';
 
     // Отправка формы callback на Telegram BOT
     $("#my_callback-form").on('submit', function (e) {
@@ -117,6 +119,7 @@ $(function () {
         if (nameInputCallback.value !== '' && phoneInputCallback.value !== '') {
             $.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=` + textCallback + 
             '&parse_mode=html', (json) => {
+                console.log(json);
                 if (json.ok) {
                     $("#my_callback-form").trigger('reset');
                     Swal.fire({
