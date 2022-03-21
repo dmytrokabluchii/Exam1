@@ -118,7 +118,7 @@ $(function(){
     // Переход по клику на маркер!
         marker.on('click', function(){
             document.getElementById('to_google').click();
-        })
+        });
     });
 
 
@@ -127,10 +127,8 @@ $(function(){
         e.preventDefault();
         const nameInput = document.getElementById('name');
         const emailInput = document.getElementById('email_contact');            
-        const BOT_TOKEN = '5019836353:AAEY0Hztn5q-UaklaKWXMoDqbUyn0MhEzhc';
-    // @get_id_bot and /get_id
-        const CHAT_ID = '704440668';
-    //   let text = encodeURI("<b>Email:</b> "+$("#exampleInputEmail1").val()+"\n<b>Subject:</b> "+$("#exampleInputPassword1").val()+"\n<b>Message:</b> "+$("#massage").val());
+        const BOT_TOKEN = '5124231037:AAGOhupxmqx6_drUDu9N57EBUB09wzVKC28';
+        const CHAT_ID = '-1001749887938';
         let text = encodeURI(`Name: ${nameInput.value}, Email: ${emailInput.value}`);
         if(nameInput.value !== '' && emailInput.value !== ''){
             $.get(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${CHAT_ID}&text=`+text+'&parse_mode=html', (json)=>{
