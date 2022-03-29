@@ -44,12 +44,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;300;400;700;800;900&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="assets/plugins/sweetalert2/sweetalert2.min.css">    
     <link rel="stylesheet" href="assets/css/style.min.css">
     <link rel="stylesheet" href="assets/css/responsive.min.css">
 </head>
 
 <body>
-
     <div class="mobile_menu_wrap">
         <div class="sidemenu_top">
             <div class="mobile_logo" itemscope itemtype="https://schema.org/Organization">
@@ -68,16 +68,15 @@
         <nav class="sidemenu">
             <ul>
                 <li><a href="#">HOME</a></li>
-                <li><a href="#">ABOUT</a></li>
-                <li><a href="#">SERVICES</a></li>
-                <li><a href="#">GALLERY</a></li>
-                <li><a href="#">BLOG</a></li>
-                <li><a href="#">CONTACT</a></li>
+                <li><a href="#about">ABOUT</a></li>
+                <li><a href="#services">SERVICES</a></li>
+                <li><a href="#gallery">GALLERY</a></li>
+                <li><a href="#blog">BLOG</a></li>
+                <li><a href="#contact">CONTACT</a></li>
             </ul>
         </nav>
     </div>
     <div class="page_overlay"></div>
-
 
     <header class="header">
         <div class="header__container container">
@@ -89,12 +88,12 @@
             <div class="header__main">
                 <nav class="header__menu main-menu">
                     <ul>
-                        <li class="menu__link"><a href="#">HOME</a></li>
-                        <li class="menu__link"><a href="#">ABOUT</a></li>
-                        <li class="menu__link"><a href="#">SERVICES</a></li>
-                        <li class="menu__link"><a href="#">GALLERY</a></li>
-                        <li class="menu__link"><a href="#">BLOG</a></li>
-                        <li class="menu__link"><a href="#">CONTACT</a></li>
+                        <li class="menu__link"><a href="#title">HOME</a></li>
+                        <li class="menu__link"><a href="#about">ABOUT</a></li>
+                        <li class="menu__link"><a href="#services">SERVICES</a></li>
+                        <li class="menu__link"><a href="#gallery">GALLERY</a></li>
+                        <li class="menu__link"><a href="#blog">BLOG</a></li>
+                        <li class="menu__link"><a href="#contact">CONTACT</a></li>
                     </ul>
                 </nav>
 
@@ -111,7 +110,7 @@
     </header>
 
     <main>
-        <section class="title title__pic lazy-bg" data-src="assets/images/bg_title.jpg">
+        <section id="title" class="title title__pic lazy-bg" data-src="assets/images/bg_title.jpg">
             <div class="title__container container">
                 <div class="title__main">
                     <h2 class="title__main-text title-black">Fresh Life
@@ -127,12 +126,12 @@
                     </div>
                 </div>
             </div>
-            <div class="virtual-mouse"></div>
+            <a id="virtualMouse" class="virtual-mouse" href="#about"></a>
             <div class="title_overlay"></div>
         </section>
 
 
-        <section class="about">
+        <section id="about" class="about">
             <div class="about__container container">
                 <div class="about__pic top">
                     <img class="lazy"
@@ -156,7 +155,7 @@
             </div>
         </section>
 
-        <section class="tomato">
+        <section id="services" class="tomato">
             <div class="tomato__container container">
                 <div class="tomato__block">
                     <div class="tomato__row-left">
@@ -214,7 +213,7 @@
         </section>
 
 
-        <section class="gallery">
+        <section id="gallery" class="gallery">
             <div class="gallery__container container">
                 <div class="gallery__text">
                     <h2 class="gallery__title title-black">Gallery</h2>
@@ -281,13 +280,13 @@
                             </div>
                         </div>
 
-                        <form class="subscribe__field" action="#" id="my_subscribe-form" method="get">
+                        <form class="subscribe__field" action="sender.php" id="my_subscribe-form" method="post">
                             <div class="subscribe__email">
-                                <input class="subscribe__mail" type="email" name="registration_email" id="email"
+                                <input class="subscribe__mail form-row" type="email" name="subscribe_mail" id="email"
                                     placeholder="Your email address">
                             </div>
                             <div class="subscribe__button btn">
-                                <button class="btn-green" type="submit">SUBSCRIBE
+                                <button class="btn-green subscribe-form" type="button">SUBSCRIBE
                                 </button>
                             </div>
                         </form>
@@ -298,7 +297,7 @@
             </div>
         </section>
 
-        <section class="blog">
+        <section id="blog" class="blog">
             <div class="blog__container container">
                 <div class="blog__block">
                     <div class="blog__text">
@@ -397,7 +396,7 @@
         </section>
 
 
-        <section class="contact contact__pic lazy-bg" data-src="assets/images/bg_contact.jpg">
+        <section id="contact" class="contact contact__pic lazy-bg" data-src="assets/images/bg_contact.jpg">
             <div class="contact__container container">
                 <div class="contact__block">
                     <div class="contact__text">
@@ -414,67 +413,59 @@
 
                     <div class="contact__row wrapper">
                         <div class="contact__row-left contact-left">
-                            <form class="contact__form form" action="#" id="my_form" method="get">
+                            <form class="contact__form form" action="sender.php" id="my_form" method="post">
                                 <div>
-                                    <input class="contact__name contact__field" type="text" name="registration_name"
-                                        id="name" placeholder="Your Name">
+                                    <input class="contact__name contact__field form-row" type="text" name="registration_name"
+                                        id="name" placeholder="Your Name" required>
                                 </div>
                                 <div>
-                                    <input class="contact__mail contact__field" type="email" name="registration"
+                                    <input class="contact__mail contact__field form-row" type="email" name="registration_email"
                                         id="email_contact" placeholder="Your email">
                                 </div>
                                 <div>
-                                    <input class="contact__tel contact__field phone" type="tel"
+                                    <input class="contact__tel contact__field phone form-row" type="tel"
                                         name="registration_phone" id="phone"
-                                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="Your phone number">
+                                        pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}" placeholder="Your phone number" required>
                                 </div>
                                 <div>
-                                    <textarea class="contact__message contact__field" name="Final_information"
+                                    <textarea class="contact__message contact__field form-row" name="registration_information"
                                         id="message" cols="30" rows="10">Your message
                                     </textarea>
                                 </div>
                                 <div class="contact__button">
-                                    <button class="btn btn-blue" type="submit">SUBMIT
-                                    </button>
+                                    <button class="btn btn-blue send-form" type="button">SUBMIT</button>
                                 </div>
                             </form>
                         </div>
 
                         <div class="contact__row-right contact-right" itemscope itemtype="https://schema.org/Organization">
-                            <div class="contact__address">
-                                ADDRESS
-                            </div>
+                            <div class="contact__address">ADDRESS</div>
                             <div class="contact__data" itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
                                 <a href="https://www.google.com/maps/@50.4439122,30.5162644,18z?hl=ru-RU"
                                     class="contact-link">
                                     <span itemprop="streetAddress">123 City name, Street,</span> 
                                     <span itemprop="addressLocality">City, Country</span></a>
                             </div>
-                            <div class="contact__address">
-                                EMAIL
-                            </div>
+                            <div class="contact__address">EMAIL</div>
                             <div class="contact__data">
                                 <a href="mailto:cahee@domain.com" class="contact-link" itemprop="email">cahee@domain.com</a>
                             </div>
-                            <div class="contact__address">
-                                PHONE
-                            </div>
+                            <div class="contact__address">PHONE</div>
                             <div class="contact__data">
                                 <a href="tel:+0123456789" class="contact-link" itemprop="telephone">+012 345 6789</a>
                             </div>
-
                         </div>
+
                     </div>
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer class="footer">
         <div class="footer__row">
             <div class="footer__date">© 2015 Company. All right reserved.</div>
-            <div class="footer__logo" itemscope itemtype="https://schema.org/Organization">
+            <div class="footer__logo logo" itemscope itemtype="https://schema.org/Organization">
                 <img class="lazy" itemprop="logo"
                     src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAEALAAAAAABAAEAAAICTAEAOw=="
                     data-src="assets/images/logo-small.png" alt="logo">
@@ -485,27 +476,12 @@
         </div>
     </footer>
 
-
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
-        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous">
-        </script>
-    <script>
-        $(function () {
-            $(".hamburger, .page_overlay").on('click', function () {
-                $(".hamburger").toggleClass("is-active");
-                $("body").toggleClass("open");
-            });
-        });
-    </script>
+    <script src="assets/js/jquery-3.6.0.min.js"></script>
+    <script src="assets/js/jquery.validate.min.js"></script>
     <script src="assets/js/maskedinput.min.js"></script>
-    <script>
-        $(function () {
-            $('.phone').mask('+38 (099) 999-99-9?9');
-        })
-    </script>
-
     <script src="assets/js/lazyload.js"></script>
-
+    <script src="assets/plugins/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="assets/js/main.js"></script>
 
 </body>
 

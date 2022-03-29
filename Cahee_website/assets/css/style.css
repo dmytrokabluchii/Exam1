@@ -104,7 +104,7 @@
   font-size: 5.625rem;
 }
 
-.contact__text .subtext, .blog .subtext, .subscribe__field::placeholder, .subscribe__text .subtext, .gallery__text .subtext, .about__main-subtext, .title__main .subtext {
+.contact__text .subtext, .blog .subtext, .subscribe__mail::placeholder, .subscribe__text .subtext, .gallery__text .subtext, .about__main-subtext, .title__main .subtext {
   font: 400 1rem "Raleway";
   line-height: 26px;
   letter-spacing: 0.03em;
@@ -177,11 +177,11 @@ img {
 
 .header {
   position: fixed;
-  width: 100%;
   left: 0;
   top: 0;
   height: 100px;
-  background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0);
   z-index: 10;
 }
 .header .container {
@@ -225,6 +225,16 @@ img {
   width: 100%;
 }
 
+.header.fixed_header {
+  height: 80px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 199;
+}
+.header.fixed_header .container {
+  padding-top: 0px;
+}
+
 .title {
   display: flex;
   justify-content: center;
@@ -257,6 +267,9 @@ img {
 .title__main_button:hover {
   background: #91371f;
   border-color: #91371f;
+}
+.title .virtual-mouse {
+  cursor: pointer;
 }
 .title .virtual-mouse::before {
   content: "";
@@ -482,6 +495,14 @@ img {
 }
 .subscribe .subscribe__email {
   width: calc(100% - 198px);
+}
+.subscribe__mail::placeholder {
+  padding-left: 15px;
+}
+.subscribe__mail:focus {
+  outline: none;
+  border: 1px solid #000;
+  border-left: 5px solid #355b82;
 }
 .subscribe__button {
   flex: 0 0 170px;
