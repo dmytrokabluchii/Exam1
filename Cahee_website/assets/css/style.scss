@@ -39,6 +39,7 @@ $base_size:16;
     cursor: pointer;
     color: #fff;	
     box-shadow: 0px 4px 5px 1px #6F6C70;
+    transition: all 0.4s ease-in-out;
 }
 
 %btn-blue {
@@ -240,7 +241,18 @@ img {
             position: absolute;
             width: 100%;
             height: 100%;
+            animation: rotate 5s 1s infinite ease;
         }
+
+        @keyframes rotate {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
         &.top {
             img {
                 top: 0;
@@ -302,6 +314,7 @@ img {
             text-align: center;
             position: relative;
             box-shadow: -3px 1px 5px 0px #366996, 0px 7px 8px 0px #366996;
+            transition: all 0.4s ease-in;
 
             a {
                 text-decoration: none;

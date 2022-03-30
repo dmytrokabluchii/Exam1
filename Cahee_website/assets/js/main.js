@@ -30,7 +30,6 @@ $(function () {
     $('.phone').mask('+38 (099) 999-99-9?9');
 
     $('.send-form, .subscribe-form').click( function() {
-    	// const form = jQuery(this).closest('form');
         const form = $(this).closest('form');
     	if ( form.valid() ) {
     		form.css('opacity','.5');
@@ -39,7 +38,6 @@ $(function () {
     		$.ajax({
     			url: actUrl,
     			type: 'post',
-    			// dataType: 'html',
     			data: form.serialize(),
     			success: function(data) {
                     Swal.fire({
