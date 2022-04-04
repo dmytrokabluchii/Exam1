@@ -17,6 +17,10 @@ $(function () {
   $(".hamburger, .page_overlay").on('click', function () {
     $(".hamburger").toggleClass("is-active");
     $("body").toggleClass("open");
+  }); // Закрытие меню бургер при нажатии на пунты меню
+
+  $(".sidemenu ul li a").on('click', function () {
+    $("body").removeClass("open");
   }); // Плавный Scroll main menu + Скролл по arrow!
 
   $(".header__menu ul li a, .virtual-mouse, .header__logo").on('click', function (e) {
@@ -25,8 +29,10 @@ $(function () {
     $('body,html').animate({
       scrollTop: top + 'px'
     }, 1100);
-  });
-  $('.phone').mask('+38 (099) 999-99-9?9');
+  }); // Phone-mask
+
+  $('.phone').mask('+38 (099) 999-99-9?9'); // Send-form
+
   $('.send-form, .subscribe-form').click(function () {
     var form = $(this).closest('form');
 

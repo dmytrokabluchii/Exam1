@@ -17,6 +17,10 @@ $(function () {
         $(".hamburger").toggleClass("is-active");
         $("body").toggleClass("open");
     });
+    // Закрытие меню бургер при нажатии на пунты меню
+    $(".sidemenu ul li a").on('click', function () {
+        $("body").removeClass("open");
+    });
 
     // Плавный Scroll main menu + Скролл по arrow!
     $(".header__menu ul li a, .virtual-mouse, .header__logo").on('click', function (e) {
@@ -27,8 +31,10 @@ $(function () {
         }, 1100);
     });
 
+    // Phone-mask
     $('.phone').mask('+38 (099) 999-99-9?9');
 
+    // Send-form
     $('.send-form, .subscribe-form').click( function() {
         const form = $(this).closest('form');
     	if ( form.valid() ) {
