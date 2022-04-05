@@ -105,8 +105,6 @@ $(function () {
     });
 
     //  константы для Telegram BOT
-    // const BOT_TOKEN = '5019836353:AAEY0Hztn5q-UaklaKWXMoDqbUyn0MhEzhc';
-    // const CHAT_ID = '704440668';
     const BOT_TOKEN = '5167653908:AAFXB-D-kZfDWFFxheBEfRZi22U0J-Nos9c';
     const CHAT_ID = '-1001773732504';
 
@@ -335,7 +333,7 @@ getReview();
 
 // Подключение lightGallery
 lightGallery(document.querySelector('.gallery__album', '.album__page'), {
-    plugins: [lgZoom, lgThumbnail],
+    plugins: [lgZoom, lgThumbnail, lgFullscreen, lgComment, lgAutoplay, lgShare],
     thumbnail: true,
     zoom: true,
     actualSize: true,
