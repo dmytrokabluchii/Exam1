@@ -706,3 +706,24 @@ body {
         left: 0;
     }
 }
+
+.hamburger--slider .hamburger-inner {
+    background-color: #fff;
+}
+
+.hamburger--slider .hamburger-inner::before {
+    background-color: #fff;
+}
+
+.hamburger--slider .hamburger-inner::after {
+    background-color: #fff;
+}
+
+.hamburger.is-active .hamburger-inner {
+    top: 0;
+    background-color: #5474fd;
+}
+
+.hamburger.is-active .hamburger-inner::after{
+    background-color: #5474fd;
+}

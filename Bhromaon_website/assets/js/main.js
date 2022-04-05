@@ -34,12 +34,15 @@ $(function () {
             $("body").toggleClass("open");
         });
     });
+    // Закрытие меню бургер при нажатии на пунты меню
+    $(".sidemenu ul li a").on('click', function () {
+        $("body").removeClass("open");
+    });
 
     // Плавный Scroll main menu + Скролл по arrow!
     $(".header__item li a, .header__scroll a").on('click', function(e){
         e.preventDefault();
         const top = $($(this).attr("href")).offset().top-80;
-        // let id  = $(this).attr('href'), top = $(id).offset().top;
         $('body,html').animate({scrollTop: top + 'px'}, 1100);
     });
 
