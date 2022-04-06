@@ -417,9 +417,6 @@ input {
   background-color: #fff;
   width: 100%;
 }
-#booking-modal .modal__form .form-field:invalid {
-  border-color: red;
-}
 #booking-modal .modal__form .form-field:focus {
   background-color: #f5bab1;
   opacity: 1;

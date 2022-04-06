@@ -138,9 +138,6 @@
 
     <script src="../assets/js/lazyload.js"></script>
     <script src="../assets/js/jquery-3.6.0.min.js"></script>
-    <script src="../assets/plugins/slick/slick.min.js"></script>
-    <script src="../assets/plugins/phonemask/maskedinput.min.js"></script>
-    <script src="../assets/plugins/animatewow/wow.min.js"></script>
     <script src="../assets/plugins/lightGallery/lightgallery.min.js"></script>
     <script src="../assets/plugins/lightGallery/lg-thumbnail.min.js"></script>
     <script src="../assets/plugins/lightGallery/lg-zoom.min.js"></script>
@@ -148,7 +145,23 @@
     <script src="../assets/plugins/lightGallery/lg-autoplay.min.js"></script>
     <script src="../assets/plugins/lightGallery/lg-comment.min.js"></script>
     <script src="../assets/plugins/lightGallery/lg-share.min.js"></script>
-    <script src="../assets/js/main.js"></script>
+    <!-- <script src="../assets/js/main.js"></script> -->
+
+    <script>
+        $(function () {
+            // Подключение lightGallery
+            lightGallery(document.querySelector('.gallery__album', '.album__page'), {
+                plugins: [lgZoom, lgThumbnail, lgFullscreen, lgComment, lgAutoplay, lgShare],
+                thumbnail: true,
+                zoom: true,
+                actualSize: true,
+                animateThumb: true,
+                zoomFromOrigin: true,
+                speed: 500,
+                licenseKey: 'your_license_key',
+            });
+        });
+    </script>
     
 </body>
 
