@@ -3,3 +3,5 @@ link to website - https://dmytrokabluchii.github.io/website/Bhromaon_website/ind
 Single page website, used Pixel Perfect, responsive design.
 
 Technologies used: HTML, SCSS , jQuery.
+
+One of my first work made while studying at Beetroot Academy.
