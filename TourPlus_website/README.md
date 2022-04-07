@@ -1,4 +1,4 @@
-link to website - https://dmytrokabluchii.github.io/website/TourPlus_website/index.html
+link to website - https://dmytrokabluchii.github.io/my_projects/TourPlus_website/index.html
 
 Multi page website, responsive design. Selection of content for website.
 
