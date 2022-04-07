@@ -1,4 +1,4 @@
-link to website - https://dmytrokabluchii.github.io/website/Monticello_website/index.html
+link to website - https://dmytrokabluchii.github.io/my_projects/Monticello_website/index.html
 
 Single page website, responsive design, used Pixel Perfect.
 
