@@ -46,7 +46,7 @@ $base_size:16;
         }
 
         &__title {
-            padding-top: 50%;
+            margin-top: 50%;
             text-align: center;
             @include fz(70);
         }
@@ -134,7 +134,7 @@ $base_size:16;
         }
 
         &__title {
-            padding-top: 70%;
+            margin-top: 70%;
             @include fz(60);
         }
     }
@@ -236,7 +236,7 @@ $base_size:16;
         }
 
         &__title {
-            padding-top: 55%;
+            margin-top: 55%;
             @include fz(55);
             width: 80%;
             color: rgb(49, 51, 51);
@@ -584,7 +584,7 @@ $base_size:16;
         }
 
         &__title {
-            padding-top: 35%;
+            margin-top: 35%;
         }
     }
 
