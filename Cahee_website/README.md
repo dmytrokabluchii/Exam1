@@ -6,4 +6,4 @@ Single page website, responsive design, used Pixel Perfect.
 
 Technologies used: HTML, SCSS , jQuery, PHP(mail).
 
-One of my work made while studying at Beetroot Academy.
+One of my first project made while studying at Beetroot Academy.
