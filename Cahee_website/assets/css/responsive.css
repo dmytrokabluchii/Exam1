@@ -26,7 +26,7 @@
     background-size: auto 90%;
   }
   .tomato__title {
-    padding-top: 50%;
+    margin-top: 50%;
     text-align: center;
     font-size: 4.375rem;
   }
@@ -91,7 +91,7 @@
     background-size: auto 75%;
   }
   .tomato__title {
-    padding-top: 70%;
+    margin-top: 70%;
     font-size: 3.75rem;
   }
 
@@ -172,7 +172,7 @@
     background-size: auto 70%;
   }
   .tomato__title {
-    padding-top: 55%;
+    margin-top: 55%;
     font-size: 3.4375rem;
     width: 80%;
     color: #313333;
@@ -442,7 +442,7 @@
     padding: 0;
   }
   .tomato__title {
-    padding-top: 35%;
+    margin-top: 35%;
   }
 
   .gallery {

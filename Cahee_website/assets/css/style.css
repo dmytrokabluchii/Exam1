@@ -282,6 +282,10 @@ img {
   bottom: 11vh;
   left: 50%;
   transform: translateX(-50%);
+  transition: all 0.5s ease-in-out;
+}
+.title .virtual-mouse:hover:before {
+  border: 2px solid #ff6033;
 }
 .title .virtual-mouse::after {
   content: "";
@@ -292,6 +296,11 @@ img {
   transform: translateX(-50%);
   bottom: calc(11vh - -23px);
   background-color: #2c2d2d;
+  transition: all 0.5s ease-in-out;
+}
+.title .virtual-mouse:hover::after {
+  bottom: calc(11vh - -5px);
+  background-color: #ff6033;
 }
 
 .about {
@@ -415,10 +424,15 @@ img {
   background-repeat: no-repeat;
 }
 .tomato__title {
-  padding-top: 42%;
+  margin-top: 42%;
   color: #fff;
   text-align: right;
   font-size: 5.625rem;
+  transition: all 0.5s ease-in-out;
+}
+.tomato__title:hover {
+  color: #424242;
+  mix-blend-mode: multiply;
 }
 
 .gallery {
@@ -552,10 +566,10 @@ img {
 .blog__column {
   flex: 0 1 33.333%;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
+  transition: all 0.3s ease;
 }
 .blog__column:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .blog .item-blog {
   position: relative;
