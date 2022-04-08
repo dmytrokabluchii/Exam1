@@ -1,4 +1,6 @@
 <?php
+    $mail = $_POST['subscribe_mail'];   
+
     $name = $_POST['registration_name'];
     $email = $_POST['registration_email'];
 	$phone = $_POST['registration_phone'];
@@ -8,9 +10,10 @@
 	$date = date ("d.m.Y"); 
 	$time = date ("h:i");
 	$from = $email;
-	$subject = "Cahee request";
+	$subject = "Cahee contact and subscribe request";
 	
 	$msg="
+    Subscribe mail: $mail;	
     Registration name: $name;
     Registration email: $email;
     Registration phone: $phone;

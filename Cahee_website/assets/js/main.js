@@ -38,7 +38,7 @@ $(function () {
     $('.send-form, .subscribe-form').click( function() {
         const form = $(this).closest('form');
     	if ( form.valid() ) {
-    		form.css('opacity','.5');
+    		// form.css('opacity','.8');
     		let actUrl = form.attr('action');
 
     		$.ajax({
