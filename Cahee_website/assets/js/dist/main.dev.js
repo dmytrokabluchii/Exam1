@@ -37,7 +37,7 @@ $(function () {
     var form = $(this).closest('form');
 
     if (form.valid()) {
-      form.css('opacity', '.5');
+      // form.css('opacity','.8');
       var actUrl = form.attr('action');
       $.ajax({
         url: actUrl,
