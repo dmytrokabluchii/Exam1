@@ -552,10 +552,10 @@ img {
 .blog__column {
   flex: 0 1 33.333%;
   cursor: pointer;
+  transition: all 0.5s ease-in-out;
 }
 .blog__column:hover {
   transform: scale(1.1);
-  transition: 0.5s;
 }
 .blog .item-blog {
   position: relative;

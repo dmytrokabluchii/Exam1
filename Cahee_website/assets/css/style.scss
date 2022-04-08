@@ -552,10 +552,10 @@ img {
     &__column {
         flex: 0 1 33.333%;
         cursor: pointer;
+        transition: all .5s ease-in-out;
 
         &:hover {
             transform: scale(1.1);
-            transition: .5s;
         }
     }
 
