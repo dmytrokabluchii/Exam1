@@ -61,7 +61,9 @@ $(function () {
             timer: 5000
           });
         }
-      });
+      }); // Очистка формы
+
+      document.getElementById('my_form', 'my_subscribe-form').reset();
     }
   });
 });

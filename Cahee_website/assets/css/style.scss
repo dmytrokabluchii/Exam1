@@ -83,6 +83,7 @@ img {
     margin: 0 auto;
 }
 
+
 .header {
     position: fixed;
     left: 0;
@@ -173,7 +174,7 @@ img {
             color: #262626;
         }
 
-        .subtext {
+        &-subtext {
             @extend %subtext;
             padding-bottom: 30px;
         }

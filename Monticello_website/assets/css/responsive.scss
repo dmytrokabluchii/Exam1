@@ -777,3 +777,32 @@ $base_size:16;
         }
     }
 }
+
+@media screen and (max-height:380px) {
+    .mobile_menu_wrap {
+        .sidemenu {
+            li {
+                a {
+                    padding: 8px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-height:320px) {
+    .mobile_menu_wrap {
+        .sidemenu {
+            li {
+                a {
+                    padding: 5px;
+                }
+            }
+        }
+        .mobile__media ul {
+            li {
+                padding: 15px 30px;
+            }
+        }
+    }
+}
