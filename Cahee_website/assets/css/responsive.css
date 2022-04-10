@@ -40,8 +40,8 @@
   }
 }
 @media screen and (max-width: 1020px) {
-  .virtual-mouse {
-    visibility: hidden;
+  .title__main {
+    width: 50%;
   }
 
   .tomato__row-left {
@@ -281,11 +281,21 @@
     padding-top: 20px;
   }
 
+  .title__pic {
+    background-position: 60% 50%;
+    background-size: content;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: multiply;
+  }
   .title__main {
     width: 100%;
   }
+  .title__main-text {
+    color: #fff;
+  }
   .title__main-subtext {
-    width: 70%;
+    width: 100%;
+    color: #fff;
   }
 
   .gallery {
@@ -325,16 +335,6 @@
   }
 }
 @media screen and (max-width: 530px) {
-  .title__main {
-    width: 90%;
-  }
-  .title__main-text {
-    font-size: 2.8125rem;
-  }
-  .title__main-subtext {
-    width: 70%;
-  }
-
   .about__pic {
     width: 75%;
   }
@@ -409,11 +409,14 @@
     padding-top: 15px;
   }
 
+  .title__main-text {
+    font-size: 3.4375rem;
+  }
   .title .btn-orange {
-    padding: 0 5px;
-    height: 45px;
-    width: 150px;
-    font-size: 1.125rem;
+    padding: 0 10px;
+    height: 50px;
+    width: 175px;
+    font-size: 1.1875rem;
   }
 
   .tomato {
@@ -456,10 +459,10 @@
     padding: 30px 0 0px;
   }
   .gallery .btn-blue {
-    padding: 0 5px;
-    height: 45px;
-    width: 150px;
-    font-size: 1.125rem;
+    padding: 0 10px;
+    height: 50px;
+    width: 175px;
+    font-size: 1.1875rem;
   }
 
   .subscribe {
@@ -472,10 +475,10 @@
     flex: 0 0 auto;
   }
   .subscribe .btn-green {
-    width: 150px;
-    height: 45px;
-    padding: 0 5px;
-    font-size: 1.125rem;
+    padding: 0 10px;
+    height: 50px;
+    width: 175px;
+    font-size: 1.1875rem;
   }
 
   .blog {
@@ -491,10 +494,10 @@
     padding: 30px 0 0 0;
   }
   .blog .btn-red {
-    width: 150px;
-    height: 45px;
-    padding: 0 5px;
-    font-size: 1.125rem;
+    padding: 0 10px;
+    height: 50px;
+    width: 175px;
+    font-size: 1.1875rem;
   }
 
   .contact {
@@ -510,27 +513,59 @@
     max-height: 200px;
   }
   .contact .btn-blue {
-    padding: 0 5px;
-    height: 45px;
-    width: 150px;
-    font-size: 1.125rem;
+    padding: 0 10px;
+    height: 50px;
+    width: 175px;
+    font-size: 1.1875rem;
   }
 }
 @media screen and (max-height: 666px) {
-  .title {
-    height: 100%;
-    display: flex;
-    justify-content: start;
-    align-items: flex-start;
-    padding: 150px 0 50px;
+  .header {
+    height: 80px;
   }
+
+  .title__main {
+    width: 100%;
+    margin-top: 0px;
+  }
+  .title__main-text {
+    font-size: 3.125rem;
+    font-weight: 900;
+    padding-bottom: 5px;
+  }
+  .title__main-subtext {
+    width: 60%;
+    padding-bottom: 10px;
+  }
+  .title .btn-orange {
+    padding: 0 5px;
+    height: 50px;
+    width: 170px;
+    font-size: 1.125rem;
+  }
+}
+@media screen and (max-height: 410px) {
   .title__pic {
-    background-position: 40% 50%;
+    background-color: rgba(0, 0, 0, 0.4);
+    background-blend-mode: multiply;
   }
   .title__main {
     width: 100%;
   }
+  .title__main-text {
+    font-size: 2.8125rem;
+    padding-bottom: 0px;
+    color: #fff;
+  }
   .title__main-subtext {
-    width: 70%;
+    color: #fff;
+    width: 100%;
+    line-height: 24px;
+    padding-bottom: 5px;
+  }
+
+  .sidemenu li a {
+    padding: 5px;
+    font-size: 1.1875rem;
   }
 }

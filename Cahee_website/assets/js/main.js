@@ -40,7 +40,7 @@ $(function () {
     	if ( form.valid() ) {
     		// form.css('opacity','.8');
     		let actUrl = form.attr('action');
-
+            
     		$.ajax({
     			url: actUrl,
     			type: 'post',
@@ -52,7 +52,7 @@ $(function () {
                         title: 'Your message send!',
                         showConfirmButton: false,
                         timer: 5000,
-                    });
+                    });   
     			},
     			error: function() {
                     Swal.fire({
@@ -64,6 +64,8 @@ $(function () {
                     });
     			}
     		});
+            // Очистка формы
+            document.getElementById('my_form','my_subscribe-form').reset(); 
     	}
     });
 });

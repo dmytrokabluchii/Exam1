@@ -104,7 +104,7 @@
   font-size: 5.625rem;
 }
 
-.contact__text .subtext, .blog .subtext, .subscribe__mail::placeholder, .subscribe__text .subtext, .gallery__text .subtext, .about__main-subtext, .title__main .subtext {
+.contact__text .subtext, .blog .subtext, .subscribe__mail::placeholder, .subscribe__text .subtext, .gallery__text .subtext, .about__main-subtext, .title__main-subtext {
   font: 400 1rem "Raleway";
   line-height: 26px;
   letter-spacing: 0.03em;
@@ -258,7 +258,7 @@ img {
   padding-bottom: 15px;
   color: #262626;
 }
-.title__main .subtext {
+.title__main-subtext {
   padding-bottom: 30px;
 }
 .title__main_button {

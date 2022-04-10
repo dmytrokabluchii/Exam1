@@ -63,8 +63,10 @@ $base_size:16;
 }
 
 @media screen and (max-width: 1020px) {
-    .virtual-mouse {
-        visibility: hidden;
+    .title {
+        &__main {
+            width: 50%;
+        }
     }
 
     .tomato {
@@ -376,10 +378,20 @@ $base_size:16;
     }
 
     .title {
+        &__pic {
+            background-position: 60% 50%;
+            background-size: content;
+            background-color: rgb(0, 0, 0, .4);
+            background-blend-mode: multiply;
+        }
         &__main {
             width: 100%;
+            &-text {
+                color: #fff;
+            }
             &-subtext {
-                width: 70%;
+                width: 100%;
+                color: #fff;
             }
         }
     }
@@ -430,20 +442,6 @@ $base_size:16;
 
 
 @media screen and (max-width:530px) {
-    .title {
-        &__main {
-            width: 90%;
-
-            &-text {
-                @include fz(45);
-            }
-
-            &-subtext {
-                width: 70%;
-            }
-        }
-    }
-
     .about {
         &__pic {
             width: 75%;
@@ -544,11 +542,16 @@ $base_size:16;
     }
 
     .title {
+        &__main {
+            &-text {
+                @include fz(55);
+            }
+        }
         .btn-orange {
-            padding: 0 5px;
-            height: 45px;
-            width: 150px;
-            @include fz(18);
+            padding: 0 10px;
+            height: 50px;
+            width: 175px;
+            @include fz(19);
         }
     }
 
@@ -601,10 +604,10 @@ $base_size:16;
         }
 
         .btn-blue {
-            padding: 0 5px;
-            height: 45px;
-            width: 150px;
-            @include fz(18);
+            padding: 0 10px;
+            height: 50px;
+            width: 175px;
+            @include fz(19);
         }
     }
 
@@ -620,10 +623,10 @@ $base_size:16;
         }
 
         .btn-green {
-            width: 150px;
-            height: 45px;
-            padding: 0 5px;
-            @include fz(18);
+            padding: 0 10px;
+            height: 50px;
+            width: 175px;
+            @include fz(19);
         }
     }
 
@@ -643,10 +646,10 @@ $base_size:16;
         }
 
         .btn-red {
-            width: 150px;
-            height: 45px;
-            padding: 0 5px;
-            @include fz(18);
+            padding: 0 10px;
+            height: 50px;
+            width: 175px;
+            @include fz(19);
         }
     }
 
@@ -665,30 +668,70 @@ $base_size:16;
         }
 
         .btn-blue {
-            padding: 0 5px;
-            height: 45px;
-            width: 150px;
-            @include fz(18);
+            padding: 0 10px;
+            height: 50px;
+            width: 175px;
+            @include fz(19);
         }
     }
 
 }
 
 @media screen and (max-height:666px) {
+    .header {
+        height: 80px;
+    }
     .title {
-        height: 100%;
-        display: flex;
-        justify-content: start;
-        align-items: flex-start;
-        padding: 150px 0 50px;
-            &__pic {
-                background-position: 40% 50%;
+        &__main {
+            width: 100%;
+            margin-top: 0px;
+            &-text {
+                @include fz(50);
+                font-weight: 900;
+                padding-bottom: 5px;
             }
-            &__main {
-                width: 100%;
-                &-subtext {
-                    width: 70%;
-                }
+            &-subtext {
+                width: 60%;
+                padding-bottom: 10px;
             }
         }
+        .btn-orange {
+            padding: 0 5px;
+            height: 50px;
+            width: 170px;
+            @include fz(18);
+        }
+    }
+}
+
+@media screen and (max-height:410px) {
+    .title {
+        &__pic {
+            background-color: rgb(0, 0, 0, .4);
+            background-blend-mode: multiply;
+        }
+        &__main {
+            width: 100%;
+            &-text {
+                @include fz(45);
+                padding-bottom: 0px;
+                color: #fff;
+            }
+            &-subtext {
+                color: #fff;
+                width: 100%;
+                line-height: 24px;
+                padding-bottom: 5px;
+            }
+        }
+    }
+
+    .sidemenu {
+        li {
+            a {
+                padding: 5px;
+                @include fz(19);
+            }
+        }
+    }
 }
