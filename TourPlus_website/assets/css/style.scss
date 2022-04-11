@@ -80,6 +80,13 @@ body {
     text-transform: uppercase;
 }
 
+.card__link button {
+    transition: all .4s ease-in-out;
+    &:hover {
+        color: #691682;
+    }
+}
+
 .modal__button, .callback__button {
     display: flex;
     justify-content: center;
@@ -131,10 +138,12 @@ input {
     color: #FF492F;
 }
 
-.media__links a svg:hover,
-.mobile__media_links:hover {
-    transform: scale(1.2);
-    transition: all .3s ease-in-out;
+.media__links a svg,
+.mobile__media_links a svg{
+    transition: all .4s ease-in-out;
+    &:hover {
+        transform: scale(1.2);
+    }
 }
 
 .modal__callback {
@@ -475,7 +484,6 @@ input {
                 }
             }
         }
-        
     }
     &__wrapper {
         max-width: 44%;
@@ -829,6 +837,7 @@ input {
                     background: url(../images/svg/youtube.svg) 0 0 no-repeat;
                     z-index: 50;
                     opacity: 0.75;
+                    transition: all .4s ease-in-out;
                 }
                 &:hover:before {
                     opacity: 1;
@@ -893,7 +902,7 @@ input {
         &:after {
             content: "";
             opacity: 0;
-            transition: opacity 0.4s ease-in-out;
+            transition: opacity .4s ease-in-out;
         }
         &:hover:after {
             content: "";
@@ -910,7 +919,7 @@ input {
         &:before {
             content: "";
             opacity: 0;
-            transition: opacity 0.4s;
+            transition: opacity .4s ease-in-out;
         }
         &:hover:before {
             content: "";
@@ -1301,11 +1310,15 @@ input {
             justify-content: center;
             align-items: center;
             text-align: center;
-
             text-decoration: none;
             color: #fff;
             cursor: pointer;
             @include fz(50);
+            transition: all .4s ease-in-out;
+            &:hover {
+                background-color: #b33320;
+                color: rgb(79, 228, 228);
+            }
         }
     }
 
@@ -1332,6 +1345,13 @@ input {
         margin-right: 15px;
     }
 
+    .list__service li a, &__contacts-data a {
+        transition: all .2s ease-in-out;
+        &:hover {
+            color:rgb(79, 228, 228);
+        }
+    }
+    
     &__service_title,
     &__contacts_title {
         padding-bottom: 45px;

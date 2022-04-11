@@ -84,7 +84,6 @@ $base_size:16;
 }
 
 
-
 @media screen and (max-width:999px) {
     .home {
         &__bg {
@@ -399,6 +398,7 @@ $base_size:16;
     }
 }
 
+
 @media screen and (max-width:650px) {
     .place {
         &__subtitle {
@@ -489,6 +489,7 @@ $base_size:16;
         }
     }
 }
+
 
 @media screen and (max-width:580px) {
     .place {
@@ -584,6 +585,7 @@ $base_size:16;
     }
 }
 
+
 @media screen and (max-width:500px) {
     .footer {
         &__arrow {
@@ -595,6 +597,7 @@ $base_size:16;
         }
     }
 }
+
 
 @media screen and (max-width:460px) {
     .modal__callback {
@@ -913,6 +916,7 @@ $base_size:16;
     }
 }
 
+
 @media screen and (max-height:600px) {
     .home {
         &__bg {
@@ -927,6 +931,7 @@ $base_size:16;
         }
     }
 }
+
 
 @media screen and (max-height:550px) {
     #booking-modal {
@@ -973,6 +978,7 @@ $base_size:16;
     }
 }
 
+
 @media screen and (max-height:525px) {
     .mobile_menu_wrap {
         .mobile__logo {
@@ -1009,6 +1015,7 @@ $base_size:16;
     }
 }
 
+
 @media screen and (max-height:450px) {
     .mobile_menu_wrap {
         .sidemenu {
@@ -1038,6 +1045,7 @@ $base_size:16;
     }
 }
 
+
 @media screen and (max-height:425px) {
     .home {
         &__bg {
@@ -1052,6 +1060,7 @@ $base_size:16;
         }
     }
 }
+
 
 @media screen and (max-height:374px) {
     .mobile_menu_wrap {
@@ -1077,6 +1086,7 @@ $base_size:16;
         }
     }
 }
+
 
 @media screen and (max-height:350px) {
     .home {
