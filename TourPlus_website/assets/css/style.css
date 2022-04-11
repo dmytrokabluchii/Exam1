@@ -191,6 +191,13 @@ body {
   text-transform: uppercase;
 }
 
+.card__link button {
+  transition: all 0.4s ease-in-out;
+}
+.card__link button:hover {
+  color: #691682;
+}
+
 .modal__button, .callback__button {
   display: flex;
   justify-content: center;
@@ -239,10 +246,13 @@ input {
   color: #FF492F;
 }
 
+.media__links a svg,
+.mobile__media_links a svg {
+  transition: all 0.4s ease-in-out;
+}
 .media__links a svg:hover,
-.mobile__media_links:hover {
+.mobile__media_links a svg:hover {
   transform: scale(1.2);
-  transition: all 0.3s ease-in-out;
 }
 
 .modal__callback {
@@ -889,6 +899,7 @@ input {
   background: url(../images/svg/youtube.svg) 0 0 no-repeat;
   z-index: 50;
   opacity: 0.75;
+  transition: all 0.4s ease-in-out;
 }
 .video__content li a:hover:before {
   opacity: 1;
@@ -962,7 +973,7 @@ input {
 .gallery__link:before {
   content: "";
   opacity: 0;
-  transition: opacity 0.4s;
+  transition: opacity 0.4s ease-in-out;
 }
 .gallery__link:hover:before {
   content: "";
@@ -1317,6 +1328,11 @@ input {
   color: #fff;
   cursor: pointer;
   font-size: 3.125rem;
+  transition: all 0.4s ease-in-out;
+}
+.footer__arrow .arrow__content_icon:hover {
+  background-color: #b33320;
+  color: #4fe4e4;
 }
 .footer__column {
   width: 100%;
@@ -1336,6 +1352,12 @@ input {
 .footer__contacts_link img {
   width: 24px;
   margin-right: 15px;
+}
+.footer .list__service li a, .footer__contacts-data a {
+  transition: all 0.2s ease-in-out;
+}
+.footer .list__service li a:hover, .footer__contacts-data a:hover {
+  color: #4fe4e4;
 }
 .footer__service_title, .footer__contacts_title {
   padding-bottom: 45px;
