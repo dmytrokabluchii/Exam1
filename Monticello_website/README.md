@@ -2,6 +2,6 @@ link to website - https://dmytrokabluchii.github.io/my_projects/Monticello_websi
 
 Single page website, responsive design, used Pixel Perfect.
 
-Technologies used: HTML, SCSS , Java Script, AJAX, JSON, jQuery.
+Technologies used: HTML, SCSS , Java Script, AJAX, JSON, Telegram bot, jQuery.
 
 One of my work made while studying at Beetroot Academy.
