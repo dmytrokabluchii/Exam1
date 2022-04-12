@@ -1,8 +1,8 @@
-link to website - https://dmytrokabluchii.github.io/my_projects/Cahee_website/index.html
+link to example - https://dmytrokabluchii.github.io/my_projects/Cahee_website/index.html
 
-link to website (with working php mail) - http://beetroot.zzz.com.ua/Cahee_website/
+link to example (with working php mail) - http://beetroot.zzz.com.ua/Cahee_website/
 
-Single page website, responsive design, used Pixel Perfect.
+Single page landing, responsive design, used Pixel Perfect.
 
 Technologies used: HTML, SCSS , jQuery, PHP(mail).
 
