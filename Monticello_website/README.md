@@ -1,6 +1,6 @@
-link to website - https://dmytrokabluchii.github.io/my_projects/Monticello_website/index.html
+link to example - https://dmytrokabluchii.github.io/my_projects/Monticello_website/index.html
 
-Single page website, responsive design, used Pixel Perfect.
+Single page landing, responsive design, used Pixel Perfect.
 
 Technologies used: HTML, SCSS , Java Script, AJAX, JSON, Telegram bot, jQuery.
 
