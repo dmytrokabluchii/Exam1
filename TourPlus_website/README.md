@@ -1,4 +1,4 @@
-link to website - https://dmytrokabluchii.github.io/my_projects/TourPlus_website/index.html
+link to example - https://dmytrokabluchii.github.io/my_projects/TourPlus_website/index.html
 
 Multi page website, responsive design.
 
