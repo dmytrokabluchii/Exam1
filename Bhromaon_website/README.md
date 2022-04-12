@@ -1,6 +1,6 @@
-link to website - https://dmytrokabluchii.github.io/my_projects/Bhromaon_website/index.html
+link to example - https://dmytrokabluchii.github.io/my_projects/Bhromaon_website/index.html
 
-Single page website, used Pixel Perfect, responsive design.
+Single page website, responsive design, used Pixel Perfect.
 
 Technologies used: HTML, SCSS , jQuery.
 
