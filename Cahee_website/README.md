@@ -1,6 +1,10 @@
 link to example - https://dmytrokabluchii.github.io/my_projects/Cahee_website/index.html
 
+The project placed in real hosting.
+
 link to example (with working php mail) - http://beetroot.zzz.com.ua/Cahee_website/
+
+Website performance is 99%, according to pagespeed.web.dev
 
 Single page landing, responsive design, used Pixel Perfect.
 
