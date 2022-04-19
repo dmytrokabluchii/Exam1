@@ -523,7 +523,7 @@ img {
 
 .blog {
     // background: #b07cf7;
-    background-image: url("../images/wall-2059909-1-min.jpg");
+    background-image: url("../images/blog_bg.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -536,27 +536,26 @@ img {
         @extend %title;
         padding-bottom: 25px;
             text-shadow:
-            0 0 3px #fff,
-            0 0 6px #fff,
-            0 0 10px #fff,
-            0 0 20px #30adf0,
-            0 0 35px #30adf0,
-            0 0 47px #30adf0,
-            0 0 62px #30adf0,
-            0 0 83px #30adf0;
-
-            animation: flicker_blog 2s infinite alternate-reverse;
-            @keyframes flicker_blog {
-                0% {
-                    color: #fff;
-                }
-                50% {
-                    color:#6191ab;
-                }
-                100% {
-                    color: #30adf0;
-                }
-            }
+            0 0 4px #fff,
+            0 0 10px #30adf0,
+            0 0 20px #30adf0;
+        // Flickering neon animation for text, freezing on mobile
+        // animation: flicker_blog 3.5s infinite alternate;
+        // @keyframes flicker_blog {
+        // 0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        //     text-shadow:
+        //     0 0 4px #fff,
+        //     0 0 8px #fff,
+        //     0 0 15px #30adf0,
+        //     0 0 25px #30adf0,
+        //     0 0 42px #30adf0,
+        //     0 0 58px #30adf0,
+        //     0 0 75px #30adf0;
+        // }
+        //     20%, 24%, 55% {        
+        //         text-shadow: none;
+        //     }
+        // }
     }
 
     .subtext {
@@ -565,14 +564,9 @@ img {
         margin: 0 auto;
         padding-bottom: 30px;
         text-shadow:
-                0 0 2px #fff,
-                0 0 5px #fff,
-                0 0 8px #fff,
-                0 0 15px #30adf0,
-                0 0 25px #30adf0,
-                0 0 37px #30adf0,
-                0 0 52px #30adf0,
-                0 0 66px #30adf0;
+                0 0 3px #fff,
+                0 0 9px #30adf0,
+                0 0 20px #30adf0;
     }
 
     &__row {
