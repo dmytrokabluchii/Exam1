@@ -171,7 +171,18 @@ img {
             @include fz(60);
             font-weight: 900;
             padding-bottom: 15px;
-            color: #262626;
+            animation: flicker_title 2s infinite alternate-reverse;
+            @keyframes flicker_title {
+                0% {
+                    color: #262626;
+                }
+                50% {
+                    color:#ff6033
+                }
+                100% {
+                    color: #b80433;
+                }
+            }
         }
 
         &-subtext {
@@ -239,21 +250,18 @@ img {
     &__pic {
         width: 55%;
         position: relative;
-
         &::before {
             content: '';
             display: block;
             padding-top: 100%;
             background-color: #00bdbd;
         }
-
         img {
             position: absolute;
             width: 100%;
             height: 100%;
             animation: rotate 5s 1s infinite ease;
         }
-
         @keyframes rotate {
             0% {
                 transform: rotate(0deg);
@@ -262,7 +270,6 @@ img {
                 transform: rotate(360deg);
             }
         }
-
         &.top {
             img {
                 top: 0;
@@ -275,14 +282,17 @@ img {
         width: 41%;
         color: #fff;
         padding-top: 130px;
-
         &-title {
             font-weight: 700;
             font-family: 'Raleway';
             @include fz(90);
             margin-left: -20px; 
+            // transition: all 1.5s ease-in-out;
+            // &:hover {
+            //     color: #bc0640;
+            //     mix-blend-mode: multiply;
+            // }
         }
-
         &-subtext {
             @extend %subtext;
             p {
@@ -380,12 +390,17 @@ img {
         color: #fff;
         text-align: right;
         @include fz(90);
-        transition: all 0.5s ease-in-out;
-        &:hover {
-            color: #424242;;
-            // полупрозрачный текст
-            mix-blend-mode: multiply;
-            
+        animation: flicker_tomato 2s infinite alternate-reverse;
+        @keyframes flicker_tomato {
+            0% {
+                color:#fff;
+            }
+            50% {
+                color:#91371f;
+            }
+            100% {
+                color: #262626;
+            }
         }
     }
 }
@@ -394,7 +409,6 @@ img {
 .gallery {
     background: #ffe92f;
     padding: 80px 0 120px;
-
     img {
         width: 100%;
         height: 100%;
@@ -404,13 +418,11 @@ img {
 
     &__text {
         text-align: center;
-
         .title-black {
             @extend %title;
             color: #262626;
             padding-bottom: 23px;
         }
-
         .subtext {
             @extend %subtext;
             width: 53%;
@@ -422,47 +434,28 @@ img {
     &__grid {
         display: grid;
         gap: 30px;
+        &_image {
+            // Smooth upscale image
+            overflow:hidden;
+            cursor: pointer;
+            img {
+                transition: all 1s ease-out;
+            }
+            img:hover {
+                transform: scale(1.1);
+            }
+        }
     }
 
     .image-big {
         grid-area: span 2/span 2;
     }
-    .picture-big {
-        width: 100%;
-        position: relative;
-
-        &::before {
-            content: '';
-            display: block;
-            padding-top: 71.428%;
-            background-color: #ffe92f;
-        }
-
-        img {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        &.gal-top {
-            img {
-                top: 0;
-                transform: translate(-50%, 0);
-            }
-        }
-    }
-
     .image-middle:last-child {
         grid-column: 2/4;
     }
-
     &__button {
         @extend %btn-block;
     }
-
     .btn-blue {
         @extend %btn;
         @extend %btn-blue;
@@ -540,7 +533,11 @@ img {
 }
 
 .blog {
-    background: #b07cf7;
+    // background: #b07cf7;
+    background-image: url("../images/wall-2059909-1-min.jpg");
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
     padding: 80px 0 120px;
     color: #fff;
 
@@ -551,6 +548,35 @@ img {
     &__title {
         @extend %title;
         padding-bottom: 25px;
+        /* Flickering neon animation for text */
+        animation: flicker 3.5s infinite alternate;
+        @keyframes flicker {
+            0%, 18%, 22%, 25%, 53%, 57%, 100% {
+                text-shadow:
+                0 0 5px #fff,
+                0 0 8px #fff,
+                0 0 12px #fff,
+                0 0 35px #30adf0,
+                0 0 50px #30adf0,
+                0 0 70px #30adf0,
+                0 0 85px #30adf0,
+                0 0 115px #30adf0;
+            }
+            20%, 24%, 55% {        
+                text-shadow: none;
+            }
+        // smooth pulsate neon animation for text, loading prosessor!!!
+        // animation: pulsate 0.3s ease-in-out infinite alternate;  
+        // text-shadow:
+        //     0 0 5px #fff,
+        //     0 0 8px #fff,
+        //     0 0 12px #fff,
+        //     0 0 35px #30adf0,
+        //     0 0 50px #30adf0,
+        //     0 0 70px #30adf0,
+        //     0 0 85px #30adf0,
+        //     0 0 110px #30adf0;
+        }
     }
 
     .subtext {
@@ -558,6 +584,15 @@ img {
         width: 50%;
         margin: 0 auto;
         padding-bottom: 30px;
+        text-shadow:
+                0 0 2px #fff,
+                0 0 5px #fff,
+                0 0 8px #fff,
+                0 0 15px #30adf0,
+                0 0 25px #30adf0,
+                0 0 37px #30adf0,
+                0 0 52px #30adf0,
+                0 0 66px #30adf0;
     }
 
     &__row {
@@ -570,7 +605,6 @@ img {
         flex: 0 1 33.333%;
         cursor: pointer;
         transition: all .3s ease;
-
         &:hover {
             transform: scale(1.05);
         }
@@ -579,17 +613,14 @@ img {
     .item-blog {
         position: relative;
         overflow: hidden;
-
-        img {
-            box-shadow: 1px 5px 6px 1px #504E51;
-        }
-
+        // img {
+        //     box-shadow: 1px 5px 6px 1px #504E51;
+        // }
         &:hover .item-blog__date {
             position: absolute;
             top: 30px;
             left: 30px;
         }
-
         &__date {
             width: 60px;
             height: 60px;
@@ -603,7 +634,6 @@ img {
             left: -100px;
             top: -100px;
             transition: all .5s ease;
-
             span {
                 @include fz(30);
             }
@@ -655,6 +685,7 @@ img {
         @extend %btn;
         background-color: #f72b3b;
         border: 1px solid #f72b3b;
+        box-shadow: 0px 0px 15px 6px #2389A0;
 
         &:hover {
             background: #81161f;
