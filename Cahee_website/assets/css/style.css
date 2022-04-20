@@ -549,7 +549,7 @@ img {
 }
 
 .blog {
-  background-image: url("../images/wall-2059909-1-min.jpg");
+  background-image: url("../images/blog_bg.jpg");
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -561,14 +561,13 @@ img {
 }
 .blog__title {
   padding-bottom: 25px;
-  /* Flickering neon animation for text */
-  animation: flicker 3.5s infinite alternate;
+  animation: flicker_blog 2.5s infinite alternate;
 }
-@keyframes flicker {
-  0%, 18%, 22%, 25%, 53%, 57%, 100% {
-    text-shadow: 0 0 5px #fff, 0 0 8px #fff, 0 0 12px #fff, 0 0 35px #30adf0, 0 0 50px #30adf0, 0 0 70px #30adf0, 0 0 85px #30adf0, 0 0 115px #30adf0;
+@keyframes flicker_blog {
+  0%, 25%, 57%, 100% {
+    text-shadow: 0 0 4px #fff, 0 0 10px #30adf0, 0 0 20px #30adf0;
   }
-  20%, 24%, 55% {
+  20%, 55% {
     text-shadow: none;
   }
 }
@@ -576,7 +575,7 @@ img {
   width: 50%;
   margin: 0 auto;
   padding-bottom: 30px;
-  text-shadow: 0 0 2px #fff, 0 0 5px #fff, 0 0 8px #fff, 0 0 15px #30adf0, 0 0 25px #30adf0, 0 0 37px #30adf0, 0 0 52px #30adf0, 0 0 66px #30adf0;
+  text-shadow: 0 0 3px #fff, 0 0 9px #30adf0, 0 0 20px #30adf0;
 }
 .blog__row {
   display: flex;

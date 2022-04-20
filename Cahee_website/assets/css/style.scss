@@ -177,7 +177,7 @@ img {
                     color: #262626;
                 }
                 50% {
-                    color:#ff6033
+                    color:#ff6033;
                 }
                 100% {
                     color: #b80433;
@@ -307,14 +307,12 @@ img {
 .tomato {
     background: #70bfff;
     padding: 80px 0 135px;
-
     &__block {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: stretch;
         width: 100%;
-
         >div {
             width: 50%;
         }
@@ -327,7 +325,6 @@ img {
     &__column {
         list-style: none;
         max-width: 400px;
-
         li {
             background-color: #fff;
             margin: 20px 0;
@@ -335,7 +332,6 @@ img {
             position: relative;
             box-shadow: -3px 1px 5px 0px #366996, 0px 7px 8px 0px #366996;
             transition: all 0.4s ease-in;
-
             a {
                 text-decoration: none;
                 color: #262626;
@@ -345,17 +341,14 @@ img {
                 align-items: center;
             }
         }
-
         li:hover {
             background: linear-gradient(45deg, rgb(112, 191, 255) 7%, rgb(246, 66, 24) 86%);
             transform: scale(1.1);
             border-radius: 50px;
         }
-
         &_link {
             width: calc(100% - 100px);
         }
-
         &_icon {
             width: 100px;
             height: 100px;
@@ -383,7 +376,6 @@ img {
         background-size: auto 97%;
         background-repeat: no-repeat;
     }
-
 
     &__title {
         margin-top: 42%;
@@ -460,12 +452,10 @@ img {
         @extend %btn;
         @extend %btn-blue;
     }
-
 }
 
 .subscribe {
     padding: 135px 0 166px;
-
     &__pic {
         background-color: #fff;
         background-position: center center;
@@ -478,7 +468,6 @@ img {
             padding-bottom: 17px;
             font: 600 2.5rem 'Raleway';
         }
-
         .subtext {
             @extend %subtext;
             width: 50%;
@@ -534,49 +523,52 @@ img {
 
 .blog {
     // background: #b07cf7;
-    background-image: url("../images/wall-2059909-1-min.jpg");
+    background-image: url("../images/blog_bg.jpg");
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     padding: 80px 0 120px;
     color: #fff;
-
     &__text {
         text-align: center;
     }
-
     &__title {
         @extend %title;
         padding-bottom: 25px;
-        /* Flickering neon animation for text */
-        animation: flicker 3.5s infinite alternate;
-        @keyframes flicker {
-            0%, 18%, 22%, 25%, 53%, 57%, 100% {
-                text-shadow:
-                0 0 5px #fff,
-                0 0 8px #fff,
-                0 0 12px #fff,
-                0 0 35px #30adf0,
-                0 0 50px #30adf0,
-                0 0 70px #30adf0,
-                0 0 85px #30adf0,
-                0 0 115px #30adf0;
-            }
-            20%, 24%, 55% {        
+            // text-shadow:
+            // 0 0 4px #fff,
+            // 0 0 10px #30adf0,
+            // 0 0 20px #30adf0;
+        // Flickering neon animation for text, freezing on mobile
+        animation: flicker_blog 2.5s infinite alternate;
+        @keyframes flicker_blog {
+        0%, 25%, 57%, 100% {
+            text-shadow:
+            0 0 4px #fff,
+            0 0 10px #30adf0,
+            0 0 20px #30adf0,
+        }
+            20%, 55% {        
                 text-shadow: none;
             }
-        // smooth pulsate neon animation for text, loading prosessor!!!
-        // animation: pulsate 0.3s ease-in-out infinite alternate;  
-        // text-shadow:
-        //     0 0 5px #fff,
-        //     0 0 8px #fff,
-        //     0 0 12px #fff,
-        //     0 0 35px #30adf0,
-        //     0 0 50px #30adf0,
-        //     0 0 70px #30adf0,
-        //     0 0 85px #30adf0,
-        //     0 0 110px #30adf0;
         }
+
+        // animation: flicker_blog 3.5s infinite alternate;
+        // @keyframes flicker_blog {
+        // 0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        //     text-shadow:
+        //     0 0 4px #fff,
+        //     0 0 8px #fff,
+        //     0 0 15px #30adf0,
+        //     0 0 25px #30adf0,
+        //     0 0 42px #30adf0,
+        //     0 0 58px #30adf0,
+        //     0 0 75px #30adf0;
+        // }
+        //     20%, 24%, 55% {        
+        //         text-shadow: none;
+        //     }
+        // }
     }
 
     .subtext {
@@ -585,14 +577,9 @@ img {
         margin: 0 auto;
         padding-bottom: 30px;
         text-shadow:
-                0 0 2px #fff,
-                0 0 5px #fff,
-                0 0 8px #fff,
-                0 0 15px #30adf0,
-                0 0 25px #30adf0,
-                0 0 37px #30adf0,
-                0 0 52px #30adf0,
-                0 0 66px #30adf0;
+                0 0 3px #fff,
+                0 0 9px #30adf0,
+                0 0 20px #30adf0;
     }
 
     &__row {
@@ -686,7 +673,6 @@ img {
         background-color: #f72b3b;
         border: 1px solid #f72b3b;
         box-shadow: 0px 0px 15px 6px #2389A0;
-
         &:hover {
             background: #81161f;
             border-color: #81161f;
@@ -696,7 +682,6 @@ img {
 
 .contact {
     padding: 80px 0 50px;
-
     &__pic {
         background-color: #fff;
         background-position: center center;
@@ -712,7 +697,6 @@ img {
 
     &__text {
         text-align: center;
-
         .subtext {
             @extend %subtext;
             max-width: 30%;
@@ -830,7 +814,6 @@ img {
 
 .hamburger_menu {
     display: none;
-
     a {
         display: inline-block;
         width: 40px;
@@ -877,7 +860,6 @@ img {
 .sidemenu {
     li {
         border-bottom: 1px solid #666;
-
         a {
             display: inline-block;
             padding: 15px;
@@ -894,7 +876,6 @@ img {
     .page_overlay {
         display: block;
     }
-
     .mobile_menu_wrap {
         left: 0;
     }
