@@ -535,11 +535,11 @@ img {
     &__title {
         @extend %title;
         padding-bottom: 25px;
-            // text-shadow:
-            // 0 0 4px #fff,
-            // 0 0 10px #30adf0,
-            // 0 0 20px #30adf0;
-        // Flickering neon animation for text, freezing on mobile
+            text-shadow:
+            0 0 4px #fff,
+            0 0 10px #30adf0,
+            0 0 20px #30adf0;
+        // Flickering neon animation for text
         animation: flicker_blog 2.5s infinite alternate;
         @keyframes flicker_blog {
         0%, 25%, 57%, 100% {
@@ -552,23 +552,32 @@ img {
                 text-shadow: none;
             }
         }
-
-        // animation: flicker_blog 3.5s infinite alternate;
-        // @keyframes flicker_blog {
-        // 0%, 18%, 22%, 25%, 53%, 57%, 100% {
-        //     text-shadow:
-        //     0 0 4px #fff,
-        //     0 0 8px #fff,
-        //     0 0 15px #30adf0,
-        //     0 0 25px #30adf0,
-        //     0 0 42px #30adf0,
-        //     0 0 58px #30adf0,
-        //     0 0 75px #30adf0;
-        // }
-        //     20%, 24%, 55% {        
-        //         text-shadow: none;
+        // Or second variant
+        // text-shadow:
+        //     0 0 3px #fff,
+        //     0 0 7px #fff,
+        //     0 0 10px #30adf0,
+        //     0 0 20px #30adf0,
+        //     0 0 33px #30adf0;
+        //     animation: pulsate_blog_title 0.3s ease-in-out infinite alternate; 
+        //     @keyframes pulsate_blog_title {
+        //         100% {
+        //             text-shadow:
+        //             0 0 3px #fff,
+        //             0 0 7px #fff,
+        //             0 0 10px #30adf0,
+        //             0 0 20px #30adf0,
+        //             0 0 33px #30adf0;
+        //         }
+        //         0% {
+        //             text-shadow:
+        //             0 0 4px #fff,
+        //             0 0 8px #fff,
+        //             0 0 9px #30adf0,
+        //             0 0 19px #30adf0,
+        //             0 0 31px #30adf0;
+        //         }
         //     }
-        // }
     }
 
     .subtext {
@@ -784,6 +793,12 @@ img {
         font: 200 21px 'Ralevay';
         color: #434343;
         line-height: 30px;
+        a {
+            transition: all .3s ease-in-out;
+            &:hover {
+                color: #ff6033;
+            }
+        }
     }
 }
 
