@@ -561,7 +561,15 @@ img {
 }
 .blog__title {
   padding-bottom: 25px;
-  text-shadow: 0 0 4px #fff, 0 0 10px #30adf0, 0 0 20px #30adf0;
+  animation: flicker_blog 2.5s infinite alternate;
+}
+@keyframes flicker_blog {
+  0%, 25%, 57%, 100% {
+    text-shadow: 0 0 4px #fff, 0 0 10px #30adf0, 0 0 20px #30adf0;
+  }
+  20%, 55% {
+    text-shadow: none;
+  }
 }
 .blog .subtext {
   width: 50%;

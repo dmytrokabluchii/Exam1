@@ -535,11 +535,24 @@ img {
     &__title {
         @extend %title;
         padding-bottom: 25px;
+            // text-shadow:
+            // 0 0 4px #fff,
+            // 0 0 10px #30adf0,
+            // 0 0 20px #30adf0;
+        // Flickering neon animation for text, freezing on mobile
+        animation: flicker_blog 2.5s infinite alternate;
+        @keyframes flicker_blog {
+        0%, 25%, 57%, 100% {
             text-shadow:
             0 0 4px #fff,
             0 0 10px #30adf0,
-            0 0 20px #30adf0;
-        // Flickering neon animation for text, freezing on mobile
+            0 0 20px #30adf0,
+        }
+            20%, 55% {        
+                text-shadow: none;
+            }
+        }
+
         // animation: flicker_blog 3.5s infinite alternate;
         // @keyframes flicker_blog {
         // 0%, 18%, 22%, 25%, 53%, 57%, 100% {
