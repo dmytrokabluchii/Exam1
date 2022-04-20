@@ -17,7 +17,6 @@ $base_size:16;
         &__pic {
             background-position: center center;
         }
-
         &__title {
             @include fz(80);
         }
@@ -30,7 +29,6 @@ $base_size:16;
         &__main {
             padding-top: 100px;
         }
-
         &__main-title {
             @include fz(75);
         }
@@ -40,11 +38,9 @@ $base_size:16;
         &__column {
             max-width: 360px;
         }
-
         &__pic {
             background-size: auto 90%;
         }
-
         &__title {
             margin-top: 50%;
             text-align: center;
@@ -54,7 +50,6 @@ $base_size:16;
 
     .gallery {
         padding: 60px 0 100px;
-
         .subtext {
             width: 60%;
             padding-bottom: 35px;
@@ -73,11 +68,9 @@ $base_size:16;
         &__row-left {
             padding: 75px 0 0 50px;
         }
-
         &__pic {
             background-size: auto 80%;
         }
-
         &__title {
             @include fz(65);
         }
@@ -98,7 +91,6 @@ $base_size:16;
             align-items: center;
             width: 100%;
         }
-
         &__pic {
             width: 70%;
             align-self: center;
@@ -108,17 +100,14 @@ $base_size:16;
                 }
             }
         }
-
         &__main {
             width: 65%;
             padding-top: 15px;
         }
-
         &-title {
             @include fz(65);
             margin: 0;
         }
-
         &-subtext {
             p {
                 margin: 0;
@@ -130,11 +119,9 @@ $base_size:16;
         &__row-left {
             padding: 60px 0 0 40px;
         }
-
         &__pic {
             background-size: auto 75%;
         }
-
         &__title {
             margin-top: 70%;
             @include fz(60);
@@ -151,44 +138,36 @@ $base_size:16;
 @media screen and (max-width:900px) {
     .blog {
         padding: 40px 0 80px;
-
         &__title {
             @include fz(75);
             padding-bottom: 20px;
         }
-
         .subtext {
             width: 80%;
             padding-bottom: 20px;
         }
-
         .item-blog {
             &:hover .item-blog__date {
                 position: absolute;
                 top: 20px;
                 left: 10px;
             }
-
             &__date {
                 width: 55px;
                 height: 55px;
                 @include fz(18);
-
                 span {
                     @include fz(24);
                 }
             }
         }
-
         .item-text {
             padding: 5px 10px;
         }
-
         .item-blog__title {
             @include fz(17);
             padding-bottom: 20px;
         }
-
         .item-blog__text {
             line-height: 15px;
         }
@@ -196,11 +175,9 @@ $base_size:16;
 
     .contact {
         padding: 60px 0 50px;
-
         &__title {
             @include fz(75);
         }
-
         &__text {
             .subtext {
                 max-width: 50%;
@@ -213,30 +190,24 @@ $base_size:16;
     .header__menu {
         display: none;
     }
-
     .header__logo img {
         width: 75%;
     }
-
     .hamburger_menu {
         display: block;
     }
-
     .mobile_logo img {
         width: 75%;
     }
 
     .tomato {
         padding: 50px 0 100px;
-
         &__row-left {
             padding: 40px 0 0 10px;
         }
-
         &__pic {
             background-size: auto 70%;
         }
-
         &__title {
             margin-top: 55%;
             @include fz(55);
@@ -246,24 +217,19 @@ $base_size:16;
 
     .gallery {
         padding: 50px 0 80px;
-
         .subtext {
             width: 95%;
         }
-
         .title-black {
             padding-bottom: 15px;
             @include fz(80)
         }
-
         &__grid {
             grid-template-columns: 1fr 1fr;
             gap: 20px;
-
             .image-big {
                 grid-area: span 1 / span 2;
             }
-
             .image-middle:last-child {
                 grid-column: 2/3;
             }
@@ -289,28 +255,23 @@ $base_size:16;
                 width: 100%;
             }
         }
-
         &__row-left {
             padding: 40px 0 0 0;
         }
-
         &__row-right {
             display: flex;
             justify-content: center;
             align-items: center;
         }
-
         &__pic {
             background-position: center center;
             background-size: 50%;
         }
-
         &__title {
             width: 100%;
             @include fz(55);
             color: #fff;
         }
-
         &__row-left {
             padding: 20px 0 0 0;
             display: flex;
@@ -340,22 +301,18 @@ $base_size:16;
             display: flex;
             flex-direction: column-reverse;
         }
-
         &__row-left {
             flex: 1 1 auto;
             width: 100%;
         }
-
         &__row-right {
             flex: 0 1 auto;
             width: 100%;
             padding-bottom: 25px;
         }
-
         &__field {
             width: 100%;
         }
-
         &__button {
             width: 100%;
             padding-bottom: 30px;
@@ -366,11 +323,9 @@ $base_size:16;
 @media screen and (max-width:666px) {
     .header {
         height: 70px;
-
         &__logo img {
             width: 60%;
         }
-
         .container {
             padding-top: 20px;
         }
@@ -407,7 +362,6 @@ $base_size:16;
         &__pic {
             background-position: 60% 50%;
         }
-
         &__field {
             width: 90%;
         }
@@ -416,23 +370,19 @@ $base_size:16;
     .footer {
         height: 120px;
         padding: 20px 5px;
-
         &__row {
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
         }
-
         &__date {
             width: 100%;
         }
-
         &__logo {
             padding: 10px 0;
             height: 100%;
         }
-
         &__text {
             width: 100%;
         }
@@ -450,15 +400,12 @@ $base_size:16;
                 }
             }
         }
-
         &__main {
             width: 75%;
             padding-top: 5px;
-
             &-title {
                 @include fz(50);
             }
-
             &-subtext {
                 line-height: 21px;
             }
@@ -467,19 +414,13 @@ $base_size:16;
 
     .gallery {
         padding: 40px 0 60px;
-        // .container {
-        //     width: 100%;
-        // }
-
         &__grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 20px;
-
             .image-big {
                 grid-area: span 1;
             }
-
             .image-middle:last-child {
                 grid-area: span 1;
             }
@@ -488,15 +429,12 @@ $base_size:16;
 
     .subscribe {
         padding: 60px 0 90px;
-
         &__text h3 {
             @include fz(35);
         }
-
         &__pic {
             background-position: 65% 50%;
         }
-
         &__field {
             width: 100%;
             display: flex;
@@ -504,11 +442,9 @@ $base_size:16;
             justify-content: start;
             align-items: flex-start;
         }
-
         &__mail {
             margin-bottom: 20px;
         }
-
         .subscribe__email {
             width: calc(100% - 70px);
         }
@@ -516,7 +452,6 @@ $base_size:16;
 
     .contact {
         padding: 40px 0 50px;
-
         &__text {
             .subtext {
                 max-width: 80%;
@@ -530,11 +465,9 @@ $base_size:16;
 @media screen and (max-width:375px) {
     .header {
         height: 60px;
-
         &__logo img {
             width: 55%;
         }
-
         .container {
             padding-top: 15px;
         }
@@ -556,18 +489,14 @@ $base_size:16;
 
     .tomato {
         padding: 10px 0 30px;
-
         &__column {
             max-width: 280px;
-
             &_link {
                 width: calc(100% - 75px);
             }
-
             &_icon {
                 width: 75px;
                 height: 75px;
-
                 svg {
                     width: 40px;
                     position: absolute;
@@ -576,15 +505,12 @@ $base_size:16;
                 }
             }
         }
-
         &__row-left {
             padding: 0;
         }
-
         &__row-right {
             padding: 0;
         }
-
         &__title {
             margin-top: 35%;
         }
@@ -592,16 +518,13 @@ $base_size:16;
 
     .gallery {
         padding: 30px 0 50px;
-
         .title-black {
             padding-bottom: 10px;
             @include fz(60);
         }
-
         &__button {
             padding: 30px 0 0px;
         }
-
         .btn-blue {
             padding: 0 10px;
             height: 50px;
@@ -612,15 +535,12 @@ $base_size:16;
 
     .subscribe {
         padding: 30px 0 50px;
-
         &__field {
             padding: 15px 0 0;
         }
-
         &__button {
             flex: 0 0 auto;
         }
-
         .btn-green {
             padding: 0 10px;
             height: 50px;
@@ -631,19 +551,15 @@ $base_size:16;
 
     .blog {
         padding: 30px 5px 50px;
-
         &__title {
             @include fz(60);
         }
-
         .subtext {
             width: 95%;
         }
-
         &__button {
             padding: 30px 0 0 0;
         }
-
         .btn-red {
             padding: 0 10px;
             height: 50px;
@@ -654,18 +570,15 @@ $base_size:16;
 
     .contact {
         padding: 30px 0 50px;
-
         &__title {
             @include fz(60);
         }
-
         .subtext {
             padding-bottom: 20px;
         }
         &__message {
             max-height: 200px;
         }
-
         .btn-blue {
             padding: 0 10px;
             height: 50px;
