@@ -531,6 +531,7 @@ input {
                 height: 40px;
                 width: 40px;
                 opacity: 0.75;
+                transition: all .4s ease-in-out;
             }
             &:hover:before {
                 opacity: 1;
