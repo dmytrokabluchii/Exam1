@@ -69,7 +69,7 @@ $(function () {
   }); // закрыть по клику вне окна callback + order tour
 
   $(document).mouseup(function (e) {
-    var popup = $('.callback__content, .modal__content');
+    var popup = $('.callback__content, .modal__field');
 
     if (e.target != popup[0] && popup.has(e.target).length === 0) {
       $('.modal__callback, .booking__modal').fadeOut(600);
