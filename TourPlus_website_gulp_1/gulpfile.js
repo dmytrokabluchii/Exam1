@@ -18,6 +18,8 @@ const del =             require('del');
 const imgmin =          require('gulp-imagemin');
 // Для минификации js файлов
 const uglify =          require('gulp-uglify-es').default;
+// GIT-Page
+const ghPages = require('gulp-gh-pages');
 
 const ASSETS = "src/assets/";
 const ASSETS_DIST = "dist/assets/";
@@ -174,3 +176,9 @@ gulp.parallel('move-css', 'move-js', 'move-plugins', 'move-json', 'move-favicon'
 // и таск 'move' который все это закидывает в папку dist
 gulp.task('build', gulp.series('cleartmp', 'clear', 'sass', 
 gulp.parallel('build-html',  'minify-css', 'prepare-js'), 'imgmin', 'move'));
+
+// GIT-Page task
+gulp.task('deploy', function() {
+    return gulp.src('./dist/**/*')
+      .pipe(ghPages());
+  });
