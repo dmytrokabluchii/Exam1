@@ -182,7 +182,7 @@ img {
   top: 0;
   height: 100px;
   width: 100%;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgba(255, 255, 255, 0.5);
   z-index: 10;
 }
 .header .container {
@@ -190,7 +190,7 @@ img {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-top: 50px;
+  padding-top: 0px;
 }
 .header__menu ul {
   display: flex;
@@ -214,10 +214,10 @@ img {
   width: 0;
   position: absolute;
   height: 4px;
-  background-color: orange;
+  background-color: #ff6033;
   top: -5px;
   left: 0;
-  transition: all 0.2s ease;
+  transition: all 0.4s ease;
 }
 .header__menu ul li a:hover {
   text-decoration: none;
@@ -243,9 +243,9 @@ img {
   background-color: #f9f8fb;
 }
 .title__pic {
-  height: 96vh;
+  height: 100vh;
   background-position: center center;
-  background-size: content;
+  background-size: cover;
   background-repeat: no-repeat;
 }
 .title__main {
@@ -287,10 +287,10 @@ img {
   content: "";
   width: 23px;
   height: 37px;
-  border: 2px solid #2c2d2d;
+  border: 2px solid #fff;
   border-radius: 14px;
   position: absolute;
-  bottom: 11vh;
+  bottom: 7vh;
   left: 50%;
   transform: translateX(-50%);
   transition: all 0.5s ease-in-out;
@@ -305,17 +305,17 @@ img {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: calc(11vh - -23px);
-  background-color: #2c2d2d;
+  bottom: calc(7vh - -23px);
+  background-color: #fff;
   transition: all 0.5s ease-in-out;
 }
 .title .virtual-mouse:hover::after {
-  bottom: calc(11vh - -5px);
+  bottom: calc(7vh - -5px);
   background-color: #ff6033;
 }
 
 .about {
-  background: #00bdbd;
+  background: linear-gradient(90deg, #00bdbd, #13675d);
   padding: 29px 0;
 }
 .about__container {
@@ -330,7 +330,6 @@ img {
   content: "";
   display: block;
   padding-top: 100%;
-  background-color: #00bdbd;
 }
 .about__pic img {
   position: absolute;
@@ -367,7 +366,7 @@ img {
 }
 
 .tomato {
-  background: #70bfff;
+  background: linear-gradient(90deg, #4caaf8, #c3ddd8);
   padding: 80px 0 135px;
 }
 .tomato__block {
@@ -454,7 +453,7 @@ img {
 }
 
 .gallery {
-  background: #ffe92f;
+  background: linear-gradient(90deg, #f0df5d, #f8e00d);
   padding: 80px 0 120px;
 }
 .gallery img {
