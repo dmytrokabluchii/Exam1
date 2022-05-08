@@ -410,6 +410,14 @@ body {
   -ms-flex-pack: center;
   justify-content: center;
 }
+.about__scroll a {
+  color: #fff;
+  opacity: 0.6;
+  transition: all 0.3s ease-in-out;
+}
+.about__scroll a:hover {
+  opacity: 1;
+}
 .about__scroll a img {
   width: 40px;
 }
@@ -521,10 +529,10 @@ body {
   cursor: pointer;
   text-decoration: none;
   color: #000;
+  transition: all 0.2s ease-in-out;
 }
 .project__location a:hover {
   color: #765ad8;
-  transition: all 0.2s ease-in-out;
 }
 .project__button {
   padding-bottom: 60px;
@@ -978,6 +986,10 @@ body {
 }
 .footer__contact-data a span {
   color: #000;
+  transition: all 0.2s ease-in-out;
+}
+.footer__contact-data a span:hover {
+  color: #765ad8;
 }
 .footer__contact-data img {
   width: 14px;

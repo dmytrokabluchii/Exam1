@@ -364,7 +364,12 @@ body {
         justify-content: center;
 
         a {
-
+            color:#fff;
+            opacity: .6;
+            transition: all .3s ease-in-out;
+            &:hover {
+                opacity: 1;
+            }
             img {
                 width: 40px;
             }
@@ -497,9 +502,9 @@ body {
             cursor: pointer;
             text-decoration: none;
             color: #000;
+            transition: all .2s ease-in-out;
             &:hover {
                 color: #765ad8;
-                transition: all .2s ease-in-out;
             }
         }
     }
@@ -994,7 +999,6 @@ body {
             color: #2C4058;
             position: relative;
             padding: 0 0 46px;
-
             h4::before {
                 @extend %line;
                 background-color: #2C4058;
@@ -1011,7 +1015,6 @@ body {
             -ms-flex-pack: justify;
             justify-content: space-between;
             gap: 30px;
-
             &_left {
                 -webkit-box-flex: 1;
                 -ms-flex: 1 1 50%;
@@ -1027,15 +1030,16 @@ body {
             display: -ms-flexbox;
             display: flex;
             padding-bottom: 33px;
-
             a {
                 text-decoration: none;
-
                 span {
                     color: #000;
+                    transition: all .2s ease-in-out;
+                    &:hover {
+                        color: #765ad8;
+                    }
                 }
             }
-
             img {
                 width: 14px;
                 fill: #7E5AFF;
@@ -1088,7 +1092,6 @@ body {
             -webkit-transition: all 0.2s ease;
             -o-transition: all 0.2s ease;
             transition: all 0.2s ease;
-
             &:valid {
                 border-color: green;
             }
@@ -1097,7 +1100,6 @@ body {
         .form-row input:focus {
             outline: 0;
             border-color: #07d4e2;
-
             &:invalid {
                 border-color: red;
             }
@@ -1129,15 +1131,12 @@ body {
 
     &__media {
         padding-top: 6px;
-
         li {
             cursor: pointer;
             display: inline-block;
-
             +li {
                 padding-left: 15px;
             }
-
             a {
                 svg {
                     width: 40px;
@@ -1213,7 +1212,6 @@ body {
     .sidemenu {
         li {
             border-bottom: 1px solid rgb(194, 191, 191);
-
             a {
                 display: inline-block;
                 padding: 15px;
@@ -1247,7 +1245,6 @@ body {
     .page_overlay {
         display: block;
     }
-
     .mobile_menu_wrap {
         left: 0;
     }

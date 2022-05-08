@@ -15,7 +15,7 @@ $(function(){
     });
 
     // Плавный скролл по меню!
-    $("#main_menu a").on('click', function(e){
+    $("#main_menu a, .header__logo a, .footer__logo a").on('click', function(e){
         e.preventDefault();
         const top = $($(this).attr("href")).offset().top-60;
         $("html, body").animate({scrollTop:top+'px'}, 900);
