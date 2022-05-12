@@ -587,9 +587,33 @@ body {
   position: relative;
   padding-bottom: 75px;
   color: #fff;
+  animation: flicker_news 3s infinite alternate-reverse;
 }
 .news__title h4::before {
   background-color: #fff;
+  animation: flicker_news_line 3s infinite alternate-reverse;
+}
+@keyframes flicker_news_line {
+  0% {
+    background-color: #fff;
+  }
+  50% {
+    background-color: #7E5AFF;
+  }
+  100% {
+    background-color: #2C4058;
+  }
+}
+@keyframes flicker_news {
+  0% {
+    color: #fff;
+  }
+  50% {
+    color: #7E5AFF;
+  }
+  100% {
+    color: #2C4058;
+  }
 }
 .news .slider__wrapper_horizontal {
   margin: 0 -15px;

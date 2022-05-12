@@ -14,6 +14,17 @@ $(function(){
             }
     });
 
+    // Hamburger-menu
+    $(".hamburger, .page_overlay").on('click', function () {
+        // $(".hamburger").toggleClass("is-active");
+        $(".mobile_menu_wrap .hamburger").toggleClass("is-active");
+        $("body").toggleClass("open");
+    });
+    // Закрытие меню бургер при нажатии на пунты меню
+    $(".sidemenu ul li a").on('click', function () {
+        $("body").removeClass("open");
+    });
+
     // Плавный скролл по меню!
     $("#main_menu a, .header__logo a, .footer__logo a").on('click', function(e){
         e.preventDefault();
@@ -28,28 +39,7 @@ $(function(){
         $('body,html').animate({scrollTop: top}, 1400);
     });
 
-
-    // Slick-slider News
-    getNews();
-    $('.slick__wrapper_vertical').slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        speed: 1100,
-        vertical: true,
-        verticalSwiping: true,
-        dots: true,
-        arrows: false,
-        // swipe: false,
-        responsive: [
-            {
-                breakpoint: 1024,
-                settings: {
-                verticalSwiping: false,
-                }
-            }
-        ]
-    });
+    // Slick-slider About
     $('#slider-horizontal').slick({
         infinite: true,
         speed: 900,
@@ -74,19 +64,89 @@ $(function(){
             }
         ]   
     });
-
-
-    // Hamburger-menu
-    $(".hamburger, .page_overlay").on('click', function () {
-        // $(".hamburger").toggleClass("is-active");
-        $(".mobile_menu_wrap .hamburger").toggleClass("is-active");
-        $("body").toggleClass("open");
+    // Slick-slider News
+    getNews();
+    $('.slick__wrapper_vertical').slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        speed: 1100,
+        vertical: true,
+        verticalSwiping: true,
+        dots: true,
+        arrows: false,
+        // swipe: false,
+        responsive: [
+            {
+                breakpoint: 1024,
+                settings: {
+                verticalSwiping: false,
+                }
+            }
+        ]
     });
-    // Закрытие меню бургер при нажатии на пунты меню
-    $(".sidemenu ul li a").on('click', function () {
-        $("body").removeClass("open");
-    });
 
+    // Ajax Динамические пост новостей
+    function getNews(){
+        $.ajax({
+            url:'common/news.json',
+            type:'get',
+            dataType:'json',
+            success:function(json){
+                let html = '';
+                json.forEach((card)=>{
+                    html += `
+                    <li class="slider__item wow animate__zoomIn" data-wow-duration="2s">
+                        <div class="slider__item-container">
+                            <div class="slider__item-content" id="news-card_first">
+                                <div class="slider__content_header">
+                                    <img class="slider__content_img"
+                                    src="assets/images/${card.pic}" 
+                                    alt="news-pic"">
+                                </div>
+                                <div class="slider__content_title">
+                                    <h4 class="blue-text">${card.title}</h4>
+                                    </div>
+                                <div class="slider__content_subtitle">
+                                    <p>${card.description}</p>
+                                </div>
+                                <div class="slider__content_footer author">
+                                    <div class="slider__content_avatar">
+                                        <img class="slider__content_photo"
+                                        src="assets/images/${card.author.avatar}"
+                                        alt="author-pic">
+                                    </div>
+                                    <div class="slider__footer_text">
+                                        <div class="slider__content_author">${card.author.name} </div>
+                                        <div class="slider__content_date">${card.author.date} </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <a class="slider__item-link" href="javascript:void(0);"></a>
+                    </li>
+                `;
+                });
+
+                $("#slider-horizontal").slick('slickAdd', html);
+            },
+            error:function(){
+                panel.warning("The news don't load!", true);
+            }
+        });  
+    }
+
+    // Подключение lightGallery
+    lightGallery(document.querySelector('.my-gallery'), {
+        plugins:[lgZoom, lgThumbnail],
+        thumbnail: true,
+        zoom: true,
+        actualSize: true,
+        animateThumb: true,
+        zoomFromOrigin: true,
+        speed: 500,
+        licenseKey: 'your_license_key',
+    });
 
     // Map Leaflet
     // инициализируем карту по клику
@@ -121,7 +181,6 @@ $(function(){
         });
     });
 
-
     // Отправка формы на Telegram BOT
     $("#my_form").on('submit', function(e){
         e.preventDefault();
@@ -140,71 +199,7 @@ $(function(){
         }
     });
 
+    // Инициализация WOW.js при скроле for animate.css
+    new WOW().init();
+
 });
-
-
-// Подключение lightGallery
-lightGallery(document.querySelector('.my-gallery'), {
-    plugins:[lgZoom, lgThumbnail],
-    thumbnail: true,
-    zoom: true,
-    actualSize: true,
-    animateThumb: true,
-    zoomFromOrigin: true,
-    speed: 500,
-    licenseKey: 'your_license_key',
-});
-
-
-// Ajax Динамические пост новостей
-function getNews(){
-    $.ajax({
-        url:'common/news.json',
-        type:'get',
-        dataType:'json',
-        success:function(json){
-            let html = '';
-            json.forEach((card)=>{
-                html += `
-                <li class="slider__item wow animate__zoomIn" data-wow-duration="2s">
-                    <div class="slider__item-container">
-                        <div class="slider__item-content" id="news-card_first">
-                            <div class="slider__content_header">
-                                <img class="slider__content_img"
-                                src="assets/images/${card.pic}" 
-                                alt="news-pic"">
-                            </div>
-                            <div class="slider__content_title">
-                                <h4 class="blue-text">${card.title}</h4>
-                                </div>
-                            <div class="slider__content_subtitle">
-                                <p>${card.description}</p>
-                            </div>
-                            <div class="slider__content_footer author">
-                                <div class="slider__content_avatar">
-                                    <img class="slider__content_photo"
-                                    src="assets/images/${card.author.avatar}"
-                                    alt="author-pic">
-                                </div>
-                                <div class="slider__footer_text">
-                                    <div class="slider__content_author">${card.author.name} </div>
-                                    <div class="slider__content_date">${card.author.date} </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="slider__item-link" href="javascript:void(0);"></a>
-                </li>
-            `;
-            });
-
-            $("#slider-horizontal").slick('slickAdd', html);
-        },
-        error:function(){
-            panel.warning("The news don't load!", true);
-        }
-    });  
-}
-
-// Инициализация WOW.js при скроле for animate.css
-new WOW().init();
