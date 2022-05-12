@@ -14,6 +14,16 @@ $(function () {
         $("header").removeClass("fixed_header");
       }
     }
+  }); // Hamburger-menu
+
+  $(".hamburger, .page_overlay").on('click', function () {
+    // $(".hamburger").toggleClass("is-active");
+    $(".mobile_menu_wrap .hamburger").toggleClass("is-active");
+    $("body").toggleClass("open");
+  }); // Закрытие меню бургер при нажатии на пунты меню
+
+  $(".sidemenu ul li a").on('click', function () {
+    $("body").removeClass("open");
   }); // Плавный скролл по меню!
 
   $("#main_menu a, .header__logo a, .footer__logo a").on('click', function (e) {
@@ -31,26 +41,8 @@ $(function () {
     $('body,html').animate({
       scrollTop: top
     }, 1400);
-  }); // Slick-slider News
+  }); // Slick-slider About
 
-  getNews();
-  $('.slick__wrapper_vertical').slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    speed: 1100,
-    vertical: true,
-    verticalSwiping: true,
-    dots: true,
-    arrows: false,
-    // swipe: false,
-    responsive: [{
-      breakpoint: 1024,
-      settings: {
-        verticalSwiping: false
-      }
-    }]
-  });
   $('#slider-horizontal').slick({
     infinite: true,
     speed: 900,
@@ -71,16 +63,55 @@ $(function () {
         slidesToScroll: 1
       }
     }]
-  }); // Hamburger-menu
+  }); // Slick-slider News
 
-  $(".hamburger, .page_overlay").on('click', function () {
-    // $(".hamburger").toggleClass("is-active");
-    $(".mobile_menu_wrap .hamburger").toggleClass("is-active");
-    $("body").toggleClass("open");
-  }); // Закрытие меню бургер при нажатии на пунты меню
+  getNews();
+  $('.slick__wrapper_vertical').slick({
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    speed: 1100,
+    vertical: true,
+    verticalSwiping: true,
+    dots: true,
+    arrows: false,
+    // swipe: false,
+    responsive: [{
+      breakpoint: 1024,
+      settings: {
+        verticalSwiping: false
+      }
+    }]
+  }); // Ajax Динамические пост новостей
 
-  $(".sidemenu ul li a").on('click', function () {
-    $("body").removeClass("open");
+  function getNews() {
+    $.ajax({
+      url: 'common/news.json',
+      type: 'get',
+      dataType: 'json',
+      success: function success(json) {
+        var html = '';
+        json.forEach(function (card) {
+          html += "\n                    <li class=\"slider__item wow animate__zoomIn\" data-wow-duration=\"2s\">\n                        <div class=\"slider__item-container\">\n                            <div class=\"slider__item-content\" id=\"news-card_first\">\n                                <div class=\"slider__content_header\">\n                                    <img class=\"slider__content_img\"\n                                    src=\"assets/images/".concat(card.pic, "\" \n                                    alt=\"news-pic\"\">\n                                </div>\n                                <div class=\"slider__content_title\">\n                                    <h4 class=\"blue-text\">").concat(card.title, "</h4>\n                                    </div>\n                                <div class=\"slider__content_subtitle\">\n                                    <p>").concat(card.description, "</p>\n                                </div>\n                                <div class=\"slider__content_footer author\">\n                                    <div class=\"slider__content_avatar\">\n                                        <img class=\"slider__content_photo\"\n                                        src=\"assets/images/").concat(card.author.avatar, "\"\n                                        alt=\"author-pic\">\n                                    </div>\n                                    <div class=\"slider__footer_text\">\n                                        <div class=\"slider__content_author\">").concat(card.author.name, " </div>\n                                        <div class=\"slider__content_date\">").concat(card.author.date, " </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                        <a class=\"slider__item-link\" href=\"javascript:void(0);\"></a>\n                    </li>\n                ");
+        });
+        $("#slider-horizontal").slick('slickAdd', html);
+      },
+      error: function error() {
+        panel.warning("The news don't load!", true);
+      }
+    });
+  } // Подключение lightGallery
+
+
+  lightGallery(document.querySelector('.my-gallery'), {
+    plugins: [lgZoom, lgThumbnail],
+    thumbnail: true,
+    zoom: true,
+    actualSize: true,
+    animateThumb: true,
+    zoomFromOrigin: true,
+    speed: 500,
+    licenseKey: 'your_license_key'
   }); // Map Leaflet
   // инициализируем карту по клику
 
@@ -123,37 +154,7 @@ $(function () {
         }
       });
     }
-  });
-}); // Подключение lightGallery
+  }); // Инициализация WOW.js при скроле for animate.css
 
-lightGallery(document.querySelector('.my-gallery'), {
-  plugins: [lgZoom, lgThumbnail],
-  thumbnail: true,
-  zoom: true,
-  actualSize: true,
-  animateThumb: true,
-  zoomFromOrigin: true,
-  speed: 500,
-  licenseKey: 'your_license_key'
-}); // Ajax Динамические пост новостей
-
-function getNews() {
-  $.ajax({
-    url: 'common/news.json',
-    type: 'get',
-    dataType: 'json',
-    success: function success(json) {
-      var html = '';
-      json.forEach(function (card) {
-        html += "\n                <li class=\"slider__item wow animate__zoomIn\" data-wow-duration=\"2s\">\n                    <div class=\"slider__item-container\">\n                        <div class=\"slider__item-content\" id=\"news-card_first\">\n                            <div class=\"slider__content_header\">\n                                <img class=\"slider__content_img\"\n                                src=\"assets/images/".concat(card.pic, "\" \n                                alt=\"news-pic\"\">\n                            </div>\n                            <div class=\"slider__content_title\">\n                                <h4 class=\"blue-text\">").concat(card.title, "</h4>\n                                </div>\n                            <div class=\"slider__content_subtitle\">\n                                <p>").concat(card.description, "</p>\n                            </div>\n                            <div class=\"slider__content_footer author\">\n                                <div class=\"slider__content_avatar\">\n                                    <img class=\"slider__content_photo\"\n                                    src=\"assets/images/").concat(card.author.avatar, "\"\n                                    alt=\"author-pic\">\n                                </div>\n                                <div class=\"slider__footer_text\">\n                                    <div class=\"slider__content_author\">").concat(card.author.name, " </div>\n                                    <div class=\"slider__content_date\">").concat(card.author.date, " </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                    <a class=\"slider__item-link\" href=\"javascript:void(0);\"></a>\n                </li>\n            ");
-      });
-      $("#slider-horizontal").slick('slickAdd', html);
-    },
-    error: function error() {
-      panel.warning("The news don't load!", true);
-    }
-  });
-} // Инициализация WOW.js при скроле for animate.css
-
-
-new WOW().init();
+  new WOW().init();
+});
