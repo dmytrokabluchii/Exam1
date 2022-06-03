@@ -764,6 +764,7 @@ img {
 
 .hamburger_menu {
   display: none;
+  order: 3;
 }
 .hamburger_menu a {
   display: inline-block;
