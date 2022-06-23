@@ -110,7 +110,7 @@
   letter-spacing: 0.03em;
 }
 
-.contact__message, .contact__field:focus, .contact__field::placeholder {
+.contact__message, .contact__name, .contact__mail, .contact__tel, .contact__field::placeholder {
   color: #fff;
   font: 400 1rem "Ralevay";
   padding: 0 5px;
@@ -168,6 +168,10 @@ img {
   vertical-align: top;
   width: 100%;
   height: 100%;
+}
+
+.error {
+  color: red;
 }
 
 .container {
@@ -698,6 +702,11 @@ img {
   background-color: #00c4c4;
   opacity: 0.5;
   width: 75%;
+  color: #fff;
+}
+.contact .contact__input {
+  display: flex;
+  flex-direction: column;
 }
 .contact__field:focus {
   background-color: #00c4c4;

@@ -33,13 +33,6 @@ $(function () {
 
     // Phone-mask
     $('.phone').mask('+38 (099) 999-99-9?9');
-
-    // валидация email
-    // const validateEmail = (email) => {
-    //     return email.match(
-    //         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    //     );
-    // }; 
     
     // Send-form
     $('.send-form, .subscribe-form').click( function() {
@@ -47,7 +40,6 @@ $(function () {
     	if ( form.valid() ) {
     		// form.css('opacity','.8');
     		let actUrl = form.attr('action');
-            
     		$.ajax({
     			url: actUrl,
     			type: 'post',
@@ -65,13 +57,13 @@ $(function () {
                     Swal.fire({
                         position: 'top-end',
                         icon: 'error',
-                        title: 'Server error, the message not send!',
+                        title: 'Server error, the message can not be send!',
                         showConfirmButton: false,
                         timer: 5000
                     });
     			}
     		});
-            // Очистка формы
+            // Очистка формы метод .reset()
             document.getElementById('my_form','my_subscribe-form').reset(); 
     	}
     });

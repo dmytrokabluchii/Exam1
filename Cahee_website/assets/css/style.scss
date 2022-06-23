@@ -77,6 +77,11 @@ img {
     height: 100%;
 }
 
+// change textcolor in validate message
+.error {
+    color: red;
+}
+
 .container {
     width: 90%;
     max-width: 1170px;
@@ -750,6 +755,12 @@ img {
         background-color: #00c4c4;
         opacity: 0.5;
         width: 75%;
+        color: #fff;
+    }
+
+    .contact__input {
+        display: flex;
+        flex-direction: column;
     }
 
     &__field::placeholder {
@@ -757,7 +768,6 @@ img {
     }
 
     &__field:focus {
-        @extend %text_form;
         background-color: #00c4c4;
         opacity: 1;
         border-left: 5px solid #355b82;
@@ -773,6 +783,7 @@ img {
     &__mail,
     &__tel {
         height: 50px;
+        @extend %text_form;
     }
 
     &__message {
