@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://dmytrokabluchii.github.io/my_projects/MySlider-InPureJS/index.html">
-    <img src="./img/example.jpg">
+    <img width="299" height="121"  src="./img/example.jpg">
   </a>
   <h3 align="center">My Slider In Pure JS</h3>
 </p>
