@@ -645,7 +645,7 @@ img {
             position: absolute;
             left: -100px;
             top: -100px;
-            transition: all .5s ease;
+            transition: all .5s ease-in-out;
             span {
                 @include fz(30);
             }
