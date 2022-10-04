@@ -610,15 +610,14 @@ body {
             list-style: none;
             position: relative;
             padding: 15px;
-
+            -webkit-transition: all .3s ease-in-out;
+            -o-transition: all .3s ease-in-out;
+            transition: all .3s ease-in-out;
             &:hover {
                 overflow: hidden;
-                -webkit-transform: scale(1.01);
-                -ms-transform: scale(1.01);
-                transform: scale(1.01);
-                -webkit-transition: all .3s ease-in-out;
-                -o-transition: all .3s ease-in-out;
-                transition: all .3s ease-in-out;
+                -webkit-transform: scale(1.02);
+                -ms-transform: scale(1.02);
+                transform: scale(1.02);
             }
         }
 

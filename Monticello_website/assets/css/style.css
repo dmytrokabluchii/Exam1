@@ -624,15 +624,15 @@ body {
   list-style: none;
   position: relative;
   padding: 15px;
-}
-.news .slider__wrapper_horizontal li:hover {
-  overflow: hidden;
-  -webkit-transform: scale(1.01);
-  -ms-transform: scale(1.01);
-  transform: scale(1.01);
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+.news .slider__wrapper_horizontal li:hover {
+  overflow: hidden;
+  -webkit-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  transform: scale(1.02);
 }
 .news .slider__wrapper_horizontal .slider__item-link {
   display: inline-block;
