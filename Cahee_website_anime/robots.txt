@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: http://beetroot.zzz.com.ua/Cahee_website_anime/sitemap.xml
