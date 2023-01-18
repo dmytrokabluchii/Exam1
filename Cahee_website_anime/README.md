@@ -1,11 +1,7 @@
-Link to project: https://dmytrokabluchii.github.io/my_projects/Cahee_website_anime/
+Link to gitPage: https://dmytrokabluchii.github.io/my_projects/Cahee_website_anime/
 
-The project placed in real hosting, link to example (working form to email) - http://beetroot.zzz.com.ua/Cahee_website_anime/
+Link to page in real hosting - http://dimdim.byethost13.com/Cahee_website_anime/
 
-Website performance is 99%, according to pagespeed.web.dev
+Single page landing, responsive design.
 
-Single page landing, responsive design, used Pixel Perfect.
-
-Technologies used: HTML, SCSS , jQuery, PHP(mail).
-
-One of my first project made while studying at Beetroot Academy (10-11.2021).
+Technologies used: HTML, SCSS , jQuery, PHP(mail), GSAP animation.
