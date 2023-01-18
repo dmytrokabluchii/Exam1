@@ -1,4 +1,4 @@
-Link to example: https://dmytrokabluchii.github.io/my_projects/Cahee_website_anime/
+Link to project: https://dmytrokabluchii.github.io/my_projects/Cahee_website_anime/
 
 The project placed in real hosting, link to example (working form to email) - http://beetroot.zzz.com.ua/Cahee_website_anime/
 
