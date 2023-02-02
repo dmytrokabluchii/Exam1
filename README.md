@@ -1,8 +1,6 @@
 Link to pages - https://dmytrokabluchii.github.io/my_projects/
-
-
-
-
+<br>
+<br>
 Bhromaon page - https://dmytrokabluchii.github.io/my_projects/Bhromaon_website/
 
 Cahee page - https://dmytrokabluchii.github.io/my_projects/Cahee_website/
