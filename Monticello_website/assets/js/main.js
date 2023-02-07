@@ -32,7 +32,7 @@ $(function(){
         $("html, body").animate({scrollTop:top+'px'}, 900);
     });
     // Скролл по arrow!
-    $(".about-arrow a").on("click", function (e) {
+    $(".about-arrow").on("click", function (e) {
         e.preventDefault();
         let id  = $(this).attr('href'),
             top = $(id).offset().top;

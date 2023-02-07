@@ -255,7 +255,7 @@ body {
 }
 
 .header__content {
-  margin-top: 55px;
+  padding-top: 55px;
   position: fixed;
   left: 0;
   top: 0;
@@ -365,19 +365,18 @@ body {
   background: linear-gradient(243.43deg, #7E5AFF 16.9%, #55B7FF 83.27%);
 }
 .about-bg {
-  padding: 60px 0 0;
   background-position: 50% 50%;
   background-size: cover;
   background-repeat: no-repeat;
-  height: 800px;
+  height: 100vh;
+  position: relative;
 }
 .about__text {
-  width: 100%;
-  padding-top: 105px;
+  max-width: 90%;
+  padding-top: 30vh;
   font-family: "Montserrat";
   position: relative;
   color: #fff;
-  max-width: 90%;
   margin: 0 auto;
 }
 .about__title {
@@ -391,7 +390,6 @@ body {
   text-align: center;
 }
 .about__subtitle {
-  padding-bottom: 240px;
   position: relative;
 }
 .about__subtitle P {
@@ -402,15 +400,10 @@ body {
   font-weight: normal;
   text-align: center;
 }
-.about__scroll {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-}
 .about__scroll a {
+  position: absolute;
+  left: 50%;
+  bottom: 10%;
   color: #fff;
   opacity: 0.6;
   transition: all 0.3s ease-in-out;

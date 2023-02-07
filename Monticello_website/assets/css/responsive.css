@@ -70,9 +70,6 @@
     /* формулы адаптивного шрифта до 44px плавного умен-я имеем на разр-и в 320px */
     font-size: calc(30px + 50 * ((100vw / 1170)));
   }
-  .about__subtitle {
-    padding-bottom: 170px;
-  }
 
   .project__block-second {
     grid-template-columns: repeat(2, 50% 50%);
@@ -239,6 +236,10 @@
   }
 }
 @media screen and (max-width: 850px) {
+  .header__content {
+    padding-top: 25px;
+    height: 70px;
+  }
   .header__main-menu, .header__media {
     display: none;
   }
@@ -309,6 +310,10 @@
   }
 }
 @media screen and (max-width: 660px) {
+  .about__scroll a {
+    left: 48%;
+  }
+
   .news .container .slider__wrapper_horizontal .slick-prev {
     left: -30px;
   }
@@ -350,6 +355,11 @@
   }
 }
 @media screen and (max-width: 480px) {
+  .about__scroll a {
+    left: 46%;
+    bottom: 6%;
+  }
+
   .news .container {
     width: 90%;
   }
@@ -398,9 +408,6 @@
   }
   .about__title {
     padding: 115px 10px 15px 0;
-  }
-  .about__subtitle {
-    padding-bottom: 140px;
   }
   .about__subtitle P {
     font-size: 1rem;
@@ -510,9 +517,42 @@
     font-size: 1.875rem;
   }
 }
-@media screen and (max-height: 800px) {
-  .about__subtitle {
-    padding-bottom: 110px;
+@media screen and (max-height: 550px) {
+  .header__content {
+    padding-top: 25px;
+    height: 70px;
+  }
+
+  .about__title {
+    padding: 110px 0 15px;
+  }
+  .about__title h2 {
+    font-size: 3rem;
+  }
+  .about__scroll a {
+    left: 47%;
+    bottom: 6%;
+  }
+}
+@media screen and (max-height: 450px) {
+  .header__content {
+    padding-top: 10px;
+    height: 50px;
+  }
+
+  .about__title {
+    padding: 90px 0 15px;
+  }
+  .about__title h2 {
+    font-size: 2.75rem;
+  }
+  .about__subtitle P {
+    font-size: 1rem;
+    line-height: 20px;
+    letter-spacing: 0.15em;
+  }
+  .about .slick-dots {
+    top: 55%;
   }
 }
 @media screen and (max-height: 380px) {

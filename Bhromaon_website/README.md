@@ -1,4 +1,4 @@
-link to example - https://dmytrokabluchii.github.io/my_projects/Bhromaon_website/index.html
+link to example - https://dmytrokabluchii.github.io/my_projects/Bhromaon_website
 
 Single page website, responsive design, used Pixel Perfect.
 

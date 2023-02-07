@@ -2,8 +2,6 @@ Link to example - https://dmytrokabluchii.github.io/my_projects/Cahee_website/in
 
 Link to page on hosting - http://dimdim.byethost13.com/Cahee_website/
 
-Link to example with GSAP animation - http://dimdim.byethost13.com/Cahee_website_anime/
-
 Website performance is 99%, according to pagespeed.web.dev
 
 Single page landing, responsive design, used Pixel Perfect.

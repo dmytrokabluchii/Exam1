@@ -109,10 +109,6 @@ $base_size:16;
             /* формулы адаптивного шрифта до 44px плавного умен-я имеем на разр-и в 320px */
             font-size: calc(30px + 50 * ((100vw / 1170)));
         }
-
-        &__subtitle {
-            padding-bottom: 170px;
-        }
     }
 
     .project {
@@ -382,7 +378,10 @@ $base_size:16;
 
 @media screen and (max-width:850px) {
     .header {
-
+        &__content {
+            padding-top: 25px;
+            height: 70px;
+        }
         &__main-menu,
         &__media {
             display: none;
@@ -480,6 +479,13 @@ $base_size:16;
 
 
 @media screen and (max-width: 660px) {
+    .about {
+        &__scroll {
+            a {
+                left: 48%;
+            }
+        }
+    }
     .news {
         .container {
             .slider__wrapper_horizontal {
@@ -547,6 +553,14 @@ $base_size:16;
 
 
 @media screen and (max-width: 480px) {
+    .about {
+        &__scroll {
+            a {
+                left: 46%;
+                bottom: 6%;
+            }
+        }
+    }
     .news {
         .container {
             width: 90%;
@@ -615,8 +629,6 @@ $base_size:16;
         }
 
         &__subtitle {
-            padding-bottom: 140px;
-
             P {
                 @include fz(16);
                 letter-spacing: 0.15em;
@@ -770,10 +782,52 @@ $base_size:16;
 }
 
 
-@media screen and (max-height:800px) {
+@media screen and (max-height:550px) {
+    .header {
+        &__content {
+            padding-top: 25px;
+            height: 70px;
+        }
+    }
     .about {
+        &__title {
+            padding: 110px 0 15px;
+            h2 {
+                @include fz(48);
+            }
+        }
+        &__scroll {
+            a {
+                left: 47%;
+                bottom: 6%;
+            }
+        }
+    }
+}
+
+@media screen and (max-height:450px) {
+    .header {
+        &__content {
+            padding-top: 10px;
+            height: 50px;
+        }
+    }
+    .about {
+        &__title {
+            padding: 90px 0 15px;
+            h2 {
+                @include fz(44);
+            }
+        }
         &__subtitle {
-            padding-bottom: 110px;
+            P {
+                @include fz(16);
+                line-height: 20px;
+                letter-spacing: 0.15em;
+            }
+        }
+        .slick-dots {
+            top: 55%;
         }
     }
 }
