@@ -34,7 +34,7 @@ $(function () {
     }, 900);
   }); // Скролл по arrow!
 
-  $(".about-arrow a").on("click", function (e) {
+  $(".about-arrow").on("click", function (e) {
     e.preventDefault();
     var id = $(this).attr('href'),
         top = $(id).offset().top;

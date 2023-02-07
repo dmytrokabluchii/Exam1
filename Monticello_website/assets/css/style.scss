@@ -176,7 +176,7 @@ body {
 
 .header {
     &__content {
-        margin-top: 55px;
+        padding-top: 55px;
         position: fixed;
         left: 0;
         top: 0;
@@ -188,12 +188,9 @@ body {
         -o-transition: all .2s ease;
         transition: all .2s ease;
     }
-
-
     &__block {
         color: #fff;
     }
-
     &__main {
         display: -webkit-box;
         display: -ms-flexbox;
@@ -312,26 +309,26 @@ body {
     }
 
     &-bg {
-        padding: 60px 0 0;
+        // padding: 60px 0 0;
         background-position: 50% 50%;
         background-size: cover;
         background-repeat: no-repeat;
-        height: 800px;
+        // height: 800px;
+        height: 100vh;
+        position: relative;
     }
 
     &__text {
-        width: 100%;
-        padding-top: 105px;
+        max-width: 90%;
+        padding-top: 30vh;
         font-family: 'Montserrat';
         position: relative;
         color: #fff;
-        max-width: 90%;
         margin: 0 auto;
     }
 
     &__title {
         padding: 165px 0 17px;
-
         h2 {
             @include fz(80);
             /* раб. формула адаптивного шрифта(1 этап, 2-й в медиа запросе на (max-width:767px))
@@ -342,9 +339,7 @@ body {
     }
 
     &__subtitle {
-        padding-bottom: 240px;
         position: relative;
-
         P {
             @include fz(17);
             line-height: 22px;
@@ -356,14 +351,10 @@ body {
     }
 
     &__scroll {
-        display: -webkit-box;
-        display: -ms-flexbox;
-        display: flex;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-
         a {
+            position: absolute;
+            left: 50%;
+            bottom: 10%;
             color:#fff;
             opacity: .6;
             transition: all .3s ease-in-out;
